@@ -6,6 +6,7 @@ import { BLOCKS, NodeData } from '@contentful/rich-text-types';
 import { UniformText } from '@uniformdev/canvas-react';
 import { getTextClass } from '../../utilities/styling';
 import { ContentBlockProps } from '.';
+import Divider from '../Divider';
 
 const documentToHtmlStringOptions: Options = {
   renderNode: {
@@ -20,7 +21,14 @@ const documentToHtmlStringOptions: Options = {
   },
 };
 
-export const ContentBlock: FC<ContentBlockProps> = ({ titleStyle: TitleTag = 'h1', content = '', link, styles }) => {
+export const ContentBlock: FC<ContentBlockProps> = ({
+  titleStyle: TitleTag = 'h1',
+  content = '',
+  link,
+  variant = 'default',
+  subTitle,
+  styles,
+}) => {
   const Wrapper = link?.path
     ? ({ children }: PropsWithChildren) => {
         return <Link href={link?.path}>{children}</Link>;
@@ -28,9 +36,17 @@ export const ContentBlock: FC<ContentBlockProps> = ({ titleStyle: TitleTag = 'h1
     : Fragment;
 
   return (
-    <div
-      className={'text-secondary-content items-center justify-between w-full gap-5 mx-auto lg:flex-nowrap rounded-xl'}
-    >
+    <div className={'text-primary items-center justify-between w-full gap-5 mx-auto lg:flex-nowrap'}>
+      {variant === 'subtitle' && subTitle && (
+        <Wrapper>
+          <UniformText
+            placeholder="Sub Title goes here"
+            parameterId="subTitle"
+            as="h3"
+            className={classNames('font-bold text-3xl mb-4', styles?.subTitle)}
+          />
+        </Wrapper>
+      )}
       <Wrapper>
         <UniformText
           placeholder="Title goes here"
@@ -39,9 +55,10 @@ export const ContentBlock: FC<ContentBlockProps> = ({ titleStyle: TitleTag = 'h1
           className={classNames('font-medium', getTextClass(TitleTag), styles?.title)}
         />
       </Wrapper>
+      {variant === 'divider' && <Divider />}
       {content ? (
         <div
-          className="py-6 text-xl"
+          className={variant === 'divider' ? 'py-0 text-lg' : 'py-6 text-xl'}
           dangerouslySetInnerHTML={{
             __html: typeof content === 'string' ? content : documentToHtmlString(content, documentToHtmlStringOptions),
           }}
@@ -51,7 +68,7 @@ export const ContentBlock: FC<ContentBlockProps> = ({ titleStyle: TitleTag = 'h1
           placeholder="Text goes here"
           parameterId="text"
           as={TitleTag}
-          className={classNames('py-6 text-xl', styles?.text)}
+          className={classNames(variant === 'divider' ? 'py-0 text-lg' : 'py-6 text-xl', styles?.text)}
         />
       )}
     </div>

@@ -4,7 +4,7 @@ import { Divider } from '@/canvas';
 import { createFakeCompositionData } from '../utils';
 
 const meta: Meta<typeof Divider> = {
-  title: 'Divider',
+  title: 'Data Display/Divider',
   component: Divider,
 };
 
@@ -17,10 +17,7 @@ const argTypes = {
 };
 
 export const Default: Story = {
-  args: {
-    colorStyle: 'primary',
-    thickness: 1,
-  },
+  args: {},
   argTypes,
   render: args => {
     const fakeComposition = createFakeCompositionData(

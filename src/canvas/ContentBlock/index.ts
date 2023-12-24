@@ -5,6 +5,7 @@ import { ContentBlock } from './ContentBlock';
 type Styles = {
   title?: string;
   text?: string;
+  subTitle?: string;
 };
 export type ContentBlockProps = ComponentProps<{
   title?: string;
@@ -13,6 +14,8 @@ export type ContentBlockProps = ComponentProps<{
   text: string;
   content?: string | Document;
   styles?: Styles;
+  variant?: 'default' | 'subtitle' | 'divider';
+  subTitle?: string;
 }>;
 
 registerUniformComponent({

@@ -11,6 +11,6 @@ export const getDividerColorStyle = (style: Types.AvailableColor) => {
     case 'base-300':
       return 'border-base-300';
     default:
-      return 'border-base-200';
+      return 'border-neutral-300';
   }
 };

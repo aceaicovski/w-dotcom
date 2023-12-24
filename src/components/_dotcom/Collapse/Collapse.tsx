@@ -67,8 +67,8 @@ const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
         className={cn(
           'collapse',
           'collapse-arrow',
-          {'collapse-open': open === true},
-          {'collapse-close': open === false},
+          { 'collapse-open': open === true },
+          { 'collapse-close': open === false },
           className
         )}
         onBlur={handleBlur}
