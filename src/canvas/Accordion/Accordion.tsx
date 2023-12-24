@@ -4,7 +4,7 @@ import { UniformSlot, UniformText } from '@uniformdev/canvas-react';
 import { AccordionProps } from '.';
 
 export const Accordion: FC<AccordionProps> = ({ styles }) => (
-  <div className={classNames('text-secondary-content', styles?.container)}>
+  <div className={classNames('text-primary', styles?.container)}>
     <UniformText
       placeholder="Title goes here"
       parameterId="title"
@@ -15,7 +15,7 @@ export const Accordion: FC<AccordionProps> = ({ styles }) => (
       placeholder="Description goes here"
       parameterId="description"
       as="p"
-      className={classNames('text-xl pb-6', styles?.description)}
+      className={classNames('text-lg pb-6', styles?.description)}
     />
     <UniformSlot name="items" />
   </div>

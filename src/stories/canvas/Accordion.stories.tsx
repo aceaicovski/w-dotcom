@@ -4,8 +4,11 @@ import { Accordion } from '@/canvas';
 import { createFakeCompositionData, createUniformParameter } from '../utils';
 
 const meta: Meta<typeof Accordion> = {
-  title: 'Accordion',
+  title: 'Data Display/Accordion',
   component: Accordion,
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;

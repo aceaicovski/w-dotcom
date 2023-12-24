@@ -8,11 +8,16 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
   const toggleAccordion = useCallback(() => setOpened(isOpened => !isOpened), []);
 
   return (
-    <div className={classNames('card rounded-none mb-6 last:mb-0', styles?.container)}>
+    <div
+      className={classNames(
+        'card rounded-none mb-2 last:mb-0 border-b border-solid border-neutral-300',
+        styles?.container
+      )}
+    >
       <button
         onClick={toggleAccordion}
         className={classNames(
-          'flex flex-row justify-between items-center p-4 md:p-8 text-2xl font-bold bg-primary w-full',
+          'flex flex-row justify-between items-center p-2 md:p-4 text-2xl font-semibold bg-inherit w-full',
           styles?.toggleButton
         )}
       >
@@ -20,7 +25,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
           placeholder="Title goes here"
           parameterId="title"
           as="p"
-          className={classNames('text-start pr-2 text-primary-content', styles?.title)}
+          className={classNames('text-start pr-2 text-primary', styles?.title)}
         />
         <div className="flex items-center">
           {isOpened ? (
@@ -29,7 +34,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
                 fillRule="evenodd"
                 clipRule="evenodd"
                 d="M7.50013 0L0 7.13651L1.95843 9L7.5 3.7271L13.0416 9L15 7.13651L7.50013 0Z"
-                fill="white"
+                fill="#d4d4d4"
               />
             </svg>
           ) : (
@@ -38,7 +43,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
                 fillRule="evenodd"
                 clipRule="evenodd"
                 d="M7.49987 9L15 1.86349L13.0416 0L7.5 5.2729L1.95843 0L0 1.86349L7.49987 9Z"
-                fill="white"
+                fill="#d4d4d4"
               />
             </svg>
           )}
@@ -49,7 +54,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
           placeholder="Description goes here"
           parameterId="description"
           as="p"
-          className={classNames('p-10 text-secondary-content', styles?.description)}
+          className={classNames('text-primary text-base px-2 pb-4 md:px-4', styles?.description)}
         />
       )}
     </div>
