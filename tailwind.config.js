@@ -1,4 +1,5 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
+import { colors } from './src/styles/theme/colors';
 
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
@@ -12,6 +13,10 @@ module.exports = {
       },
       blur: {
         xs: '2px',
+      },
+      colors: {
+        primary: colors.primary,
+        secondary: colors.secondary,
       },
     },
   },
