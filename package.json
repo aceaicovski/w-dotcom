@@ -41,6 +41,9 @@
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^16.1.0",
     "@contentful/rich-text-types": "^16.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@uniformdev/canvas": "19.83.0",
     "@uniformdev/canvas-next": "19.83.0",
     "@uniformdev/canvas-react": "19.83.0",
@@ -51,6 +54,7 @@
     "@uniformdev/richtext": "19.83.0",
     "@vercel/og": "^0.5.7",
     "classnames": "^2.3.2",
+    "clsx": "^2.0.0",
     "daisyui": "^2.51.5",
     "framer-motion": "10.16.2",
     "next": "^13.5.6",
@@ -60,7 +64,8 @@
     "react-player": "^2.12.0",
     "react-responsive-masonry": "2.1.7",
     "sass": "1.64.1",
-    "sharp": "^0.32.1"
+    "sharp": "^0.32.1",
+    "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "7.5.3",

@@ -1,14 +1,26 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
-import { getButtonAnimationClass, getButtonClass } from '../../utilities/styling';
+import { getButtonAnimationClass, getButtonClass, getButtonSizeClass } from '../../utilities/styling';
 import { ButtonProps } from './';
 
-const Button: FC<ButtonProps> = ({ href, copy, style, className, onClick, disable = false, animationType }) => {
+const Button: FC<ButtonProps> = ({
+  href,
+  copy,
+  style,
+  size = 'regular',
+  rounded = false,
+  className,
+  onClick,
+  disable = false,
+  animationType,
+}) => {
   const buttonStyle = classNames(
-    'btn rounded-none',
+    'btn',
+    rounded && 'rounded-full',
     className,
     animationType ? getButtonAnimationClass(style, animationType) : getButtonClass(style),
+    getButtonSizeClass(size),
     {
       'btn-disabled': disable,
     }

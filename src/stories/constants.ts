@@ -4,4 +4,6 @@ export const currencyOptions = ['USD', 'EUR'];
 
 export const buttonStyleOptions = ['primary', 'secondary', 'accent', 'link'];
 
+export const buttonSizeOptions = ['large', 'regular', 'small'];
+
 export const horizontalAlignmentOptions = ['left', 'center', 'right'];

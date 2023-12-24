@@ -9,7 +9,7 @@ import type { Preview } from '@storybook/react';
 const preview: Preview = {
   decorators: [
     (Story, context) => {
-      const theme = context.parameters.theme || context.globals.theme || 'uniform';
+      const theme = context.parameters.theme || context.globals.theme || 'nextlevelsports';
       return (
         <ThemeProvider data={getTheme(theme)}>
           <Story />
@@ -23,11 +23,12 @@ export const globalTypes = {
   theme: {
     name: 'Theme',
     description: 'Global theme for components',
-    defaultValue: 'uniform',
+    defaultValue: 'nextlevelsports',
     toolbar: {
       icon: 'globe',
       title: 'Theme',
       items: [
+        { value: 'nextlevelsports', title: 'Next Level Sports' },
         { value: 'uniform', title: 'Uniform' },
         { value: 'javadrip', title: 'Javadrip' },
       ],

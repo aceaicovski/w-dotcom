@@ -39,6 +39,11 @@ import './Spacer';
 import './Testimonial';
 import './Video';
 
+import './SportTypeCard';
+
+export { default as SportTypeCard } from './SportTypeCard';
+export type { SportTypeCardProps } from './SportTypeCard';
+
 export { default as Accordion } from './Accordion';
 
 export { default as AddToCart } from './AddToCart';

@@ -1,9 +1,9 @@
 export const getButtonClass = (style?: Types.ButtonStyles) => {
   switch (style) {
     case 'primary':
-      return 'btn-primary';
+      return 'btn-primary text-white';
     case 'secondary':
-      return 'btn-secondary';
+      return 'btn-secondary text-white';
     case 'accent':
       return 'btn-accent';
     case 'ghost':
@@ -47,6 +47,17 @@ const getStaticAnimationClass = (style?: Types.ButtonStyles) => {
       return 'btn-link hover:border-transparent';
     default:
       return 'btn-primary hover:text-primary hover:transparent';
+  }
+};
+
+export const getButtonSizeClass = (size: Types.ButtonSize) => {
+  switch (size) {
+    case 'large':
+      return 'btn-lg';
+    case 'small':
+      return 'btn-sm';
+    default:
+      return '';
   }
 };
 

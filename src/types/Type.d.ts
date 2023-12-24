@@ -20,6 +20,8 @@ declare namespace Types {
 
   type ButtonStyles = 'primary' | 'secondary' | 'accent' | 'ghost' | 'link';
 
+  type ButtonSize = 'large' | 'regular' | 'small';
+
   type BadgeStyles = 'primary' | 'secondary' | 'accent' | 'outline';
 
   type BadgeSize = 'xs' | 'sm' | 'md' | 'lg';
@@ -58,7 +60,7 @@ declare namespace Types {
 
   type HorizontalAlignment = 'left' | 'center' | 'right';
 
-  type SupportedThemes = 'uniform' | 'javadrip' | 'custom';
+  type SupportedThemes = 'uniform' | 'javadrip' | 'custom' | 'nextlevelsports';
 
   type ThemeColors = {
     value: string;

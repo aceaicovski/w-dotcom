@@ -5,6 +5,8 @@ export type ButtonProps = ComponentProps<{
   copy: string;
   link: Types.ProjectMapLink;
   style: Types.ButtonStyles;
+  size?: Types.ButtonSize;
+  rounded?: boolean;
   animationType?: Types.AnimationType;
 }>;
 
