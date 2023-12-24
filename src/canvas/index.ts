@@ -39,11 +39,6 @@ import './Spacer';
 import './Testimonial';
 import './Video';
 
-import './SportTypeCard';
-
-export { default as SportTypeCard } from './SportTypeCard';
-export type { SportTypeCardProps } from './SportTypeCard';
-
 export { default as Accordion } from './Accordion';
 
 export { default as AddToCart } from './AddToCart';
@@ -108,3 +103,15 @@ export { default as RichText } from './RichText';
 
 export { default as Video } from './Video';
 export type { VideoProps } from './Video';
+
+/**
+ * Next Level Sports design components
+ */
+import './SportTypeCard';
+import './ProgramNavigation';
+
+export { default as SportTypeCard } from './SportTypeCard';
+export type { SportTypeCardProps } from './SportTypeCard';
+
+export { default as ProgramNavigation } from './ProgramNavigation';
+export type { ProgramNavigationProps } from './ProgramNavigation';

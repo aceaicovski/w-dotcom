@@ -1,4 +1,5 @@
 export { default as SportTypeCard, type SportTypeCardProps } from './_dotcom/SportTypeCard';
+export { default as ProgramNavigation } from './_dotcom/ProgramNavigation';
 
 export { default as Decorators } from './Decorators';
 export { default as BaseAddToCart } from './BaseAddToCart';
