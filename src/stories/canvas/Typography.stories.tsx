@@ -2,6 +2,7 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { UniformComposition } from '@uniformdev/canvas-react';
 import { Typography, type TypographyProps } from '@/canvas';
+import { BackgroundTypes } from '../../utilities/styling';
 import { createFakeCompositionData } from '../utils';
 import { Container } from '@/components';
 
@@ -40,4 +41,24 @@ export const Default: Story = {
   args: BASE_PROPS,
   argTypes,
   render: renderStory,
+};
+
+export const Tags: Story = {
+  args: BASE_PROPS,
+  argTypes,
+  render: (args: TypographyProps) => {
+    const fakeComposition = createFakeCompositionData('sportTypeCard', args, {});
+    return (
+      <UniformComposition data={fakeComposition}>
+        <Container backgroundType={BackgroundTypes.Light} className="flex flex-col space-y-4">
+          <Typography {...args} tag="h1" />
+          <Typography {...args} tag="h2" />
+          <Typography {...args} tag="h3" />
+          <Typography {...args} tag="h4" />
+          <Typography {...args} tag="p" />
+          <Typography {...args} tag="q" />
+        </Container>
+      </UniformComposition>
+    );
+  },
 };
