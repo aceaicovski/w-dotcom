@@ -1,4 +1,5 @@
 import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
+import { PaddingSize } from '../../utilities/styling';
 import { Typography } from './Typography';
 
 type Styles = {
@@ -9,26 +10,14 @@ type Styles = {
 export type TypographyProps = ComponentProps<{
   tag: Types.TypographyStyle;
   text: string;
-  textAlign?: Types.HorizontalAlignment;
+  align?: Types.HorizontalAlignment;
   styles?: Styles;
+  marginBottom?: PaddingSize;
 }>;
 
 registerUniformComponent({
   type: 'typography',
   component: Typography,
 });
-
-export const getTextAlign = (textAlign: Types.HorizontalAlignment) => {
-  switch (textAlign) {
-    case 'left':
-      return 'text-left';
-    case 'center':
-      return 'text-center';
-    case 'right':
-      return 'text-right';
-    default:
-      return 'text-left';
-  }
-};
 
 export default Typography;

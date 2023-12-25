@@ -308,3 +308,16 @@ export const getLineClampClass = (maxLineCount?: Types.AvailableMaxLineCount) =>
       return '';
   }
 };
+
+export const getTextAlign = (textAlign: Types.HorizontalAlignment) => {
+  switch (textAlign) {
+    case 'left':
+      return 'text-left';
+    case 'center':
+      return 'text-center';
+    case 'right':
+      return 'text-right';
+    default:
+      return 'text-left';
+  }
+};

@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { UniformComposition } from '@uniformdev/canvas-react';
 import { Typography, type TypographyProps } from '@/canvas';
@@ -18,6 +19,12 @@ const BASE_PROPS: Omit<TypographyProps, 'component'> = {
   tag: 'p',
 };
 
+const argTypes = {
+  tag: { control: 'select', options: ['h1', 'h2', 'h3', 'h4', 'p', 'q'] },
+  align: { control: 'select', options: ['left', 'center', 'right'] },
+  marginBottom: { control: 'select', options: ['Small', 'Medium', 'Large', 'None'] },
+};
+
 const renderStory = (args: TypographyProps) => {
   const fakeComposition = createFakeCompositionData('typography', args, {});
   return (
@@ -31,5 +38,6 @@ const renderStory = (args: TypographyProps) => {
 
 export const Default: Story = {
   args: BASE_PROPS,
+  argTypes,
   render: renderStory,
 };

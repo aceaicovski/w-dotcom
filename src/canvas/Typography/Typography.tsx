@@ -1,17 +1,23 @@
 import { FC } from 'react';
 import classNames from 'classnames';
 import { UniformSlot, UniformText } from '@uniformdev/canvas-react';
-import { getTypographyClass } from '@/utilities/styling';
-import { getTextAlign } from '.';
+import { getTypographyClass, getTextAlign, getMarginBottomClass } from '@/utilities/styling';
 import { TypographyProps } from '.';
 
-export const Typography: FC<TypographyProps> = ({ tag, textAlign, styles }) => (
-  <div className={classNames('text-primary', textAlign ? getTextAlign(textAlign) : 'text-left', styles?.container)}>
+export const Typography: FC<TypographyProps> = ({ tag, align, marginBottom, styles }) => (
+  <div
+    className={classNames(
+      'text-primary',
+      align ? getTextAlign(align) : 'text-left',
+      getMarginBottomClass(marginBottom),
+      styles?.container
+    )}
+  >
     <UniformText
       placeholder="Content goes here"
       parameterId="text"
       as={tag}
-      className={classNames('mb-4', getTypographyClass(tag), styles?.text)}
+      className={classNames(getTypographyClass(tag), styles?.text)}
     />
     <UniformSlot name="items" />
   </div>
