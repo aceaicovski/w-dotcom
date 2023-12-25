@@ -9,7 +9,7 @@ type Styles = {
 };
 export type ContentBlockProps = ComponentProps<{
   title?: string;
-  titleStyle: Types.HeadingStyles;
+  titleStyle: Types.TypographyStyle;
   link?: Types.ProjectMapLink;
   text: string;
   content?: string | Document;

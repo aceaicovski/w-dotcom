@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Next, documentToHtmlString, Options } from '@contentful/rich-text-html-renderer';
 import { BLOCKS, NodeData } from '@contentful/rich-text-types';
 import { UniformText } from '@uniformdev/canvas-react';
-import { getTextClass } from '../../utilities/styling';
+import { getTypographyClass } from '../../utilities/styling';
 import { ContentBlockProps } from '.';
 import Divider from '../Divider';
 
@@ -43,7 +43,7 @@ export const ContentBlock: FC<ContentBlockProps> = ({
             placeholder="Sub Title goes here"
             parameterId="subTitle"
             as="h3"
-            className={classNames('font-bold text-3xl mb-4', styles?.subTitle)}
+            className={classNames('mb-4', getTypographyClass('h3'), styles?.subTitle)}
           />
         </Wrapper>
       )}
@@ -52,13 +52,13 @@ export const ContentBlock: FC<ContentBlockProps> = ({
           placeholder="Title goes here"
           parameterId="title"
           as={TitleTag}
-          className={classNames('font-medium', getTextClass(TitleTag), styles?.title)}
+          className={classNames(getTypographyClass(TitleTag), styles?.title)}
         />
       </Wrapper>
       {variant === 'divider' && <Divider />}
       {content ? (
         <div
-          className={variant === 'divider' ? 'py-0 text-lg' : 'py-6 text-xl'}
+          className={classNames(variant === 'divider' ? 'py-0' : 'py-6', getTypographyClass('p'))}
           dangerouslySetInnerHTML={{
             __html: typeof content === 'string' ? content : documentToHtmlString(content, documentToHtmlStringOptions),
           }}
@@ -68,7 +68,7 @@ export const ContentBlock: FC<ContentBlockProps> = ({
           placeholder="Text goes here"
           parameterId="text"
           as={TitleTag}
-          className={classNames(variant === 'divider' ? 'py-0 text-lg' : 'py-6 text-xl', styles?.text)}
+          className={classNames(variant === 'divider' ? 'py-0' : 'py-6', getTypographyClass('p'), styles?.text)}
         />
       )}
     </div>
