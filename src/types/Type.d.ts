@@ -58,6 +58,8 @@ declare namespace Types {
 
   type HeadingStyles = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
+  type TypographyStyle = 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'q';
+
   type HorizontalAlignment = 'left' | 'center' | 'right';
 
   type SupportedThemes = 'uniform' | 'javadrip' | 'custom' | 'nextlevelsports';

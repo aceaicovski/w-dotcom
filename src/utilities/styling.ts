@@ -84,6 +84,25 @@ export const getTextClass = (style?: Types.HeadingStyles) => {
   }
 };
 
+export const getTypographyClass = (style?: Types.TypographyStyle) => {
+  switch (style) {
+    case 'h1':
+      return 'font-bold text-3xl italic uppercase md:text-4xl lg:text-5xl';
+    case 'h2':
+      return 'font-bold text-2xl md:text-3xl lg:text-4xl';
+    case 'h3':
+      return 'font-semibold text-xl md:text-2xl lg:text-3xl';
+    case 'h4':
+      return 'font-semibold text-lg md:text-xl lg:text-2xl';
+    case 'p':
+      return 'font-normal text-sm lg:text-base';
+    case 'q':
+      return 'font-medium text-lg italic md:text-xl lg:text-2xl';
+    default:
+      return 'font-normal text-base';
+  }
+};
+
 export const getObjectFitClass = (objectFit?: Types.AvailableObjectFit) => {
   switch (objectFit) {
     case 'contain':

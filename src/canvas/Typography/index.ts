@@ -7,8 +7,9 @@ type Styles = {
 };
 
 export type TypographyProps = ComponentProps<{
-  textStyle: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  tag: Types.TypographyStyle;
   text: string;
+  textAlign?: Types.HorizontalAlignment;
   styles?: Styles;
 }>;
 
@@ -16,5 +17,18 @@ registerUniformComponent({
   type: 'typography',
   component: Typography,
 });
+
+export const getTextAlign = (textAlign: Types.HorizontalAlignment) => {
+  switch (textAlign) {
+    case 'left':
+      return 'text-left';
+    case 'center':
+      return 'text-center';
+    case 'right':
+      return 'text-right';
+    default:
+      return 'text-left';
+  }
+};
 
 export default Typography;

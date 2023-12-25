@@ -7,9 +7,6 @@ import { Container } from '@/components';
 const meta: Meta<typeof Typography> = {
   title: 'Data Display/Typography',
   component: Typography,
-  parameters: {
-    layout: 'centered',
-  },
 };
 
 export default meta;
@@ -18,14 +15,14 @@ type Story = StoryObj<typeof Typography>;
 
 const BASE_PROPS: Omit<TypographyProps, 'component'> = {
   text: 'Typography paragraph',
-  textStyle: 'p',
+  tag: 'p',
 };
 
 const renderStory = (args: TypographyProps) => {
   const fakeComposition = createFakeCompositionData('typography', args, {});
   return (
     <UniformComposition data={fakeComposition}>
-      <Container>
+      <Container className="w-full block">
         <Typography {...args} />
       </Container>
     </UniformComposition>
