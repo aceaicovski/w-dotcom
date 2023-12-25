@@ -37,6 +37,7 @@ import './Review';
 import './RichText';
 import './Spacer';
 import './Testimonial';
+import './Typography';
 import './Video';
 
 export { default as Accordion } from './Accordion';
@@ -115,3 +116,6 @@ export type { SportTypeCardProps } from './SportTypeCard';
 
 export { default as ProgramNavigation } from './ProgramNavigation';
 export type { ProgramNavigationProps } from './ProgramNavigation';
+
+export { default as Typography } from './Typography';
+export type { TypographyProps } from './Typography';
