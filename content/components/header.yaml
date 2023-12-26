@@ -66,23 +66,19 @@ parameters:
     typeConfig: null
   - id: syntheticGap
     name: Synthetic Gap
-    type: tp-slider-parameter
-    helpText: Manage spacing between components on the page
+    type: select
+    helpText: Page Content Vertical Gap ( Large | Medium | Small | None )
     typeConfig:
-      step: 1
-      type: custom
-      unit: px
       options:
-        - label: None
-          value: None
-        - label: Small
-          value: Small
-        - label: Medium
-          value: Medium
-        - label: Large
+        - text: Large
           value: Large
-      maxValue: 10
-      minValue: 0
+        - text: Medium
+          value: Medium
+        - text: Small
+          value: Small
+        - text: None
+          value: None
+    localizable: false
 categoryId: 1bf9504a-07c4-4873-bbca-f235a6da182b
 previewImageUrl: >-
   https://res.cloudinary.com/uniform-demos/image/upload/v1/csk-preview-images/UniformTheme/Header_preview_image
@@ -106,8 +102,8 @@ slots:
     patternsInAllowedComponents: false
 titleParameter: linksAlignment
 canBeComposition: false
-created: '2023-08-28T12:30:18.569126+00:00'
-updated: '2023-09-12T06:54:30.210971+00:00'
+created: '2023-12-22T15:51:48.994734+00:00'
+updated: '2023-12-26T19:01:23.958746+00:00'
 variants:
   - id: light
     name: Light

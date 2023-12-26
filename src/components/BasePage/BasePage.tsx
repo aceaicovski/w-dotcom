@@ -12,6 +12,7 @@ import ThemeProvider from '../ThemeProvider';
 import { getGapClass, getMarginBottomClass, PaddingSize } from '../../utilities/styling';
 import { CHILDREN_CONTAINER_STYLES, COMMON_PADDING } from '../../hocs/withoutContainer';
 import { BasePageProps } from './';
+import { getTheme } from '@/stories/utils/themes';
 
 const PageContent: FC<Pick<BasePageProps, 'preview' | 'useUniformComposition' | 'providers' | 'styles'>> = ({
   useUniformComposition,
@@ -27,7 +28,7 @@ const PageContent: FC<Pick<BasePageProps, 'preview' | 'useUniformComposition' | 
     Providers ? <Providers styles={{ modal: styles?.modal }}>{children}</Providers> : <>{children}</>;
 
   return (
-    <ThemeProvider>
+    <ThemeProvider data={getTheme('nextlevelsports')}>
       <ContentProviders>
         {/* Docs: https://docs.uniform.app/reference/packages/uniformdev-canvas-react#slot */}
         <div className={COMMON_PADDING}>

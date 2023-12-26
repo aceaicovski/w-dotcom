@@ -9,37 +9,7 @@ composition:
         https://res.cloudinary.com/uniform-demos/image/upload/v1692277338/csk-icons/Logo_amxon7_fb5wxp.png
     theme:
       type: tp-set-up-theme-parameter
-      value:
-        colors:
-          - name: primary
-            label: Primary
-            value: '#0052ED'
-          - name: primary-content
-            label: Primary Content
-            value: '#FFFFFF'
-          - name: secondary
-            label: Secondary
-            value: '#ffffff'
-          - name: secondary-content
-            label: Secondary Content
-            value: '#000000'
-          - name: accent
-            label: Accent
-            value: '#DF0000'
-          - name: accent-content
-            label: Accent Content
-            value: '#FFFFFF'
-          - name: info-content
-            label: Info Content
-            value: '#99C6FF'
-          - name: base-200
-            label: Base 200
-            value: '#6b8ff0'
-          - name: base-300
-            label: Base 300
-            value: '#001242'
-        themeName: uniform
-        themeLabel: Uniform
+      value: nextlevelsports
     favicon:
       type: image
       value: >-
@@ -48,8 +18,8 @@ composition:
       type: select
       value: inter
     syntheticGap:
-      type: tp-slider-parameter
-      value: Medium
+      type: select
+      value: None
     linksAlignment:
       type: tp-horizontal-align-parameter
       value: center
@@ -401,8 +371,8 @@ composition:
   _overridability:
     parameters:
       syntheticGap: 'yes'
-created: '2023-08-28T12:30:23.574658+00:00'
-modified: '2023-09-19T10:05:32.724101+00:00'
+created: '2023-12-22T15:51:54.100054+00:00'
+modified: '2023-12-26T19:01:33.979692+00:00'
 pattern: true
 previewImageUrl: >-
   https://res.cloudinary.com/uniform-demos/image/upload/v1/csk-preview-images/UniformTheme/Header_pattern_preview_image

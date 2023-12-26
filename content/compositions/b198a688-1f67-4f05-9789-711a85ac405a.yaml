@@ -1,0 +1,447 @@
+composition:
+  _name: Home
+  _id: b198a688-1f67-4f05-9789-711a85ac405a
+  _slug: /
+  type: page
+  parameters:
+    pageTitle:
+      type: text
+      value: Home
+  slots:
+    pageFooter:
+      - _id: ff414476-ffb8-4565-a0d8-cb4d98882c3b
+        type: footer
+        _pattern: 319639e9-4bac-4fb3-8f0b-19088c969fcb
+    pageHeader:
+      - _id: 4c1471ce-7919-4c8a-9c1b-2ba993808af5
+        type: header
+        _pattern: e46c8336-acfd-43e8-ac59-8be8f4c33b7d
+    pageContent:
+      - _id: e87b29d2-6f0e-4bd0-9b89-dd13c2b3c560
+        type: container
+        slots:
+          container-inner:
+            - _id: aaa91dac-d523-445f-9000-77c63bd5114d
+              type: content
+              parameters:
+                title:
+                  type: text
+                  value: University of California, Berkeley
+                styles:
+                  type: json
+                  value:
+                    text: hidden
+                    title: text-white
+                    subTitle: text-white
+                variant:
+                  type: select
+                  value: subtitle
+                subTitle:
+                  type: text
+                  value: Next Level Flag Football
+                titleStyle:
+                  type: select
+                  value: h1
+        variant: fluidContent
+        parameters:
+          title:
+            type: text
+            value: Wide Hero Container with Secondary background
+          maxWidth:
+            type: select
+            value: Medium
+          marginTop:
+            type: select
+            value: None
+          paddingTop:
+            type: select
+            value: Medium
+          marginBottom:
+            type: select
+            value: None
+          paddingBottom:
+            type: select
+            value: Medium
+          backgroundType:
+            type: select
+            value: Secondary
+      - _id: 871981fd-23f1-43ff-85c1-654ec8beea30
+        type: container
+        slots:
+          container-inner:
+            - _id: d80c7658-6238-4584-91df-031dbde6b0bb
+              type: programNavigation
+        parameters:
+          title:
+            type: text
+            value: Program Navigation Full Width Container
+          maxWidth:
+            type: select
+            value: Full
+          paddingTop:
+            type: select
+            value: None
+          paddingBottom:
+            type: select
+            value: None
+      - _id: b751e2b5-3076-4f25-82b6-fa80d3dd2f5d
+        type: container
+        slots:
+          container-inner:
+            - _id: 57e46065-1e2c-439d-8883-88c053d2af2c
+              type: typography
+              parameters:
+                tag:
+                  type: select
+                  value: h1
+                text:
+                  type: text
+                  value: Explore next level sports
+                align:
+                  type: select
+                  value: center
+                marginBottom:
+                  type: select
+                  value: Small
+            - _id: 02b4fe2c-93ac-4b64-bce9-1d7ad9516333
+              type: grid
+              slots:
+                grid-inner:
+                  - _id: 83e6ae5c-5fb2-4f75-9105-22bd62b3a736
+                    type: sportTypeCard
+                    parameters:
+                      icon:
+                        type: select
+                        value: footbal
+                      path:
+                        type: link
+                        value:
+                          path: /
+                          type: projectMapNode
+                          nodeId: 5a9c6cac-a0cd-43ca-b2df-8706b1f4ba81
+                          projectMapId: 40535f31-cdc1-4ac3-bb4d-2a008493b431
+                      title:
+                        type: text
+                        value: Flag Footbal
+                  - _id: 1441012f-b55f-4036-a8e5-042e0a131c97
+                    type: sportTypeCard
+                    parameters:
+                      icon:
+                        type: select
+                        value: basketball
+                      path:
+                        type: link
+                        value:
+                          path: /
+                          type: projectMapNode
+                          nodeId: 5a9c6cac-a0cd-43ca-b2df-8706b1f4ba81
+                          projectMapId: 40535f31-cdc1-4ac3-bb4d-2a008493b431
+                      title:
+                        type: text
+                        value: Basketball
+                  - _id: 97f44502-37f3-47a7-8776-cac967609e10
+                    type: sportTypeCard
+                    parameters:
+                      icon:
+                        type: select
+                        value: volleyball
+                      path:
+                        type: link
+                        value:
+                          path: /
+                          type: projectMapNode
+                          nodeId: 5a9c6cac-a0cd-43ca-b2df-8706b1f4ba81
+                          projectMapId: 40535f31-cdc1-4ac3-bb4d-2a008493b431
+                      title:
+                        type: text
+                        value: Volleyball
+                  - _id: 1989206c-c40d-459c-8f53-dec900048f36
+                    type: sportTypeCard
+                    parameters:
+                      icon:
+                        type: select
+                        value: flag-pennant
+                      path:
+                        type: link
+                        value:
+                          path: /
+                          type: projectMapNode
+                          nodeId: 5a9c6cac-a0cd-43ca-b2df-8706b1f4ba81
+                          projectMapId: 40535f31-cdc1-4ac3-bb4d-2a008493b431
+                      title:
+                        type: text
+                        value: Summer Camp
+              parameters:
+                gapX:
+                  type: select
+                  value: small
+                title:
+                  type: text
+                  value: Sport Type Card
+                columnsCount:
+                  type: tp-slider-parameter
+                  value: '4'
+        parameters:
+          title:
+            type: text
+            value: Sport Type Cards Container
+          marginTop:
+            type: select
+            value: Small
+          paddingTop:
+            type: select
+            value: None
+          marginBottom:
+            type: select
+            value: Medium
+          paddingBottom:
+            type: select
+            value: None
+      - _id: 4ddb0f46-7c4f-487b-9c32-42753f90abb1
+        type: container
+        slots:
+          container-inner:
+            - _id: 00235304-136f-416f-925d-7b5ce29d5d24
+              type: typography
+              parameters:
+                tag:
+                  type: select
+                  value: h3
+                text:
+                  type: text
+                  value: League Operations
+                marginBottom:
+                  type: select
+                  value: Small
+            - _id: d7884078-8d32-4132-a679-39555ca8d3f1
+              type: grid
+              slots:
+                grid-inner:
+                  - _id: 80011ffb-a81d-4ccd-a392-bb0ad9513fa0
+                    type: content
+                    parameters:
+                      text:
+                        type: text
+                        value: >-
+                          The Next Level Flag Football season at Cal will run
+                          with 9 program dates over the program schedule
+                      title:
+                        type: text
+                        value: Season Operations
+                      variant:
+                        type: select
+                        value: divider
+                      titleStyle:
+                        type: select
+                        value: h4
+                  - _id: c59962a2-bdb7-4e19-9c6c-a33899016941
+                    type: content
+                    parameters:
+                      text:
+                        type: text
+                        value: >-
+                          All games are on Sundays - except Super Bowl Weekend
+                          (Games on Saturday).
+                      title:
+                        type: text
+                        value: Game Dates
+                      variant:
+                        type: select
+                        value: divider
+                      titleStyle:
+                        type: select
+                        value: h4
+                  - _id: 58caa6ab-6422-447d-bb90-a405e4bc93e6
+                    type: content
+                    parameters:
+                      text:
+                        type: text
+                        value: >-
+                          $315.00 - Fees are inclusive of a participant's custom
+                          jersey, shorts, use of flags, and other
+                          equipment/offerings. (In December, expedited uniform
+                          shipping charge added to any registrations.)
+                      title:
+                        type: text
+                        value: Season Fees
+                      variant:
+                        type: select
+                        value: divider
+                      titleStyle:
+                        type: select
+                        value: h4
+                  - _id: 93f9a6c0-a042-4f73-b9d0-b429fcc45d33
+                    type: content
+                    parameters:
+                      text:
+                        type: text
+                        value: >-
+                          Teams are 12 players maximum (15 for 7th grade) ,
+                          limited exceptions on a case-by-case basis.
+                      title:
+                        type: text
+                        value: Team Roster Size
+                      variant:
+                        type: select
+                        value: divider
+                      titleStyle:
+                        type: select
+                        value: h4
+                  - _id: c567f898-cff9-40a0-970c-ed94c82fc58d
+                    type: content
+                    parameters:
+                      text:
+                        type: text
+                        value: >-
+                          During the registration process, participants have the
+                          option to purchase additional Player Packs upon check
+                          out. For the 2024 Next Level Flag Football season, 4
+                          options are available for purchase (see below). Player
+                          Pack costs will be added to the base league
+                          registration fees at check out. All Player Pack
+                          merchandise will be shipped with your participant's
+                          Next Level Flag Football uniform - unless otherwise
+                          communicated from our team. Sizing verification will
+                          be sent via email as your season uniform heads into
+                          production!
+                      title:
+                        type: text
+                        value: Optional Player Packs
+                      variant:
+                        type: select
+                        value: divider
+                      titleStyle:
+                        type: select
+                        value: h4
+                  - _id: 00ab50fe-5602-441d-ba17-4290a4c09ec6
+                    type: content
+                    parameters:
+                      text:
+                        type: text
+                        value: >-
+                          All season uniforms will be shipped to a participant's
+                          home (or provided shipping address). Delivery will
+                          occur via USPS and a valid USPS delivery location is
+                          required. Participants must keep their shipping
+                          addresses up to date for proper delivery. Replacement
+                          uniforms will be at the cost of the participant should
+                          inaccurate addresses be provided at the time of
+                          production.
+                      title:
+                        type: text
+                        value: Uniform Delivery
+                      variant:
+                        type: select
+                        value: divider
+                      titleStyle:
+                        type: select
+                        value: h4
+              parameters:
+                gapX:
+                  type: select
+                  value: small
+                gapY:
+                  type: select
+                  value: medium
+                title:
+                  type: text
+                  value: League Operations 2 columns grid
+                columnsCount:
+                  type: tp-slider-parameter
+                  value: '2'
+        parameters:
+          title:
+            type: text
+            value: League Operations Container
+          maxWidth:
+            type: select
+            value: Small
+          paddingTop:
+            type: select
+            value: None
+          paddingBottom:
+            type: select
+            value: None
+      - _id: fa0d139b-46a1-4f1b-b316-8310ffe1f07f
+        type: container
+        slots:
+          container-inner:
+            - _id: e4949624-37a1-4813-bcab-894c383bd712
+              type: accordion
+              slots:
+                items:
+                  - _id: a0b35d90-92f7-48e8-bc79-be11bc0aff21
+                    type: accordionItem
+                    parameters:
+                      title:
+                        type: text
+                        value: Is this template completely free to use?
+                      description:
+                        type: text
+                        value: Yes, this template is completely free to use.
+                  - _id: 9e162935-b6e6-4a62-aa03-9d223576a6ec
+                    type: accordionItem
+                    parameters:
+                      title:
+                        type: text
+                        value: Can I use it in a commercial project?
+                      description:
+                        type: text
+                        value: Yes, this you can.
+              parameters:
+                title:
+                  type: text
+                  value: Frequently Asked Questions
+                description:
+                  type: text
+                  value: >-
+                    Answer your customers possible questions here, it will
+                    increase the conversion rate as well as support or chat
+                    requests.
+        parameters:
+          title:
+            type: text
+            value: Accordion Container
+          maxWidth:
+            type: select
+            value: Small
+          paddingTop:
+            type: select
+            value: Small
+          paddingBottom:
+            type: select
+            value: Small
+      - _id: 4f2991c4-1b4e-4716-b277-fb0345f6f728
+        type: container
+        slots:
+          container-inner:
+            - _id: 9610a8d5-abb2-471f-8a10-6cc47e931c2c
+              type: video
+              parameters:
+                url:
+                  type: link
+                  value:
+                    path: https://www.youtube.com/watch?v=KN7krvnm2uM
+                    type: url
+        parameters:
+          title:
+            type: text
+            value: Small Width Container with Video
+          maxWidth:
+            type: select
+            value: Small
+          marginTop:
+            type: select
+            value: Small
+          paddingTop:
+            type: select
+            value: None
+          marginBottom:
+            type: select
+            value: Medium
+          paddingBottom:
+            type: select
+            value: None
+created: '2023-12-22T15:52:50.411286+00:00'
+modified: '2023-12-26T19:02:49.891804+00:00'
+pattern: false
