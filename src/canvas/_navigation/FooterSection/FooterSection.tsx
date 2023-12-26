@@ -4,7 +4,9 @@ import { FooterSectionProps } from '.';
 
 export const FooterSection: FC<FooterSectionProps> = ({ title }) => (
   <div>
-    <span className="footer-title opacity-100 text-primary">{title}</span>
-    <UniformSlot name="links" />
+    <span className="footer-title">{title}</span>
+    <ul>
+      <UniformSlot name="links" />
+    </ul>
   </div>
 );

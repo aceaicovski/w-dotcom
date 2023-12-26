@@ -1,5 +1,6 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import { colors } from './src/styles/theme/colors';
+import { footer } from './src/styles/theme/footer';
 
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
@@ -32,6 +33,7 @@ module.exports = {
         dotcom: {
           ...require('./src/styles/theme/colors'),
           ...require('./src/styles/theme/button'),
+          footer,
 
           '--rounded-btn': '.5rem',
           // We can add another font to the component by simply setting the property
