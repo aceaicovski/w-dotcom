@@ -31,7 +31,7 @@ export const HeroDefault: FC<HeroProps> = ({
   delay = 'none',
   styles,
 }) => {
-  const baseTextStyle = textColorVariant === 'Light' ? 'text-primary-content' : 'text-secondary-content';
+  const baseTextStyle = textColorVariant === 'Dark' ? 'text-secondary' : 'text-primary';
 
   const { ElementWrapper, getDelayValue } = useHeroAnimation({
     duration,

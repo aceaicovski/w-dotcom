@@ -198,16 +198,24 @@ export enum PaddingSize {
   None = 'None',
 }
 
+export enum MaxWidth {
+  Full = 'Full',
+  Large = 'Large',
+  Medium = 'Medium',
+  Small = 'Small',
+  None = 'None',
+}
+
 export const getBackgroundClass = (background?: BackgroundTypes) => {
   switch (background) {
     case BackgroundTypes.Transparent:
-      return 'bg-transparent';
+      return 'bg-transparent text-primary';
     case BackgroundTypes.Light:
-      return 'bg-base-100 text-black';
+      return 'bg-base-100 text-primary';
     case BackgroundTypes.Medium:
-      return 'bg-gray-50 text-black';
+      return 'bg-gray-50 text-primary';
     case BackgroundTypes.Dark:
-      return 'bg-base-300 !text-primary-content';
+      return 'bg-base-300 !text-secondary';
     default:
       return '';
   }
@@ -267,6 +275,23 @@ export const getMarginBottomClass = (padding?: PaddingSize) => {
     case PaddingSize.Small:
       return 'mb-6 lg:mb-8';
     case PaddingSize.None:
+      return '';
+    default:
+      return '';
+  }
+};
+
+export const getMaxWidth = (width?: MaxWidth) => {
+  switch (width) {
+    case MaxWidth.Small:
+      return 'm-auto max-w-4xl';
+    case MaxWidth.Medium:
+      return 'm-auto max-w-screen-xl';
+    case MaxWidth.Large:
+      return 'm-auto max-w-screen-2xl';
+    case MaxWidth.Full:
+      return 'max-w-full';
+    case MaxWidth.None:
       return '';
     default:
       return '';

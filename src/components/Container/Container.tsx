@@ -16,6 +16,7 @@ const Container: FC<ContainerProps> = ({
   children,
   backgroundClassName = '',
   className,
+  maxWidth,
 }) => {
   if (containerVariant === ContainerVariants.FluidContent) {
     return (
@@ -27,14 +28,16 @@ const Container: FC<ContainerProps> = ({
         marginBottom={marginBottom}
         backgroundClassName={backgroundClassName}
       >
-        <BaseContainer className={className}>{children}</BaseContainer>
+        <BaseContainer className={className} maxWidth={maxWidth}>
+          {children}
+        </BaseContainer>
       </BackgroundWrapper>
     );
   }
 
   if (containerVariant === ContainerVariants.BackgroundInContainer) {
     return (
-      <ScreenContainer className={className}>
+      <ScreenContainer className={className} maxWidth={maxWidth}>
         <BackgroundWrapper
           paddingTop={paddingTop}
           backgroundType={backgroundType || BackgroundTypes.Transparent}
@@ -58,7 +61,9 @@ const Container: FC<ContainerProps> = ({
       marginBottom={marginBottom}
       backgroundClassName={backgroundClassName}
     >
-      <ScreenContainer className={className}>{children}</ScreenContainer>
+      <ScreenContainer className={className} maxWidth={maxWidth}>
+        {children}
+      </ScreenContainer>
     </BackgroundWrapper>
   );
 };

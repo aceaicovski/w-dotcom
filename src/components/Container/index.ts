@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { BackgroundTypes, PaddingSize } from '../../utilities/styling';
+import { BackgroundTypes, PaddingSize, MaxWidth } from '../../utilities/styling';
 
 export enum ContainerVariants {
   BackgroundInContainer = 'backgroundInContainer',
@@ -16,6 +16,7 @@ export type ContainerProps = {
   backgroundClassName?: string;
   containerVariant?: string;
   className?: string;
+  maxWidth?: MaxWidth;
 };
 
 export * from './BaseContainer';

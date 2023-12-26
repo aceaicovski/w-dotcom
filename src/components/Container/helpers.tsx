@@ -10,7 +10,7 @@ import {
 } from '../../utilities/styling';
 import { ContainerProps } from './';
 
-type BackgroundWrapperProps = Required<Omit<ContainerProps, 'className'>>;
+type BackgroundWrapperProps = Required<Omit<ContainerProps, 'maxWidth' | 'className'>>;
 
 export const BackgroundWrapper: FC<Omit<BackgroundWrapperProps, 'containerVariant'>> = ({
   backgroundType = BackgroundTypes.Transparent,
