@@ -24,8 +24,8 @@ const ProgramNavigationLinks = React.forwardRef<HTMLDivElement, ProgramNavigatio
             className={cn(
               `${
                 index === 1
-                  ? 'bg-neutral font-medium text-white hover:bg-primary'
-                  : 'hover:text-focus-text bg-inherit font-normal text-primary'
+                  ? 'bg-primary opacity-90 font-medium text-white hover:opacity-100'
+                  : 'hover:opacity-80 bg-inherit font-normal text-primary'
               }`,
               'mr-1 hidden h-11 items-center justify-center rounded-lg px-4 text-lg md:inline-flex'
             )}
