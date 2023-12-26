@@ -11,11 +11,6 @@ parameters:
     helpText: ''
     typeConfig:
       required: false
-  - id: titleStyle
-    name: Title Style
-    type: tp-title-style-parameter
-    helpText: ''
-    typeConfig: null
   - id: link
     name: Link
     type: link
@@ -33,6 +28,52 @@ parameters:
     type: json
     helpText: ''
     typeConfig: {}
+  - id: variant
+    name: Variant
+    type: select
+    helpText: Content Block Variant
+    typeConfig:
+      options:
+        - text: default
+          value: default
+        - text: subtitle
+          value: subtitle
+        - text: divider
+          value: divider
+    localizable: false
+  - id: subTitle
+    name: SubTitle
+    type: text
+    helpText: Content Block Subtitle
+    typeConfig: null
+    localizable: true
+  - id: titleStyle
+    name: Title Style
+    type: select
+    helpText: 'Title Style (TypographyStyle: h1 | h2 | h3 | h4 | p | q)'
+    typeConfig:
+      options:
+        - text: h1
+          value: h1
+        - text: h2
+          value: h2
+        - text: h3
+          value: h3
+        - text: h4
+          value: h4
+        - text: p
+          value: p
+        - text: q
+          value: q
+    localizable: false
+  - id: styles
+    name: Styles
+    type: json
+    helpText: >-
+      Content Block Styles Configuration `style: { title: "tw-", text: "tw-",
+      subTitle: "tw-" }`
+    typeConfig: {}
+    localizable: false
 categoryId: 94a7a423-8c09-4264-8495-c562c17d811e
 previewImageUrl: >-
   https://res.cloudinary.com/uniform-demos/image/upload/v1/csk-preview-images/UniformTheme/Content_preview_image
@@ -40,5 +81,5 @@ useTeamPermissions: true
 slots: []
 titleParameter: title
 canBeComposition: false
-created: '2023-08-28T12:30:18.084771+00:00'
-updated: '2023-09-12T06:54:30.647243+00:00'
+created: '2023-12-22T15:51:48.541356+00:00'
+updated: '2023-12-26T16:17:34.563381+00:00'

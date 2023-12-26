@@ -45,43 +45,35 @@ parameters:
       maxValue: 10
       minValue: 0
   - id: gapX
-    name: Gap X
-    type: tp-slider-parameter
-    helpText: ''
+    name: GapX
+    type: select
+    helpText: Grid Gap X (none | small | medium | large)
     typeConfig:
-      step: 1
-      type: custom
-      unit: px
       options:
-        - label: None
+        - text: none
           value: none
-        - label: Small
+        - text: small
           value: small
-        - label: Medium
+        - text: medium
           value: medium
-        - label: Large
+        - text: large
           value: large
-      maxValue: 10
-      minValue: 0
+    localizable: false
   - id: gapY
-    name: Gap Y
-    type: tp-slider-parameter
-    helpText: ''
+    name: GapY
+    type: select
+    helpText: Grid Gap Y (none | small | medium | large)
     typeConfig:
-      step: 1
-      type: custom
-      unit: px
       options:
-        - label: None
+        - text: none
           value: none
-        - label: Small
+        - text: small
           value: small
-        - label: Medium
+        - text: medium
           value: medium
-        - label: Large
+        - text: large
           value: large
-      maxValue: 10
-      minValue: 0
+    localizable: false
 categoryId: 19f9419d-14da-496d-a4ac-eec5010e13d7
 previewImageUrl: >-
   https://res.cloudinary.com/uniform-demos/image/upload/v1/csk-preview-images/UniformTheme/Grid_preview_image
@@ -110,10 +102,11 @@ slots:
       - price
       - addToCart
       - review
+      - sportTypeCard
     allowAllComponents: false
     inheritAllowedComponents: false
     patternsInAllowedComponents: false
 titleParameter: title
 canBeComposition: false
-created: '2023-08-28T12:30:17.829058+00:00'
-updated: '2023-09-12T06:54:30.809426+00:00'
+created: '2023-12-22T15:51:48.529954+00:00'
+updated: '2023-12-24T17:25:52.455847+00:00'

@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: sportTypeCard
+name: SportTypeCard
+icon: rectangle-rounded
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: Sport Type Card Caption
+    typeConfig: null
+    localizable: true
+  - id: path
+    name: Path
+    type: link
+    helpText: Sport Type Card Href
+    typeConfig: null
+    localizable: true
+  - id: icon
+    name: Icon
+    type: select
+    helpText: Sport Type Card Icon
+    typeConfig:
+      options:
+        - text: footbal
+          value: footbal
+        - text: basketball
+          value: basketball
+        - text: volleyball
+          value: volleyball
+        - text: futboll
+          value: futboll
+        - text: flag-pennant
+          value: flag-pennant
+        - text: baseball
+          value: baseball
+    localizable: false
+categoryId: ea001653-1f96-4f07-9187-a1626a4965e5
+useTeamPermissions: true
+slots: []
+titleParameter: icon
+canBeComposition: true
+created: '2023-12-23T17:31:57.653436+00:00'
+updated: '2023-12-23T17:31:57.653436+00:00'

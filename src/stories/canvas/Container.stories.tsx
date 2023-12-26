@@ -35,6 +35,8 @@ const argTypes = {
   backgroundType: { control: 'select', options: containerBackgroundTypeOptions },
   paddingTop: { control: 'select', options: containerPaddingOptions },
   paddingBottom: { control: 'select', options: containerPaddingOptions },
+  marginTop: { control: 'select', options: containerPaddingOptions },
+  marginBottom: { control: 'select', options: containerPaddingOptions },
   maxWidth: { control: 'select', options: containerWidthOptions },
 };
 
