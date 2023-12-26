@@ -189,6 +189,7 @@ export enum BackgroundTypes {
   Dark = 'Dark',
   Medium = 'Medium',
   Transparent = 'Transparent',
+  Secondary = 'Secondary',
 }
 
 export enum PaddingSize {
@@ -216,6 +217,8 @@ export const getBackgroundClass = (background?: BackgroundTypes) => {
       return 'bg-gray-50 text-primary';
     case BackgroundTypes.Dark:
       return 'bg-base-300 !text-secondary';
+    case BackgroundTypes.Secondary:
+      return 'bg-secondary !text-white';
     default:
       return '';
   }
