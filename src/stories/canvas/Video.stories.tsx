@@ -2,11 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { UniformComposition } from '@uniformdev/canvas-react';
 import { Video, VideoProps } from '@/canvas';
 import { Container } from '@/components';
-import { BackgroundTypes } from '@/utilities/styling';
+import { BackgroundTypes, MaxWidth } from '@/utilities/styling';
 import { createFakeCompositionData } from '../utils';
 
 const meta: Meta<typeof Video> = {
-  title: 'Video',
+  title: 'Data Display/Video',
   component: Video,
 };
 
@@ -27,7 +27,7 @@ const renderStory = (args: VideoProps) => {
   const fakeComposition = createFakeCompositionData('video', args, {});
   return (
     <UniformComposition data={fakeComposition}>
-      <Container backgroundType={BackgroundTypes.Light}>
+      <Container backgroundType={BackgroundTypes.Light} maxWidth={MaxWidth.Small}>
         <Video {...args} />
       </Container>
     </UniformComposition>

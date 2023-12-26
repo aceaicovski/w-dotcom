@@ -12,7 +12,7 @@ const BuildTimestamp = dynamic(() => import('../../../components/BuildTimestamp'
 export const Footer: FC<FooterProps> = ({ logo, displayBuildTimestamp = false, copyright, styles }) => {
   const imageUrl = getMediaUrl(logo);
   return (
-    <div className={classNames('bg-secondary', styles?.container)}>
+    <div className={classNames('bg-primary', styles?.container)}>
       <ScreenContainer>
         <footer
           className={classNames(
@@ -27,7 +27,7 @@ export const Footer: FC<FooterProps> = ({ logo, displayBuildTimestamp = false, c
               className="footer-content text-secondary-content"
               dangerouslySetInnerHTML={{ __html: `2023 ${copyright}` }}
             />
-            <div className="footer-content text-secondary-content">
+            <div className="footer-content text-white">
               <UniformRichText parameterId="footerText" />
             </div>
           </div>
