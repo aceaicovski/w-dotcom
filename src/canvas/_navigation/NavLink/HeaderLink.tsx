@@ -9,10 +9,10 @@ export const HeaderLink: FC<LinkProps> = ({ title, link, styles }) => {
   const router = useRouter();
   const isCurrentRoute = useMemo(() => checkIsCurrentRoute(router, link), [router, link]);
   return (
-    <li>
+    <li className={classNames({ 'border-b-2 border-solid border-primary': isCurrentRoute })}>
       <Link
         className={classNames('!rounded-none', styles?.link, {
-          'font-extrabold': isCurrentRoute,
+          'font-semibold': isCurrentRoute,
           [styles?.activeLink || '']: isCurrentRoute,
         })}
         href={link?.path || '#'}
