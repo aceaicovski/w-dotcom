@@ -12,7 +12,13 @@ import { faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const BuildTimestamp = dynamic(() => import('../../../components/BuildTimestamp'), { ssr: false });
 
-export const Footer: FC<FooterProps> = ({ logo, displayBuildTimestamp = false, copyright, styles }) => {
+export const Footer: FC<FooterProps> = ({
+  logo,
+  hideLogo = false,
+  displayBuildTimestamp = false,
+  copyright,
+  styles,
+}) => {
   const imageUrl = getMediaUrl(logo);
   return (
     <div className={classNames('bg-primary px-4', styles?.container)}>
@@ -26,15 +32,11 @@ export const Footer: FC<FooterProps> = ({ logo, displayBuildTimestamp = false, c
           <div className="text-white text-xs lg:hidden" dangerouslySetInnerHTML={{ __html: `© 2023 ${copyright}` }} />
           <div className="w-full lg:w-3/5 flex items-start justify-start xl:justify-between xl:pr-10">
             <UniformSlot name="section" />
-            <div className="w-full flex flex-col md:flex-row items-start justify-start">
-              <UniformSlot name="section" />
-              <UniformSlot name="section" />
-            </div>
           </div>
           <div className="w-full lg:w-2/5 text-white -mb-8 lg:mb-0">
-            <Image src={imageUrl} width="200" height="50" alt="Next Level Sports" />
+            {!hideLogo && <Image src={imageUrl} width="200" height="50" alt={copyright} />}
             <div className="footer-title opacity-100 text-white italic text-3xl lg:text-4xl xl:text-5xl">
-              Next Level Sports
+              {copyright}
             </div>
             <div className="flex items-center justify-start">
               <FontAwesomeIcon icon={faLocationDot} className="mr-3" />
@@ -46,11 +48,11 @@ export const Footer: FC<FooterProps> = ({ logo, displayBuildTimestamp = false, c
             </div>
             {displayBuildTimestamp && <BuildTimestamp style={styles?.buildTimestamp} />}
             <div className="my-4 lg:my-8 flex">
-              <UniformSlot name="iconLinks" />
+              <UniformSlot name="iconLinkSocial" />
             </div>
             <div
               className="hidden lg:block text-white text-sm"
-              dangerouslySetInnerHTML={{ __html: `© 2023 ${copyright}` }}
+              dangerouslySetInnerHTML={{ __html: `© 2024 ${copyright}` }}
             />
           </div>
         </footer>

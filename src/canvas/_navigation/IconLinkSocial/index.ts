@@ -3,7 +3,7 @@ import { IconLinkSocial } from './IconLinkSocial';
 
 export type IconLinkSocialProps = ComponentProps<{
   link: Types.ProjectMapLink;
-  icon: 'facebook' | 'instagram' | 'vimeo' | 'linkedin';
+  icon: 'facebook' | 'instagram' | 'vimeo' | 'linkedin' | 'x';
 }>;
 
 registerUniformComponent({

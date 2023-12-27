@@ -22,6 +22,7 @@ import './_navigation/Footer';
 import './_navigation/FooterSection';
 import './_navigation/Header';
 import './_navigation/IconLink';
+import './_navigation/IconLinkSocial';
 import './_navigation/NavLink';
 import './_navigation/_mega-menu/NavigationMenu';
 import './_navigation/_mega-menu/NavigationMenuSection';

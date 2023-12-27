@@ -100,10 +100,9 @@ slots:
     allowAllComponents: false
     inheritAllowedComponents: false
     patternsInAllowedComponents: false
-titleParameter: linksAlignment
 canBeComposition: false
 created: '2023-12-22T15:51:48.994734+00:00'
-updated: '2023-12-26T19:01:23.958746+00:00'
+updated: '2023-12-27T15:02:36.6288+00:00'
 variants:
   - id: light
     name: Light

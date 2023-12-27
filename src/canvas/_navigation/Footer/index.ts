@@ -9,6 +9,7 @@ type Styles = {
 
 export type FooterProps = ComponentProps<{
   logo: string | Types.CloudinaryImage;
+  hideLogo?: boolean;
   displayBuildTimestamp?: boolean;
   copyright: string;
   footerText?: string;
