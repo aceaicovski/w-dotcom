@@ -14,7 +14,7 @@ export const FooterPlaceholder = () => (
           dangerouslySetInnerHTML={{ __html: `© 2023 Next Level Sports` }}
         />
         <div className="w-full lg:w-3/5 flex items-start justify-start xl:justify-between xl:pr-10">
-          <div className="mr-6 xl:mx-12 ">
+          <div className="mr-6 xl:mx-12">
             <span className="footer-title opacity-100 text-white normal-case text-lg lg:text-xl xl:text-2xl">
               Company
             </span>

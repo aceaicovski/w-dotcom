@@ -6,9 +6,6 @@ import { FooterPlaceholder } from '../../canvas/_navigation/Footer/decorator';
 export default {
   title: 'Navigation/Footer',
   component: FooterPlaceholder,
-  // parameters: {
-  //   layout: 'centered',
-  // },
 } as Meta;
 
 export const Default = () => {
