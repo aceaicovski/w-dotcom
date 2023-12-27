@@ -11,7 +11,7 @@ export const HeaderLink: FC<LinkProps> = ({ title, link, styles }) => {
   return (
     <li className={classNames({ 'border-b-2 border-solid border-primary': isCurrentRoute })}>
       <Link
-        className={classNames('!rounded-none', styles?.link, {
+        className={classNames('hover:bg-primary hover:text-white rounded-lg px-4 py-2 w-full block', styles?.link, {
           'font-semibold': isCurrentRoute,
           [styles?.activeLink || '']: isCurrentRoute,
         })}

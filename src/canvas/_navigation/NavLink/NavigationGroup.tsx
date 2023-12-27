@@ -24,7 +24,7 @@ export const NavigationGroup: FC<LinkProps> = ({ title, link, styles }) => {
           <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
         </svg>
       </Link>
-      <ul className="p-2 bg-primary !rounded-none z-50">
+      <ul className="p-2 bg-white z-50 shadow-md">
         <UniformSlot name="subNavItems" />
       </ul>
     </li>
