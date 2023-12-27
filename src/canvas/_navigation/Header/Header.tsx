@@ -9,7 +9,7 @@ import { getHeaderColor, getLinksAlignment } from './helpers';
 import { HeaderProps } from '.';
 
 export const Header: FC<HeaderProps> = ({ logo, component, linksAlignment }) => (
-  <div className={classNames('text-primary-content', getHeaderColor(component.variant))}>
+  <div className={classNames('text-primary', getHeaderColor(component.variant))}>
     <ScreenContainer>
       <div className="navbar px-0">
         <div className="navbar-start w-full">

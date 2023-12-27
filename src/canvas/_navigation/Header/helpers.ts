@@ -5,7 +5,7 @@ export const getHeaderColor = (variant?: string) => {
     case HeaderVariants.Light:
       return 'bg-base-200';
     default:
-      return 'bg-base-300';
+      return 'bg-transparent';
   }
 };
 
