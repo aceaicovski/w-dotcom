@@ -9,12 +9,12 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 // This placeholder is used as a background on the visual editing workspace of the patterns
 // Activate visual editing doc: https://docs.uniform.app/docs/guides/composition/visual-editing/activate-visual-editing
 export const HeaderPlaceholder = () => (
-  <div className="text-primary border border-solid border-white px-8">
+  <div className="border border-solid border-white px-8 text-primary">
     <ScreenContainer maxWidth={MaxWidth.Large}>
       <div className="navbar px-0">
         <div className="navbar-start w-full">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost hover:bg-transparent px-0 lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost px-0 hover:bg-transparent lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-8 w-8"
@@ -27,10 +27,10 @@ export const HeaderPlaceholder = () => (
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content p-6 shadow w-52 bg-primary text-white space-y-4"
+              className="dropdown-content menu menu-compact w-52 space-y-4 bg-primary p-6 text-white shadow"
             >
               <svg
-                className="w-full text-center mb-6"
+                className="mb-6 w-full text-center"
                 xmlns="http://www.w3.org/2000/svg"
                 width="57"
                 height="15"
@@ -58,8 +58,8 @@ export const HeaderPlaceholder = () => (
           <Link className="ml-8 lg:ml-0" href="/">
             <Image src="/logo.png" width="64" height="64" alt="Next Level Sports" />
           </Link>
-          <div className="hidden lg:flex justify-center w-full">
-            <ul className="menu menu-horizontal px-1 shrink-0 gap-8">
+          <div className="hidden w-full justify-center lg:flex">
+            <ul className="menu menu-horizontal shrink-0 gap-8 px-1">
               <li className="border-b-2 border-solid border-primary">Flag Football</li>
               <li>Basketball</li>
               <li>Volleyball</li>
@@ -86,7 +86,7 @@ export const HeaderPlaceholder = () => (
             </label>
             <ul
               tabIndex={1}
-              className="menu menu-compact dropdown-content p-6 shadow w-52 bg-primary text-white space-y-4"
+              className="dropdown-content menu menu-compact w-52 space-y-4 bg-primary p-6 text-white shadow"
             >
               <li>California</li>
               <li>New York</li>

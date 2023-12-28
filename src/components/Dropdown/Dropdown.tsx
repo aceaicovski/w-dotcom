@@ -39,11 +39,11 @@ const Dropdown: FC<DropdownProps> = ({
   );
 
   return (
-    <div onMouseLeave={onMouseLeave} className="relative inline-block w-full h-12">
+    <div onMouseLeave={onMouseLeave} className="relative inline-block h-12 w-full">
       <button
         type="button"
         className={classNames(
-          'inline-flex items-center justify-between w-full h-full px-4 uppercase font-extrabold border-2 border-black focus:outline-none focus:border-slate-300',
+          'inline-flex h-full w-full items-center justify-between border-2 border-black px-4 font-extrabold uppercase focus:border-slate-300 focus:outline-none',
           { 'text-xs': !!value },
           { 'opacity-50': disable },
           buttonClassName
@@ -67,7 +67,7 @@ const Dropdown: FC<DropdownProps> = ({
       {isOpen && (
         <div
           className={classNames(
-            'z-50 origin-top-right absolute right-0 w-full rounded-b-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none bg-base-300',
+            'absolute right-0 z-50 w-full origin-top-right rounded-b-md bg-base-300 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',
             optionsContainerClassName
           )}
           role="menu"

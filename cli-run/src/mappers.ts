@@ -224,7 +224,10 @@ const DataSource: {
       headers: [
         { key: 'Content-Type', value: 'application/json' },
         { key: 'api_key', value: process.env.CLI_CONTENT_STACK_API_KEY },
-        { key: 'access_token', value: process.env.CLI_CONTENT_STACK_DELIVERY_TOKEN },
+        {
+          key: 'access_token',
+          value: process.env.CLI_CONTENT_STACK_DELIVERY_TOKEN,
+        },
       ],
     },
   },
@@ -237,7 +240,10 @@ const DataSource: {
     dataProperties: {
       headers: [
         { key: 'Content-Type', value: 'application/json' },
-        { key: 'X-Algolia-Application-Id', value: process.env.CLI_ALGOLIA_APPLICATION_ID },
+        {
+          key: 'X-Algolia-Application-Id',
+          value: process.env.CLI_ALGOLIA_APPLICATION_ID,
+        },
         { key: 'X-Algolia-API-Key', value: process.env.CLI_ALGOLIA_SEARCH_KEY },
       ],
     },
@@ -251,7 +257,10 @@ const DataSource: {
     dataProperties: {
       headers: [
         { key: 'Content-Type', value: 'application/json' },
-        { key: 'Authorization', value: `Bearer ${process.env.CLI_COVEO_API_KEY}` },
+        {
+          key: 'Authorization',
+          value: `Bearer ${process.env.CLI_COVEO_API_KEY}`,
+        },
       ],
     },
   },

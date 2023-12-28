@@ -10,14 +10,14 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
   return (
     <div
       className={classNames(
-        'card rounded-none mb-2 last:mb-0 border-b border-solid border-neutral-300',
+        'card mb-2 rounded-none border-b border-solid border-neutral-300 last:mb-0',
         styles?.container
       )}
     >
       <button
         onClick={toggleAccordion}
         className={classNames(
-          'flex flex-row justify-between items-center p-2 md:p-4 text-2xl font-semibold bg-inherit w-full',
+          'flex w-full flex-row items-center justify-between bg-inherit p-2 text-2xl font-semibold md:p-4',
           styles?.toggleButton
         )}
       >
@@ -25,7 +25,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
           placeholder="Title goes here"
           parameterId="title"
           as="p"
-          className={classNames('text-start pr-2 text-primary', styles?.title)}
+          className={classNames('pr-2 text-start text-primary', styles?.title)}
         />
         <div className="flex items-center">
           {isOpened ? (
@@ -54,7 +54,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
           placeholder="Description goes here"
           parameterId="description"
           as="p"
-          className={classNames('text-primary text-base px-2 pb-4 md:px-4', styles?.description)}
+          className={classNames('px-2 pb-4 text-base text-primary md:px-4', styles?.description)}
         />
       )}
     </div>

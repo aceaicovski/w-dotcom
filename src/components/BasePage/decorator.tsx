@@ -11,12 +11,12 @@ export const BackgroundDecorator: UniformPlaygroundDecorator = ({ data, children
   const isHeaderComponents = ['header'].includes(data.type);
 
   return (
-    <div className="min-h-screen overflow-x-hidden flex flex-col relative">
-      {!isHeaderComponents && <div className={classNames('blur-sm mb-6', COMMON_PADDING)}>{HeaderPlaceholder()}</div>}
-      <div className={classNames('flex flex-col flex-1 [&>*]:my-auto', COMMON_PADDING, CHILDREN_CONTAINER_STYLES)}>
+    <div className="relative flex min-h-screen flex-col overflow-x-hidden">
+      {!isHeaderComponents && <div className={classNames('mb-6 blur-sm', COMMON_PADDING)}>{HeaderPlaceholder()}</div>}
+      <div className={classNames('flex flex-1 flex-col [&>*]:my-auto', COMMON_PADDING, CHILDREN_CONTAINER_STYLES)}>
         {children}
       </div>
-      {!isFooterComponents && <div className={classNames('blur-sm mt-6', COMMON_PADDING)}>{FooterPlaceholder()}</div>}
+      {!isFooterComponents && <div className={classNames('mt-6 blur-sm', COMMON_PADDING)}>{FooterPlaceholder()}</div>}
     </div>
   );
 };
@@ -24,7 +24,13 @@ export const BackgroundDecorator: UniformPlaygroundDecorator = ({ data, children
 // This decorator is used to define specific margins/paddings for some components
 export const WithoutContainerDecorator: UniformPlaygroundDecorator = ({ data, children }) =>
   ['hero', 'banner', 'container', 'header', 'footer', 'productInfo', 'productGallery'].includes(data.type) ? (
-    <div className={classNames('!max-w-none !px-0', { '!my-0': ['header'].includes(data.type) })}>{children}</div>
+    <div
+      className={classNames('!max-w-none !px-0', {
+        '!my-0': ['header'].includes(data.type),
+      })}
+    >
+      {children}
+    </div>
   ) : (
     <>{children}</>
   );

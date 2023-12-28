@@ -23,14 +23,17 @@ const BASE_PROPS: Omit<TypographyProps, 'component'> = {
 const argTypes = {
   tag: { control: 'select', options: ['h1', 'h2', 'h3', 'h4', 'p', 'q'] },
   align: { control: 'select', options: ['left', 'center', 'right'] },
-  marginBottom: { control: 'select', options: ['Small', 'Medium', 'Large', 'None'] },
+  marginBottom: {
+    control: 'select',
+    options: ['Small', 'Medium', 'Large', 'None'],
+  },
 };
 
 const renderStory = (args: TypographyProps) => {
   const fakeComposition = createFakeCompositionData('typography', args, {});
   return (
     <UniformComposition data={fakeComposition}>
-      <Container className="w-full block">
+      <Container className="block w-full">
         <Typography {...args} />
       </Container>
     </UniformComposition>

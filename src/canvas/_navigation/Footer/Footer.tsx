@@ -25,17 +25,17 @@ export const Footer: FC<FooterProps> = ({
       <ScreenContainer maxWidth={MaxWidth.Large}>
         <footer
           className={classNames(
-            'footer py-10 flex flex-col-reverse lg:flex-row justify-between border-info-content w-full',
+            'footer flex w-full flex-col-reverse justify-between border-info-content py-10 lg:flex-row',
             styles?.footerSection
           )}
         >
-          <div className="text-white text-xs lg:hidden" dangerouslySetInnerHTML={{ __html: `© 2023 ${copyright}` }} />
-          <div className="w-full lg:w-3/5 flex items-start justify-start xl:justify-between xl:pr-10">
+          <div className="text-xs text-white lg:hidden" dangerouslySetInnerHTML={{ __html: `© 2023 ${copyright}` }} />
+          <div className="flex w-full items-start justify-start lg:w-3/5 xl:justify-between xl:pr-10">
             <UniformSlot name="section" />
           </div>
-          <div className="w-full lg:w-2/5 text-white -mb-8 lg:mb-0">
+          <div className="-mb-8 w-full text-white lg:mb-0 lg:w-2/5">
             {!hideLogo && <Image src={imageUrl} width="200" height="50" alt={copyright} />}
-            <div className="footer-title opacity-100 text-white italic text-3xl lg:text-4xl xl:text-5xl">
+            <div className="footer-title text-3xl italic text-white opacity-100 lg:text-4xl xl:text-5xl">
               {copyright}
             </div>
             <div className="flex items-center justify-start">
@@ -47,11 +47,11 @@ export const Footer: FC<FooterProps> = ({
               <div className="text-sm lg:text-base">support@nextlevelsports.com</div>
             </div>
             {displayBuildTimestamp && <BuildTimestamp style={styles?.buildTimestamp} />}
-            <div className="my-4 lg:my-8 flex">
+            <div className="my-4 flex lg:my-8">
               <UniformSlot name="iconLinkSocial" />
             </div>
             <div
-              className="hidden lg:block text-white text-sm"
+              className="hidden text-sm text-white lg:block"
               dangerouslySetInnerHTML={{ __html: `© 2024 ${copyright}` }}
             />
           </div>

@@ -53,7 +53,7 @@ const ProductInfo: FC<Props> = ({
 
   return (
     <div
-      className={classNames('hero relative w-full h-full flex justify-end', {
+      className={classNames('hero relative flex h-full w-full justify-end', {
         'min-h-[700px]': !fullHeight,
         'min-h-[calc(100vh-64px)]': fullHeight,
       })}
@@ -66,33 +66,33 @@ const ProductInfo: FC<Props> = ({
             src={imageUrl}
             priority
             className={classNames(
-              'absolute top-0 bottom-0 left-0 right-0 z-10',
+              'absolute bottom-0 left-0 right-0 top-0 z-10',
               getObjectFitClass(objectFit || 'cover')
             )}
           />
           <div
             className={classNames(
-              'absolute top-0 bottom-0 left-0 right-0 z-10',
+              'absolute bottom-0 left-0 right-0 top-0 z-10',
               getImageOverlayOpacityStyle(overlayOpacity),
               getImageOverlayColorStyle(overlayColor)
             )}
           />
         </>
       )}
-      <div className={classNames('flex w-1/2 flex-col mx-1 md:mx-10 z-20 text-primary-content')}>
+      <div className={classNames('z-20 mx-1 flex w-1/2 flex-col text-primary-content md:mx-10')}>
         <ElementWrapper
           duration={duration}
           delay={getDelayValue(0)}
           animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
         >
           {useCustomTextElements ? (
-            <p className={classNames('uppercase text-lg mb-5', styles?.eyebrow)}>{eyebrowText}</p>
+            <p className={classNames('mb-5 text-lg uppercase', styles?.eyebrow)}>{eyebrowText}</p>
           ) : (
             <UniformText
               placeholder="Eyebrow goes here"
               parameterId="eyebrowText"
               as="p"
-              className={classNames('uppercase text-lg mb-5', styles?.eyebrow)}
+              className={classNames('mb-5 text-lg uppercase', styles?.eyebrow)}
             />
           )}
         </ElementWrapper>
@@ -102,13 +102,13 @@ const ProductInfo: FC<Props> = ({
           animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
         >
           {useCustomTextElements ? (
-            <TitleTag className={classNames('text-secondary font-bold text-4xl mb-5', styles?.title)}>{title}</TitleTag>
+            <TitleTag className={classNames('mb-5 text-4xl font-bold text-secondary', styles?.title)}>{title}</TitleTag>
           ) : (
             <UniformText
               placeholder="Title goes here"
               parameterId="title"
               as={TitleTag}
-              className={classNames('text-secondary font-bold text-4xl mb-5', styles?.title)}
+              className={classNames('mb-5 text-4xl font-bold text-secondary', styles?.title)}
             />
           )}
         </ElementWrapper>
@@ -118,12 +118,12 @@ const ProductInfo: FC<Props> = ({
           animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
         >
           {useCustomTextElements ? (
-            <div className={classNames('text-xl font-light mb-5', styles?.subtitle)}>{subTitle}</div>
+            <div className={classNames('mb-5 text-xl font-light', styles?.subtitle)}>{subTitle}</div>
           ) : (
             <UniformText
               placeholder="Subtitle goes here"
               parameterId="subTitle"
-              className={classNames('text-xl font-light mb-5', styles?.subtitle)}
+              className={classNames('mb-5 text-xl font-light', styles?.subtitle)}
             />
           )}
         </ElementWrapper>
@@ -133,12 +133,12 @@ const ProductInfo: FC<Props> = ({
           animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
         >
           {useCustomTextElements ? (
-            <div className={classNames('text-lg mb-5', styles?.description)}>{description}</div>
+            <div className={classNames('mb-5 text-lg', styles?.description)}>{description}</div>
           ) : (
             <UniformText
               placeholder="Description goes here"
               parameterId="description"
-              className={classNames('text-lg mb-5', styles?.description)}
+              className={classNames('mb-5 text-lg', styles?.description)}
             />
           )}
         </ElementWrapper>
@@ -186,7 +186,9 @@ const ProductInfo: FC<Props> = ({
             <Button
               href={formatProjectMapLink(secondaryButtonLink)}
               onClick={onClickSecondaryButton}
-              className={classNames('w-full mt-5', { 'border-secondary': !secondaryButtonAnimationType })}
+              className={classNames('mt-5 w-full', {
+                'border-secondary': !secondaryButtonAnimationType,
+              })}
               animationType={secondaryButtonAnimationType}
               copy={
                 useCustomTextElements ? (
@@ -205,7 +207,7 @@ const ProductInfo: FC<Props> = ({
           delay={getDelayValue(13)}
           animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
         >
-          <div className="flex justify-between w-3/4">
+          <div className="flex w-3/4 justify-between">
             {(features || []).map(feature => (
               <div className="flex items-center" key={feature}>
                 <FeatureIcon />

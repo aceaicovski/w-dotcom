@@ -32,11 +32,11 @@ export const NavigationMenuSectionLink: FC<NavigationMenuSectionLinkProps> = ({
         >
           <div>
             <p className={classNames({ 'font-extrabold': isCurrentRoute })}>{title}</p>
-            {Boolean(description) && <p className="text-xs max-w-[150px]">{description}</p>}
+            {Boolean(description) && <p className="max-w-[150px] text-xs">{description}</p>}
           </div>
-          <div className="flex items-center justify-center mt-1 rounded-md w-11">
+          <div className="mt-1 flex w-11 items-center justify-center rounded-md">
             {imageIrl && (
-              <Image width={100} height={100} alt="icon" className="w-10 h-10 text-indigo-50 " src={imageIrl} />
+              <Image width={100} height={100} alt="icon" className="h-10 w-10 text-indigo-50 " src={imageIrl} />
             )}
           </div>
         </div>

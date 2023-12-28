@@ -15,10 +15,10 @@ export const Feature: FC<FeatureProps> = ({ icon, link }) => {
     : Fragment;
 
   return (
-    <div className="flex items-start mt-8 space-x-3">
-      <div className="flex items-center justify-center flex-shrink-0 mt-1 rounded-md w-11 h-11 ">
+    <div className="mt-8 flex items-start space-x-3">
+      <div className="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md ">
         {Boolean(imageUrl) && (
-          <Image width={100} height={100} alt="icon" className="w-10 h-10 text-indigo-50" src={imageUrl} />
+          <Image width={100} height={100} alt="icon" className="h-10 w-10 text-indigo-50" src={imageUrl} />
         )}
       </div>
       <div>

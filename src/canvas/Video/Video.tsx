@@ -16,7 +16,7 @@ export const Video: FC<VideoProps> = ({ url, loop, controls, lazyLoad, placehold
   const onPause = useCallback(() => setPlaying(false), []);
 
   return (
-    <div className="border-2 border-white rounded-2xl group/video relative">
+    <div className="group/video relative rounded-2xl border-2 border-white">
       {url && (
         <div style={{ paddingBottom: ASPECT_RATION_PADDING }}>
           <ReactPlayer
@@ -30,7 +30,11 @@ export const Video: FC<VideoProps> = ({ url, loop, controls, lazyLoad, placehold
             controls={controls}
             muted={muted}
             loop={loop}
-            style={{ position: 'absolute', borderRadius: '1rem', overflow: 'hidden' }}
+            style={{
+              position: 'absolute',
+              borderRadius: '1rem',
+              overflow: 'hidden',
+            }}
             light={lazyLoad ? placeholderImage || true : false}
             playIcon={<PlayButton onClick={onPlay} />}
           />

@@ -15,8 +15,8 @@ export const RichText: FC<RichTextProps> = ({ component }) => (
     >
       <UniformRichText
         className={classNames({
-          '[&_*]:text-primary-content !marker:text-primary-content': component?.variant === RichTextVariants.Light,
-          '[&_*]:text-secondary-content marker:text-secondary-content': component?.variant !== RichTextVariants.Light,
+          '!marker:text-primary-content [&_*]:text-primary-content': component?.variant === RichTextVariants.Light,
+          'marker:text-secondary-content [&_*]:text-secondary-content': component?.variant !== RichTextVariants.Light,
         })}
         parameterId="content"
       />

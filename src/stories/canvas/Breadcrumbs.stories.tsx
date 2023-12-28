@@ -5,7 +5,10 @@ import { Breadcrumbs } from '@/canvas';
 import { createFakeCompositionData } from '../utils';
 
 const argTypes = {
-  colorStyle: { control: 'select', options: ['primary', 'secondary', 'accent', 'base-200', 'base-300'] },
+  colorStyle: {
+    control: 'select',
+    options: ['primary', 'secondary', 'accent', 'base-200', 'base-300'],
+  },
   separator: { control: 'select', options: ['chevron', 'slash', 'none'] },
 };
 

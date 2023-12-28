@@ -74,12 +74,12 @@ export const CardBlockCarousel: FC<CardBlockProps> = ({
     <div>
       <div
         className={classNames(
-          'w-full flex flex-col md:flex-row md:items-center justify-between mb-6 md:mb-10',
+          'mb-6 flex w-full flex-col justify-between md:mb-10 md:flex-row md:items-center',
           styles?.container,
           colorClassName
         )}
       >
-        <div className="mb-6 md:mb-0 basis-2/3 xl:basis-auto">
+        <div className="mb-6 basis-2/3 md:mb-0 xl:basis-auto">
           <UniformText
             placeholder="Title goes here"
             parameterId="title"

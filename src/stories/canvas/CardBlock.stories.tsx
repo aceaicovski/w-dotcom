@@ -64,7 +64,9 @@ const CAROUSEL_CARDS = [
 ];
 
 const renderStory = (args: ComponentProps & Omit<CardBlockProps, 'component'>) => {
-  const fakeComposition = createFakeCompositionData('cardBlock', args, { ...args.component.slots });
+  const fakeComposition = createFakeCompositionData('cardBlock', args, {
+    ...args.component.slots,
+  });
   return (
     <UniformComposition data={fakeComposition}>
       <CardBlock {...args} />
@@ -73,7 +75,9 @@ const renderStory = (args: ComponentProps & Omit<CardBlockProps, 'component'>) =
 };
 
 const renderStoryCardBlockCarousel = (args: ComponentProps & Omit<CardBlockProps, 'component'>) => {
-  const fakeComposition = createFakeCompositionData('cardBlock', args, { ...args.component.slots });
+  const fakeComposition = createFakeCompositionData('cardBlock', args, {
+    ...args.component.slots,
+  });
   return (
     <UniformComposition data={fakeComposition}>
       <CardBlock {...args} component={{ type: 'cardBlock', variant: CardBlockVariants.Carousel }} />

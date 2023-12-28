@@ -50,8 +50,8 @@ const Facet: FC<FacetProps> = ({ field }) => {
   const getFacetValues = () => {
     return facetState.values.map((value: FacetValue) => (
       <div
-        className={classNames('mt-4 px-2 hover:opacity-30 text-secondary-content', {
-          'rounded whitespace-nowrap py-1.5 px-2 hover:opacity-30 bg-primary my-1 text-primary-content':
+        className={classNames('mt-4 px-2 text-secondary-content hover:opacity-30', {
+          'my-1 whitespace-nowrap rounded bg-primary px-2 py-1.5 text-primary-content hover:opacity-30':
             headlessFacets.isValueSelected(value),
         })}
         key={value.value}
@@ -59,15 +59,15 @@ const Facet: FC<FacetProps> = ({ field }) => {
           toggleSelect(value);
         }}
       >
-        <label className="cursor-pointer flex justify-between items-center pr-3">
+        <label className="flex cursor-pointer items-center justify-between pr-3">
           <span
-            className={classNames('capitalize pr-4 flex-1', {
+            className={classNames('flex-1 pr-4 capitalize', {
               'text-primary-content': headlessFacets.isValueSelected(value),
             })}
           >
             {value.value}
           </span>
-          <span className="bg-gray-50 rounded-full px-2 text-secondary-content">{value.numberOfResults}</span>
+          <span className="rounded-full bg-gray-50 px-2 text-secondary-content">{value.numberOfResults}</span>
         </label>
       </div>
     ));
@@ -97,9 +97,9 @@ const FacetConfiguration: FC<FacetConfigurationProps> = ({ facet }) => {
   }
 
   return (
-    <div className="w-full flex justify-center">
-      <div className="pt-12 pr-10 inline-flex flex-col lg:w-full first:pt-2 min-h-[250px]">
-        <UniformText parameterId="title" className="font-extrabold text-lg capitalize text-black" />
+    <div className="flex w-full justify-center">
+      <div className="inline-flex min-h-[250px] flex-col pr-10 pt-12 first:pt-2 lg:w-full">
+        <UniformText parameterId="title" className="text-lg font-extrabold capitalize text-black" />
         <Facet key={field} field={field} />
       </div>
     </div>

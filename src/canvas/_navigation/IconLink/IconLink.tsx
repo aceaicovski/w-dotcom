@@ -11,7 +11,7 @@ export const IconLink: FC<IconLinkProps> = ({ icon, link }) => {
   return (
     <Link
       target={link.path.includes('http') ? '_blank' : '_self'}
-      className="[&:not(:last-child)]:mr-3 shrink-0"
+      className="shrink-0 [&:not(:last-child)]:mr-3"
       href={link?.path || '#'}
     >
       <Image src={imageUrl} width="24" height="24" alt="iconLink" />

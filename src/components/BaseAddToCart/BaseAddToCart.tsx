@@ -23,8 +23,8 @@ const BaseAddToCart: FC<BaseAddToCartProps> = ({
   }, [quantity, onClick]);
 
   return (
-    <div className="flex flex-row justify-between items-center py-6 flex-wrap gap-5">
-      <div className="flex items-center justify-between w-auto gap-4 grow">
+    <div className="flex flex-row flex-wrap items-center justify-between gap-5 py-6">
+      <div className="flex w-auto grow items-center justify-between gap-4">
         <div className="inline font-bold text-secondary-content">QUANTITY:</div>
         <ProductQuantityItem
           animationType={animationType}
@@ -35,7 +35,7 @@ const BaseAddToCart: FC<BaseAddToCartProps> = ({
         />
       </div>
       <div
-        className={classNames('btn rounded-none ml-auto w-full flex-1 min-w-[200px]', getButtonClass(buttonStyle))}
+        className={classNames('btn ml-auto w-full min-w-[200px] flex-1 rounded-none', getButtonClass(buttonStyle))}
         onClick={handleButtonClick}
       >
         {useCustomTextElements ? (

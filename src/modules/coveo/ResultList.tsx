@@ -48,7 +48,7 @@ const ResultList: FC<ComponentProps> = ({ component }) => {
       default:
         return (
           <div
-            className="border border-gray-300 p-4 rounded-md mb-4 flex items-center justify-center"
+            className="mb-4 flex items-center justify-center rounded-md border border-gray-300 p-4"
             key={item.uniqueId}
           >
             <span>Add your custom Result Item</span>
@@ -60,7 +60,7 @@ const ResultList: FC<ComponentProps> = ({ component }) => {
   if (!resultState.results?.length) return <InformationContent title="Sorry there are no products for this filter" />;
 
   return (
-    <div className="grid gap-y-3 mb-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 sm:gap-y-6 lg:gap-x-8 lg:gap-y-5 sm:mb-0">
+    <div className="mb-8 grid gap-y-3 sm:mb-0 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-5">
       {
         // @ts-ignore: Expected error if the module is not yet installed
         resultState.results.map(result => renderResultItem(component, result))

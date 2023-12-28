@@ -22,12 +22,12 @@ export const CardBlockDefault: FC<CardBlockProps> = ({
   return (
     <div
       className={classNames(
-        'flex items-center justify-between py-2 gap-2 flex-wrap',
+        'flex flex-wrap items-center justify-between gap-2 py-2',
         styles?.container,
         colorClassName
       )}
     >
-      <div className="w-full flex flex-col md:flex-row md:items-center justify-between px-3 pb-6">
+      <div className="flex w-full flex-col justify-between px-3 pb-6 md:flex-row md:items-center">
         <div className="basis-2/3 xl:basis-auto">
           <UniformText
             placeholder="Title goes here"

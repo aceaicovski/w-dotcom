@@ -13,7 +13,10 @@ export default meta;
 type Story = StoryObj<typeof Divider>;
 
 const argTypes = {
-  colorStyle: { control: 'select', options: ['primary', 'secondary', 'accent', 'base-200', 'base-300'] },
+  colorStyle: {
+    control: 'select',
+    options: ['primary', 'secondary', 'accent', 'base-200', 'base-300'],
+  },
 };
 
 export const Default: Story = {

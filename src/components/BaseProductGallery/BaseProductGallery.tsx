@@ -119,7 +119,7 @@ const BaseProductGallery: FC<BaseProductGalleryProps> = ({
       );
 
       return (
-        <div className="flex flex-col gap-6 mt-12">
+        <div className="mt-12 flex flex-col gap-6">
           {imagesGroups?.map((images, lineIndex) =>
             images.length ? (
               <Masonry

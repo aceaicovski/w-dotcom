@@ -115,7 +115,10 @@ export const getUniformEnvs = async (
       message: 'Select Uniform host:',
       options: [
         { value: 'https://uniform.app', label: 'https://uniform.app' },
-        { value: 'https://canary.uniform.app', label: 'https://canary.uniform.app' },
+        {
+          value: 'https://canary.uniform.app',
+          label: 'https://canary.uniform.app',
+        },
       ],
       initialValue: 'https://uniform.app',
     })
@@ -125,7 +128,12 @@ export const getUniformEnvs = async (
     ? 'https://canary.uniform.global'
     : 'https://uniform.global';
 
-  return { uniformApiKey, uniformProjectId, uniformCliBaseUrl, uniformEdgeApiHost };
+  return {
+    uniformApiKey,
+    uniformProjectId,
+    uniformCliBaseUrl,
+    uniformEdgeApiHost,
+  };
 };
 
 export const getUniformAccessTokenEnvs = async (): Promise<{
@@ -138,7 +146,10 @@ export const getUniformAccessTokenEnvs = async (): Promise<{
       message: 'Select Uniform host:',
       options: [
         { value: 'https://uniform.app', label: 'https://uniform.app' },
-        { value: 'https://canary.uniform.app', label: 'https://canary.uniform.app' },
+        {
+          value: 'https://canary.uniform.app',
+          label: 'https://canary.uniform.app',
+        },
         { value: '', label: 'Other host' },
       ],
       initialValue: process.env.CLI_UNIFORM_CLI_BASE_URL || 'https://uniform.app',
@@ -360,7 +371,12 @@ export const getContentfulEnvs = async (
     })
   ).toString();
 
-  return { CONTENTFUL_SPACE_ID, CONTENTFUL_ENVIRONMENT, CONTENTFUL_CDA_ACCESS_TOKEN, CONTENTFUL_CPA_ACCESS_TOKEN };
+  return {
+    CONTENTFUL_SPACE_ID,
+    CONTENTFUL_ENVIRONMENT,
+    CONTENTFUL_CDA_ACCESS_TOKEN,
+    CONTENTFUL_CPA_ACCESS_TOKEN,
+  };
 };
 
 export const getSegmentEnvs = async (

@@ -21,7 +21,11 @@ const inter = Inter({
 
 const lexend_giga = Lexend_Giga({ subsets: ['latin'] });
 
-export const metrophobic = Metrophobic({ weight: ['400'], subsets: ['latin'], display: 'swap' });
+export const metrophobic = Metrophobic({
+  weight: ['400'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const rubik = Rubik({
   subsets: ['latin'],

@@ -6,7 +6,9 @@ import ThemeProvider from '../ThemeProvider';
 import { PlaygroundProps } from '.';
 
 const Playground: FC<PlaygroundProps> = ({ data, defaultTheme }) => {
-  const contextualEditingEnhancer = createUniformApiEnhancer({ apiUrl: '/api/preview' });
+  const contextualEditingEnhancer = createUniformApiEnhancer({
+    apiUrl: '/api/preview',
+  });
 
   return (
     <ComponentStarterKitContextProvider data={data}>

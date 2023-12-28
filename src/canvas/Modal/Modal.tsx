@@ -42,7 +42,7 @@ export const Modal: FC<ModalProps> = ({ closeOnClickOutside, automaticOpenTimeou
 
   return (
     <div>
-      <div onClick={onToggleModal} className="max-w-screen-xl mx-auto">
+      <div onClick={onToggleModal} className="mx-auto max-w-screen-xl">
         <UniformSlot name="trigger" />
       </div>
       {isModalContentPlaceholder ? (
@@ -50,7 +50,7 @@ export const Modal: FC<ModalProps> = ({ closeOnClickOutside, automaticOpenTimeou
       ) : (
         <dialog
           open={showModal}
-          className={classNames('modal w-full h-full', {
+          className={classNames('modal h-full w-full', {
             // we need override uniform add button zIndex(9900)
             'modal-open z-[9901]': showModal,
           })}
@@ -61,7 +61,7 @@ export const Modal: FC<ModalProps> = ({ closeOnClickOutside, automaticOpenTimeou
             className={classNames('modal-box p-8', getModalMaxWidth(maxWidth))}
             onClick={onClickContent}
           >
-            <div onClick={onToggleModal} className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            <div onClick={onToggleModal} className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2">
               ✕
             </div>
             <UniformSlot name="content" />

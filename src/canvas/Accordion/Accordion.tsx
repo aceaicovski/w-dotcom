@@ -9,13 +9,13 @@ export const Accordion: FC<AccordionProps> = ({ styles }) => (
       placeholder="Title goes here"
       parameterId="title"
       as="p"
-      className={classNames('text-3xl font-extrabold pb-4', styles?.title)}
+      className={classNames('pb-4 text-3xl font-extrabold', styles?.title)}
     />
     <UniformText
       placeholder="Description goes here"
       parameterId="description"
       as="p"
-      className={classNames('text-lg pb-6', styles?.description)}
+      className={classNames('pb-6 text-lg', styles?.description)}
     />
     <UniformSlot name="items" />
   </div>

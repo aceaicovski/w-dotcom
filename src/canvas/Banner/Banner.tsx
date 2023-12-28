@@ -28,24 +28,24 @@ export const Banner: FC<BannerProps> = ({
     <Wrapper>
       <div
         className={classNames(
-          'w-full z-[9999]',
+          'z-[9999] w-full',
           { 'fixed left-1/2 -translate-x-1/2': !inline },
           getPositionClassName(position, inline),
           getWidthClassName(component?.variant as BannerVariant)
         )}
       >
-        <div className="w-full grid md:grid-cols-12 bg-base-300 gap-x-6 py-5 px-5 xl:px-10">
+        <div className="grid w-full gap-x-6 bg-base-300 px-5 py-5 md:grid-cols-12 xl:px-10">
           <div className="col-span-1">
             {Boolean(icon) && <Image width={60} height={60} src={icon} alt="banner-icon" />}
           </div>
           <div
-            className={classNames('w-full flex flex-col items-left col-span-7', getTextAlignmentClassName(textAlign))}
+            className={classNames('items-left col-span-7 flex w-full flex-col', getTextAlignmentClassName(textAlign))}
           >
             <UniformText
               placeholder="Title goes here"
               parameterId="title"
               as="p"
-              className="text-primary-content text-xl"
+              className="text-xl text-primary-content"
             />
             <UniformText
               placeholder="Description goes here"
@@ -54,7 +54,7 @@ export const Banner: FC<BannerProps> = ({
               className="py-6 text-xl text-primary-content"
             />
           </div>
-          <div className="col-span-4 flex items-center justify-between gap-2 flex-col xs:gap-0 xs:flex-row md:flex-col lg:flex-row shrink-0 md:justify-end w-full md:w-auto md:space-x-0 md:space-y-2 lg:space-y-0 lg:space-x-3 mt-4 md:mt-0">
+          <div className="xs:gap-0 xs:flex-row col-span-4 mt-4 flex w-full shrink-0 flex-col items-center justify-between gap-2 md:mt-0 md:w-auto md:flex-col md:justify-end md:space-x-0 md:space-y-2 lg:flex-row lg:space-x-3 lg:space-y-0">
             {Boolean(primaryButtonLink) && (
               <Button
                 className="mx-1"

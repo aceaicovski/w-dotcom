@@ -22,7 +22,10 @@ const BASE_PROPS: Omit<SportTypeCardProps, 'component'> = {
 };
 
 const argTypes = {
-  icon: { control: 'select', options: ['footbal', 'basketball', 'volleyball', 'futboll', 'flag-pennant', 'baseball'] },
+  icon: {
+    control: 'select',
+    options: ['footbal', 'basketball', 'volleyball', 'futboll', 'flag-pennant', 'baseball'],
+  },
 };
 
 const renderStory = (args: SportTypeCardProps) => {

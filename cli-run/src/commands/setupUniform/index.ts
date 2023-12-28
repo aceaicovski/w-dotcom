@@ -31,7 +31,10 @@ const getAvailableProjectTypes = async (params: UNIFORM_API.GetProjectTypesParam
 
 export const setupUniformProject = async (
   params: UNIFORM_API.SetupUniformProject,
-  progressSpinner: { start: (message: string) => void; stop: (message: string) => void }
+  progressSpinner: {
+    start: (message: string) => void;
+    stop: (message: string) => void;
+  }
 ) => {
   const { uniformApiHost, uniformAccessToken, project, variant } = params;
   const headers = {
@@ -41,28 +44,46 @@ export const setupUniformProject = async (
 
   const decoded = jwt.decode(uniformAccessToken, { complete: false });
 
-  const teams = await getAvailableTeams({ apiHost: uniformApiHost, headers, subject: decoded?.sub?.toString() });
+  const teams = await getAvailableTeams({
+    apiHost: uniformApiHost,
+    headers,
+    subject: decoded?.sub?.toString(),
+  });
 
-  const availableTeams = teams.map(({ team }) => ({ value: team.id, label: team.name }));
+  const availableTeams = teams.map(({ team }) => ({
+    value: team.id,
+    label: team.name,
+  }));
 
   let teamId = await getUniformTeam([...availableTeams, { value: 'new', label: '➕ Create new' }]);
 
   if (teamId === 'new') {
     const teamName = await getUniformTeamName();
 
-    const createTeamResponse = await createUniformTeam({ apiHost: uniformApiHost, name: teamName, headers });
+    const createTeamResponse = await createUniformTeam({
+      apiHost: uniformApiHost,
+      name: teamName,
+      headers,
+    });
 
     teamId = createTeamResponse.id;
   }
 
   const team = teams.find(({ team }) => team.id === teamId)?.team;
 
-  const availableProjects = (team?.sites || []).map(site => ({ value: site.id, label: site.name }));
+  const availableProjects = (team?.sites || []).map(site => ({
+    value: site.id,
+    label: site.name,
+  }));
 
   let projectId = await getUniformProject([...availableProjects, { value: 'new', label: '➕ Create new' }]);
 
   if (projectId === 'new') {
-    const { projectTypes } = await getAvailableProjectTypes({ uniformApiHost, uniformAccessToken, teamId });
+    const { projectTypes } = await getAvailableProjectTypes({
+      uniformApiHost,
+      uniformAccessToken,
+      teamId,
+    });
     if (projectTypes.length === 0) {
       console.log('Your Uniform team is not licensed for any additional projects.');
       return {};
@@ -90,7 +111,12 @@ export const setupUniformProject = async (
 
   progressSpinner.start('Start creating uniform api keys');
 
-  const createdKeys = await createApiKeys({ teamId, projectId, apiHost: uniformApiHost, headers });
+  const createdKeys = await createApiKeys({
+    teamId,
+    projectId,
+    apiHost: uniformApiHost,
+    headers,
+  });
 
   const { writeApiKey } = createdKeys;
 

@@ -39,7 +39,13 @@ export const CardWrapped: Story = {
     const fakeComposition = createFakeCompositionData('testimonial', args, {});
     return (
       <UniformComposition data={fakeComposition}>
-        <Testimonial {...args} component={{ type: 'testimonial', variant: TestimonialVariant.CardWrapped }} />
+        <Testimonial
+          {...args}
+          component={{
+            type: 'testimonial',
+            variant: TestimonialVariant.CardWrapped,
+          }}
+        />
       </UniformComposition>
     );
   },

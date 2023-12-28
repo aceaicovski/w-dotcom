@@ -35,10 +35,10 @@ const PageContent: FC<Pick<BasePageProps, 'preview' | 'useUniformComposition' | 
           <UniformSlot name="pageHeader" />
         </div>
         {/* useUniformComposition is always true only for global composition preview */}
-        {useUniformComposition && <h1 className="flex-1 flex justify-center items-center">Page content placeholder</h1>}
+        {useUniformComposition && <h1 className="flex flex-1 items-center justify-center">Page content placeholder</h1>}
         <div
           className={classNames(
-            'flex flex-col flex-1',
+            'flex flex-1 flex-col',
             CHILDREN_CONTAINER_STYLES,
             COMMON_PADDING,
             getGapClass(gap),
@@ -68,7 +68,9 @@ const BasePage: FC<BasePageProps> = ({
   <UniformComposition
     data={composition}
     behaviorTracking="onLoad"
-    contextualEditingEnhancer={createUniformApiEnhancer({ apiUrl: '/api/preview' })}
+    contextualEditingEnhancer={createUniformApiEnhancer({
+      apiUrl: '/api/preview',
+    })}
   >
     <ComponentStarterKitContextProvider {...(context || {})}>
       <PageContent

@@ -36,7 +36,7 @@ const BreadcrumbManager: FC<BreadcrumbManagerProps> = ({ title }) => {
           breadcrumbManagerState.facetBreadcrumbs.map(facet => (
             <li key={facet.facetId} className="mb-4">
               {facet.field}:
-              <div className="flex gap-2 flex-wrap">
+              <div className="flex flex-wrap gap-2">
                 {
                   // @ts-ignore: Expected error if the module is not yet installed
                   facet.values.map(breadcrumb => (

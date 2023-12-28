@@ -8,7 +8,7 @@ const ProgramNavigationBody = React.forwardRef<HTMLDivElement, ProgramNavigation
     return (
       <div
         {...props}
-        className={cn('m-auto max-w-screen-xl flex items-center justify-between px-4 lg:px-0', className)}
+        className={cn('m-auto flex max-w-screen-xl items-center justify-between px-4 lg:px-0', className)}
         ref={ref}
       />
     );

@@ -8,7 +8,11 @@ export const COMMON_PADDING = '[&>*]:xl:px-0 [&>*]:px-4';
 export const withoutContainer =
   <T,>(Component: ComponentType<ComponentProps<T>>, withoutPaddings?: boolean): ComponentType<ComponentProps<T>> =>
   (props: ComponentProps<T>) => (
-    <div className={classNames('!max-w-none !px-0', { [COMMON_PADDING]: !withoutPaddings })}>
+    <div
+      className={classNames('!max-w-none !px-0', {
+        [COMMON_PADDING]: !withoutPaddings,
+      })}
+    >
       <Component {...props} />
     </div>
   );

@@ -70,7 +70,7 @@ export const IconLinkSocial: FC<IconLinkSocialProps> = ({ icon, link }) => {
   return (
     <Link
       target={link.path.includes('http') ? '_blank' : '_self'}
-      className="[&:not(:last-child)]:mr-4 flex items-center justify-center w-8 h-8 border border-solid border-white rounded-full hover:opacity-60"
+      className="flex h-8 w-8 items-center justify-center rounded-full border border-solid border-white hover:opacity-60 [&:not(:last-child)]:mr-4"
       href={link?.path || '#'}
     >
       <IconImg icon={icon} />

@@ -13,12 +13,12 @@ import { faLocationDot, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { Button, Logo } from '@/components';
 
 export const Header: FC<HeaderProps> = ({ logo, component, linksAlignment }) => (
-  <div className={classNames('text-primary px-8', getHeaderColor(component.variant))}>
+  <div className={classNames('px-8 text-primary', getHeaderColor(component.variant))}>
     <ScreenContainer maxWidth={MaxWidth.Large}>
       <div className="navbar px-0">
         <div className="navbar-start w-full">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost hover:bg-transparent px-0 lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost px-0 hover:bg-transparent lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-8 w-8"
@@ -31,7 +31,7 @@ export const Header: FC<HeaderProps> = ({ logo, component, linksAlignment }) => 
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content p-1 shadow w-52 bg-primary text-white space-y-4"
+              className="dropdown-content menu menu-compact w-52 space-y-4 bg-primary p-1 text-white shadow"
             >
               <Logo className="ml-2" color="light" />
               <UniformSlot name="links" />
@@ -41,19 +41,19 @@ export const Header: FC<HeaderProps> = ({ logo, component, linksAlignment }) => 
             <Image src={getMediaUrl(logo)} width="64" height="64" alt="Next Level Sports" className="hidden" />
             <Logo color="dark" />
           </Link>
-          <div className={classNames('hidden lg:flex w-full', getLinksAlignment(linksAlignment))}>
-            <ul className="menu menu-horizontal px-1 shrink-0">
+          <div className={classNames('hidden w-full lg:flex', getLinksAlignment(linksAlignment))}>
+            <ul className="menu menu-horizontal shrink-0 px-1">
               <UniformSlot name="links" />
             </ul>
           </div>
         </div>
-        <div className="hidden sm:flex gap-4">
+        <div className="hidden gap-4 sm:flex">
           <div className="dropdown">
             <label tabIndex={1} className="flex items-center justify-center p-1 hover:cursor-pointer">
               <FontAwesomeIcon icon={faLocationDot} className="mr-2" size="2x" />
               <FontAwesomeIcon icon={faChevronDown} />
             </label>
-            <div className="dropdown-content p-4 shadow bg-white rounded-xl w-max top-20 origin-top-right right-0">
+            <div className="dropdown-content right-0 top-20 w-max origin-top-right rounded-xl bg-white p-4 shadow">
               <ul tabIndex={1} className="grid grid-cols-2">
                 <UniformSlot name="locations" />
               </ul>

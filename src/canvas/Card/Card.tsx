@@ -76,11 +76,11 @@ export const Card: FC<CardProps> = ({
   return (
     <CardWrapper
       className={classNames(
-        'card w-96 max-w-full min-h-full mx-0 md:mx-2 border border-gray-200',
+        'card mx-0 min-h-full w-96 max-w-full border border-gray-200 md:mx-2',
         getContentClass(variant),
         {
           relative: isBackgroundImage,
-          '!border-0 !rounded-none': variant === CardVariants.Featured,
+          '!rounded-none !border-0': variant === CardVariants.Featured,
         },
         styles?.container
       )}
@@ -108,7 +108,7 @@ export const Card: FC<CardProps> = ({
 
           <div
             className={classNames(
-              'absolute top-0 left-0 right-0 bottom-0 rounded-xl',
+              'absolute bottom-0 left-0 right-0 top-0 rounded-xl',
               getImageOverlayOpacityStyle(overlayOpacity),
               getImageOverlayColorStyle(overlayColor)
             )}
@@ -148,7 +148,7 @@ export const Card: FC<CardProps> = ({
           />
         )}
 
-        <div className="card-actions justify-end mt-auto">
+        <div className="card-actions mt-auto justify-end">
           {buttonLink && (
             <Button
               href={formatProjectMapLink(buttonLink)}

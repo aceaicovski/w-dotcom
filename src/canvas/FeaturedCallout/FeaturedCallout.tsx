@@ -15,10 +15,10 @@ export const FeaturedCallout: FC<FeaturedCalloutProps> = ({
 }) => {
   const imageUrl = getMediaUrl(image);
   return (
-    <div className="hero flex flex-wrap lg:gap-10 lg:flex-nowrap text-secondary-content">
+    <div className="hero flex flex-wrap text-secondary-content lg:flex-nowrap lg:gap-10">
       <div
         className={classNames(
-          'flex items-center justify-start w-full lg:w-1/2',
+          'flex w-full items-center justify-start lg:w-1/2',
           getFeaturedCalloutContentClass(variant)
         )}
       >
@@ -27,18 +27,18 @@ export const FeaturedCallout: FC<FeaturedCalloutProps> = ({
 
       <div
         className={classNames(
-          'hero-content flex flex-wrap items-center w-full lg:w-1/2 p-0',
+          'hero-content flex w-full flex-wrap items-center p-0 lg:w-1/2',
           getFeaturedCalloutTextContentClass(variant)
         )}
       >
         <div>
-          <div className="flex flex-col w-full">
+          <div className="flex w-full flex-col">
             {eyebrowText && (
               <UniformText
                 placeholder="Eyebrow text goes here"
                 parameterId="eyebrowText"
                 as="div"
-                className="text-sm font-bold tracking-wider uppercase text-primary my-3"
+                className="my-3 text-sm font-bold uppercase tracking-wider text-primary"
               />
             )}
             <UniformText

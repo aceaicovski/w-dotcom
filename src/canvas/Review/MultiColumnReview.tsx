@@ -18,19 +18,19 @@ export const MultiColumnReview: FC<Omit<ReviewProps, 'component'>> = ({
   const baseTextStyle = textColorVariant === 'Light' ? 'text-primary-content' : 'text-secondary-content';
 
   return (
-    <div className="grid grid-cols-12 border-t-[1px] last:border-b-[1px] py-6">
+    <div className="grid grid-cols-12 border-t-[1px] py-6 last:border-b-[1px]">
       <div className="col-span-4">
         {Boolean(picture) && (
           <Image className="rounded-full" src={picture} width={48} height={48} alt="reviewer-icon" />
         )}
         <UniformText
-          className={classNames('font-medium mt-2', baseTextStyle)}
+          className={classNames('mt-2 font-medium', baseTextStyle)}
           as="p"
           parameterId="personName"
           placeholder="Reviewer name goes here"
         />
         <UniformText
-          className={classNames('text-sm mt-1', styles?.date)}
+          className={classNames('mt-1 text-sm', styles?.date)}
           as="p"
           parameterId="date"
           placeholder="Date goes here"

@@ -24,7 +24,10 @@ const args = {
 };
 
 const argTypes = {
-  starsColor: { control: 'select', options: ['primary', 'secondary', 'accent', 'base-200', 'base-300'] },
+  starsColor: {
+    control: 'select',
+    options: ['primary', 'secondary', 'accent', 'base-200', 'base-300'],
+  },
 };
 
 export const Default: Story = {

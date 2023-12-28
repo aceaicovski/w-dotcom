@@ -146,7 +146,12 @@ const runRunDemoJourney = async (
     const { uniformApiKey, uniformCliBaseUrl, uniformEdgeApiHost, uniformProjectId } = await getUniformEnvs(project);
 
     await processEnvFile(
-      { uniformApiKey, uniformCliBaseUrl, uniformEdgeApiHost, uniformProjectId },
+      {
+        uniformApiKey,
+        uniformCliBaseUrl,
+        uniformEdgeApiHost,
+        uniformProjectId,
+      },
       project,
       projectPath,
       variant
@@ -194,10 +199,16 @@ const preSetDemo = async (project: CLI.AvailableProjects, variant: CLI.CommonVar
   const isSSGModeAvailable = await scanPageDirectory(projectPath, AppModes.SSG);
 
   if (isSSRModeAvailable) {
-    renderingModeOptions.push({ value: 'ssr', label: 'Server-side Rendering \t(SSR)' });
+    renderingModeOptions.push({
+      value: 'ssr',
+      label: 'Server-side Rendering \t(SSR)',
+    });
   }
   if (isSSGModeAvailable) {
-    renderingModeOptions.push({ value: 'ssg', label: 'Static Site Generation \t(SSG)' });
+    renderingModeOptions.push({
+      value: 'ssg',
+      label: 'Static Site Generation \t(SSG)',
+    });
   }
 
   const appMode = renderingModeOptions.length

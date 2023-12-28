@@ -39,11 +39,11 @@ export const NavigationOneColumnMenuLink: FC<NavigationOneColumnMenuLinkProps> =
         >
           <div>
             <p className={classNames({ 'font-extrabold': isCurrentRoute })}>{title}</p>
-            {Boolean(description) && <p className="text-xs max-w-[150px]">{description}</p>}
+            {Boolean(description) && <p className="max-w-[150px] text-xs">{description}</p>}
           </div>
-          <div className="flex items-center justify-center mt-1 rounded-md w-11">
+          <div className="mt-1 flex w-11 items-center justify-center rounded-md">
             {imageIrl && (
-              <Image width={100} height={100} alt="icon" className="w-10 h-10 text-indigo-50 " src={imageIrl} />
+              <Image width={100} height={100} alt="icon" className="h-10 w-10 text-indigo-50 " src={imageIrl} />
             )}
           </div>
         </div>
@@ -52,7 +52,7 @@ export const NavigationOneColumnMenuLink: FC<NavigationOneColumnMenuLinkProps> =
   );
 
   const renderHoverItem = () => (
-    <div className="absolute w-full max-w-[60%] h-full z-50 top-[10%] right-0">
+    <div className="absolute right-0 top-[10%] z-50 h-full w-full max-w-[60%]">
       {showHoverItem && (
         <div className="w-full bg-white">
           <UniformSlot name="hoverContent" />

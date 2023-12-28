@@ -56,7 +56,11 @@ const Sort: FC<BreadcrumbManagerProps> = ({ title = '', fieldsForSort = [] }) =>
   );
 
   const criteriaValue = useMemo(
-    () => criteria.map(([criterionName]) => ({ label: criterionName, value: criterionName })),
+    () =>
+      criteria.map(([criterionName]) => ({
+        label: criterionName,
+        value: criterionName,
+      })),
     [criteria]
   );
 
@@ -74,9 +78,9 @@ const Sort: FC<BreadcrumbManagerProps> = ({ title = '', fieldsForSort = [] }) =>
   );
 
   return (
-    <div className="w-full flex justify-center">
-      <div className="pr-10 inline-flex flex-col lg:w-full mb-4">
-        <UniformText parameterId="title" className="font-extrabold text-lg capitalize text-black mb-2" />
+    <div className="flex w-full justify-center">
+      <div className="mb-4 inline-flex flex-col pr-10 lg:w-full">
+        <UniformText parameterId="title" className="mb-2 text-lg font-extrabold capitalize text-black" />
         <Dropdown
           optionsContainerClassName="bg-secondary"
           title={title}

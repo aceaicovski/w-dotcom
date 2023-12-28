@@ -32,7 +32,7 @@ const CarouselButtons: FC<CarouselButtonProps> = ({
   }, [currentSlide, goToSlide, lastSlideIndex, previous]);
 
   return totalItems > slidesToShow ? (
-    <div className="flex justify-center sm:justify-end items-center my-6 lg:mt-9">
+    <div className="my-6 flex items-center justify-center sm:justify-end lg:mt-9">
       <div
         className={classNames(
           'btn rounded-none',

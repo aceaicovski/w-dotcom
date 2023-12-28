@@ -7,9 +7,9 @@ export const AccordionItemDecorator: UniformPlaygroundDecorator = ({ data, child
   const ItemPlaceholder = useCallback(
     (count = 1) =>
       new Array(count).fill(0).map((_item, index) => (
-        <div key={`item-${index}`} className="card rounded-none blur-xs mt-6">
-          <button className="flex flex-row justify-between items-center p-4 md:p-8 text-2xl font-bold bg-primary w-full">
-            <p className="text-start pr-2 text-primary-content">{`Accordion item #${index + 2} title`}</p>
+        <div key={`item-${index}`} className="card mt-6 rounded-none blur-xs">
+          <button className="flex w-full flex-row items-center justify-between bg-primary p-4 text-2xl font-bold md:p-8">
+            <p className="pr-2 text-start text-primary-content">{`Accordion item #${index + 2} title`}</p>
             <div className="flex items-center">
               <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -31,7 +31,7 @@ export const AccordionItemDecorator: UniformPlaygroundDecorator = ({ data, child
   ) : (
     <div className="text-secondary-content">
       <p className="text-3xl font-extrabold blur-xs">Accordion title</p>
-      <p className="text-xl pb-6 blur-xs">Some compelling text</p>
+      <p className="pb-6 text-xl blur-xs">Some compelling text</p>
       {children}
       {ItemPlaceholder(2)}
     </div>

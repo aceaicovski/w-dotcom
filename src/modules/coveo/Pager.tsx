@@ -16,7 +16,10 @@ const Pager: FC<PagerProps> = ({ numberOfResults = '10', numberOfPages = '3' }) 
   const headlessEngine = useContext(HeadlessEngineContext);
 
   const headlessResultsPerPage = useMemo(
-    () => buildResultsPerPage(headlessEngine, { initialState: { numberOfResults: Math.abs(Number(numberOfResults)) } }),
+    () =>
+      buildResultsPerPage(headlessEngine, {
+        initialState: { numberOfResults: Math.abs(Number(numberOfResults)) },
+      }),
     [headlessEngine, numberOfResults]
   );
   const [, setResultsPerPageState] = useState<ResultsPerPageState>(headlessResultsPerPage.state);
@@ -26,7 +29,10 @@ const Pager: FC<PagerProps> = ({ numberOfResults = '10', numberOfPages = '3' }) 
   );
 
   const headlessPager = useMemo(
-    () => buildPager(headlessEngine, { options: { numberOfPages: Math.abs(Number(numberOfPages)) } }),
+    () =>
+      buildPager(headlessEngine, {
+        options: { numberOfPages: Math.abs(Number(numberOfPages)) },
+      }),
     [headlessEngine, numberOfPages]
   );
   const [pagerState, setPagerState] = useState<PagerState>(headlessPager.state);

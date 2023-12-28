@@ -9,9 +9,13 @@ export const HeaderLink: FC<LinkProps> = ({ title, link, styles }) => {
   const router = useRouter();
   const isCurrentRoute = useMemo(() => checkIsCurrentRoute(router, link), [router, link]);
   return (
-    <li className={classNames({ 'border-b-2 border-solid border-primary': isCurrentRoute })}>
+    <li
+      className={classNames({
+        'border-b-2 border-solid border-primary': isCurrentRoute,
+      })}
+    >
       <Link
-        className={classNames('hover:bg-primary hover:text-white rounded-lg px-4 py-2 w-full block', styles?.link, {
+        className={classNames('block w-full rounded-lg px-4 py-2 hover:bg-primary hover:text-white', styles?.link, {
           'font-semibold': isCurrentRoute,
           [styles?.activeLink || '']: isCurrentRoute,
         })}

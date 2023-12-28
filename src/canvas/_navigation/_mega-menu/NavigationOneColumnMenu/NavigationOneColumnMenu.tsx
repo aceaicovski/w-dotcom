@@ -34,7 +34,7 @@ export const NavigationOneColumnMenu: FC<NavigationOneColumnMenuProps> = ({
         )}
       </div>
       <div className="col-span-8 bg-white">
-        <div className="absolute w-full max-w-[60%] z-30 top-[10%] right-0">
+        <div className="absolute right-0 top-[10%] z-30 w-full max-w-[60%]">
           <UniformSlot name="defaultContent" />
         </div>
       </div>

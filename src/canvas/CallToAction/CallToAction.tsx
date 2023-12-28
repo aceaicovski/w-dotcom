@@ -30,7 +30,7 @@ export const CallToAction: FC<CallToActionProps> = ({
   return (
     <div
       className={classNames(
-        'flex flex-wrap items-center justify-between w-full lg:flex-nowrap rounded-xl',
+        'flex w-full flex-wrap items-center justify-between rounded-xl lg:flex-nowrap',
         textColorStyle,
         styles?.container
       )}
@@ -42,7 +42,7 @@ export const CallToAction: FC<CallToActionProps> = ({
             parameterId="eyebrowText"
             as="div"
             className={classNames(
-              'text-sm font-bold tracking-wider uppercase text-primary my-3',
+              'my-3 text-sm font-bold uppercase tracking-wider text-primary',
               eyebrowTextColorStyle
             )}
           />

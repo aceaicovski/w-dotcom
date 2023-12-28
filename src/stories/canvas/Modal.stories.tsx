@@ -33,7 +33,10 @@ const BASE_PROPS: Omit<ModalProps, 'component'> = {
 };
 
 const argTypes = {
-  maxWidth: { control: 'select', options: ['none', 'small', 'medium', 'large', 'xLarge'] },
+  maxWidth: {
+    control: 'select',
+    options: ['none', 'small', 'medium', 'large', 'xLarge'],
+  },
 };
 
 const renderStory = (args: ModalProps) => {

@@ -4,8 +4,7 @@ import cn from '@/utilities/cn';
 import CollapseTitle from './CollapseTitle';
 import CollapseContent from './CollapseContent';
 
-export type CollapseProps = React.HTMLAttributes<HTMLDivElement> & 
-{
+export type CollapseProps = React.HTMLAttributes<HTMLDivElement> & {
   checkbox?: boolean;
   open?: boolean;
   onOpen?: () => void;
@@ -14,19 +13,7 @@ export type CollapseProps = React.HTMLAttributes<HTMLDivElement> &
 };
 
 const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
-  (
-    {
-      children,
-      checkbox = true,
-      open,
-      className,
-      onOpen,
-      onClose,
-      onToggle,
-      ...props
-    },
-    ref
-  ): JSX.Element => {
+  ({ children, checkbox = true, open, className, onOpen, onClose, onToggle, ...props }, ref): JSX.Element => {
     const [isChecked, setIsChecked] = useState(open);
     const checkboxRef = useRef<HTMLInputElement>(null);
 
@@ -41,7 +28,7 @@ const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
         onClose();
       }
 
-      setIsChecked(checkboxRef.current?.checked)
+      setIsChecked(checkboxRef.current?.checked);
     };
 
     // Handle blur events, specifically handling open/close for non checkbox types

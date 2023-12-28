@@ -57,7 +57,7 @@ export const HeroTwoColumns: FC<HeroProps> = ({
       containerVariant={containerVariant}
     >
       <div
-        className={classNames('hero-content text-center p-0', {
+        className={classNames('hero-content p-0 text-center', {
           'h-full items-start pt-20': fullHeight,
         })}
       >
@@ -69,7 +69,7 @@ export const HeroTwoColumns: FC<HeroProps> = ({
           overlayOpacity={overlayOpacity}
         />
 
-        <div className={classNames('flex flex-row mx-1 md:mx-10 z-20')}>
+        <div className={classNames('z-20 mx-1 flex flex-row md:mx-10')}>
           <div className="grid grid-cols-2 gap-x-28">
             <div className="flex flex-col">
               <ElementWrapper
@@ -93,13 +93,13 @@ export const HeroTwoColumns: FC<HeroProps> = ({
               </ElementWrapper>
             </div>
 
-            <div className="text-secondary flex flex-col items-start">
+            <div className="flex flex-col items-start text-secondary">
               <ElementWrapper
                 duration={duration}
                 delay={getDelayValue(3)}
                 animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInLeft}
               >
-                <Description className={classNames('text-left !py-0', styles?.description)} />
+                <Description className={classNames('!py-0 text-left', styles?.description)} />
               </ElementWrapper>
               <div className="py-6">
                 {Boolean(primaryButtonLink) && (

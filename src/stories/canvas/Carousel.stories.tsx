@@ -101,7 +101,9 @@ const IMAGES_PROPS = [
 const argTypes = {};
 
 const renderStory = (args: ComponentProps) => {
-  const fakeComposition = createFakeCompositionData('carousel', args, { ...args.component.slots });
+  const fakeComposition = createFakeCompositionData('carousel', args, {
+    ...args.component.slots,
+  });
   return (
     <UniformComposition data={fakeComposition}>
       <Carousel {...args} />

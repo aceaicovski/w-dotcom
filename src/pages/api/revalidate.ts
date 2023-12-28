@@ -18,7 +18,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const pathsToRevalidate: string[] | undefined = nodes?.map(n => n?.path);
 
   if (!pathsToRevalidate || pathsToRevalidate.length <= 0) {
-    return res.status(404).json({ message: 'Paths could not be resolved for composition: ' + compositionId });
+    return res.status(404).json({
+      message: 'Paths could not be resolved for composition: ' + compositionId,
+    });
   }
 
   try {
@@ -35,6 +37,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } catch (err: any) {
     // If there was an error, Next.js will continue
     // to show the last successfully generated page
-    return res.status(500).json({ message: err.message, compositionId, query: req.query, body: req.body });
+    return res.status(500).json({
+      message: err.message,
+      compositionId,
+      query: req.query,
+      body: req.body,
+    });
   }
 }

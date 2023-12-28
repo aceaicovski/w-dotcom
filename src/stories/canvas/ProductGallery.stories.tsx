@@ -43,7 +43,10 @@ const BASE_PROPS: Omit<BaseProductGalleryProps, 'children' | 'component'> = {
 };
 
 const argTypes = {
-  backgroundType: { control: 'select', options: containerBackgroundTypeOptions },
+  backgroundType: {
+    control: 'select',
+    options: containerBackgroundTypeOptions,
+  },
   paddingTop: { control: 'select', options: containerPaddingOptions },
   paddingBottom: { control: 'select', options: containerPaddingOptions },
 };

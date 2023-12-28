@@ -53,11 +53,11 @@ export const HeroDefault: FC<HeroProps> = ({
       containerVariant={containerVariant}
     >
       <div
-        className={classNames('hero-content text-center p-0', {
+        className={classNames('hero-content p-0 text-center', {
           'h-full items-start pt-20': fullHeight,
         })}
       >
-        <div className={classNames('flex flex-col mx-1 md:mx-10 z-20')}>
+        <div className={classNames('z-20 mx-1 flex flex-col md:mx-10')}>
           <ElementWrapper
             duration={duration}
             delay={getDelayValue(0)}

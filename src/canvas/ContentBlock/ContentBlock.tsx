@@ -36,7 +36,7 @@ export const ContentBlock: FC<ContentBlockProps> = ({
     : Fragment;
 
   return (
-    <div className={'text-primary items-center justify-between w-full gap-5 mx-auto lg:flex-nowrap'}>
+    <div className={'mx-auto w-full items-center justify-between gap-5 text-primary lg:flex-nowrap'}>
       {variant === 'subtitle' && subTitle && (
         <Wrapper>
           <UniformText

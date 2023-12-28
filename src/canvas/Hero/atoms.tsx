@@ -13,12 +13,11 @@ import Image from 'next/image';
 import BaseContainer, { ContainerVariants, ContainerProps, ScreenContainer } from '../../components/Container';
 import { HeroProps } from './';
 
-export const Title: FC<Pick<HeroProps, 'titleStyle' | 'useCustomTextElements' | 'title'> & { className?: string }> = ({
-  titleStyle: TitleTag,
-  useCustomTextElements,
-  title,
-  className,
-}) =>
+export const Title: FC<
+  Pick<HeroProps, 'titleStyle' | 'useCustomTextElements' | 'title'> & {
+    className?: string;
+  }
+> = ({ titleStyle: TitleTag, useCustomTextElements, title, className }) =>
   useCustomTextElements ? (
     <TitleTag className={classNames('font-bold', getTextClass(TitleTag))}>{title}</TitleTag>
   ) : (
@@ -36,7 +35,7 @@ export const EyebrowText: FC<{ className?: string }> = ({ className }) => (
     placeholder="Eyebrow text goes here"
     parameterId="eyebrowText"
     as="div"
-    className={classNames('font-bold tracking-wider uppercase my-3 text-sm', className)}
+    className={classNames('my-3 text-sm font-bold uppercase tracking-wider', className)}
   />
 );
 
@@ -111,7 +110,7 @@ export const BackgroundImage: FC<
           loop
           src={videoUrl}
           className={classNames(
-            'absolute h-full w-full top-0 bottom-0 left-0 right-0 z-10',
+            'absolute bottom-0 left-0 right-0 top-0 z-10 h-full w-full',
             getObjectFitClass(objectFit)
           )}
         />
@@ -121,12 +120,12 @@ export const BackgroundImage: FC<
           alt="hero-image"
           src={imageUrl}
           priority
-          className={classNames('absolute top-0 bottom-0 left-0 right-0 z-10', getObjectFitClass(objectFit))}
+          className={classNames('absolute bottom-0 left-0 right-0 top-0 z-10', getObjectFitClass(objectFit))}
         />
       )}
       <div
         className={classNames(
-          'absolute top-0 bottom-0 left-0 right-0 z-10',
+          'absolute bottom-0 left-0 right-0 top-0 z-10',
           getImageOverlayOpacityStyle(overlayOpacity),
           getImageOverlayColorStyle(overlayColor)
         )}
@@ -146,7 +145,7 @@ export const SideImage: FC<
   if (!imageUrl && !videoUrl) return null;
 
   return (
-    <div className={classNames('relative shrink-0 relative w-[500px] h-[500px]', className)}>
+    <div className={classNames('relative relative h-[500px] w-[500px] shrink-0', className)}>
       {video ? (
         <video
           autoPlay
@@ -166,7 +165,7 @@ export const SideImage: FC<
 
       <div
         className={classNames(
-          'absolute top-0 bottom-0 left-0 right-0 z-10',
+          'absolute bottom-0 left-0 right-0 top-0 z-10',
           getImageOverlayOpacityStyle(overlayOpacity),
           getImageOverlayColorStyle(overlayColor)
         )}
