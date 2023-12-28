@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import Button from '../../../../components/Button';
-import { formatProjectMapLink } from '../../../../utilities';
-import { NavigationOneColumnMenuProps } from '.';
+import { FC } from "react";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import Button from "../../../../components/Button";
+import { formatProjectMapLink } from "../../../../utilities";
+import { NavigationOneColumnMenuProps } from ".";
 
 export const NavigationTwoColumnsMenu: FC<NavigationOneColumnMenuProps> = ({
   primaryButtonCopy,

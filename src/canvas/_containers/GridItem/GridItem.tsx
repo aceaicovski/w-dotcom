@@ -1,13 +1,13 @@
-import { FC } from 'react';
-import classNames from 'classnames';
-import { UniformSlot, registerUniformComponent } from '@uniformdev/canvas-react';
+import { FC } from "react";
+import classNames from "classnames";
+import { UniformSlot, registerUniformComponent } from "@uniformdev/canvas-react";
 import {
   getGridColumnsSpanClass,
   getGridColumnsStartClass,
   getGridRowsSpanClass,
   getGridRowsStartClass,
-} from './helpers';
-import { GridItemProps } from '.';
+} from "./helpers";
+import { GridItemProps } from ".";
 
 const GridItem: FC<GridItemProps> = ({ columnStart, columnSpan, rowSpan, rowStart }) => (
   <div
@@ -23,7 +23,7 @@ const GridItem: FC<GridItemProps> = ({ columnStart, columnSpan, rowSpan, rowStar
 );
 
 registerUniformComponent({
-  type: 'gridItem',
+  type: "gridItem",
   component: GridItem,
 });
 

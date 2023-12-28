@@ -1,15 +1,15 @@
-import React from 'react';
-import type { StoryFn as Story, Meta } from '@storybook/react';
+import React from "react";
+import type { StoryFn as Story, Meta } from "@storybook/react";
 
-import ProductCard, { type ProductCardProps } from '.';
+import ProductCard, { type ProductCardProps } from ".";
 
 export default {
-  title: 'Data Display/ProductCard',
+  title: "Data Display/ProductCard",
   component: ProductCard,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } as Meta;
 
 export const Default: Story<ProductCardProps> = args => {

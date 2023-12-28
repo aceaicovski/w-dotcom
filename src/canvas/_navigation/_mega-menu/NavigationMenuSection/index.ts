@@ -1,11 +1,11 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { NavigationMenuSection } from './NavigationMenuSection';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { NavigationMenuSection } from "./NavigationMenuSection";
 
 export type NavigationMenuSectionProps = ComponentProps<{
   title: string;
 }>;
 
 registerUniformComponent({
-  type: 'navigationMenuSection',
+  type: "navigationMenuSection",
   component: NavigationMenuSection,
 });

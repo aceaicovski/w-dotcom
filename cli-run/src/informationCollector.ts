@@ -1,36 +1,36 @@
-import fs from 'fs';
-import path from 'path';
-import color from 'picocolors';
-import open from 'open';
-import { select, text, intro, confirm } from './promts';
-import { addExamplesCanvasCache, remove } from './utils';
-import { demosRequiredIntegrationsMap, demosVariantsGetEnvsMap } from './mappers';
-import { fixEslint, installPackages } from './commands/run';
-import { CommonVariants } from './constants';
+import fs from "fs";
+import path from "path";
+import color from "picocolors";
+import open from "open";
+import { select, text, intro, confirm } from "./promts";
+import { addExamplesCanvasCache, remove } from "./utils";
+import { demosRequiredIntegrationsMap, demosVariantsGetEnvsMap } from "./mappers";
+import { fixEslint, installPackages } from "./commands/run";
+import { CommonVariants } from "./constants";
 
 const args = process.argv.slice(2);
-const isDevMode = args.includes('--dev');
+const isDevMode = args.includes("--dev");
 
 const validate = (value: string) => {
-  if (!value || value?.trim().length === 0) return 'This field is required';
+  if (!value || value?.trim().length === 0) return "This field is required";
 };
 
 export const showDemoHeader = (project: string, variant: string): void => {
-  intro(color.bgCyan(`demos-run-cli ${project || ''} ${variant || ''}`));
+  intro(color.bgCyan(`demos-run-cli ${project || ""} ${variant || ""}`));
 };
 
 export const askUniformAccessToken = async (apiHost: string) => {
   const shouldContinue = await confirm({
-    message: 'Open a browser window to generate a Uniform access token?',
+    message: "Open a browser window to generate a Uniform access token?",
   });
 
   if (shouldContinue) {
-    const url = new URL('cli-login', apiHost);
+    const url = new URL("cli-login", apiHost);
     await open(url.toString());
   }
 
   return text({
-    message: 'Paste your access token here and press enter (or just enter to quit):',
+    message: "Paste your access token here and press enter (or just enter to quit):",
     validate(value) {
       if (value.length === 0) return;
     },
@@ -68,9 +68,9 @@ export const getUniformProjectTypeId = async (projectTypes: UNIFORM_API.ProjectT
     .filter(type => type.limit > type.used)
     .map(type => ({
       value: type.id,
-      label: `${type.name}${type.is_prod !== true ? ' [NON PROD]' : ''} (${type.limit - type.used} remaining)`,
+      label: `${type.name}${type.is_prod !== true ? " [NON PROD]" : ""} (${type.limit - type.used} remaining)`,
     }));
-  return (await select({ message: 'Select your Uniform project type:', options })).toString();
+  return (await select({ message: "Select your Uniform project type:", options })).toString();
 };
 
 export const getUniformTeamName = async (): Promise<string> => {
@@ -83,7 +83,7 @@ export const getUniformTeamName = async (): Promise<string> => {
 
 export const getProjectLocation = async (
   exportRoot: string,
-  message = 'Where do your project located?'
+  message = "Where do your project located?"
 ): Promise<string> => {
   return (await text({ message, validate, initialValue: exportRoot })).toString();
 };
@@ -112,21 +112,21 @@ export const getUniformEnvs = async (
 
   const uniformCliBaseUrl = (
     await select({
-      message: 'Select Uniform host:',
+      message: "Select Uniform host:",
       options: [
-        { value: 'https://uniform.app', label: 'https://uniform.app' },
+        { value: "https://uniform.app", label: "https://uniform.app" },
         {
-          value: 'https://canary.uniform.app',
-          label: 'https://canary.uniform.app',
+          value: "https://canary.uniform.app",
+          label: "https://canary.uniform.app",
         },
       ],
-      initialValue: 'https://uniform.app',
+      initialValue: "https://uniform.app",
     })
   ).toString();
 
-  const uniformEdgeApiHost = uniformCliBaseUrl.includes('canary')
-    ? 'https://canary.uniform.global'
-    : 'https://uniform.global';
+  const uniformEdgeApiHost = uniformCliBaseUrl.includes("canary")
+    ? "https://canary.uniform.global"
+    : "https://uniform.global";
 
   return {
     uniformApiKey,
@@ -143,20 +143,20 @@ export const getUniformAccessTokenEnvs = async (): Promise<{
 } | null> => {
   let uniformCliBaseUrl = (
     await select({
-      message: 'Select Uniform host:',
+      message: "Select Uniform host:",
       options: [
-        { value: 'https://uniform.app', label: 'https://uniform.app' },
+        { value: "https://uniform.app", label: "https://uniform.app" },
         {
-          value: 'https://canary.uniform.app',
-          label: 'https://canary.uniform.app',
+          value: "https://canary.uniform.app",
+          label: "https://canary.uniform.app",
         },
-        { value: '', label: 'Other host' },
+        { value: "", label: "Other host" },
       ],
-      initialValue: process.env.CLI_UNIFORM_CLI_BASE_URL || 'https://uniform.app',
+      initialValue: process.env.CLI_UNIFORM_CLI_BASE_URL || "https://uniform.app",
     })
   ).toString();
 
-  if (uniformCliBaseUrl === '') {
+  if (uniformCliBaseUrl === "") {
     uniformCliBaseUrl = (
       await text({
         message: `Your Uniform host:`,
@@ -165,12 +165,12 @@ export const getUniformAccessTokenEnvs = async (): Promise<{
     ).toString();
   }
 
-  let uniformEdgeApiHost = '';
-  if (uniformCliBaseUrl === 'https://canary.uniform.app') {
-    uniformEdgeApiHost = 'https://canary.uniform.global';
+  let uniformEdgeApiHost = "";
+  if (uniformCliBaseUrl === "https://canary.uniform.app") {
+    uniformEdgeApiHost = "https://canary.uniform.global";
   }
-  if (uniformCliBaseUrl === 'https://uniform.app') {
-    uniformEdgeApiHost = 'https://uniform.global';
+  if (uniformCliBaseUrl === "https://uniform.app") {
+    uniformEdgeApiHost = "https://uniform.global";
   }
   uniformEdgeApiHost = (
     await text({
@@ -198,8 +198,8 @@ export const getAlgoliaEnvs = async (
 }> => {
   if (!isDevMode) {
     return {
-      ALGOLIA_APPLICATION_ID: process.env.CLI_ALGOLIA_APPLICATION_ID || '',
-      ALGOLIA_SEARCH_KEY: process.env.CLI_ALGOLIA_SEARCH_KEY || '',
+      ALGOLIA_APPLICATION_ID: process.env.CLI_ALGOLIA_APPLICATION_ID || "",
+      ALGOLIA_SEARCH_KEY: process.env.CLI_ALGOLIA_SEARCH_KEY || "",
     };
   }
 
@@ -207,7 +207,7 @@ export const getAlgoliaEnvs = async (
     await text({
       message: `Your ${project} algolia application id:`,
       validate,
-      initialValue: process.env.CLI_ALGOLIA_APPLICATION_ID || '',
+      initialValue: process.env.CLI_ALGOLIA_APPLICATION_ID || "",
     })
   ).toString();
 
@@ -215,7 +215,7 @@ export const getAlgoliaEnvs = async (
     await text({
       message: `Your ${project} algolia search key:`,
       validate,
-      initialValue: process.env.CLI_ALGOLIA_SEARCH_KEY || '',
+      initialValue: process.env.CLI_ALGOLIA_SEARCH_KEY || "",
     })
   ).toString();
 
@@ -230,8 +230,8 @@ export const getCoveoEnvs = async (
 }> => {
   if (!isDevMode) {
     return {
-      NEXT_PUBLIC_COVEO_ORGANIZATION_ID: process.env.CLI_COVEO_ORGANIZATION_ID || '',
-      NEXT_PUBLIC_COVEO_API_KEY: process.env.CLI_COVEO_API_KEY || '',
+      NEXT_PUBLIC_COVEO_ORGANIZATION_ID: process.env.CLI_COVEO_ORGANIZATION_ID || "",
+      NEXT_PUBLIC_COVEO_API_KEY: process.env.CLI_COVEO_API_KEY || "",
     };
   }
 
@@ -239,7 +239,7 @@ export const getCoveoEnvs = async (
     await text({
       message: `Your ${project} coveo organization id:`,
       validate,
-      initialValue: process.env.CLI_COVEO_ORGANIZATION_ID || '',
+      initialValue: process.env.CLI_COVEO_ORGANIZATION_ID || "",
     })
   ).toString();
 
@@ -247,7 +247,7 @@ export const getCoveoEnvs = async (
     await text({
       message: `Your ${project} coveo api key:`,
       validate,
-      initialValue: process.env.CLI_COVEO_API_KEY || '',
+      initialValue: process.env.CLI_COVEO_API_KEY || "",
     })
   ).toString();
 
@@ -265,11 +265,11 @@ export const getCommercetoolsEnvs = async (
 }> => {
   if (!isDevMode) {
     return {
-      COMMERCETOOLS_PROJECT_KEY: process.env.CLI_COMMERCETOOLS_PROJECT_KEY || '',
-      COMMERCETOOLS_CLIENT_ID: process.env.CLI_COMMERCETOOLS_CLIENT_ID || '',
-      COMMERCETOOLS_CLIENT_SECRET: process.env.CLI_COMMERCETOOLS_CLIENT_SECRET || '',
-      COMMERCETOOLS_API_URL: process.env.CLI_COMMERCETOOLS_API_URL || '',
-      COMMERCETOOLS_AUTH_URL: process.env.CLI_COMMERCETOOLS_AUTH_URL || '',
+      COMMERCETOOLS_PROJECT_KEY: process.env.CLI_COMMERCETOOLS_PROJECT_KEY || "",
+      COMMERCETOOLS_CLIENT_ID: process.env.CLI_COMMERCETOOLS_CLIENT_ID || "",
+      COMMERCETOOLS_CLIENT_SECRET: process.env.CLI_COMMERCETOOLS_CLIENT_SECRET || "",
+      COMMERCETOOLS_API_URL: process.env.CLI_COMMERCETOOLS_API_URL || "",
+      COMMERCETOOLS_AUTH_URL: process.env.CLI_COMMERCETOOLS_AUTH_URL || "",
     };
   }
 
@@ -332,10 +332,10 @@ export const getContentfulEnvs = async (
 }> => {
   if (!isDevMode) {
     return {
-      CONTENTFUL_SPACE_ID: process.env.CLI_CONTENTFUL_SPACE_ID || '',
-      CONTENTFUL_ENVIRONMENT: process.env.CLI_CONTENTFUL_CLASSIC_ENVIRONMENT || '',
-      CONTENTFUL_CDA_ACCESS_TOKEN: process.env.CLI_CONTENTFUL_CDA_ACCESS_TOKEN || '',
-      CONTENTFUL_CPA_ACCESS_TOKEN: process.env.CLI_CONTENTFUL_CPA_ACCESS_TOKEN || '',
+      CONTENTFUL_SPACE_ID: process.env.CLI_CONTENTFUL_SPACE_ID || "",
+      CONTENTFUL_ENVIRONMENT: process.env.CLI_CONTENTFUL_CLASSIC_ENVIRONMENT || "",
+      CONTENTFUL_CDA_ACCESS_TOKEN: process.env.CLI_CONTENTFUL_CDA_ACCESS_TOKEN || "",
+      CONTENTFUL_CPA_ACCESS_TOKEN: process.env.CLI_CONTENTFUL_CPA_ACCESS_TOKEN || "",
     };
   }
 
@@ -343,7 +343,7 @@ export const getContentfulEnvs = async (
     await text({
       message: `Your ${project} contentful space id:`,
       validate,
-      initialValue: process.env.CLI_CONTENTFUL_SPACE_ID || '',
+      initialValue: process.env.CLI_CONTENTFUL_SPACE_ID || "",
     })
   ).toString();
 
@@ -351,7 +351,7 @@ export const getContentfulEnvs = async (
     await text({
       message: `Your ${project} contentful environment:`,
       validate,
-      initialValue: process.env.CLI_CONTENTFUL_CLASSIC_ENVIRONMENT || '',
+      initialValue: process.env.CLI_CONTENTFUL_CLASSIC_ENVIRONMENT || "",
     })
   ).toString();
 
@@ -359,7 +359,7 @@ export const getContentfulEnvs = async (
     await text({
       message: `Your ${project} contentful cda access token:`,
       validate,
-      initialValue: process.env.CLI_CONTENTFUL_CDA_ACCESS_TOKEN || '',
+      initialValue: process.env.CLI_CONTENTFUL_CDA_ACCESS_TOKEN || "",
     })
   ).toString();
 
@@ -367,7 +367,7 @@ export const getContentfulEnvs = async (
     await text({
       message: `Your ${project} contentful cpa access token:`,
       validate,
-      initialValue: process.env.CLI_CONTENTFUL_CPA_ACCESS_TOKEN || '',
+      initialValue: process.env.CLI_CONTENTFUL_CPA_ACCESS_TOKEN || "",
     })
   ).toString();
 
@@ -388,9 +388,9 @@ export const getSegmentEnvs = async (
 }> => {
   if (!isDevMode) {
     return {
-      NEXT_PUBLIC_ANALYTICS_WRITE_KEY: process.env.CLI_NEXT_PUBLIC_ANALYTICS_WRITE_KEY || '',
-      SEGMENT_SPACE_ID: process.env.CLI_SEGMENT_SPACE_ID || '',
-      SEGMENT_API_KEY: process.env.CLI_SEGMENT_API_KEY || '',
+      NEXT_PUBLIC_ANALYTICS_WRITE_KEY: process.env.CLI_NEXT_PUBLIC_ANALYTICS_WRITE_KEY || "",
+      SEGMENT_SPACE_ID: process.env.CLI_SEGMENT_SPACE_ID || "",
+      SEGMENT_API_KEY: process.env.CLI_SEGMENT_API_KEY || "",
     };
   }
 
@@ -428,7 +428,7 @@ export const getGoogleAnalyticsEnvs = async (
 }> => {
   if (!isDevMode) {
     return {
-      NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: process.env.CLI_GOOGLE_ANALYTICS_ID || '',
+      NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: process.env.CLI_GOOGLE_ANALYTICS_ID || "",
     };
   }
 
@@ -451,8 +451,8 @@ export const additionalModulesForComponentStarterKit =
     variant = CommonVariants.Default,
     projectPath,
   }: CLI.AdditionalModulesExecutorProps) => {
-    const pathToModules = path.resolve(projectPath, 'src', 'modules');
-    const pathToAdditionalCache = path.resolve(projectPath, 'content', 'examples');
+    const pathToModules = path.resolve(projectPath, "src", "modules");
+    const pathToAdditionalCache = path.resolve(projectPath, "content", "examples");
     if (!fs.existsSync(pathToModules) || !fs.existsSync(pathToAdditionalCache)) return;
 
     const isRunAddingModules = await confirm({
@@ -484,16 +484,16 @@ export const additionalModulesForComponentStarterKit =
     progressSpinner.stop(`Finished adding additional environment variables`);
 
     progressSpinner.start(`Cleaning up module files`);
-    const listOfCoveoFiles = await fs.promises.readdir(path.resolve(projectPath, 'src', 'modules', 'coveo'));
+    const listOfCoveoFiles = await fs.promises.readdir(path.resolve(projectPath, "src", "modules", "coveo"));
     await Promise.all(
       listOfCoveoFiles.map(async fileName => {
-        const pathToCoveoFile = path.resolve(projectPath, 'src', 'modules', 'coveo', fileName);
-        const coveoFile = await fs.promises.readFile(pathToCoveoFile, 'utf-8');
+        const pathToCoveoFile = path.resolve(projectPath, "src", "modules", "coveo", fileName);
+        const coveoFile = await fs.promises.readFile(pathToCoveoFile, "utf-8");
         await fs.promises.writeFile(
           pathToCoveoFile,
           coveoFile
-            .replaceAll('/* eslint-disable @typescript-eslint/ban-ts-comment */', '')
-            .replaceAll(/\/\/ @ts-ignore:.+\n/g, '')
+            .replaceAll("/* eslint-disable @typescript-eslint/ban-ts-comment */", "")
+            .replaceAll(/\/\/ @ts-ignore:.+\n/g, "")
         );
       })
     );

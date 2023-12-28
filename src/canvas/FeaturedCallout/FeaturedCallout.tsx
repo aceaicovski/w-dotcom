@@ -1,15 +1,15 @@
-import { FC } from 'react';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { UniformSlot, UniformText } from '@uniformdev/canvas-react';
-import { getMediaUrl } from '../../utilities';
-import { getTextClass } from '../../utilities/styling';
-import { FeaturedCalloutProps } from '.';
-import { getFeaturedCalloutContentClass, getFeaturedCalloutTextContentClass } from './helpers';
+import { FC } from "react";
+import Image from "next/image";
+import classNames from "classnames";
+import { UniformSlot, UniformText } from "@uniformdev/canvas-react";
+import { getMediaUrl } from "../../utilities";
+import { getTextClass } from "../../utilities/styling";
+import { FeaturedCalloutProps } from ".";
+import { getFeaturedCalloutContentClass, getFeaturedCalloutTextContentClass } from "./helpers";
 
 export const FeaturedCallout: FC<FeaturedCalloutProps> = ({
   eyebrowText,
-  titleStyle: TitleTag = 'h1',
+  titleStyle: TitleTag = "h1",
   image,
   component: { variant } = {},
 }) => {
@@ -18,7 +18,7 @@ export const FeaturedCallout: FC<FeaturedCalloutProps> = ({
     <div className="hero flex flex-wrap text-secondary-content lg:flex-nowrap lg:gap-10">
       <div
         className={classNames(
-          'flex w-full items-center justify-start lg:w-1/2',
+          "flex w-full items-center justify-start lg:w-1/2",
           getFeaturedCalloutContentClass(variant)
         )}
       >
@@ -27,7 +27,7 @@ export const FeaturedCallout: FC<FeaturedCalloutProps> = ({
 
       <div
         className={classNames(
-          'hero-content flex w-full flex-wrap items-center p-0 lg:w-1/2',
+          "hero-content flex w-full flex-wrap items-center p-0 lg:w-1/2",
           getFeaturedCalloutTextContentClass(variant)
         )}
       >
@@ -45,7 +45,7 @@ export const FeaturedCallout: FC<FeaturedCalloutProps> = ({
               placeholder="Title goes here"
               parameterId="title"
               as={TitleTag}
-              className={classNames('font-bold', getTextClass(TitleTag))}
+              className={classNames("font-bold", getTextClass(TitleTag))}
             />
             <UniformText placeholder="Description goes here" parameterId="description" as="p" className="py-6" />
           </div>

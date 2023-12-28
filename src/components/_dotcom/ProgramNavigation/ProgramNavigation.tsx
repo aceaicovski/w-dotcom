@@ -1,9 +1,9 @@
-import React from 'react';
-import cn from '@/utilities/cn';
+import React from "react";
+import cn from "@/utilities/cn";
 
-import ProgramNavigationBody, { type ProgramNavigationBodyProps as BodyProps } from './ProgramNavigationContent';
-import ProgramNavigationAction, { type ProgramNavigationActionProps as ActionProps } from './ProgramNavigationAction';
-import ProgramNavigationLinks, { type ProgramNavigationLinksProps as LinkProps } from './ProgramNavigationLinks';
+import ProgramNavigationBody, { type ProgramNavigationBodyProps as BodyProps } from "./ProgramNavigationContent";
+import ProgramNavigationAction, { type ProgramNavigationActionProps as ActionProps } from "./ProgramNavigationAction";
+import ProgramNavigationLinks, { type ProgramNavigationLinksProps as LinkProps } from "./ProgramNavigationLinks";
 
 export type ProgramNavigationBodyProps = BodyProps;
 export type ProgramNavigationActionProps = ActionProps;
@@ -17,7 +17,7 @@ const ProgramNavigation = React.forwardRef<HTMLDivElement, ProgramNavigationProp
       <div
         aria-label="Program Navigation"
         {...props}
-        className={cn('w-full border-b border-solid border-gray-200 bg-inherit py-2 drop-shadow', className)}
+        className={cn("w-full border-b border-solid border-gray-200 bg-inherit py-2 drop-shadow", className)}
         ref={ref}
       />
     );

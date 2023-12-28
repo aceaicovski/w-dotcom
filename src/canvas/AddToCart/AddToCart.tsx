@@ -1,6 +1,6 @@
-import { FC, useCallback } from 'react';
-import BaseAddToCart from '../../components/BaseAddToCart';
-import { AddToCartProps } from '.';
+import { FC, useCallback } from "react";
+import BaseAddToCart from "../../components/BaseAddToCart";
+import { AddToCartProps } from ".";
 
 export const AddToCart: FC<AddToCartProps> = ({ buttonStyle, buttonCopy, buttonAnimationType }) => {
   const handleButtonClick = useCallback((quantity: number) => {

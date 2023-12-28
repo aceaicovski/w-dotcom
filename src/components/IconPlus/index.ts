@@ -1,2 +1,2 @@
-export * from './IconPlus';
-export { default } from './IconPlus';
+export * from "./IconPlus";
+export { default } from "./IconPlus";

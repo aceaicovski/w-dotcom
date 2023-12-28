@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import classNames from 'classnames';
-import { useUniformContextualEditingState, UniformSlotProps } from '@uniformdev/canvas-react';
-import { CarouselContext } from './Carousel';
+import { useContext } from "react";
+import classNames from "classnames";
+import { useUniformContextualEditingState, UniformSlotProps } from "@uniformdev/canvas-react";
+import { CarouselContext } from "./Carousel";
 
-export const CarouselInner: UniformSlotProps<string>['wrapperComponent'] = ({ items }) => {
+export const CarouselInner: UniformSlotProps<string>["wrapperComponent"] = ({ items }) => {
   const { isContextualEditing } = useUniformContextualEditingState();
   const { currentIndex } = useContext(CarouselContext);
 
@@ -13,7 +13,7 @@ export const CarouselInner: UniformSlotProps<string>['wrapperComponent'] = ({ it
         <div
           id={`slide-${index}`}
           key={index}
-          className={classNames('min-w-full', {
+          className={classNames("min-w-full", {
             hidden: isContextualEditing && currentIndex !== index,
           })}
         >

@@ -1,18 +1,18 @@
-import { CANVAS_PUBLISHED_STATE, CANVAS_DRAFT_STATE, RouteClient } from '@uniformdev/canvas';
-import { ProjectMapClient } from '@uniformdev/project-map';
+import { CANVAS_PUBLISHED_STATE, CANVAS_DRAFT_STATE, RouteClient } from "@uniformdev/canvas";
+import { ProjectMapClient } from "@uniformdev/project-map";
 
 export const getRouteClient = () => {
   const apiKey = process.env.UNIFORM_API_KEY;
-  const edgeApiHost = process.env.UNIFORM_CLI_BASE_EDGE_URL || 'https://uniform.global';
+  const edgeApiHost = process.env.UNIFORM_CLI_BASE_EDGE_URL || "https://uniform.global";
   const projectId = process.env.UNIFORM_PROJECT_ID;
 
   if (!apiKey) {
-    throw new Error('apiKey is not specified. RouteClient cannot be instantiated: ' + apiKey);
+    throw new Error("apiKey is not specified. RouteClient cannot be instantiated: " + apiKey);
   }
 
-  if (!edgeApiHost) throw new Error('edgeApiHost is not specified. RouteClient cannot be instantiated');
+  if (!edgeApiHost) throw new Error("edgeApiHost is not specified. RouteClient cannot be instantiated");
 
-  if (!projectId) throw new Error('projectId is not specified. RouteClient cannot be instantiated.');
+  if (!projectId) throw new Error("projectId is not specified. RouteClient cannot be instantiated.");
 
   const client = new RouteClient({
     apiKey,
@@ -26,12 +26,12 @@ export const getRouteClient = () => {
 
 export const getProjectMapClient = () => {
   const apiKey = process.env.UNIFORM_API_KEY;
-  const apiHost = process.env.UNIFORM_CLI_BASE_URL || 'https://uniform.app';
+  const apiHost = process.env.UNIFORM_CLI_BASE_URL || "https://uniform.app";
   const projectId = process.env.UNIFORM_PROJECT_ID;
 
-  if (!apiHost) throw new Error('apiHost is not specified. Project Map client cannot be instantiated');
+  if (!apiHost) throw new Error("apiHost is not specified. Project Map client cannot be instantiated");
 
-  if (!projectId) throw new Error('projectId is not specified. Project Map client cannot be instantiated');
+  if (!projectId) throw new Error("projectId is not specified. Project Map client cannot be instantiated");
 
   return new ProjectMapClient({
     apiKey,
@@ -42,7 +42,7 @@ export const getProjectMapClient = () => {
 };
 
 export const getState = (preview: boolean | undefined) =>
-  process.env.NODE_ENV === 'development' || preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE;
+  process.env.NODE_ENV === "development" || preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE;
 
 export const getBreadcrumbs = async ({
   compositionId,
@@ -57,7 +57,7 @@ export const getBreadcrumbs = async ({
 }) => {
   const projectMapClient = getProjectMapClient();
 
-  const urlSegments = resolvedUrl?.split('/') || [];
+  const urlSegments = resolvedUrl?.split("/") || [];
 
   const { nodes: projectMapNodes } = await projectMapClient.getNodes({
     compositionId: compositionId,
@@ -66,12 +66,12 @@ export const getBreadcrumbs = async ({
   });
 
   return projectMapNodes?.map((node, index) => {
-    const isDynamicPath = Boolean(node.pathSegment?.includes(':'));
+    const isDynamicPath = Boolean(node.pathSegment?.includes(":"));
     return {
       name: node.name,
-      path: isDynamicPath ? urlSegments.slice(0, index + 1).join('/') || '/' : node.path,
+      path: isDynamicPath ? urlSegments.slice(0, index + 1).join("/") || "/" : node.path,
       type: node.type,
-      isRoot: node.path === '/',
+      isRoot: node.path === "/",
       dynamicInputTitle: (isDynamicPath && dynamicTitle) || null,
     };
   });

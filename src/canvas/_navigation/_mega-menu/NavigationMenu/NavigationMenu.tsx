@@ -1,26 +1,26 @@
-import { FC, useMemo } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import classNames from 'classnames';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import { NavigationMenuProps } from '.';
+import { FC, useMemo } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import classNames from "classnames";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import { NavigationMenuProps } from ".";
 
 export const NavigationMenu: FC<NavigationMenuProps> = ({ link, title }) => {
   const router = useRouter();
 
   const isCurrentRoute = useMemo(() => {
     const { asPath } = router;
-    const [pathWithoutQuery] = asPath.split('?');
-    return link?.path === '/' ? asPath === link?.path : pathWithoutQuery.includes(link?.path);
+    const [pathWithoutQuery] = asPath.split("?");
+    return link?.path === "/" ? asPath === link?.path : pathWithoutQuery.includes(link?.path);
   }, [router, link]);
 
   return (
     <li tabIndex={0}>
       <Link
-        className={classNames('!rounded-none', {
-          'font-extrabold': isCurrentRoute,
+        className={classNames("!rounded-none", {
+          "font-extrabold": isCurrentRoute,
         })}
-        href={link?.path || '#'}
+        href={link?.path || "#"}
       >
         {title}
         <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">

@@ -1,22 +1,22 @@
-import React, { FC } from 'react';
-import { colors } from '@/styles/theme/colors';
+import React, { FC } from "react";
+import { colors } from "@/styles/theme/colors";
 
 export interface LogoProps {
   width?: number;
   height?: number;
-  color?: string | 'dark' | 'light';
+  color?: string | "dark" | "light";
   className?: string;
 }
 
-const Logo: FC<LogoProps> = ({ className, width = 64, height = 64, color = 'dark' }) => {
+const Logo: FC<LogoProps> = ({ className, width = 64, height = 64, color = "dark" }) => {
   let fillColor = color;
 
   switch (color) {
-    case 'dark':
-      fillColor = colors['primary'];
+    case "dark":
+      fillColor = colors["primary"];
       break;
-    case 'light':
-      fillColor = colors['neutral-content'];
+    case "light":
+      fillColor = colors["neutral-content"];
       break;
   }
 

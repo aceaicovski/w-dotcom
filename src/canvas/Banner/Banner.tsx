@@ -1,23 +1,23 @@
-import { FC, Fragment } from 'react';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { UniformText, useUniformCurrentComposition } from '@uniformdev/canvas-react';
-import Button from '../../components/Button';
-import { formatProjectMapLink } from '../../utilities';
-import { ScreenContainer } from '../../components/Container';
-import { getPositionClassName, getWidthClassName, getTextAlignmentClassName } from './helpers';
-import { BannerProps, BannerVariant } from '.';
+import { FC, Fragment } from "react";
+import Image from "next/image";
+import classNames from "classnames";
+import { UniformText, useUniformCurrentComposition } from "@uniformdev/canvas-react";
+import Button from "../../components/Button";
+import { formatProjectMapLink } from "../../utilities";
+import { ScreenContainer } from "../../components/Container";
+import { getPositionClassName, getWidthClassName, getTextAlignmentClassName } from "./helpers";
+import { BannerProps, BannerVariant } from ".";
 
 export const Banner: FC<BannerProps> = ({
   icon,
   inline,
   primaryButtonLink,
-  primaryButtonStyle = 'primary',
+  primaryButtonStyle = "primary",
   primaryButtonAnimationType,
   position,
   textAlign,
   secondaryButtonLink,
-  secondaryButtonStyle = 'primary',
+  secondaryButtonStyle = "primary",
   secondaryButtonAnimationType,
   component,
 }) => {
@@ -28,8 +28,8 @@ export const Banner: FC<BannerProps> = ({
     <Wrapper>
       <div
         className={classNames(
-          'z-[9999] w-full',
-          { 'fixed left-1/2 -translate-x-1/2': !inline },
+          "z-[9999] w-full",
+          { "fixed left-1/2 -translate-x-1/2": !inline },
           getPositionClassName(position, inline),
           getWidthClassName(component?.variant as BannerVariant)
         )}
@@ -39,7 +39,7 @@ export const Banner: FC<BannerProps> = ({
             {Boolean(icon) && <Image width={60} height={60} src={icon} alt="banner-icon" />}
           </div>
           <div
-            className={classNames('items-left col-span-7 flex w-full flex-col', getTextAlignmentClassName(textAlign))}
+            className={classNames("items-left col-span-7 flex w-full flex-col", getTextAlignmentClassName(textAlign))}
           >
             <UniformText
               placeholder="Title goes here"

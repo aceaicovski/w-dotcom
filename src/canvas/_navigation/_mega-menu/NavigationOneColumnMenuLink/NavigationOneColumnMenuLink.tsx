@@ -1,11 +1,11 @@
-import { FC, SyntheticEvent, useCallback, useMemo, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import classNames from 'classnames';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import { getMediaUrl } from '../../../../utilities';
-import { NavigationOneColumnMenuLinkProps, NavigationOneColumnMenuLinkVariant } from '.';
+import { FC, SyntheticEvent, useCallback, useMemo, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import classNames from "classnames";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import { getMediaUrl } from "../../../../utilities";
+import { NavigationOneColumnMenuLinkProps, NavigationOneColumnMenuLinkVariant } from ".";
 
 export const NavigationOneColumnMenuLink: FC<NavigationOneColumnMenuLinkProps> = ({
   title,
@@ -20,25 +20,25 @@ export const NavigationOneColumnMenuLink: FC<NavigationOneColumnMenuLinkProps> =
 
   const isCurrentRoute = useMemo(() => {
     const { asPath } = router;
-    const [pathWithoutQuery] = asPath.split('?');
-    return link?.path === '/' ? asPath === link?.path : pathWithoutQuery.includes(link?.path);
+    const [pathWithoutQuery] = asPath.split("?");
+    return link?.path === "/" ? asPath === link?.path : pathWithoutQuery.includes(link?.path);
   }, [router, link]);
 
   const toggleShowHoverItem = useCallback(
-    (e: SyntheticEvent<HTMLDivElement>) => setShowHoverItem(e.type !== 'mouseleave'),
+    (e: SyntheticEvent<HTMLDivElement>) => setShowHoverItem(e.type !== "mouseleave"),
     []
   );
 
   const renderLink = () => (
-    <Link className={classNames('!rounded-none')} href={link?.path || '#'}>
+    <Link className={classNames("!rounded-none")} href={link?.path || "#"}>
       <div className="py-2">
         <div
-          className={classNames('flex items-center justify-between', {
-            'flex-row-reverse': component?.variant === NavigationOneColumnMenuLinkVariant.IconLeft,
+          className={classNames("flex items-center justify-between", {
+            "flex-row-reverse": component?.variant === NavigationOneColumnMenuLinkVariant.IconLeft,
           })}
         >
           <div>
-            <p className={classNames({ 'font-extrabold': isCurrentRoute })}>{title}</p>
+            <p className={classNames({ "font-extrabold": isCurrentRoute })}>{title}</p>
             {Boolean(description) && <p className="max-w-[150px] text-xs">{description}</p>}
           </div>
           <div className="mt-1 flex w-11 items-center justify-center rounded-md">

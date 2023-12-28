@@ -1,47 +1,47 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { UniformComposition } from '@uniformdev/canvas-react';
-import { Card, CardProps, CardVariants } from '@/canvas';
-import { createFakeCompositionData } from '../utils';
-import { buttonStyleOptions } from '../constants';
+import type { Meta, StoryObj } from "@storybook/react";
+import { UniformComposition } from "@uniformdev/canvas-react";
+import { Card, CardProps, CardVariants } from "@/canvas";
+import { createFakeCompositionData } from "../utils";
+import { buttonStyleOptions } from "../constants";
 
-const badgeStyleOptions = ['primary', 'secondary', 'accent', 'outline'];
+const badgeStyleOptions = ["primary", "secondary", "accent", "outline"];
 
-const badgeSizeOptions = ['xs', 'sm', 'md', 'lg'];
+const badgeSizeOptions = ["xs", "sm", "md", "lg"];
 
 const meta: Meta<typeof Card> = {
-  title: 'Card',
+  title: "Card",
   component: Card,
 };
 
 export default meta;
 type Story = StoryObj<typeof Card>;
 
-const BASE_PROPS: Omit<CardProps, 'component'> = {
-  title: 'Leverage existing technology investments ',
-  description: 'Use this paragraph to share information about your company or brand. Make it as engaging as possible.',
+const BASE_PROPS: Omit<CardProps, "component"> = {
+  title: "Leverage existing technology investments ",
+  description: "Use this paragraph to share information about your company or brand. Make it as engaging as possible.",
   image:
-    'https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png',
+    "https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png",
 
-  badge: 'New',
-  badgeStyle: 'primary',
-  badgeSize: 'sm',
-  buttonCopy: 'Home',
+  badge: "New",
+  badgeStyle: "primary",
+  badgeSize: "sm",
+  buttonCopy: "Home",
   buttonLink: {
-    path: '/',
+    path: "/",
   },
-  buttonStyle: 'primary',
-  lineCountRestriction: 'none',
-  textColorVariant: 'Dark',
+  buttonStyle: "primary",
+  lineCountRestriction: "none",
+  textColorVariant: "Dark",
 };
 
 const argTypes = {
-  badgeStyle: { control: 'select', options: badgeStyleOptions },
-  buttonStyle: { control: 'select', options: buttonStyleOptions },
-  badgeSize: { control: 'select', options: badgeSizeOptions },
+  badgeStyle: { control: "select", options: badgeStyleOptions },
+  buttonStyle: { control: "select", options: buttonStyleOptions },
+  badgeSize: { control: "select", options: badgeSizeOptions },
 };
 
 const renderStory = (args: CardProps) => {
-  const fakeComposition = createFakeCompositionData('card', args, {});
+  const fakeComposition = createFakeCompositionData("card", args, {});
   return (
     <UniformComposition data={fakeComposition}>
       <Card {...args} />
@@ -58,9 +58,9 @@ export const Default: Story = {
 export const BackgroundImage: Story = {
   args: {
     ...BASE_PROPS,
-    textColorVariant: 'Light',
+    textColorVariant: "Light",
     component: {
-      type: 'card',
+      type: "card",
       variant: CardVariants.BackgroundImage,
     },
   },
@@ -72,7 +72,7 @@ export const Featured: Story = {
   args: {
     ...BASE_PROPS,
     component: {
-      type: 'card',
+      type: "card",
       variant: CardVariants.Featured,
     },
   },

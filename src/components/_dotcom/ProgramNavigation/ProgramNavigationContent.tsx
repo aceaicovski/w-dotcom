@@ -1,5 +1,5 @@
-import React from 'react';
-import cn from '@/utilities/cn';
+import React from "react";
+import cn from "@/utilities/cn";
 
 export type ProgramNavigationBodyProps = React.HTMLAttributes<HTMLDivElement>;
 
@@ -8,7 +8,7 @@ const ProgramNavigationBody = React.forwardRef<HTMLDivElement, ProgramNavigation
     return (
       <div
         {...props}
-        className={cn('m-auto flex max-w-screen-xl items-center justify-between px-4 lg:px-0', className)}
+        className={cn("m-auto flex max-w-screen-xl items-center justify-between px-4 lg:px-0", className)}
         ref={ref}
       />
     );

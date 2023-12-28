@@ -1,27 +1,27 @@
-import jwt from 'jsonwebtoken';
-import fetch from 'node-fetch';
-import { getAvailableTeams } from './gql';
-import { createApiKeys, createUniformProject, createUniformTeam } from './api';
-import { configureDataSource, configureIntegration } from './utils';
+import jwt from "jsonwebtoken";
+import fetch from "node-fetch";
+import { getAvailableTeams } from "./gql";
+import { createApiKeys, createUniformProject, createUniformTeam } from "./api";
+import { configureDataSource, configureIntegration } from "./utils";
 import {
   getUniformProject,
   getUniformProjectName,
   getUniformProjectTypeId,
   getUniformTeam,
   getUniformTeamName,
-} from '../../informationCollector';
-import { demosRequiredIntegrationsMap, demosRequiredDataSourceMap, demosPreviewUrlMap } from '../../mappers';
+} from "../../informationCollector";
+import { demosRequiredIntegrationsMap, demosRequiredDataSourceMap, demosPreviewUrlMap } from "../../mappers";
 
 const getAvailableProjectTypes = async (params: UNIFORM_API.GetProjectTypesParams) => {
   const { uniformAccessToken, uniformApiHost, teamId } = params;
   const headers = {
-    accept: 'application/json',
+    accept: "application/json",
     authorization: `Bearer ${uniformAccessToken}`,
   };
-  const url = new URL('/api/v1/limits', uniformApiHost);
-  url.searchParams.append('teamId', teamId);
+  const url = new URL("/api/v1/limits", uniformApiHost);
+  url.searchParams.append("teamId", teamId);
   const response = await fetch(url, {
-    method: 'POST',
+    method: "POST",
     headers,
   });
   const json = (await response.json()) as any;
@@ -38,7 +38,7 @@ export const setupUniformProject = async (
 ) => {
   const { uniformApiHost, uniformAccessToken, project, variant } = params;
   const headers = {
-    accept: 'application/json',
+    accept: "application/json",
     authorization: `Bearer ${uniformAccessToken}`,
   };
 
@@ -55,9 +55,9 @@ export const setupUniformProject = async (
     label: team.name,
   }));
 
-  let teamId = await getUniformTeam([...availableTeams, { value: 'new', label: '➕ Create new' }]);
+  let teamId = await getUniformTeam([...availableTeams, { value: "new", label: "➕ Create new" }]);
 
-  if (teamId === 'new') {
+  if (teamId === "new") {
     const teamName = await getUniformTeamName();
 
     const createTeamResponse = await createUniformTeam({
@@ -76,23 +76,23 @@ export const setupUniformProject = async (
     label: site.name,
   }));
 
-  let projectId = await getUniformProject([...availableProjects, { value: 'new', label: '➕ Create new' }]);
+  let projectId = await getUniformProject([...availableProjects, { value: "new", label: "➕ Create new" }]);
 
-  if (projectId === 'new') {
+  if (projectId === "new") {
     const { projectTypes } = await getAvailableProjectTypes({
       uniformApiHost,
       uniformAccessToken,
       teamId,
     });
     if (projectTypes.length === 0) {
-      console.log('Your Uniform team is not licensed for any additional projects.');
+      console.log("Your Uniform team is not licensed for any additional projects.");
       return {};
     }
     const projectTypeId = await getUniformProjectTypeId(projectTypes);
 
     const projectName = await getUniformProjectName();
 
-    progressSpinner.start('Start creating uniform project');
+    progressSpinner.start("Start creating uniform project");
 
     const previewUrl = demosPreviewUrlMap[project]?.[variant];
 
@@ -109,7 +109,7 @@ export const setupUniformProject = async (
     progressSpinner.stop(`Finished creating uniform project. Id: ${projectId}. Preview url set to ${previewUrl}`);
   }
 
-  progressSpinner.start('Start creating uniform api keys');
+  progressSpinner.start("Start creating uniform api keys");
 
   const createdKeys = await createApiKeys({
     teamId,
@@ -120,7 +120,7 @@ export const setupUniformProject = async (
 
   const { writeApiKey } = createdKeys;
 
-  progressSpinner.stop('Api keys created');
+  progressSpinner.stop("Api keys created");
 
   const integrationsToInstall = demosRequiredIntegrationsMap[project]?.[variant] || [];
 
@@ -129,7 +129,7 @@ export const setupUniformProject = async (
   for (const integration of onlyMeshIntegrations) {
     progressSpinner.start(
       `Start installing ${integration.name} integration.${
-        integration.customManifest ? ' Custom manifest will be used.' : ''
+        integration.customManifest ? " Custom manifest will be used." : ""
       }`
     );
     await configureIntegration({

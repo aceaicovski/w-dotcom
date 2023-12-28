@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import { FooterSecondSectionProps } from '.';
+import { FC } from "react";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import { FooterSecondSectionProps } from ".";
 
 export const FooterSecondSection: FC<FooterSecondSectionProps> = ({ title }) => (
   <div className="md:mr-6 xl:mr-12">

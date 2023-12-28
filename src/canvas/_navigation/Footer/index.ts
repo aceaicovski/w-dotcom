@@ -1,5 +1,5 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { Footer } from './Footer';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { Footer } from "./Footer";
 
 type Styles = {
   container?: string;
@@ -17,9 +17,9 @@ export type FooterProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'footer',
+  type: "footer",
   component: Footer,
 });
 
-export * from './decorator';
+export * from "./decorator";
 export default Footer;

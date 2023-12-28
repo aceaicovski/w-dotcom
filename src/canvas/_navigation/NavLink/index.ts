@@ -1,7 +1,7 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { HeaderLink } from './HeaderLink';
-import { FooterLink } from './FooterLink';
-import { NavigationGroup } from './NavigationGroup';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { HeaderLink } from "./HeaderLink";
+import { FooterLink } from "./FooterLink";
+import { NavigationGroup } from "./NavigationGroup";
 
 export type Styles = {
   link?: string;
@@ -16,24 +16,24 @@ export type LinkProps = ComponentProps<{
 
 // default variant
 registerUniformComponent({
-  type: 'navigationLink',
+  type: "navigationLink",
   component: HeaderLink,
 });
 
 registerUniformComponent({
-  type: 'navigationLink',
+  type: "navigationLink",
   component: FooterLink,
-  variantId: 'footer',
+  variantId: "footer",
 });
 
 registerUniformComponent({
-  type: 'navigationLink',
+  type: "navigationLink",
   component: HeaderLink,
-  variantId: 'header',
+  variantId: "header",
 });
 
 registerUniformComponent({
-  type: 'navigationGroup',
+  type: "navigationGroup",
   component: NavigationGroup,
 });
 

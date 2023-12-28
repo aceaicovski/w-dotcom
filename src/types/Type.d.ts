@@ -18,51 +18,51 @@ declare namespace Types {
     url: string;
   };
 
-  type ButtonStyles = 'primary' | 'secondary' | 'accent' | 'ghost' | 'link';
+  type ButtonStyles = "primary" | "secondary" | "accent" | "ghost" | "link";
 
-  type ButtonSize = 'large' | 'regular' | 'small';
+  type ButtonSize = "large" | "regular" | "small";
 
-  type BadgeStyles = 'primary' | 'secondary' | 'accent' | 'outline';
+  type BadgeStyles = "primary" | "secondary" | "accent" | "outline";
 
-  type BadgeSize = 'xs' | 'sm' | 'md' | 'lg';
+  type BadgeSize = "xs" | "sm" | "md" | "lg";
 
-  type AvailableColor = 'primary' | 'secondary' | 'accent' | 'base-200' | 'base-300';
+  type AvailableColor = "primary" | "secondary" | "accent" | "base-200" | "base-300";
 
-  type AvailableBannerPosition = 'top' | 'center' | 'bottom';
+  type AvailableBannerPosition = "top" | "center" | "bottom";
 
-  type AvailableObjectFit = 'contain' | 'cover' | 'fill' | 'none';
+  type AvailableObjectFit = "contain" | "cover" | "fill" | "none";
 
-  type AvailableTextColorVariant = 'Dark' | 'Light';
+  type AvailableTextColorVariant = "Dark" | "Light";
 
-  type AnimationType = 'fadeIn' | 'flyIn';
+  type AnimationType = "fadeIn" | "flyIn";
 
-  type AnimationOrder = 'oneByOne' | 'allAtOnce';
+  type AnimationOrder = "oneByOne" | "allAtOnce";
 
-  type DurationType = 'slow' | 'medium' | 'fast';
+  type DurationType = "slow" | "medium" | "fast";
 
-  type AnimationDelay = 'none' | 'short' | 'medium' | 'long';
+  type AnimationDelay = "none" | "short" | "medium" | "long";
 
-  type AvailableMaxLineCount = '1' | '2' | '3' | '4' | '5' | '6' | 'none';
+  type AvailableMaxLineCount = "1" | "2" | "3" | "4" | "5" | "6" | "none";
 
-  type AvailableBorderRadius = 'none' | 'small' | 'medium' | 'large' | 'full';
+  type AvailableBorderRadius = "none" | "small" | "medium" | "large" | "full";
 
-  type AvailableModalMaxWidth = 'none' | 'small' | 'medium' | 'large' | 'xLarge';
+  type AvailableModalMaxWidth = "none" | "small" | "medium" | "large" | "xLarge";
 
-  type AvailableGapVariants = 'none' | 'small' | 'medium' | 'large';
+  type AvailableGapVariants = "none" | "small" | "medium" | "large";
 
-  type AvailableColumnCount = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+  type AvailableColumnCount = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12";
 
-  type AvailableRowCount = '1' | '2' | '3' | '4' | '5' | '6';
+  type AvailableRowCount = "1" | "2" | "3" | "4" | "5" | "6";
 
-  type AvailableOpacity = '0%' | '10%' | '20%' | '30%' | '40%' | '50%' | '60%' | '70%' | '80%' | '90%' | '100%';
+  type AvailableOpacity = "0%" | "10%" | "20%" | "30%" | "40%" | "50%" | "60%" | "70%" | "80%" | "90%" | "100%";
 
-  type HeadingStyles = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  type HeadingStyles = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-  type TypographyStyle = 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'q';
+  type TypographyStyle = "h1" | "h2" | "h3" | "h4" | "p" | "q";
 
-  type HorizontalAlignment = 'left' | 'center' | 'right';
+  type HorizontalAlignment = "left" | "center" | "right";
 
-  type SupportedThemes = 'uniform' | 'javadrip' | 'custom' | 'nextlevelsports';
+  type SupportedThemes = "uniform" | "javadrip" | "custom" | "nextlevelsports";
 
   type ThemeColors = {
     value: string;
@@ -70,18 +70,18 @@ declare namespace Types {
   };
 
   type SupportedFonts =
-    | 'inter'
-    | 'roboto_mono'
-    | 'rubik'
-    | 'dm_mono'
-    | 'farro'
-    | 'damion'
-    | 'advent_pro'
-    | 'asap'
-    | 'antonio'
-    | 'maven_pro'
-    | 'lexend_giga'
-    | 'metrophobic';
+    | "inter"
+    | "roboto_mono"
+    | "rubik"
+    | "dm_mono"
+    | "farro"
+    | "damion"
+    | "advent_pro"
+    | "asap"
+    | "antonio"
+    | "maven_pro"
+    | "lexend_giga"
+    | "metrophobic";
 
   type ThemeValue = {
     themeName: Types.SupportedThemes;

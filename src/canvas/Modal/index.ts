@@ -1,6 +1,6 @@
-import { registerUniformComponent, ComponentProps } from '@uniformdev/canvas-react';
-import { withoutContainer } from '../../hocs/withoutContainer';
-import { Modal } from './Modal';
+import { registerUniformComponent, ComponentProps } from "@uniformdev/canvas-react";
+import { withoutContainer } from "../../hocs/withoutContainer";
+import { Modal } from "./Modal";
 
 export type ModalProps = ComponentProps<{
   closeOnClickOutside: boolean;
@@ -9,7 +9,7 @@ export type ModalProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'modal',
+  type: "modal",
   component: withoutContainer(Modal),
 });
 

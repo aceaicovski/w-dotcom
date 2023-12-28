@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import { BackgroundTypes, PaddingSize, MaxWidth } from '../../utilities/styling';
+import { ReactNode } from "react";
+import { BackgroundTypes, PaddingSize, MaxWidth } from "../../utilities/styling";
 
 export enum ContainerVariants {
-  BackgroundInContainer = 'backgroundInContainer',
-  FluidContent = 'fluidContent',
+  BackgroundInContainer = "backgroundInContainer",
+  FluidContent = "fluidContent",
 }
 
 export type ContainerProps = {
@@ -19,6 +19,6 @@ export type ContainerProps = {
   maxWidth?: MaxWidth;
 };
 
-export * from './BaseContainer';
-export * from './ScreenContainer';
-export { default } from './Container';
+export * from "./BaseContainer";
+export * from "./ScreenContainer";
+export { default } from "./Container";

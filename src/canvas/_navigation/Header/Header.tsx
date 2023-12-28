@@ -1,19 +1,19 @@
-import { FC } from 'react';
-import classNames from 'classnames';
-import Image from 'next/image';
-import Link from 'next/link';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import { ScreenContainer } from '../../../components/Container';
-import { getMediaUrl } from '../../../utilities';
-import { getHeaderColor, getLinksAlignment } from './helpers';
-import { HeaderProps } from '.';
-import { MaxWidth } from '@/utilities/styling';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { Button, Logo } from '@/components';
+import { FC } from "react";
+import classNames from "classnames";
+import Image from "next/image";
+import Link from "next/link";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import { ScreenContainer } from "../../../components/Container";
+import { getMediaUrl } from "../../../utilities";
+import { getHeaderColor, getLinksAlignment } from "./helpers";
+import { HeaderProps } from ".";
+import { MaxWidth } from "@/utilities/styling";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { Button, Logo } from "@/components";
 
 export const Header: FC<HeaderProps> = ({ logo, component, linksAlignment }) => (
-  <div className={classNames('px-8 text-primary', getHeaderColor(component.variant))}>
+  <div className={classNames("px-8 text-primary", getHeaderColor(component.variant))}>
     <ScreenContainer maxWidth={MaxWidth.Large}>
       <div className="navbar px-0">
         <div className="navbar-start w-full">
@@ -41,7 +41,7 @@ export const Header: FC<HeaderProps> = ({ logo, component, linksAlignment }) => 
             <Image src={getMediaUrl(logo)} width="64" height="64" alt="Next Level Sports" className="hidden" />
             <Logo color="dark" />
           </Link>
-          <div className={classNames('hidden w-full lg:flex', getLinksAlignment(linksAlignment))}>
+          <div className={classNames("hidden w-full lg:flex", getLinksAlignment(linksAlignment))}>
             <ul className="menu menu-horizontal shrink-0 px-1">
               <UniformSlot name="links" />
             </ul>

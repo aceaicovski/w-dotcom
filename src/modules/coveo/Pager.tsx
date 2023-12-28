@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useContext, useEffect, useMemo, useState } from 'react';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
+import { FC, useContext, useEffect, useMemo, useState } from "react";
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
 // @ts-ignore: Expected error if the module is not yet installed
-import { buildPager, PagerState, buildResultsPerPage, ResultsPerPageState, buildSearchBox } from '@coveo/headless';
-import { HeadlessEngineContext } from './Engine';
-import Button from '../../components/Button';
+import { buildPager, PagerState, buildResultsPerPage, ResultsPerPageState, buildSearchBox } from "@coveo/headless";
+import { HeadlessEngineContext } from "./Engine";
+import Button from "../../components/Button";
 
 type PagerProps = ComponentProps<{
   numberOfResults?: string;
@@ -12,7 +12,7 @@ type PagerProps = ComponentProps<{
 }>;
 
 // Coveo Pager docs https://docs.coveo.com/en/headless/latest/reference/search/controllers/pager/
-const Pager: FC<PagerProps> = ({ numberOfResults = '10', numberOfPages = '3' }) => {
+const Pager: FC<PagerProps> = ({ numberOfResults = "10", numberOfPages = "3" }) => {
   const headlessEngine = useContext(HeadlessEngineContext);
 
   const headlessResultsPerPage = useMemo(
@@ -71,7 +71,7 @@ const Pager: FC<PagerProps> = ({ numberOfResults = '10', numberOfPages = '3' }) 
 };
 
 registerUniformComponent({
-  type: 'coveo-pager',
+  type: "coveo-pager",
   component: Pager,
 });
 

@@ -1,5 +1,5 @@
-import { registerUniformComponent, ComponentProps } from '@uniformdev/canvas-react';
-import { Button } from './Button';
+import { registerUniformComponent, ComponentProps } from "@uniformdev/canvas-react";
+import { Button } from "./Button";
 
 export type ButtonProps = ComponentProps<{
   copy: string;
@@ -11,7 +11,7 @@ export type ButtonProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'button',
+  type: "button",
   component: Button,
 });
 

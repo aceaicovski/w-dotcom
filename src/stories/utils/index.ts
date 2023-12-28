@@ -1,4 +1,4 @@
-import { RootComponentInstance, ComponentInstance } from '@uniformdev/canvas';
+import { RootComponentInstance, ComponentInstance } from "@uniformdev/canvas";
 
 interface UniformMockParam {
   type: string;
@@ -10,7 +10,7 @@ export const createUniformParameter = (params: Record<string, unknown | UniformM
     (acc, key) => ({
       ...acc,
       [key]: {
-        type: (params[key] as UniformMockParam)?.type || 'text',
+        type: (params[key] as UniformMockParam)?.type || "text",
         value: (params[key] as UniformMockParam)?.value || params[key],
       },
     }),
@@ -25,7 +25,7 @@ export const createFakeCompositionData = (
 ): RootComponentInstance => ({
   _name: type,
   type: type,
-  _id: 'ebf7db31-5e01-4874-afb4-d8d668457ba8',
+  _id: "ebf7db31-5e01-4874-afb4-d8d668457ba8",
   parameters: createUniformParameter(params),
   slots,
 });

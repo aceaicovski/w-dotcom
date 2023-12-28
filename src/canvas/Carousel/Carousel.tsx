@@ -1,10 +1,10 @@
-import { FC, useEffect, useRef, useState, createContext } from 'react';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { UniformSlot, useUniformContextualEditingState } from '@uniformdev/canvas-react';
-import { fromCamelCaseText } from '../../utilities';
-import { CarouselProps, CarouselVariants } from '.';
-import { CarouselInner } from './CarouselInner';
+import { FC, useEffect, useRef, useState, createContext } from "react";
+import Image from "next/image";
+import classNames from "classnames";
+import { UniformSlot, useUniformContextualEditingState } from "@uniformdev/canvas-react";
+import { fromCamelCaseText } from "../../utilities";
+import { CarouselProps, CarouselVariants } from ".";
+import { CarouselInner } from "./CarouselInner";
 
 export const CarouselContext = createContext({ currentIndex: 0 });
 
@@ -19,12 +19,12 @@ export const Carousel: FC<CarouselProps> = ({ component }) => {
 
   useEffect(() => {
     const handleResize = () => setReCheckCarouselSlider(prevState => !prevState);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
-    if (typeof selectedComponentReference?.componentIndex !== 'number') {
+    if (typeof selectedComponentReference?.componentIndex !== "number") {
       return;
     }
 
@@ -62,16 +62,16 @@ export const Carousel: FC<CarouselProps> = ({ component }) => {
           <div className="absolute left-5 right-5 top-1/2 z-50 flex -translate-y-1/2 transform justify-between">
             <a
               onClick={() => onGoPrevious()}
-              className={classNames('btn btn-circle', {
-                'btn-disabled': currentIndex === 0,
+              className={classNames("btn btn-circle", {
+                "btn-disabled": currentIndex === 0,
               })}
             >
               ❮
             </a>
             <a
               onClick={() => onGoNext()}
-              className={classNames('btn btn-circle', {
-                'btn-disabled': totalCountOfItems - 1 === currentIndex,
+              className={classNames("btn btn-circle", {
+                "btn-disabled": totalCountOfItems - 1 === currentIndex,
               })}
             >
               ❯
@@ -90,8 +90,8 @@ export const Carousel: FC<CarouselProps> = ({ component }) => {
                   aria-label="image-gallery"
                   key={`image-gallery-${index}`}
                   className={classNames(
-                    'outline h-32 w-32 cursor-pointer p-1.5 outline-1 outline-gray-200 duration-300 ease-out hover:p-0.5',
-                    { 'pointer-events-none !p-0.5': currentIndex === index }
+                    "outline h-32 w-32 cursor-pointer p-1.5 outline-1 outline-gray-200 duration-300 ease-out hover:p-0.5",
+                    { "pointer-events-none !p-0.5": currentIndex === index }
                   )}
                   onClick={() => setCurrentIndex(index)}
                 >

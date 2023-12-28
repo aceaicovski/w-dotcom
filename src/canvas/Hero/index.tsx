@@ -1,11 +1,11 @@
-import { FC } from 'react';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { withoutContainer } from '../../hocs/withoutContainer';
-import { ContainerProps } from '../../components/Container';
-import { HeroSideImage } from './HeroSideImage';
-import { HeroBackgroundImage } from './HeroBackgroundImage';
-import { HeroTwoColumns } from './HeroTwoColumns';
-import { HeroDefault } from './Hero';
+import { FC } from "react";
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { withoutContainer } from "../../hocs/withoutContainer";
+import { ContainerProps } from "../../components/Container";
+import { HeroSideImage } from "./HeroSideImage";
+import { HeroBackgroundImage } from "./HeroBackgroundImage";
+import { HeroTwoColumns } from "./HeroTwoColumns";
+import { HeroDefault } from "./Hero";
 
 type Styles = {
   eyebrowText?: string;
@@ -48,10 +48,10 @@ export type HeroProps = ComponentProps<
 >;
 
 export enum HeroVariant {
-  ImageLeft = 'imageLeft',
-  ImageRight = 'imageRight',
-  BackgroundImage = 'backgroundImage',
-  TwoColumns = 'twoColumns',
+  ImageLeft = "imageLeft",
+  ImageRight = "imageRight",
+  BackgroundImage = "backgroundImage",
+  TwoColumns = "twoColumns",
 }
 
 const Hero: FC<HeroProps> = props => {
@@ -72,7 +72,7 @@ const Hero: FC<HeroProps> = props => {
 [undefined, HeroVariant.ImageLeft, HeroVariant.ImageRight, HeroVariant.BackgroundImage, HeroVariant.TwoColumns].forEach(
   variantId => {
     registerUniformComponent({
-      type: 'hero',
+      type: "hero",
       component: withoutContainer(Hero),
       variantId,
     });

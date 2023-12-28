@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useContext, useEffect, useMemo, useState } from 'react';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
+import { FC, useContext, useEffect, useMemo, useState } from "react";
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
 // @ts-ignore: Expected error if the module is not yet installed
-import { buildBreadcrumbManager, BreadcrumbManagerState } from '@coveo/headless';
-import { HeadlessEngineContext } from './Engine';
-import Button from '../../components/Button';
+import { buildBreadcrumbManager, BreadcrumbManagerState } from "@coveo/headless";
+import { HeadlessEngineContext } from "./Engine";
+import Button from "../../components/Button";
 
 type BreadcrumbManagerProps = ComponentProps<{
   title?: string;
@@ -58,7 +58,7 @@ const BreadcrumbManager: FC<BreadcrumbManagerProps> = ({ title }) => {
 };
 
 registerUniformComponent({
-  type: 'coveo-breadcrumbManager',
+  type: "coveo-breadcrumbManager",
   component: BreadcrumbManager,
 });
 

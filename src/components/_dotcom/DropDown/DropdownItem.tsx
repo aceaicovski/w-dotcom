@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
 type Anchor = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   anchor?: true;
 };
 
-type NoAnchor = Pick<Anchor, 'children'> & { anchor?: false };
+type NoAnchor = Pick<Anchor, "children"> & { anchor?: false };
 
 export type DropdownItemProps = Anchor | NoAnchor;
 

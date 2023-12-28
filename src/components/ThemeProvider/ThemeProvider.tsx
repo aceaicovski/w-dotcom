@@ -1,9 +1,9 @@
-import { FC } from 'react';
-import classNames from 'classnames';
-import { useUniformCurrentComposition } from '@uniformdev/canvas-react';
-import { appFonts } from '../../fonts';
-import { generateCustomTheme } from '../../utilities/theme';
-import { ThemeProviderProps } from '.';
+import { FC } from "react";
+import classNames from "classnames";
+import { useUniformCurrentComposition } from "@uniformdev/canvas-react";
+import { appFonts } from "../../fonts";
+import { generateCustomTheme } from "../../utilities/theme";
+import { ThemeProviderProps } from ".";
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children, data, defaultTheme }) => {
   const { data: currentComposition } = useUniformCurrentComposition();
@@ -25,7 +25,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children, data, defaultTheme })
   return (
     // The way how we can set current theme
     <div
-      className={classNames('flex min-h-screen flex-col overflow-x-hidden', currentFont?.className)}
+      className={classNames("flex min-h-screen flex-col overflow-x-hidden", currentFont?.className)}
       data-theme={themeName}
     >
       <div dangerouslySetInnerHTML={{ __html: generatedTheme }} />

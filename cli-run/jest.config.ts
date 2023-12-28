@@ -1,7 +1,7 @@
 const config = {
-  preset: 'ts-jest',
+  preset: "ts-jest",
   clearMocks: true,
-  testEnvironment: 'node',
+  testEnvironment: "node",
 };
 
 export default config;

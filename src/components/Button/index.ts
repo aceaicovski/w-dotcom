@@ -1,4 +1,4 @@
-import { MouseEvent, ReactNode } from 'react';
+import { MouseEvent, ReactNode } from "react";
 
 export type ButtonProps = {
   href?: string;
@@ -12,4 +12,4 @@ export type ButtonProps = {
   animationType?: Types.AnimationType;
 };
 
-export { default } from './Button';
+export { default } from "./Button";

@@ -1,5 +1,5 @@
-import { useCallback } from 'react';
-import { UniformPlaygroundDecorator } from '@uniformdev/canvas-react';
+import { useCallback } from "react";
+import { UniformPlaygroundDecorator } from "@uniformdev/canvas-react";
 
 // This decorator is used as a display of the Accordion component around the Accordion Item component
 // Activate visual editing doc: https://docs.uniform.app/docs/guides/composition/visual-editing/activate-visual-editing
@@ -26,7 +26,7 @@ export const AccordionItemDecorator: UniformPlaygroundDecorator = ({ data, child
     []
   );
 
-  return data.type !== 'accordionItem' ? (
+  return data.type !== "accordionItem" ? (
     <>{children}</>
   ) : (
     <div className="text-secondary-content">

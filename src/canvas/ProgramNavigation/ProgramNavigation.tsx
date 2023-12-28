@@ -1,19 +1,19 @@
-import React, { FC } from 'react';
+import React, { FC } from "react";
 
-import BaseProgramNavigation from '@/components/_dotcom/ProgramNavigation';
+import BaseProgramNavigation from "@/components/_dotcom/ProgramNavigation";
 
 const testLinks = [
   {
-    name: 'Program Overview',
-    href: '#overview',
+    name: "Program Overview",
+    href: "#overview",
   },
   {
-    name: 'League Operations',
-    href: '#operations',
+    name: "League Operations",
+    href: "#operations",
   },
   {
-    name: 'Schedule',
-    href: '#schedule',
+    name: "Schedule",
+    href: "#schedule",
   },
 ];
 

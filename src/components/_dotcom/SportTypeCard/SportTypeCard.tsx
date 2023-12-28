@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { FC } from "react";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBaseball,
   faFootball,
@@ -8,14 +8,14 @@ import {
   faFutbol,
   faFlag,
   faBasketball,
-} from '@fortawesome/free-solid-svg-icons';
-import cn from '@/utilities/cn';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
+} from "@fortawesome/free-solid-svg-icons";
+import cn from "@/utilities/cn";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export interface SportTypeCardProps {
   path: string;
   title: string;
-  icon: 'footbal' | 'basketball' | 'volleyball' | 'futboll' | 'flag-pennant' | 'baseball';
+  icon: "footbal" | "basketball" | "volleyball" | "futboll" | "flag-pennant" | "baseball";
   className?: string;
 }
 
@@ -24,7 +24,7 @@ const iconMap = {
   baseball: faBaseball,
   volleyball: faVolleyball,
   futboll: faFutbol,
-  'flag-pennant': faFlag,
+  "flag-pennant": faFlag,
   basketball: faBasketball,
 };
 
@@ -35,7 +35,7 @@ const SportTypeCard: FC<SportTypeCardProps> = ({ path, icon, className, title, .
       {...props}
       href={path}
       className={cn(
-        'flex items-center justify-center gap-4 rounded-2xl bg-secondary p-4 text-white shadow lg:flex-col lg:gap-2 lg:p-8',
+        "flex items-center justify-center gap-4 rounded-2xl bg-secondary p-4 text-white shadow lg:flex-col lg:gap-2 lg:p-8",
         className
       )}
     >

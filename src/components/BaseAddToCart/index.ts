@@ -7,4 +7,4 @@ export type BaseAddToCartProps = {
   buttonAnimationType?: Types.AnimationType;
 };
 
-export { default } from './BaseAddToCart';
+export { default } from "./BaseAddToCart";

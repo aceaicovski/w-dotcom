@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import Image from 'next/image';
-import { UniformPlaygroundDecorator } from '@uniformdev/canvas-react';
+import { useCallback } from "react";
+import Image from "next/image";
+import { UniformPlaygroundDecorator } from "@uniformdev/canvas-react";
 
 // This decorator is used as a display of the FeatureCallout component around the Feature component
 // Activate visual editing doc: https://docs.uniform.app/docs/guides/composition/visual-editing/activate-visual-editing
@@ -27,7 +27,7 @@ export const FeatureDecorator: UniformPlaygroundDecorator = ({ data, children })
     []
   );
 
-  if (data.type !== 'feature') return <>{children}</>;
+  if (data.type !== "feature") return <>{children}</>;
   return (
     <div className="hero flex flex-wrap text-secondary-content lg:flex-nowrap lg:gap-10">
       <div className="flex w-full items-center justify-start blur-xs lg:w-1/2">

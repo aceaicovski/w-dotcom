@@ -1,16 +1,16 @@
-import { FC } from 'react';
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import { ScreenContainer } from '../../../components/Container';
-import { getMediaUrl } from '../../../utilities';
-import { FooterProps } from '.';
-import { MaxWidth } from '@/utilities/styling';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FC } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import classNames from "classnames";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import { ScreenContainer } from "../../../components/Container";
+import { getMediaUrl } from "../../../utilities";
+import { FooterProps } from ".";
+import { MaxWidth } from "@/utilities/styling";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-const BuildTimestamp = dynamic(() => import('../../../components/BuildTimestamp'), { ssr: false });
+const BuildTimestamp = dynamic(() => import("../../../components/BuildTimestamp"), { ssr: false });
 
 export const Footer: FC<FooterProps> = ({
   logo,
@@ -21,11 +21,11 @@ export const Footer: FC<FooterProps> = ({
 }) => {
   const imageUrl = getMediaUrl(logo);
   return (
-    <div className={classNames('bg-primary px-4', styles?.container)}>
+    <div className={classNames("bg-primary px-4", styles?.container)}>
       <ScreenContainer maxWidth={MaxWidth.Large}>
         <footer
           className={classNames(
-            'footer flex w-full flex-col-reverse justify-between border-info-content py-10 lg:flex-row',
+            "footer flex w-full flex-col-reverse justify-between border-info-content py-10 lg:flex-row",
             styles?.footerSection
           )}
         >

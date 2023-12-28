@@ -1,5 +1,5 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { Accordion } from './Accordion';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { Accordion } from "./Accordion";
 
 type Styles = {
   container?: string;
@@ -14,7 +14,7 @@ export type AccordionProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'accordion',
+  type: "accordion",
   component: Accordion,
 });
 

@@ -1,8 +1,8 @@
-import { FC, useCallback, useState, useEffect } from 'react';
-import classNames from 'classnames';
-import { UniformSlot, useUniformContextualEditingState } from '@uniformdev/canvas-react';
-import { getModalMaxWidth } from './helpers';
-import { ModalProps } from '.';
+import { FC, useCallback, useState, useEffect } from "react";
+import classNames from "classnames";
+import { UniformSlot, useUniformContextualEditingState } from "@uniformdev/canvas-react";
+import { getModalMaxWidth } from "./helpers";
+import { ModalProps } from ".";
 
 export const Modal: FC<ModalProps> = ({ closeOnClickOutside, automaticOpenTimeout, maxWidth, component }) => {
   const [showModal, setShowModal] = useState(false);
@@ -25,7 +25,7 @@ export const Modal: FC<ModalProps> = ({ closeOnClickOutside, automaticOpenTimeou
   );
 
   const isModalContentPlaceholder =
-    !component?.slots?.content?.length || component?.slots?.content?.[0]?._id?.startsWith('placeholder');
+    !component?.slots?.content?.length || component?.slots?.content?.[0]?._id?.startsWith("placeholder");
 
   const isModalTriggerPlaceholder = !component?.slots?.trigger?.length;
 
@@ -37,7 +37,7 @@ export const Modal: FC<ModalProps> = ({ closeOnClickOutside, automaticOpenTimeou
   }, [isModalTriggerPlaceholder, automaticOpenTimeout, isContextualEditing]);
 
   useEffect(() => {
-    setShowModal(selectedComponentReference?.slotName === 'content');
+    setShowModal(selectedComponentReference?.slotName === "content");
   }, [selectedComponentReference]);
 
   return (
@@ -50,15 +50,15 @@ export const Modal: FC<ModalProps> = ({ closeOnClickOutside, automaticOpenTimeou
       ) : (
         <dialog
           open={showModal}
-          className={classNames('modal h-full w-full', {
+          className={classNames("modal h-full w-full", {
             // we need override uniform add button zIndex(9900)
-            'modal-open z-[9901]': showModal,
+            "modal-open z-[9901]": showModal,
           })}
           onClick={onClickOutside}
         >
           <form
             method="dialog"
-            className={classNames('modal-box p-8', getModalMaxWidth(maxWidth))}
+            className={classNames("modal-box p-8", getModalMaxWidth(maxWidth))}
             onClick={onClickContent}
           >
             <div onClick={onToggleModal} className="btn btn-circle btn-ghost btn-sm absolute right-2 top-2">

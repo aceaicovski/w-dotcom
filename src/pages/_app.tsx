@@ -1,14 +1,14 @@
-import Head from 'next/head';
-import { UniformAppProps } from '@uniformdev/context-next';
-import { UniformContext } from '@uniformdev/context-react';
-import type { RootComponentInstance } from '@uniformdev/canvas';
-import createUniformContext from '@/context/createUniformContext';
-import '@/canvas';
-import '../styles/globals.scss';
+import Head from "next/head";
+import { UniformAppProps } from "@uniformdev/context-next";
+import { UniformContext } from "@uniformdev/context-react";
+import type { RootComponentInstance } from "@uniformdev/canvas";
+import createUniformContext from "@/context/createUniformContext";
+import "@/canvas";
+import "../styles/globals.scss";
 
 const clientContext = createUniformContext();
 
-const VERCEL_URL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '';
+const VERCEL_URL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "";
 
 const App = ({
   Component,
@@ -32,8 +32,8 @@ const App = ({
   } = composition?.parameters || {};
   //This is workaround because spaces removes from query params and not parsing automatically.
   //Space should be encoded as %20 http://www.faqs.org/rfcs/rfc1738.html
-  const ogTitle = (openGraphTitle?.value as string)?.replaceAll?.(' ', '%20');
-  const twTitle = (twitterTitle?.value as string)?.replaceAll?.(' ', '%20');
+  const ogTitle = (openGraphTitle?.value as string)?.replaceAll?.(" ", "%20");
+  const twTitle = (twitterTitle?.value as string)?.replaceAll?.(" ", "%20");
   const title: string = pageTitle?.value as string;
 
   const compositionHeader = composition?.slots?.pageHeader?.[0];
@@ -45,7 +45,7 @@ const App = ({
       return (
         <meta
           property="og:image"
-          content={`${VERCEL_URL}/api/og?title=${ogTitle ?? title?.replaceAll?.(' ', '%20')}&image=${
+          content={`${VERCEL_URL}/api/og?title=${ogTitle ?? title?.replaceAll?.(" ", "%20")}&image=${
             openGraphImage.value
           }`}
         />
@@ -59,7 +59,7 @@ const App = ({
       return (
         <meta
           property="twitter:image"
-          content={`${VERCEL_URL}/api/og?title=${twTitle ?? title?.replaceAll?.(' ', '%20')}&image=${
+          content={`${VERCEL_URL}/api/og?title=${twTitle ?? title?.replaceAll?.(" ", "%20")}&image=${
             twitterImage.value
           }`}
         />
@@ -72,7 +72,7 @@ const App = ({
     <>
       <Head>
         {/* page metadata */}
-        <title>{(pageTitle?.value as string) ?? 'Uniform Component Starter Kit'}</title>
+        <title>{(pageTitle?.value as string) ?? "Uniform Component Starter Kit"}</title>
         <meta property="og:description" content={pageMetaDescription?.value as string} />
         <meta name="keywords" content={pageKeywords?.value as string} />
         {/* Open Graph */}
@@ -84,7 +84,7 @@ const App = ({
         {renderOgImageElement()}
         {/* Twitter */}
         <meta name="twitter:title" content={(twitterTitle?.value as string) ?? pageTitle?.value} />
-        <meta name="twitter:card" content={(twitterCard?.value as string) ?? 'summary'} />
+        <meta name="twitter:card" content={(twitterCard?.value as string) ?? "summary"} />
         <meta
           name="twitter:description"
           content={(twitterDescription?.value as string) ?? pageMetaDescription?.value}

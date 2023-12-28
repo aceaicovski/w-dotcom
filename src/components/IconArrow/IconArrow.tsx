@@ -1,19 +1,19 @@
-import { FC } from 'react';
-import classNames from 'classnames';
-import { IconArrowProps } from '.';
+import { FC } from "react";
+import classNames from "classnames";
+import { IconArrowProps } from ".";
 
 const IconArrow: FC<IconArrowProps> = ({
   width = 20,
   height = 20,
-  fill = 'currentColor',
-  direction = 'right',
-  className = '',
+  fill = "currentColor",
+  direction = "right",
+  className = "",
 }) => (
   <svg
     fill={fill}
     width={`${width}px`}
     height={`${height}px`}
-    className={classNames({ 'rotate-180': direction === 'left' }, className)}
+    className={classNames({ "rotate-180": direction === "left" }, className)}
     viewBox="0 0 20 20"
     xmlns="http://www.w3.org/2000/svg"
   >

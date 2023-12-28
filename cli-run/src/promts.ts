@@ -11,7 +11,7 @@ import {
   TextOptions,
   SelectOptions,
   ConfirmOptions,
-} from '@clack/prompts';
+} from "@clack/prompts";
 
 interface Option<Value extends Readonly<string>> {
   value: Value;
@@ -21,7 +21,7 @@ interface Option<Value extends Readonly<string>> {
 
 export const checkIsCancel = (value: unknown) => {
   if (isCancel(value)) {
-    cancel('Operation cancelled.');
+    cancel("Operation cancelled.");
     return process.exit(0);
   }
 };

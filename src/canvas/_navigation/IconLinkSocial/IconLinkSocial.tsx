@@ -1,15 +1,15 @@
-import { FC } from 'react';
-import Link from 'next/link';
-import { IconLinkSocialProps } from '.';
+import { FC } from "react";
+import Link from "next/link";
+import { IconLinkSocialProps } from ".";
 
 type IconImgProps = {
-  icon: IconLinkSocialProps['icon'];
+  icon: IconLinkSocialProps["icon"];
 };
 
 export const IconLinkSocial: FC<IconLinkSocialProps> = ({ icon, link }) => {
   const IconImg = ({ icon }: IconImgProps) => {
     switch (icon) {
-      case 'facebook':
+      case "facebook":
         return (
           <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -18,7 +18,7 @@ export const IconLinkSocial: FC<IconLinkSocialProps> = ({ icon, link }) => {
             />
           </svg>
         );
-      case 'instagram':
+      case "instagram":
         return (
           <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -27,7 +27,7 @@ export const IconLinkSocial: FC<IconLinkSocialProps> = ({ icon, link }) => {
             />
           </svg>
         );
-      case 'vimeo':
+      case "vimeo":
         return (
           <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -36,7 +36,7 @@ export const IconLinkSocial: FC<IconLinkSocialProps> = ({ icon, link }) => {
             />
           </svg>
         );
-      case 'linkedin':
+      case "linkedin":
         return (
           <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -45,7 +45,7 @@ export const IconLinkSocial: FC<IconLinkSocialProps> = ({ icon, link }) => {
             />
           </svg>
         );
-      case 'x':
+      case "x":
         return (
           <svg
             width="15"
@@ -69,9 +69,9 @@ export const IconLinkSocial: FC<IconLinkSocialProps> = ({ icon, link }) => {
   if (!link || !icon) return null;
   return (
     <Link
-      target={link.path.includes('http') ? '_blank' : '_self'}
+      target={link.path.includes("http") ? "_blank" : "_self"}
       className="flex h-8 w-8 items-center justify-center rounded-full border border-solid border-white hover:opacity-60 [&:not(:last-child)]:mr-4"
-      href={link?.path || '#'}
+      href={link?.path || "#"}
     >
       <IconImg icon={icon} />
     </Link>

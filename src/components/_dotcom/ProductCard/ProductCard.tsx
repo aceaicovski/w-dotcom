@@ -1,8 +1,8 @@
-import React from 'react';
-import { ProductCardBody, type ProductCardBodyProps as BodyProps } from './ProductCardBody';
-import { ProductCardTitle, type ProductCardTitleProps as TitleProps } from './ProductCardTitle';
-import { ProductCardImage, type ProductCardImageProps as ImageProps } from './ProductCardImage';
-import cn from '@/utilities/cn';
+import React from "react";
+import { ProductCardBody, type ProductCardBodyProps as BodyProps } from "./ProductCardBody";
+import { ProductCardTitle, type ProductCardTitleProps as TitleProps } from "./ProductCardTitle";
+import { ProductCardImage, type ProductCardImageProps as ImageProps } from "./ProductCardImage";
+import cn from "@/utilities/cn";
 
 export type ProductCardBodyProps = BodyProps;
 export type ProductCardTitleProps = TitleProps;
@@ -15,7 +15,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(({ classN
     <div
       aria-label="Product card"
       {...props}
-      className={cn('card', 'product', 'w-40 rounded-2xl sm:w-56 lg:w-96', className)}
+      className={cn("card", "product", "w-40 rounded-2xl sm:w-56 lg:w-96", className)}
       ref={ref}
     />
   );

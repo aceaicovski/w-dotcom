@@ -1,43 +1,43 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { UniformComposition } from '@uniformdev/canvas-react';
-import { CallToAction, CallToActionProps, CallToActionVariant } from '@/canvas';
-import { createFakeCompositionData } from '../utils';
-import { buttonStyleOptions, titleStyleOptions } from '../constants';
+import type { Meta, StoryObj } from "@storybook/react";
+import { UniformComposition } from "@uniformdev/canvas-react";
+import { CallToAction, CallToActionProps, CallToActionVariant } from "@/canvas";
+import { createFakeCompositionData } from "../utils";
+import { buttonStyleOptions, titleStyleOptions } from "../constants";
 
 const meta: Meta<typeof CallToAction> = {
-  title: 'CallToAction',
+  title: "CallToAction",
   component: CallToAction,
 };
 
 export default meta;
 type Story = StoryObj<typeof CallToAction>;
 
-const BASE_PROPS: Omit<CallToActionProps, 'component'> = {
-  eyebrowText: 'CALL TO ACTION',
-  title: 'Are developers stuck with outdated tech and custom code to maintain?',
-  titleStyle: 'h2',
+const BASE_PROPS: Omit<CallToActionProps, "component"> = {
+  eyebrowText: "CALL TO ACTION",
+  title: "Are developers stuck with outdated tech and custom code to maintain?",
+  titleStyle: "h2",
   description:
     "Use this paragraph to share information about your company or brand. Make it as engaging as possible, and showcase your brand's unique personality.",
-  primaryButtonCopy: 'Home',
+  primaryButtonCopy: "Home",
   primaryButtonLink: {
-    path: '/',
+    path: "/",
   },
-  primaryButtonStyle: 'primary',
-  secondaryButtonCopy: 'Components',
+  primaryButtonStyle: "primary",
+  secondaryButtonCopy: "Components",
   secondaryButtonLink: {
-    path: '/',
+    path: "/",
   },
-  secondaryButtonStyle: 'link',
+  secondaryButtonStyle: "link",
 };
 
 const argTypes = {
-  titleStyle: { control: 'select', options: titleStyleOptions },
-  primaryButtonStyle: { control: 'select', options: buttonStyleOptions },
-  secondaryButtonStyle: { control: 'select', options: buttonStyleOptions },
+  titleStyle: { control: "select", options: titleStyleOptions },
+  primaryButtonStyle: { control: "select", options: buttonStyleOptions },
+  secondaryButtonStyle: { control: "select", options: buttonStyleOptions },
 };
 
 const renderStory = (args: CallToActionProps) => {
-  const fakeComposition = createFakeCompositionData('callToAction', args, {});
+  const fakeComposition = createFakeCompositionData("callToAction", args, {});
   return (
     <UniformComposition data={fakeComposition}>
       <CallToAction {...args} />
@@ -55,7 +55,7 @@ export const LeftAligned: Story = {
   args: {
     ...BASE_PROPS,
     component: {
-      type: 'callToAction',
+      type: "callToAction",
       variant: CallToActionVariant.AlignLeft,
     },
   },
@@ -67,7 +67,7 @@ export const RightAligned: Story = {
   args: {
     ...BASE_PROPS,
     component: {
-      type: 'callToAction',
+      type: "callToAction",
       variant: CallToActionVariant.AlignRight,
     },
   },
@@ -79,7 +79,7 @@ export const Featured: Story = {
   args: {
     ...BASE_PROPS,
     component: {
-      type: 'callToAction',
+      type: "callToAction",
       variant: CallToActionVariant.Featured,
     },
   },

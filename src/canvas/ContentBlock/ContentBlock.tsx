@@ -1,12 +1,12 @@
-import { FC, Fragment, PropsWithChildren } from 'react';
-import Link from 'next/link';
-import classNames from 'classnames';
-import { Next, documentToHtmlString, Options } from '@contentful/rich-text-html-renderer';
-import { BLOCKS, NodeData } from '@contentful/rich-text-types';
-import { UniformText } from '@uniformdev/canvas-react';
-import { getTypographyClass } from '../../utilities/styling';
-import { ContentBlockProps } from '.';
-import Divider from '../Divider';
+import { FC, Fragment, PropsWithChildren } from "react";
+import Link from "next/link";
+import classNames from "classnames";
+import { Next, documentToHtmlString, Options } from "@contentful/rich-text-html-renderer";
+import { BLOCKS, NodeData } from "@contentful/rich-text-types";
+import { UniformText } from "@uniformdev/canvas-react";
+import { getTypographyClass } from "../../utilities/styling";
+import { ContentBlockProps } from ".";
+import Divider from "../Divider";
 
 const documentToHtmlStringOptions: Options = {
   renderNode: {
@@ -22,10 +22,10 @@ const documentToHtmlStringOptions: Options = {
 };
 
 export const ContentBlock: FC<ContentBlockProps> = ({
-  titleStyle: TitleTag = 'h1',
-  content = '',
+  titleStyle: TitleTag = "h1",
+  content = "",
   link,
-  variant = 'default',
+  variant = "default",
   subTitle,
   styles,
 }) => {
@@ -36,14 +36,14 @@ export const ContentBlock: FC<ContentBlockProps> = ({
     : Fragment;
 
   return (
-    <div className={'mx-auto w-full items-center justify-between gap-5 text-primary lg:flex-nowrap'}>
-      {variant === 'subtitle' && subTitle && (
+    <div className={"mx-auto w-full items-center justify-between gap-5 text-primary lg:flex-nowrap"}>
+      {variant === "subtitle" && subTitle && (
         <Wrapper>
           <UniformText
             placeholder="Sub Title goes here"
             parameterId="subTitle"
             as="h3"
-            className={classNames('mb-4', getTypographyClass('h3'), styles?.subTitle)}
+            className={classNames("mb-4", getTypographyClass("h3"), styles?.subTitle)}
           />
         </Wrapper>
       )}
@@ -55,12 +55,12 @@ export const ContentBlock: FC<ContentBlockProps> = ({
           className={classNames(getTypographyClass(TitleTag), styles?.title)}
         />
       </Wrapper>
-      {variant === 'divider' && <Divider />}
+      {variant === "divider" && <Divider />}
       {content ? (
         <div
-          className={classNames(variant === 'divider' ? 'py-0' : 'py-6', getTypographyClass('p'))}
+          className={classNames(variant === "divider" ? "py-0" : "py-6", getTypographyClass("p"))}
           dangerouslySetInnerHTML={{
-            __html: typeof content === 'string' ? content : documentToHtmlString(content, documentToHtmlStringOptions),
+            __html: typeof content === "string" ? content : documentToHtmlString(content, documentToHtmlStringOptions),
           }}
         />
       ) : (
@@ -68,7 +68,7 @@ export const ContentBlock: FC<ContentBlockProps> = ({
           placeholder="Text goes here"
           parameterId="text"
           as={TitleTag}
-          className={classNames(variant === 'divider' ? 'py-0' : 'py-6', getTypographyClass('p'), styles?.text)}
+          className={classNames(variant === "divider" ? "py-0" : "py-6", getTypographyClass("p"), styles?.text)}
         />
       )}
     </div>

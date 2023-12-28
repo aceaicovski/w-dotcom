@@ -1,21 +1,21 @@
-import { FC } from 'react';
-import classNames from 'classnames';
-import { useHeroAnimation } from './animation';
-import { BackgroundImage, Container, Description, EyebrowText, PrimaryButton, SecondaryButton, Title } from './atoms';
-import { AnimationVariant } from '../../components/AnimatedContainer';
-import { HeroProps } from './';
+import { FC } from "react";
+import classNames from "classnames";
+import { useHeroAnimation } from "./animation";
+import { BackgroundImage, Container, Description, EyebrowText, PrimaryButton, SecondaryButton, Title } from "./atoms";
+import { AnimationVariant } from "../../components/AnimatedContainer";
+import { HeroProps } from "./";
 
 export const HeroBackgroundImage: FC<HeroProps> = ({
   title,
-  titleStyle = 'h1',
+  titleStyle = "h1",
   description,
   image,
   video,
   primaryButtonLink,
-  primaryButtonStyle = 'primary',
+  primaryButtonStyle = "primary",
   primaryButtonAnimationType,
   secondaryButtonLink,
-  secondaryButtonStyle = 'primary',
+  secondaryButtonStyle = "primary",
   secondaryButtonAnimationType,
   overlayOpacity,
   overlayColor,
@@ -23,7 +23,7 @@ export const HeroBackgroundImage: FC<HeroProps> = ({
   useCustomTextElements = false,
   fullHeight,
   animationType,
-  duration = 'medium',
+  duration = "medium",
   animationOrder,
   backgroundType,
   containerVariant,
@@ -31,12 +31,12 @@ export const HeroBackgroundImage: FC<HeroProps> = ({
   paddingTop,
   marginBottom,
   marginTop,
-  textColorVariant = 'Light',
+  textColorVariant = "Light",
   animationPreview,
-  delay = 'none',
+  delay = "none",
   styles,
 }) => {
-  const baseTextStyle = textColorVariant === 'Light' ? 'text-primary-content' : 'text-secondary-content';
+  const baseTextStyle = textColorVariant === "Light" ? "text-primary-content" : "text-secondary-content";
 
   const { ElementWrapper, getDelayValue } = useHeroAnimation({
     duration,
@@ -58,8 +58,8 @@ export const HeroBackgroundImage: FC<HeroProps> = ({
       containerVariant={containerVariant}
     >
       <div
-        className={classNames('hero-content p-0 text-center', {
-          'h-full items-start pt-20': fullHeight,
+        className={classNames("hero-content p-0 text-center", {
+          "h-full items-start pt-20": fullHeight,
         })}
       >
         <BackgroundImage
@@ -70,18 +70,18 @@ export const HeroBackgroundImage: FC<HeroProps> = ({
           overlayOpacity={overlayOpacity}
         />
 
-        <div className={classNames('z-20 mx-1 flex flex-col md:mx-10')}>
+        <div className={classNames("z-20 mx-1 flex flex-col md:mx-10")}>
           <ElementWrapper
             duration={duration}
             delay={getDelayValue(0)}
-            animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
+            animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
           >
             <EyebrowText className={styles?.eyebrowText} />
           </ElementWrapper>
           <ElementWrapper
             duration={duration}
             delay={getDelayValue(1.5)}
-            animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
+            animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
           >
             <Title
               titleStyle={titleStyle}
@@ -93,14 +93,14 @@ export const HeroBackgroundImage: FC<HeroProps> = ({
           <ElementWrapper
             duration={duration}
             delay={getDelayValue(3)}
-            animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
+            animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
           >
             {styles?.descriptionSeparator && description ? <div className={styles?.descriptionSeparator} /> : null}
           </ElementWrapper>
           <ElementWrapper
             duration={duration}
             delay={getDelayValue(4.5)}
-            animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
+            animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
           >
             <Description className={styles?.description} />
           </ElementWrapper>
@@ -110,7 +110,7 @@ export const HeroBackgroundImage: FC<HeroProps> = ({
               <ElementWrapper
                 duration={duration}
                 delay={getDelayValue(6)}
-                animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
+                animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
               >
                 <PrimaryButton
                   animationType={primaryButtonAnimationType}
@@ -123,7 +123,7 @@ export const HeroBackgroundImage: FC<HeroProps> = ({
               <ElementWrapper
                 duration={duration}
                 delay={getDelayValue(9)}
-                animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
+                animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInTop}
               >
                 <SecondaryButton
                   animationType={secondaryButtonAnimationType}

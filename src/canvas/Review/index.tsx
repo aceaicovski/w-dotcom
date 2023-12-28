@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { MultiColumnReview } from './MultiColumnReview';
-import { DefaultReview } from './Review';
+import { FC } from "react";
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { MultiColumnReview } from "./MultiColumnReview";
+import { DefaultReview } from "./Review";
 
 export enum ReviewVariant {
-  MultiColumn = 'multiColumn',
+  MultiColumn = "multiColumn",
 }
 
 type Style = {
@@ -37,7 +37,7 @@ const Review: FC<ReviewProps> = ({ component, ...reviewData }) =>
 
 [undefined, ReviewVariant.MultiColumn].forEach(variantId =>
   registerUniformComponent({
-    type: 'review',
+    type: "review",
     component: Review,
     variantId,
   })

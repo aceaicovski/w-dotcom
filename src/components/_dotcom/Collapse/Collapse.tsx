@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
-import cn from '@/utilities/cn';
+import React, { useRef, useState } from "react";
+import cn from "@/utilities/cn";
 
-import CollapseTitle from './CollapseTitle';
-import CollapseContent from './CollapseContent';
+import CollapseTitle from "./CollapseTitle";
+import CollapseContent from "./CollapseContent";
 
 export type CollapseProps = React.HTMLAttributes<HTMLDivElement> & {
   checkbox?: boolean;
@@ -52,10 +52,10 @@ const Collapse = React.forwardRef<HTMLDivElement, CollapseProps>(
         ref={ref}
         tabIndex={isChecked === true ? undefined : 0}
         className={cn(
-          'collapse',
-          'collapse-arrow',
-          { 'collapse-open': open === true },
-          { 'collapse-close': open === false },
+          "collapse",
+          "collapse-arrow",
+          { "collapse-open": open === true },
+          { "collapse-close": open === false },
           className
         )}
         onBlur={handleBlur}

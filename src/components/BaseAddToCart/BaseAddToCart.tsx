@@ -1,9 +1,9 @@
-import { FC, useCallback, useState } from 'react';
-import classNames from 'classnames';
-import { useUniformCurrentComposition, UniformText } from '@uniformdev/canvas-react';
-import { getButtonClass } from '../../utilities/styling';
-import ProductQuantityItem from '../../components/ProductQuantityItem';
-import { BaseAddToCartProps } from './';
+import { FC, useCallback, useState } from "react";
+import classNames from "classnames";
+import { useUniformCurrentComposition, UniformText } from "@uniformdev/canvas-react";
+import { getButtonClass } from "../../utilities/styling";
+import ProductQuantityItem from "../../components/ProductQuantityItem";
+import { BaseAddToCartProps } from "./";
 
 const BaseAddToCart: FC<BaseAddToCartProps> = ({
   buttonCopy,
@@ -35,7 +35,7 @@ const BaseAddToCart: FC<BaseAddToCartProps> = ({
         />
       </div>
       <div
-        className={classNames('btn ml-auto w-full min-w-[200px] flex-1 rounded-none', getButtonClass(buttonStyle))}
+        className={classNames("btn ml-auto w-full min-w-[200px] flex-1 rounded-none", getButtonClass(buttonStyle))}
         onClick={handleButtonClick}
       >
         {useCustomTextElements ? (

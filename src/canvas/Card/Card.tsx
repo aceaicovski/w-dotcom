@@ -1,15 +1,15 @@
-import { FC } from 'react';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { UniformText, useUniformCurrentComposition } from '@uniformdev/canvas-react';
-import Button from '../../components/Button';
+import { FC } from "react";
+import Image from "next/image";
+import classNames from "classnames";
+import { UniformText, useUniformCurrentComposition } from "@uniformdev/canvas-react";
+import Button from "../../components/Button";
 import {
   getImageOverlayColorStyle,
   getImageOverlayOpacityStyle,
   getLineClampClass,
   getObjectFitClass,
-} from '../../utilities/styling';
-import { formatProjectMapLink, getMediaUrl } from '../../utilities';
+} from "../../utilities/styling";
+import { formatProjectMapLink, getMediaUrl } from "../../utilities";
 import {
   getBadgeSizeClass,
   getBadgeStyleClass,
@@ -17,15 +17,15 @@ import {
   getDescriptionClass,
   getImageSizeClassName,
   getTextClass,
-} from './helpers';
-import { useAnimationElements } from './animation';
-import { CardVariants, CardProps } from './';
+} from "./helpers";
+import { useAnimationElements } from "./animation";
+import { CardVariants, CardProps } from "./";
 
 export const Card: FC<CardProps> = ({
   image,
-  badge = '',
-  badgeSize = 'md',
-  badgeStyle = 'secondary',
+  badge = "",
+  badgeSize = "md",
+  badgeStyle = "secondary",
   buttonLink,
   buttonStyle,
   buttonAnimationType,
@@ -36,11 +36,11 @@ export const Card: FC<CardProps> = ({
   useCustomTextElements,
   overlayOpacity,
   overlayColor,
-  objectFit = 'cover',
+  objectFit = "cover",
   component: { variant } = {},
-  textColorVariant = 'Dark',
+  textColorVariant = "Dark",
   animationType,
-  duration = 'medium',
+  duration = "medium",
   animationPreview,
   delay,
   styles,
@@ -48,19 +48,19 @@ export const Card: FC<CardProps> = ({
   const imageUrl = getMediaUrl(image);
   const { isContextualEditing } = useUniformCurrentComposition();
 
-  const badgeClassNames = classNames('badge', getBadgeStyleClass(badgeStyle), getBadgeSizeClass(badgeSize));
+  const badgeClassNames = classNames("badge", getBadgeStyleClass(badgeStyle), getBadgeSizeClass(badgeSize));
 
   const titleClassNames = classNames(
-    'card-title',
+    "card-title",
     getTextClass(variant),
-    textColorVariant === 'Dark' ? 'text-secondary-content' : 'text-primary-content',
+    textColorVariant === "Dark" ? "text-secondary-content" : "text-primary-content",
     styles?.title
   );
 
   const descriptionClassNames = classNames(
     getLineClampClass(lineCountRestriction),
     getDescriptionClass(variant),
-    textColorVariant === 'Dark' ? 'text-secondary-content' : 'text-primary-content',
+    textColorVariant === "Dark" ? "text-secondary-content" : "text-primary-content",
     styles?.description
   );
 
@@ -76,11 +76,11 @@ export const Card: FC<CardProps> = ({
   return (
     <CardWrapper
       className={classNames(
-        'card mx-0 min-h-full w-96 max-w-full border border-gray-200 md:mx-2',
+        "card mx-0 min-h-full w-96 max-w-full border border-gray-200 md:mx-2",
         getContentClass(variant),
         {
           relative: isBackgroundImage,
-          '!rounded-none !border-0': variant === CardVariants.Featured,
+          "!rounded-none !border-0": variant === CardVariants.Featured,
         },
         styles?.container
       )}
@@ -89,7 +89,7 @@ export const Card: FC<CardProps> = ({
         <figure
           className={classNames({
             relative: !isBackgroundImage,
-            'flex !justify-start p-8': variant === CardVariants.Featured,
+            "flex !justify-start p-8": variant === CardVariants.Featured,
           })}
         >
           {Boolean(imageUrl) && (
@@ -99,7 +99,7 @@ export const Card: FC<CardProps> = ({
               width={variant === CardVariants.Featured ? 80 : 384}
               height={variant === CardVariants.Featured ? 80 : 384}
               className={classNames(
-                getObjectFitClass(objectFit || 'cover'),
+                getObjectFitClass(objectFit || "cover"),
                 getImageSizeClassName(variant),
                 styles?.image
               )}
@@ -108,7 +108,7 @@ export const Card: FC<CardProps> = ({
 
           <div
             className={classNames(
-              'absolute bottom-0 left-0 right-0 top-0 rounded-xl',
+              "absolute bottom-0 left-0 right-0 top-0 rounded-xl",
               getImageOverlayOpacityStyle(overlayOpacity),
               getImageOverlayColorStyle(overlayColor)
             )}
@@ -117,9 +117,9 @@ export const Card: FC<CardProps> = ({
       </ImageWrapper>
       <div
         className={classNames(
-          'card-body',
+          "card-body",
           {
-            'px-2': variant === CardVariants.Featured,
+            "px-2": variant === CardVariants.Featured,
           },
           styles?.cardBody
         )}
@@ -144,7 +144,7 @@ export const Card: FC<CardProps> = ({
             placeholder="Description goes here"
             parameterId="description"
             className={descriptionClassNames}
-            render={(value = '') => <div dangerouslySetInnerHTML={{ __html: value }} />}
+            render={(value = "") => <div dangerouslySetInnerHTML={{ __html: value }} />}
           />
         )}
 

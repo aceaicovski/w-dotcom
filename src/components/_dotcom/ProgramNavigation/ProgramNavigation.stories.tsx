@@ -1,28 +1,28 @@
-import React from 'react';
-import type { StoryFn as Story, Meta } from '@storybook/react';
+import React from "react";
+import type { StoryFn as Story, Meta } from "@storybook/react";
 
-import ProgramNavigation, { type ProgramNavigationProps } from '.';
+import ProgramNavigation, { type ProgramNavigationProps } from ".";
 
 export default {
-  title: 'Navigation/ProgramNavigation',
+  title: "Navigation/ProgramNavigation",
   component: ProgramNavigation,
   parameters: {
-    layout: 'fullscreen',
+    layout: "fullscreen",
   },
 } as Meta;
 
 const testLinks = [
   {
-    name: 'Program Overview',
-    href: '#',
+    name: "Program Overview",
+    href: "#",
   },
   {
-    name: 'League Operations',
-    href: '#',
+    name: "League Operations",
+    href: "#",
   },
   {
-    name: 'Schedule',
-    href: '#',
+    name: "Schedule",
+    href: "#",
   },
 ];
 

@@ -1,1 +1,1 @@
-export { default, type SportTypeCardProps } from './SportTypeCard';
+export { default, type SportTypeCardProps } from "./SportTypeCard";

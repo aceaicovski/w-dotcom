@@ -1,5 +1,5 @@
-import { registerUniformComponent, ComponentProps } from '@uniformdev/canvas-react';
-import { Divider } from './Divider';
+import { registerUniformComponent, ComponentProps } from "@uniformdev/canvas-react";
+import { Divider } from "./Divider";
 
 export type DividerProps = ComponentProps<{
   colorStyle?: Types.AvailableColor;
@@ -9,6 +9,6 @@ export type DividerProps = ComponentProps<{
 export default Divider;
 
 registerUniformComponent({
-  type: 'divider',
+  type: "divider",
   component: Divider,
 });

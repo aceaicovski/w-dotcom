@@ -5,7 +5,7 @@ import {
   getInstalledIntegration,
   getIntegrationDefinitionByDisplayName,
   installIntegration,
-} from './api';
+} from "./api";
 
 interface ConfigureIntegration {
   displayName: string;

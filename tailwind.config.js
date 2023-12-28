@@ -1,18 +1,18 @@
-import { fontFamily } from 'tailwindcss/defaultTheme';
-import { colors } from './src/styles/theme/colors';
+import { fontFamily } from "tailwindcss/defaultTheme";
+import { colors } from "./src/styles/theme/colors";
 
 module.exports = {
-  content: ['./src/**/*.{ts,tsx}'],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roboto', ...fontFamily.sans],
+        sans: ["Roboto", ...fontFamily.sans],
       },
       width: {
-        'screen-xl': '1440px',
+        "screen-xl": "1440px",
       },
       blur: {
-        xs: '2px',
+        xs: "2px",
       },
       colors: {
         primary: colors.primary,
@@ -20,7 +20,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     styled: true,
     base: true,
@@ -30,10 +30,10 @@ module.exports = {
     themes: [
       {
         dotcom: {
-          ...require('./src/styles/theme/colors'),
-          ...require('./src/styles/theme/button'),
+          ...require("./src/styles/theme/colors"),
+          ...require("./src/styles/theme/button"),
 
-          '--rounded-btn': '.5rem',
+          "--rounded-btn": ".5rem",
           // We can add another font to the component by simply setting the property
           // fontFamily: "Inter",
         },

@@ -1,9 +1,9 @@
-import { FC, Fragment, PropsWithChildren } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { UniformText } from '@uniformdev/canvas-react';
-import { getMediaUrl } from '../../utilities';
-import { FeatureProps } from '.';
+import { FC, Fragment, PropsWithChildren } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { UniformText } from "@uniformdev/canvas-react";
+import { getMediaUrl } from "../../utilities";
+import { FeatureProps } from ".";
 
 export const Feature: FC<FeatureProps> = ({ icon, link }) => {
   const imageUrl = getMediaUrl(icon);

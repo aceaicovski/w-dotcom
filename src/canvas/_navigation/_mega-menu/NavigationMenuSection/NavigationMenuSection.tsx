@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import { NavigationMenuSectionProps } from '.';
+import { FC } from "react";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import { NavigationMenuSectionProps } from ".";
 
 export const NavigationMenuSection: FC<NavigationMenuSectionProps> = ({ title }) => (
   <div>

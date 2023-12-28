@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-import Button, { type ButtonProps } from '@/components/Button';
+import Button, { type ButtonProps } from "@/components/Button";
 
-export type DropdownToggleProps = Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'color'> & {
-  color?: ButtonProps['variant'];
-  size?: ButtonProps['size'];
+export type DropdownToggleProps = Omit<React.LabelHTMLAttributes<HTMLLabelElement>, "color"> & {
+  color?: ButtonProps["variant"];
+  size?: ButtonProps["size"];
   button?: boolean;
   disabled?: boolean;
   children: string;
@@ -12,7 +12,7 @@ export type DropdownToggleProps = Omit<React.LabelHTMLAttributes<HTMLLabelElemen
 
 const DropdownToggle = ({
   children,
-  color = 'outlined',
+  color = "outlined",
   size,
   button = true,
   className,

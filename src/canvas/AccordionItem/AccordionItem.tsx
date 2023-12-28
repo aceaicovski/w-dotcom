@@ -1,7 +1,7 @@
-import { FC, useCallback, useState } from 'react';
-import classNames from 'classnames';
-import { UniformText } from '@uniformdev/canvas-react';
-import { AccordionItemProps } from '.';
+import { FC, useCallback, useState } from "react";
+import classNames from "classnames";
+import { UniformText } from "@uniformdev/canvas-react";
+import { AccordionItemProps } from ".";
 
 export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
   const [isOpened, setOpened] = useState(false);
@@ -10,14 +10,14 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
   return (
     <div
       className={classNames(
-        'card mb-2 rounded-none border-b border-solid border-neutral-300 last:mb-0',
+        "card mb-2 rounded-none border-b border-solid border-neutral-300 last:mb-0",
         styles?.container
       )}
     >
       <button
         onClick={toggleAccordion}
         className={classNames(
-          'flex w-full flex-row items-center justify-between bg-inherit p-2 text-2xl font-semibold md:p-4',
+          "flex w-full flex-row items-center justify-between bg-inherit p-2 text-2xl font-semibold md:p-4",
           styles?.toggleButton
         )}
       >
@@ -25,7 +25,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
           placeholder="Title goes here"
           parameterId="title"
           as="p"
-          className={classNames('pr-2 text-start text-primary', styles?.title)}
+          className={classNames("pr-2 text-start text-primary", styles?.title)}
         />
         <div className="flex items-center">
           {isOpened ? (
@@ -54,7 +54,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({ styles }) => {
           placeholder="Description goes here"
           parameterId="description"
           as="p"
-          className={classNames('px-2 pb-4 text-base text-primary md:px-4', styles?.description)}
+          className={classNames("px-2 pb-4 text-base text-primary md:px-4", styles?.description)}
         />
       )}
     </div>

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useCallback, useEffect, useMemo, useState, ChangeEvent, useContext } from 'react';
-import { registerUniformComponent, ComponentProps } from '@uniformdev/canvas-react';
+import { FC, useCallback, useEffect, useMemo, useState, ChangeEvent, useContext } from "react";
+import { registerUniformComponent, ComponentProps } from "@uniformdev/canvas-react";
 // @ts-ignore: Expected error if the module is not yet installed
-import { buildSearchBox } from '@coveo/headless';
-import { HeadlessEngineContext } from './Engine';
+import { buildSearchBox } from "@coveo/headless";
+import { HeadlessEngineContext } from "./Engine";
 
 type SearchBoxProps = ComponentProps<{
   placeholder?: string;
@@ -27,12 +27,12 @@ const SearchBox: FC<SearchBoxProps> = ({ placeholder, enableQuerySyntax = false,
         options: {
           highlightOptions: {
             notMatchDelimiters: {
-              open: '<strong>',
-              close: '</strong>',
+              open: "<strong>",
+              close: "</strong>",
             },
             correctionDelimiters: {
-              open: '<i>',
-              close: '</i>',
+              open: "<i>",
+              close: "</i>",
             },
           },
           clearFilters,
@@ -75,7 +75,7 @@ const SearchBox: FC<SearchBoxProps> = ({ placeholder, enableQuerySyntax = false,
 };
 
 registerUniformComponent({
-  type: 'coveo-searchBox',
+  type: "coveo-searchBox",
   component: SearchBox,
 });
 

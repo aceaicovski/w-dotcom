@@ -1,7 +1,7 @@
-import React, { type ReactElement } from 'react';
-import cn from '@/utilities/cn';
+import React, { type ReactElement } from "react";
+import cn from "@/utilities/cn";
 
-import SelectOption, { type SelectOptionProps } from './SelectOption';
+import SelectOption, { type SelectOptionProps } from "./SelectOption";
 
 type ListOrItem<T> = T[] | T | Array<T | T[]>;
 
@@ -17,7 +17,7 @@ const SelectInner = (props: SelectProps, ref: React.ForwardedRef<HTMLSelectEleme
       {...rest}
       ref={ref}
       className={cn(
-        'select-focus-btn select select-bordered select-md bg-gray-200 text-base font-medium focus:outline-offset-0',
+        "select-focus-btn select select-bordered select-md bg-gray-200 text-base font-medium focus:outline-offset-0",
         className
       )}
     >

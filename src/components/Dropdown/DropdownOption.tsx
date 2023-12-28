@@ -1,6 +1,6 @@
-import { FC, useCallback } from 'react';
-import classNames from 'classnames';
-import { Option } from './';
+import { FC, useCallback } from "react";
+import classNames from "classnames";
+import { Option } from "./";
 
 export type DropdownOptionProps = {
   option: Option;
@@ -13,8 +13,8 @@ export const DropdownOption: FC<DropdownOptionProps> = ({ option, isDefault, onS
 
   return (
     <button
-      className={classNames('block px-4 py-2 hover:opacity-50 lg:mx-4 lg:my-2 lg:p-0', {
-        'opacity-50 hover:opacity-100': isDefault,
+      className={classNames("block px-4 py-2 hover:opacity-50 lg:mx-4 lg:my-2 lg:p-0", {
+        "opacity-50 hover:opacity-100": isDefault,
       })}
       onClick={handleSelect}
       tabIndex={-1}

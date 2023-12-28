@@ -1,25 +1,25 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useContext, useEffect, useMemo, useState } from 'react';
-import { ComponentInstance, RootComponentInstance } from '@uniformdev/canvas';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
+import { FC, useContext, useEffect, useMemo, useState } from "react";
+import { ComponentInstance, RootComponentInstance } from "@uniformdev/canvas";
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
 // @ts-ignore: Expected error if the module is not yet installed
-import { buildResultList, Result } from '@coveo/headless';
-import { HeadlessEngineContext } from './Engine';
-import ResultItem from './ResultItem';
-import InformationContent from '../../components/InformationContent';
+import { buildResultList, Result } from "@coveo/headless";
+import { HeadlessEngineContext } from "./Engine";
+import ResultItem from "./ResultItem";
+import InformationContent from "../../components/InformationContent";
 
 enum ItemTypes {
-  Item = 'coveo-resultListItem',
+  Item = "coveo-resultListItem",
 }
 
 const COVEO_FIELDS_TO_INCLUDE = [
-  'slug',
-  'description',
-  'ec_description',
-  'ec_category',
-  'name',
-  'ec_thumbnails',
-  'sub_category',
+  "slug",
+  "description",
+  "ec_description",
+  "ec_category",
+  "name",
+  "ec_thumbnails",
+  "sub_category",
 ];
 
 // Coveo Result List docs https://docs.coveo.com/en/headless/latest/reference/search/controllers/result-list/
@@ -70,7 +70,7 @@ const ResultList: FC<ComponentProps> = ({ component }) => {
 };
 
 registerUniformComponent({
-  type: 'coveo-resultList',
+  type: "coveo-resultList",
   component: ResultList,
 });
 

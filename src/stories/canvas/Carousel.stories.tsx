@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { UniformComposition, ComponentProps } from '@uniformdev/canvas-react';
-import { Carousel, CarouselVariants } from '@/canvas';
-import { createFakeCompositionData, createUniformParameter } from '../utils';
+import type { Meta, StoryObj } from "@storybook/react";
+import { UniformComposition, ComponentProps } from "@uniformdev/canvas-react";
+import { Carousel, CarouselVariants } from "@/canvas";
+import { createFakeCompositionData, createUniformParameter } from "../utils";
 
 const meta: Meta<typeof Carousel> = {
-  title: 'Carousel',
+  title: "Carousel",
   component: Carousel,
 };
 
@@ -13,95 +13,95 @@ type Story = StoryObj<typeof Carousel>;
 
 const HEROS_PROPS = [
   {
-    eyebrowText: 'Hero',
-    title: '1. Are developers stuck with outdated tech and custom code to maintain?',
-    titleStyle: 'h2',
+    eyebrowText: "Hero",
+    title: "1. Are developers stuck with outdated tech and custom code to maintain?",
+    titleStyle: "h2",
     description:
       "Use this paragraph to share information about your company or brand. Make it as engaging as possible, and showcase your brand's unique personality.",
-    primaryButtonCopy: 'Home',
+    primaryButtonCopy: "Home",
     primaryButtonLink: {
-      path: '/',
+      path: "/",
     },
     image:
-      'https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp',
-    primaryButtonStyle: 'primary',
-    secondaryButtonCopy: 'Components',
+      "https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp",
+    primaryButtonStyle: "primary",
+    secondaryButtonCopy: "Components",
     secondaryButtonLink: {
-      path: '/',
+      path: "/",
     },
-    secondaryButtonStyle: 'link',
-    type: 'hero',
-    textColorVariant: 'Dark',
+    secondaryButtonStyle: "link",
+    type: "hero",
+    textColorVariant: "Dark",
   },
   {
-    eyebrowText: 'Hero',
-    title: '2. Are developers stuck with outdated tech and custom code to maintain?',
-    titleStyle: 'h2',
+    eyebrowText: "Hero",
+    title: "2. Are developers stuck with outdated tech and custom code to maintain?",
+    titleStyle: "h2",
     description:
       "Use this paragraph to share information about your company or brand. Make it as engaging as possible, and showcase your brand's unique personality.",
-    primaryButtonCopy: 'Home',
+    primaryButtonCopy: "Home",
     primaryButtonLink: {
-      path: '/',
+      path: "/",
     },
     image:
-      'https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp',
-    primaryButtonStyle: 'primary',
-    secondaryButtonCopy: 'Components',
+      "https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp",
+    primaryButtonStyle: "primary",
+    secondaryButtonCopy: "Components",
     secondaryButtonLink: {
-      path: '/',
+      path: "/",
     },
-    secondaryButtonStyle: 'link',
-    type: 'hero',
-    textColorVariant: 'Dark',
+    secondaryButtonStyle: "link",
+    type: "hero",
+    textColorVariant: "Dark",
   },
   {
-    eyebrowText: 'Hero',
-    title: '3. Are developers stuck with outdated tech and custom code to maintain?',
-    titleStyle: 'h2',
+    eyebrowText: "Hero",
+    title: "3. Are developers stuck with outdated tech and custom code to maintain?",
+    titleStyle: "h2",
     description:
       "Use this paragraph to share information about your company or brand. Make it as engaging as possible, and showcase your brand's unique personality.",
-    primaryButtonCopy: 'Home',
+    primaryButtonCopy: "Home",
     primaryButtonLink: {
-      path: '/',
+      path: "/",
     },
     image:
-      'https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp',
-    primaryButtonStyle: 'primary',
-    secondaryButtonCopy: 'Components',
+      "https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp",
+    primaryButtonStyle: "primary",
+    secondaryButtonCopy: "Components",
     secondaryButtonLink: {
-      path: '/',
+      path: "/",
     },
-    secondaryButtonStyle: 'link',
-    type: 'hero',
-    textColorVariant: 'Dark',
+    secondaryButtonStyle: "link",
+    type: "hero",
+    textColorVariant: "Dark",
   },
 ];
 
 const IMAGES_PROPS = [
   {
-    type: 'image',
-    src: 'https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp',
-    width: '2000',
-    height: '2000',
+    type: "image",
+    src: "https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp",
+    width: "2000",
+    height: "2000",
   },
   {
-    type: 'image',
-    src: 'https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp',
-    width: '2000',
-    height: '2000',
+    type: "image",
+    src: "https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp",
+    width: "2000",
+    height: "2000",
   },
   {
-    type: 'image',
-    src: 'https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp',
-    width: '2000',
-    height: '2000',
+    type: "image",
+    src: "https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp",
+    width: "2000",
+    height: "2000",
   },
 ];
 
 const argTypes = {};
 
 const renderStory = (args: ComponentProps) => {
-  const fakeComposition = createFakeCompositionData('carousel', args, {
+  const fakeComposition = createFakeCompositionData("carousel", args, {
     ...args.component.slots,
   });
   return (
@@ -114,11 +114,11 @@ const renderStory = (args: ComponentProps) => {
 export const Default: Story = {
   args: {
     component: {
-      type: 'carousel',
+      type: "carousel",
       variant: undefined,
       slots: {
         carouselItem: HEROS_PROPS.map(item => ({
-          type: 'hero',
+          type: "hero",
           parameters: createUniformParameter(item),
         })),
       },
@@ -131,11 +131,11 @@ export const Default: Story = {
 export const ImageGallery: Story = {
   args: {
     component: {
-      type: 'carousel',
+      type: "carousel",
       variant: CarouselVariants.ImageGallery,
       slots: {
         carouselItem: IMAGES_PROPS.map(item => ({
-          type: 'image',
+          type: "image",
           parameters: createUniformParameter(item),
         })),
       },

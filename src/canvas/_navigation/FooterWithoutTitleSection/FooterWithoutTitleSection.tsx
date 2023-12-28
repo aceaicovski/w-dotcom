@@ -1,6 +1,6 @@
-import { FC } from 'react';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import { FooterWithoutTitleSectionProps } from '.';
+import { FC } from "react";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import { FooterWithoutTitleSectionProps } from ".";
 
 export const FooterWithoutTitleSection: FC<FooterWithoutTitleSectionProps> = ({ title }) => (
   <div>

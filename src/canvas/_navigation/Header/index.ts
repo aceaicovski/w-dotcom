@@ -1,6 +1,6 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { withoutContainer } from '../../../hocs/withoutContainer';
-import { Header } from './Header';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { withoutContainer } from "../../../hocs/withoutContainer";
+import { Header } from "./Header";
 
 export type HeaderProps = ComponentProps<{
   logo: string | Types.CloudinaryImage;
@@ -9,16 +9,16 @@ export type HeaderProps = ComponentProps<{
 }>;
 
 export enum HeaderVariants {
-  Light = 'light',
+  Light = "light",
 }
 
 [undefined, HeaderVariants.Light].forEach(variantId => {
   registerUniformComponent({
-    type: 'header',
+    type: "header",
     component: withoutContainer(Header),
     variantId,
   });
 });
 
 export default withoutContainer(Header);
-export * from './decorator';
+export * from "./decorator";

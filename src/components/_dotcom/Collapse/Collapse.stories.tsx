@@ -1,10 +1,10 @@
-import React from 'react';
-import type { StoryFn as Story, Meta } from '@storybook/react';
+import React from "react";
+import type { StoryFn as Story, Meta } from "@storybook/react";
 
-import Collapse, { type CollapseProps } from '.';
+import Collapse, { type CollapseProps } from ".";
 
 export default {
-  title: 'Data Display/Collapse',
+  title: "Data Display/Collapse",
   component: Collapse,
 } as Meta;
 
@@ -19,5 +19,5 @@ export const Default: Story<CollapseProps> = args => {
   );
 };
 Default.args = {
-  className: 'bg-gray-100',
+  className: "bg-gray-100",
 };

@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { UniformComposition } from '@uniformdev/canvas-react';
-import { SportTypeCard, SportTypeCardProps } from '@/canvas';
-import { Container } from '@/components';
-import { BackgroundTypes } from '../../../utilities/styling';
-import { createFakeCompositionData } from '../../utils';
-import React from 'react';
+import type { Meta, StoryObj } from "@storybook/react";
+import { UniformComposition } from "@uniformdev/canvas-react";
+import { SportTypeCard, SportTypeCardProps } from "@/canvas";
+import { Container } from "@/components";
+import { BackgroundTypes } from "../../../utilities/styling";
+import { createFakeCompositionData } from "../../utils";
+import React from "react";
 
 const meta: Meta<typeof SportTypeCard> = {
-  title: 'Data Display/SportTypeCard',
+  title: "Data Display/SportTypeCard",
   component: SportTypeCard,
 };
 
@@ -15,21 +15,21 @@ export default meta;
 
 type Story = StoryObj<typeof SportTypeCard>;
 
-const BASE_PROPS: Omit<SportTypeCardProps, 'component'> = {
-  path: '/',
-  title: 'Flag Football',
-  icon: 'footbal',
+const BASE_PROPS: Omit<SportTypeCardProps, "component"> = {
+  path: "/",
+  title: "Flag Football",
+  icon: "footbal",
 };
 
 const argTypes = {
   icon: {
-    control: 'select',
-    options: ['footbal', 'basketball', 'volleyball', 'futboll', 'flag-pennant', 'baseball'],
+    control: "select",
+    options: ["footbal", "basketball", "volleyball", "futboll", "flag-pennant", "baseball"],
   },
 };
 
 const renderStory = (args: SportTypeCardProps) => {
-  const fakeComposition = createFakeCompositionData('sportTypeCard', args, {});
+  const fakeComposition = createFakeCompositionData("sportTypeCard", args, {});
   return (
     <UniformComposition data={fakeComposition}>
       <Container backgroundType={BackgroundTypes.Light} className="flex flex-row justify-center">
@@ -49,7 +49,7 @@ export const RowCards: Story = {
   args: BASE_PROPS,
   argTypes,
   render: (args: SportTypeCardProps) => {
-    const fakeComposition = createFakeCompositionData('sportTypeCard', args, {});
+    const fakeComposition = createFakeCompositionData("sportTypeCard", args, {});
     return (
       <UniformComposition data={fakeComposition}>
         <Container backgroundType={BackgroundTypes.Light} className="flex flex-row justify-center space-x-4">

@@ -1,5 +1,5 @@
-import { registerUniformComponent, ComponentProps } from '@uniformdev/canvas-react';
-import { FeaturedCallout } from './FeaturedCallout';
+import { registerUniformComponent, ComponentProps } from "@uniformdev/canvas-react";
+import { FeaturedCallout } from "./FeaturedCallout";
 
 export type FeaturedCalloutProps = ComponentProps<{
   eyebrowText?: string;
@@ -10,12 +10,12 @@ export type FeaturedCalloutProps = ComponentProps<{
 }>;
 
 export enum FeaturedCalloutVariant {
-  ImageRight = 'imageRight',
+  ImageRight = "imageRight",
 }
 
 [undefined, FeaturedCalloutVariant.ImageRight].forEach(variantId => {
   registerUniformComponent({
-    type: 'featuredCallout',
+    type: "featuredCallout",
     component: FeaturedCallout,
     variantId,
   });

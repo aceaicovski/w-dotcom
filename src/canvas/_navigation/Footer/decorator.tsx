@@ -1,7 +1,7 @@
-import { ScreenContainer } from '../../../components/Container';
-import { MaxWidth } from '@/utilities/styling';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { ScreenContainer } from "../../../components/Container";
+import { MaxWidth } from "@/utilities/styling";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 // This placeholder is used as a background on the visual editing workspace of the patterns
 // Activate visual editing doc: https://docs.uniform.app/docs/guides/composition/visual-editing/activate-visual-editing

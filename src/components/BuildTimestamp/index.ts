@@ -2,4 +2,4 @@ export type BuildTimestampProps = {
   style?: string;
 };
 
-export { default } from './BuildTimestamp';
+export { default } from "./BuildTimestamp";

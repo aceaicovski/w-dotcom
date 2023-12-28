@@ -1,13 +1,13 @@
-import React from 'react';
-import cn from '@/utilities/cn';
+import React from "react";
+import cn from "@/utilities/cn";
 
-import DropdownMenu from './DropdownMenu';
-import DropdownItem from './DropdownItem';
-import DropdownToggle from './DropdownToggle';
+import DropdownMenu from "./DropdownMenu";
+import DropdownItem from "./DropdownItem";
+import DropdownToggle from "./DropdownToggle";
 
 export type DropdownProps<T extends HTMLElement = HTMLDivElement> = React.HTMLAttributes<T> & {
-  horizontal?: 'left' | 'right';
-  vertical?: 'top' | 'bottom';
+  horizontal?: "left" | "right";
+  vertical?: "top" | "bottom";
   end?: boolean;
   open?: boolean;
 };
@@ -20,13 +20,13 @@ const Dropdown = React.forwardRef<HTMLDivElement, DropdownProps>(
         {...props}
         ref={ref}
         className={cn(
-          'dropdown',
-          { 'dropdown-left': horizontal === 'left' },
-          { 'dropdown-right': horizontal === 'right' },
-          { 'dropdown-top': vertical === 'top' },
-          { 'dropdown-bottom': vertical === 'bottom' },
-          { 'dropdown-end': end },
-          { 'dropdown-open': open },
+          "dropdown",
+          { "dropdown-left": horizontal === "left" },
+          { "dropdown-right": horizontal === "right" },
+          { "dropdown-top": vertical === "top" },
+          { "dropdown-bottom": vertical === "bottom" },
+          { "dropdown-end": end },
+          { "dropdown-open": open },
           className
         )}
       >

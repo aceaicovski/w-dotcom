@@ -1,13 +1,13 @@
-import React from 'react';
-import type { StoryFn as Story, Meta } from '@storybook/react';
+import React from "react";
+import type { StoryFn as Story, Meta } from "@storybook/react";
 
-import Dropdown, { type DropdownProps } from '.';
+import Dropdown, { type DropdownProps } from ".";
 
 export default {
-  title: 'Actions/Dropdown',
+  title: "Actions/Dropdown",
   component: Dropdown,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
 } as Meta;
 

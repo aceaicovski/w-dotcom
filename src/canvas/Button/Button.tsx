@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import { useUniformCurrentComposition, UniformText } from '@uniformdev/canvas-react';
-import BaseButton from '../../components/Button';
-import { formatProjectMapLink } from '../../utilities';
-import { ButtonProps } from '.';
+import { FC } from "react";
+import { useUniformCurrentComposition, UniformText } from "@uniformdev/canvas-react";
+import BaseButton from "../../components/Button";
+import { formatProjectMapLink } from "../../utilities";
+import { ButtonProps } from ".";
 
 export const Button: FC<ButtonProps> = ({ link, style, size, rounded, animationType }) => {
   const { isContextualEditing } = useUniformCurrentComposition();

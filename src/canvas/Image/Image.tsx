@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import NextImage from 'next/image';
-import classNames from 'classnames';
-import { getImageOverlayColorStyle, getImageOverlayOpacityStyle, getObjectFitClass } from '../../utilities/styling';
-import { getMediaUrl } from '../../utilities';
-import { getBorderColorStyle, getBorderRadiusStyle } from './helpers';
-import { ImageProps } from '.';
+import { FC } from "react";
+import NextImage from "next/image";
+import classNames from "classnames";
+import { getImageOverlayColorStyle, getImageOverlayOpacityStyle, getObjectFitClass } from "../../utilities/styling";
+import { getMediaUrl } from "../../utilities";
+import { getBorderColorStyle, getBorderRadiusStyle } from "./helpers";
+import { ImageProps } from ".";
 
 export const Image: FC<ImageProps> = ({
   src,
@@ -28,7 +28,7 @@ export const Image: FC<ImageProps> = ({
   return (
     <div
       className={classNames(
-        'relative h-max max-w-max',
+        "relative h-max max-w-max",
         getBorderColorStyle(borderColor),
         getBorderRadiusStyle(borderRadius)
       )}
@@ -39,14 +39,14 @@ export const Image: FC<ImageProps> = ({
         width={width}
         height={height}
         className={classNames(getBorderRadiusStyle(borderRadius), getObjectFitClass(objectFit))}
-        alt={alt ?? 'image'}
+        alt={alt ?? "image"}
         fill={fill}
         quality={quality}
         priority={priority}
       />
       <div
         className={classNames(
-          'absolute bottom-0 left-0 right-0 top-0',
+          "absolute bottom-0 left-0 right-0 top-0",
           getImageOverlayColorStyle(overlayColor),
           getImageOverlayOpacityStyle(overlayOpacity),
           getBorderRadiusStyle(borderRadius)

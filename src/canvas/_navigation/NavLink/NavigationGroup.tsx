@@ -1,10 +1,10 @@
-import { FC, useMemo } from 'react';
-import classNames from 'classnames';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import { checkIsCurrentRoute } from './helpers';
-import { LinkProps } from '.';
+import { FC, useMemo } from "react";
+import classNames from "classnames";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import { checkIsCurrentRoute } from "./helpers";
+import { LinkProps } from ".";
 
 export const NavigationGroup: FC<LinkProps> = ({ title, link, styles }) => {
   const router = useRouter();
@@ -13,11 +13,11 @@ export const NavigationGroup: FC<LinkProps> = ({ title, link, styles }) => {
   return (
     <li tabIndex={0}>
       <Link
-        className={classNames('!rounded-none', styles?.link, {
-          'font-extrabold': isCurrentRoute,
-          [styles?.activeLink || '']: isCurrentRoute,
+        className={classNames("!rounded-none", styles?.link, {
+          "font-extrabold": isCurrentRoute,
+          [styles?.activeLink || ""]: isCurrentRoute,
         })}
-        href={link?.path || '#'}
+        href={link?.path || "#"}
       >
         {title}
         <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">

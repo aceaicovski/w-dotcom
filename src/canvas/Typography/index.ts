@@ -1,6 +1,6 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { PaddingSize } from '../../utilities/styling';
-import { Typography } from './Typography';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { PaddingSize } from "../../utilities/styling";
+import { Typography } from "./Typography";
 
 type Styles = {
   container?: string;
@@ -16,7 +16,7 @@ export type TypographyProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'typography',
+  type: "typography",
   component: Typography,
 });
 
