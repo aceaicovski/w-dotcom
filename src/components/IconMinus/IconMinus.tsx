@@ -1,4 +1,4 @@
-import { FC, SVGProps } from 'react';
+import { FC, SVGProps } from "react";
 
 const IconMinus: FC<SVGProps<SVGSVGElement>> = props => (
   <svg
@@ -7,7 +7,7 @@ const IconMinus: FC<SVGProps<SVGSVGElement>> = props => (
     viewBox="0 0 24 24"
     strokeWidth="1.5"
     stroke="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
     {...props}
   >
     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />

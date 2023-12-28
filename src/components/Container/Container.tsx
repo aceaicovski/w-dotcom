@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import classNames from 'classnames';
-import { BackgroundTypes, PaddingSize } from '../../utilities/styling';
-import { ContainerProps, ContainerVariants } from './';
-import { BaseContainer } from './BaseContainer';
-import { ScreenContainer } from './ScreenContainer';
-import { BackgroundWrapper } from './helpers';
+import { FC } from "react";
+import classNames from "classnames";
+import { BackgroundTypes, PaddingSize } from "../../utilities/styling";
+import { ContainerProps, ContainerVariants } from "./";
+import { BaseContainer } from "./BaseContainer";
+import { ScreenContainer } from "./ScreenContainer";
+import { BackgroundWrapper } from "./helpers";
 
 const Container: FC<ContainerProps> = ({
   backgroundType,
@@ -14,8 +14,9 @@ const Container: FC<ContainerProps> = ({
   marginBottom = PaddingSize.None,
   containerVariant,
   children,
-  backgroundClassName = '',
+  backgroundClassName = "",
   className,
+  maxWidth,
 }) => {
   if (containerVariant === ContainerVariants.FluidContent) {
     return (
@@ -27,14 +28,16 @@ const Container: FC<ContainerProps> = ({
         marginBottom={marginBottom}
         backgroundClassName={backgroundClassName}
       >
-        <BaseContainer className={className}>{children}</BaseContainer>
+        <BaseContainer className={className} maxWidth={maxWidth}>
+          {children}
+        </BaseContainer>
       </BackgroundWrapper>
     );
   }
 
   if (containerVariant === ContainerVariants.BackgroundInContainer) {
     return (
-      <ScreenContainer className={className}>
+      <ScreenContainer className={className} maxWidth={maxWidth}>
         <BackgroundWrapper
           paddingTop={paddingTop}
           backgroundType={backgroundType || BackgroundTypes.Transparent}
@@ -58,7 +61,9 @@ const Container: FC<ContainerProps> = ({
       marginBottom={marginBottom}
       backgroundClassName={backgroundClassName}
     >
-      <ScreenContainer className={className}>{children}</ScreenContainer>
+      <ScreenContainer className={className} maxWidth={maxWidth}>
+        {children}
+      </ScreenContainer>
     </BackgroundWrapper>
   );
 };

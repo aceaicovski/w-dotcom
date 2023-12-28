@@ -1,14 +1,14 @@
-import { FC } from 'react';
-import classNames from 'classnames';
-import { useUniformCurrentComposition, UniformText } from '@uniformdev/canvas-react';
-import Button from '../../components/Button';
-import { getTextClass } from '../../utilities/styling';
-import { formatProjectMapLink } from '../../utilities';
-import { getCallToActionContentClass, getCallToActionTextWrappersClass } from './helpers';
-import { CallToActionProps } from '.';
+import { FC } from "react";
+import classNames from "classnames";
+import { useUniformCurrentComposition, UniformText } from "@uniformdev/canvas-react";
+import Button from "../../components/Button";
+import { getTextClass } from "../../utilities/styling";
+import { formatProjectMapLink } from "../../utilities";
+import { getCallToActionContentClass, getCallToActionTextWrappersClass } from "./helpers";
+import { CallToActionProps } from ".";
 
 export const CallToAction: FC<CallToActionProps> = ({
-  titleStyle: TitleTag = 'h2',
+  titleStyle: TitleTag = "h2",
   primaryButtonCopy,
   primaryButtonLink,
   primaryButtonStyle,
@@ -23,26 +23,26 @@ export const CallToAction: FC<CallToActionProps> = ({
 }) => {
   const { isContextualEditing } = useUniformCurrentComposition();
 
-  const isLightTextColor = textColorVariant === 'Light';
-  const eyebrowTextColorStyle = isLightTextColor ? 'text-secondary' : 'text-primary';
-  const textColorStyle = isLightTextColor ? 'text-primary-content' : 'text-secondary-content';
+  const isLightTextColor = textColorVariant === "Light";
+  const eyebrowTextColorStyle = isLightTextColor ? "text-secondary" : "text-primary";
+  const textColorStyle = isLightTextColor ? "text-primary-content" : "text-secondary-content";
 
   return (
     <div
       className={classNames(
-        'flex flex-wrap items-center justify-between w-full lg:flex-nowrap rounded-xl',
+        "flex w-full flex-wrap items-center justify-between rounded-xl lg:flex-nowrap",
         textColorStyle,
         styles?.container
       )}
     >
-      <div className={classNames('flex', getCallToActionContentClass(variant))}>
+      <div className={classNames("flex", getCallToActionContentClass(variant))}>
         <div className={getCallToActionTextWrappersClass(variant)}>
           <UniformText
             placeholder="Eyebrow text goes here"
             parameterId="eyebrowText"
             as="div"
             className={classNames(
-              'text-sm font-bold tracking-wider uppercase text-primary my-3',
+              "my-3 text-sm font-bold uppercase tracking-wider text-primary",
               eyebrowTextColorStyle
             )}
           />
@@ -50,7 +50,7 @@ export const CallToAction: FC<CallToActionProps> = ({
             placeholder="Title goes here"
             parameterId="title"
             as={TitleTag}
-            className={classNames('font-medium', getTextClass(TitleTag))}
+            className={classNames("font-medium", getTextClass(TitleTag))}
           />
           <UniformText placeholder="Description goes here" parameterId="description" as="p" className="py-6 text-xl" />
         </div>

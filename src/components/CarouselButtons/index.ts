@@ -1,4 +1,4 @@
-import { ButtonGroupProps } from 'react-multi-carousel';
+import { ButtonGroupProps } from "react-multi-carousel";
 
 export type CarouselButtonProps = ButtonGroupProps & {
   buttonStyle: Types.ButtonStyles;
@@ -6,4 +6,4 @@ export type CarouselButtonProps = ButtonGroupProps & {
   colorClassName?: string;
 };
 
-export { default } from './CarouselButtons';
+export { default } from "./CarouselButtons";

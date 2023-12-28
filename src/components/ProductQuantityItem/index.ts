@@ -6,5 +6,5 @@ export type ProductQuantityItemProps = {
   animationType?: Types.AnimationType;
 };
 
-export * from './ProductQuantityItem';
-export { default } from './ProductQuantityItem';
+export * from "./ProductQuantityItem";
+export { default } from "./ProductQuantityItem";

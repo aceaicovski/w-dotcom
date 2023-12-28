@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useEffect, useMemo, useState } from 'react';
-import classNames from 'classnames';
-import { ComponentProps, UniformSlot, registerUniformComponent } from '@uniformdev/canvas-react';
+import { FC, useEffect, useMemo, useState } from "react";
+import classNames from "classnames";
+import { ComponentProps, UniformSlot, registerUniformComponent } from "@uniformdev/canvas-react";
 // @ts-ignore: Expected error if the module is not yet installed
-import { buildFacet, buildSearchBox, FacetState } from '@coveo/headless';
-import { getHeadlessEngine, HeadlessEngineContext } from './Engine';
-import Container from '../../components/Container';
-import { PaddingSize } from '../../utilities/styling';
+import { buildFacet, buildSearchBox, FacetState } from "@coveo/headless";
+import { getHeadlessEngine, HeadlessEngineContext } from "./Engine";
+import Container from "../../components/Container";
+import { PaddingSize } from "../../utilities/styling";
 
 type SearchProviderProps = ComponentProps<{
   [name: string]: string;
@@ -16,7 +16,7 @@ type SearchProviderProps = ComponentProps<{
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const SearchProvider: FC<SearchProviderProps> = ({ component, ...facet }) => {
   const rootFacetName = Object.keys(facet)?.[0];
-  const rootFacetValue = facet[0] || '';
+  const rootFacetValue = facet[0] || "";
 
   const headlessEngine = useMemo(() => getHeadlessEngine(), []);
   const headlessFacets = useMemo(
@@ -45,7 +45,7 @@ const SearchProvider: FC<SearchProviderProps> = ({ component, ...facet }) => {
 
   useEffect(() => {
     if (!headlessSearchBox.state.isLoading) {
-      if (currentSubCategory && currentSubCategory.state === 'idle') {
+      if (currentSubCategory && currentSubCategory.state === "idle") {
         headlessFacets?.toggleSingleSelect(currentSubCategory);
       } else if (!currentSubCategory) {
         headlessSearchBox.submit();
@@ -54,7 +54,7 @@ const SearchProvider: FC<SearchProviderProps> = ({ component, ...facet }) => {
   }, [currentSubCategory, headlessEngine, headlessFacets, headlessSearchBox]);
 
   const hidden = useMemo(
-    () => rootFacetValue && (!currentSubCategory || currentSubCategory?.state === 'idle'),
+    () => rootFacetValue && (!currentSubCategory || currentSubCategory?.state === "idle"),
     [currentSubCategory, rootFacetValue]
   );
 
@@ -70,7 +70,7 @@ const SearchProvider: FC<SearchProviderProps> = ({ component, ...facet }) => {
 };
 
 registerUniformComponent({
-  type: 'coveo-searchProvider',
+  type: "coveo-searchProvider",
   component: SearchProvider,
 });
 

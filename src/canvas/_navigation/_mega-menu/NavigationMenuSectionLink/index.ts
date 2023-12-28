@@ -1,5 +1,5 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { NavigationMenuSectionLink } from './NavigationMenuSectionLink';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { NavigationMenuSectionLink } from "./NavigationMenuSectionLink";
 
 export type NavigationMenuSectionLinkProps = ComponentProps<{
   title: string;
@@ -9,12 +9,12 @@ export type NavigationMenuSectionLinkProps = ComponentProps<{
 }>;
 
 export enum NavigationMenuSectionLinkVariant {
-  IconLeft = 'iconLeft',
+  IconLeft = "iconLeft",
 }
 
 [undefined, NavigationMenuSectionLinkVariant.IconLeft].forEach(variantId =>
   registerUniformComponent({
-    type: 'navigationMenuSectionLink',
+    type: "navigationMenuSectionLink",
     component: NavigationMenuSectionLink,
     variantId,
   })

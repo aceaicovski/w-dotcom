@@ -1,5 +1,5 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { NavigationOneColumnMenuLink } from './NavigationOneColumnMenuLink';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { NavigationOneColumnMenuLink } from "./NavigationOneColumnMenuLink";
 
 export type NavigationOneColumnMenuLinkProps = ComponentProps<{
   title: string;
@@ -9,12 +9,12 @@ export type NavigationOneColumnMenuLinkProps = ComponentProps<{
 }>;
 
 export enum NavigationOneColumnMenuLinkVariant {
-  IconLeft = 'iconLeft',
+  IconLeft = "iconLeft",
 }
 
 [undefined, NavigationOneColumnMenuLinkVariant.IconLeft].forEach(variantId =>
   registerUniformComponent({
-    type: 'navigationOneColumnMenuLink',
+    type: "navigationOneColumnMenuLink",
     component: NavigationOneColumnMenuLink,
     variantId,
   })

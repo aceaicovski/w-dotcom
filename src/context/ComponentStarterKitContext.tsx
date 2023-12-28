@@ -1,8 +1,8 @@
-import { FC, PropsWithChildren, createContext, useContext, useMemo } from 'react';
-import { NextFont } from 'next/dist/compiled/@next/font';
-import { useUniformCurrentComposition } from '@uniformdev/canvas-react';
-import { RootComponentInstance } from '@uniformdev/canvas';
-import { appFonts } from '../fonts';
+import { FC, PropsWithChildren, createContext, useContext, useMemo } from "react";
+import { NextFont } from "next/dist/compiled/@next/font";
+import { useUniformCurrentComposition } from "@uniformdev/canvas-react";
+import { RootComponentInstance } from "@uniformdev/canvas";
+import { appFonts } from "../fonts";
 
 type ComponentStartKitContextProps = {
   breadcrumbs?: Types.ProjectMapLink[];

@@ -1,17 +1,17 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { RichText } from './RichText';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { RichText } from "./RichText";
 
 export type RichTextProps = ComponentProps<{
   content?: string;
 }>;
 
 export enum RichTextVariants {
-  Light = 'light',
+  Light = "light",
 }
 
 [undefined, RichTextVariants.Light].forEach(variantId =>
   registerUniformComponent({
-    type: 'richText',
+    type: "richText",
     component: RichText,
     variantId,
   })

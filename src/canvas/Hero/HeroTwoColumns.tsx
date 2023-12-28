@@ -1,20 +1,20 @@
-import { FC } from 'react';
-import classNames from 'classnames';
-import { useHeroAnimation } from './animation';
-import { BackgroundImage, Container, Description, EyebrowText, PrimaryButton, SecondaryButton, Title } from './atoms';
-import { AnimationVariant } from '../../components/AnimatedContainer';
-import { HeroProps } from './';
+import { FC } from "react";
+import classNames from "classnames";
+import { useHeroAnimation } from "./animation";
+import { BackgroundImage, Container, Description, EyebrowText, PrimaryButton, SecondaryButton, Title } from "./atoms";
+import { AnimationVariant } from "../../components/AnimatedContainer";
+import { HeroProps } from "./";
 
 export const HeroTwoColumns: FC<HeroProps> = ({
   title,
-  titleStyle = 'h1',
+  titleStyle = "h1",
   image,
   video,
   primaryButtonLink,
-  primaryButtonStyle = 'primary',
+  primaryButtonStyle = "primary",
   primaryButtonAnimationType,
   secondaryButtonLink,
-  secondaryButtonStyle = 'primary',
+  secondaryButtonStyle = "primary",
   secondaryButtonAnimationType,
   overlayOpacity,
   overlayColor,
@@ -22,7 +22,7 @@ export const HeroTwoColumns: FC<HeroProps> = ({
   useCustomTextElements = false,
   fullHeight,
   animationType,
-  duration = 'medium',
+  duration = "medium",
   animationOrder,
   backgroundType,
   containerVariant,
@@ -30,12 +30,12 @@ export const HeroTwoColumns: FC<HeroProps> = ({
   paddingTop,
   marginBottom,
   marginTop,
-  textColorVariant = 'Light',
+  textColorVariant = "Light",
   animationPreview,
-  delay = 'none',
+  delay = "none",
   styles,
 }) => {
-  const baseTextStyle = textColorVariant === 'Light' ? 'text-primary-content' : 'text-secondary-content';
+  const baseTextStyle = textColorVariant === "Light" ? "text-primary-content" : "text-secondary-content";
 
   const { ElementWrapper, getDelayValue } = useHeroAnimation({
     duration,
@@ -57,8 +57,8 @@ export const HeroTwoColumns: FC<HeroProps> = ({
       containerVariant={containerVariant}
     >
       <div
-        className={classNames('hero-content text-center p-0', {
-          'h-full items-start pt-20': fullHeight,
+        className={classNames("hero-content p-0 text-center", {
+          "h-full items-start pt-20": fullHeight,
         })}
       >
         <BackgroundImage
@@ -69,37 +69,37 @@ export const HeroTwoColumns: FC<HeroProps> = ({
           overlayOpacity={overlayOpacity}
         />
 
-        <div className={classNames('flex flex-row mx-1 md:mx-10 z-20')}>
+        <div className={classNames("z-20 mx-1 flex flex-row md:mx-10")}>
           <div className="grid grid-cols-2 gap-x-28">
             <div className="flex flex-col">
               <ElementWrapper
                 duration={duration}
                 delay={getDelayValue(0)}
-                animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInRight}
+                animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInRight}
               >
                 <EyebrowText className={styles?.eyebrowText} />
               </ElementWrapper>
               <ElementWrapper
                 duration={duration}
                 delay={getDelayValue(1.5)}
-                animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInRight}
+                animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInRight}
               >
                 <Title
                   titleStyle={titleStyle}
                   useCustomTextElements={useCustomTextElements}
-                  className={classNames('text-left', styles?.title)}
+                  className={classNames("text-left", styles?.title)}
                   title={title}
                 />
               </ElementWrapper>
             </div>
 
-            <div className="text-secondary flex flex-col items-start">
+            <div className="flex flex-col items-start text-secondary">
               <ElementWrapper
                 duration={duration}
                 delay={getDelayValue(3)}
-                animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInLeft}
+                animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInLeft}
               >
-                <Description className={classNames('text-left !py-0', styles?.description)} />
+                <Description className={classNames("!py-0 text-left", styles?.description)} />
               </ElementWrapper>
               <div className="py-6">
                 {Boolean(primaryButtonLink) && (
@@ -107,7 +107,7 @@ export const HeroTwoColumns: FC<HeroProps> = ({
                     duration={duration}
                     delay={getDelayValue(4.5)}
                     animationVariant={
-                      animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInLeft
+                      animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInLeft
                     }
                   >
                     <PrimaryButton
@@ -122,7 +122,7 @@ export const HeroTwoColumns: FC<HeroProps> = ({
                     duration={duration}
                     delay={getDelayValue(6)}
                     animationVariant={
-                      animationType === 'fadeIn' ? AnimationVariant.FadeIn : AnimationVariant.FadeInLeft
+                      animationType === "fadeIn" ? AnimationVariant.FadeIn : AnimationVariant.FadeInLeft
                     }
                   >
                     <SecondaryButton

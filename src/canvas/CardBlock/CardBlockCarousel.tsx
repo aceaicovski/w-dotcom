@@ -1,19 +1,19 @@
-import { FC, useCallback } from 'react';
-import classNames from 'classnames';
-import MultiCarousel from 'react-multi-carousel';
+import { FC, useCallback } from "react";
+import classNames from "classnames";
+import MultiCarousel from "react-multi-carousel";
 import {
   UniformText,
   UniformSlot,
   useUniformCurrentComposition,
   UniformSlotWrapperComponentProps,
-} from '@uniformdev/canvas-react';
-import 'react-multi-carousel/lib/styles.css';
-import CarouselButtons from '../../components/CarouselButtons';
-import Button from '../../components/Button';
-import { getTextClass } from '../../utilities/styling';
-import { formatProjectMapLink } from '../../utilities';
-import { getColorClassName } from './helpers';
-import { CardBlockProps } from '.';
+} from "@uniformdev/canvas-react";
+import "react-multi-carousel/lib/styles.css";
+import CarouselButtons from "../../components/CarouselButtons";
+import Button from "../../components/Button";
+import { getTextClass } from "../../utilities/styling";
+import { formatProjectMapLink } from "../../utilities";
+import { getColorClassName } from "./helpers";
+import { CardBlockProps } from ".";
 
 const defaultResponsiveData = {
   desktop: {
@@ -31,7 +31,7 @@ const defaultResponsiveData = {
 };
 
 export const CardBlockCarousel: FC<CardBlockProps> = ({
-  titleStyle: TitleTag = 'h1',
+  titleStyle: TitleTag = "h1",
   buttonLink,
   buttonStyle,
   buttonAnimationType,
@@ -74,17 +74,17 @@ export const CardBlockCarousel: FC<CardBlockProps> = ({
     <div>
       <div
         className={classNames(
-          'w-full flex flex-col md:flex-row md:items-center justify-between mb-6 md:mb-10',
+          "mb-6 flex w-full flex-col justify-between md:mb-10 md:flex-row md:items-center",
           styles?.container,
           colorClassName
         )}
       >
-        <div className="mb-6 md:mb-0 basis-2/3 xl:basis-auto">
+        <div className="mb-6 basis-2/3 md:mb-0 xl:basis-auto">
           <UniformText
             placeholder="Title goes here"
             parameterId="title"
             as={TitleTag}
-            className={classNames('font-bold', getTextClass(TitleTag))}
+            className={classNames("font-bold", getTextClass(TitleTag))}
           />
           <UniformText placeholder="Description goes here" parameterId="description" as="p" className="sm:pr-8" />
         </div>

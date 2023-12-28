@@ -15,16 +15,29 @@ parameters:
     type: group
     typeConfig:
       childrenParams:
-        - paddingBottom
-        - backgroundType
+        - maxWidth
         - paddingTop
+        - paddingBottom
         - marginTop
         - marginBottom
-  - id: backgroundType
-    name: Background Type
-    type: tp-background-type-parameter
-    helpText: ''
-    typeConfig: null
+        - backgroundType
+  - id: maxWidth
+    name: Max Width
+    type: select
+    helpText: Container Max Width ( Small | Medium | Large | Full | None )
+    typeConfig:
+      options:
+        - text: Small
+          value: Small
+        - text: Medium
+          value: Medium
+        - text: Large
+          value: Large
+        - text: Full
+          value: Full
+        - text: None
+          value: None
+    localizable: false
   - id: paddingTop
     name: Padding Top
     type: select
@@ -81,6 +94,23 @@ parameters:
           value: Large
         - text: None
           value: None
+  - id: backgroundType
+    name: Background Type
+    type: select
+    helpText: Container Background ( Light | Dark | Medium | Transparent | Secondary )
+    typeConfig:
+      options:
+        - text: Light
+          value: Light
+        - text: Dark
+          value: Dark
+        - text: Medium
+          value: Medium
+        - text: Transparent
+          value: Transparent
+        - text: Secondary
+          value: Secondary
+    localizable: false
 categoryId: 19f9419d-14da-496d-a4ac-eec5010e13d7
 previewImageUrl: >-
   https://res.cloudinary.com/uniform-demos/image/upload/v1/csk-preview-images/UniformTheme/Container_preview_image
@@ -94,8 +124,8 @@ slots:
     patternsInAllowedComponents: false
 titleParameter: title
 canBeComposition: false
-created: '2023-08-28T12:30:17.822277+00:00'
-updated: '2023-09-12T06:54:30.690672+00:00'
+created: '2023-12-22T15:51:48.537847+00:00'
+updated: '2023-12-26T16:40:27.268519+00:00'
 variants:
   - id: backgroundInContainer
     name: Background In Container

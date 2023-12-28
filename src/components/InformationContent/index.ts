@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
 
 export type InformationContentProps = {
   title: string;
@@ -7,5 +7,5 @@ export type InformationContentProps = {
   className?: string;
 };
 
-export * from './InformationContent';
-export { default } from './InformationContent';
+export * from "./InformationContent";
+export { default } from "./InformationContent";

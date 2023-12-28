@@ -1,14 +1,14 @@
-import { RouteGetResponseEdgehancedComposition } from '@uniformdev/canvas';
-import { getRouteClient } from '../utilities/canvas/canvasClients';
-export { default } from '../components/Playground';
+import { RouteGetResponseEdgehancedComposition } from "@uniformdev/canvas";
+import { getRouteClient } from "../utilities/canvas/canvasClients";
+export { default } from "../components/Playground";
 
 // Activate visual editing doc: https://docs.uniform.app/docs/guides/composition/visual-editing/activate-visual-editing
 
 // The current project theme is detected from the title on the Home page,
 // First theme from the Theme Pack integration is used by default.
-const HOME_PAGE_PATH = '/'; // Path to the Home page
+const HOME_PAGE_PATH = "/"; // Path to the Home page
 const UNIFORM_THEMES_SOURCE =
-  process.env.UNIFORM_THEMES_SOURCE || 'https://theme-pack-mesh-integration.netlify.app/staticThemes.json';
+  process.env.UNIFORM_THEMES_SOURCE || "https://theme-pack-mesh-integration.netlify.app/staticThemes.json";
 
 export const getServerSideProps = async () => {
   const routeClient = getRouteClient();

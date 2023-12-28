@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
-import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
-import { enableNextSsr } from '@uniformdev/context-next';
-import createUniformContext from '@/context/createUniformContext';
+import { ReactElement } from "react";
+import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from "next/document";
+import { enableNextSsr } from "@uniformdev/context-next";
+import createUniformContext from "@/context/createUniformContext";
 
 type CustomDocumentProps = DocumentInitialProps;
 

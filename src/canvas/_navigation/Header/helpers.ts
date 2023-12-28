@@ -1,23 +1,23 @@
-import { HeaderVariants } from '.';
+import { HeaderVariants } from ".";
 
 export const getHeaderColor = (variant?: string) => {
   switch (variant) {
     case HeaderVariants.Light:
-      return 'bg-base-200';
+      return "bg-base-200";
     default:
-      return 'bg-base-300';
+      return "bg-transparent";
   }
 };
 
 export const getLinksAlignment = (alignment?: Types.HorizontalAlignment) => {
   switch (alignment) {
-    case 'left':
-      return 'justify-start';
-    case 'center':
-      return 'justify-center';
-    case 'right':
-      return 'justify-end';
+    case "left":
+      return "justify-start";
+    case "center":
+      return "justify-center";
+    case "right":
+      return "justify-end";
     default:
-      return 'justify-end';
+      return "justify-end";
   }
 };

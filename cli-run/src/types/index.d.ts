@@ -1,7 +1,7 @@
 declare namespace CLI {
-  type CommonVariants = import('../constants').CommonVariants;
+  type CommonVariants = import("../constants").CommonVariants;
 
-  type AvailableProjects = import('../constants').AvailableProjects;
+  type AvailableProjects = import("../constants").AvailableProjects;
 
   type Spinner = {
     start: (msg?: string | undefined) => void;

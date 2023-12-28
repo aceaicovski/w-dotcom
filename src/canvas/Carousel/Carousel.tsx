@@ -1,10 +1,10 @@
-import { FC, useEffect, useRef, useState, createContext } from 'react';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { UniformSlot, useUniformContextualEditingState } from '@uniformdev/canvas-react';
-import { fromCamelCaseText } from '../../utilities';
-import { CarouselProps, CarouselVariants } from '.';
-import { CarouselInner } from './CarouselInner';
+import { FC, useEffect, useRef, useState, createContext } from "react";
+import Image from "next/image";
+import classNames from "classnames";
+import { UniformSlot, useUniformContextualEditingState } from "@uniformdev/canvas-react";
+import { fromCamelCaseText } from "../../utilities";
+import { CarouselProps, CarouselVariants } from ".";
+import { CarouselInner } from "./CarouselInner";
 
 export const CarouselContext = createContext({ currentIndex: 0 });
 
@@ -19,12 +19,12 @@ export const Carousel: FC<CarouselProps> = ({ component }) => {
 
   useEffect(() => {
     const handleResize = () => setReCheckCarouselSlider(prevState => !prevState);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
-    if (typeof selectedComponentReference?.componentIndex !== 'number') {
+    if (typeof selectedComponentReference?.componentIndex !== "number") {
       return;
     }
 
@@ -56,26 +56,30 @@ export const Carousel: FC<CarouselProps> = ({ component }) => {
     >
       <div>
         <div className="relative overflow-hidden">
-          <div ref={container} className="flex flex-row items-center scroll-smooth overflow-x-hidden">
+          <div ref={container} className="flex flex-row items-center overflow-x-hidden scroll-smooth">
             <UniformSlot name="carouselItem" wrapperComponent={CarouselInner} />
           </div>
-          <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-50">
+          <div className="absolute left-5 right-5 top-1/2 z-50 flex -translate-y-1/2 transform justify-between">
             <a
               onClick={() => onGoPrevious()}
-              className={classNames('btn btn-circle', { 'btn-disabled': currentIndex === 0 })}
+              className={classNames("btn btn-circle", {
+                "btn-disabled": currentIndex === 0,
+              })}
             >
               ❮
             </a>
             <a
               onClick={() => onGoNext()}
-              className={classNames('btn btn-circle', { 'btn-disabled': totalCountOfItems - 1 === currentIndex })}
+              className={classNames("btn btn-circle", {
+                "btn-disabled": totalCountOfItems - 1 === currentIndex,
+              })}
             >
               ❯
             </a>
           </div>
         </div>
         {variant === CarouselVariants.ImageGallery && !!carouselItem?.length && (
-          <div className="pt-2 flex flex-row gap-2 flex-wrap">
+          <div className="flex flex-row flex-wrap gap-2 pt-2">
             {carouselItem.map((item, index) => {
               const { src } = item.parameters || {};
               const srcImage = src?.value as string | undefined;
@@ -86,17 +90,17 @@ export const Carousel: FC<CarouselProps> = ({ component }) => {
                   aria-label="image-gallery"
                   key={`image-gallery-${index}`}
                   className={classNames(
-                    'cursor-pointer w-32 h-32 outline outline-1 outline-gray-200 p-1.5 hover:p-0.5 ease-out duration-300',
-                    { '!p-0.5 pointer-events-none': currentIndex === index }
+                    "outline h-32 w-32 cursor-pointer p-1.5 outline-1 outline-gray-200 duration-300 ease-out hover:p-0.5",
+                    { "pointer-events-none !p-0.5": currentIndex === index }
                   )}
                   onClick={() => setCurrentIndex(index)}
                 >
                   {srcImage ? (
-                    <div className="relative w-full h-full">
+                    <div className="relative h-full w-full">
                       <Image src={srcImage} fill className="object-cover" alt="" />
                     </div>
                   ) : (
-                    <div className="bg-primary w-full h-full  flex justify-center items-center">
+                    <div className="flex h-full w-full  items-center justify-center bg-primary">
                       <span className="break-words">{fromCamelCaseText(item.type)}</span>
                     </div>
                   )}

@@ -10,6 +10,12 @@ parameters:
     type: image
     helpText: ''
     typeConfig: null
+  - id: hideLogo
+    name: Hide Logo
+    type: checkbox
+    helpText: Toggle Logo visibility at Footer
+    typeConfig: null
+    localizable: false
   - id: displayBuildTimestamp
     name: Display Build Timestamp
     type: checkbox
@@ -46,13 +52,13 @@ slots:
     allowAllComponents: false
     inheritAllowedComponents: false
     patternsInAllowedComponents: false
-  - id: iconLinks
-    name: Icon Links
+  - id: iconLinkSocial
+    name: Icon Link Social
     allowedComponents:
-      - iconLink
+      - iconLinkSocial
     allowAllComponents: false
     inheritAllowedComponents: false
     patternsInAllowedComponents: false
 canBeComposition: false
-created: '2023-08-28T12:30:17.996632+00:00'
-updated: '2023-09-12T06:54:30.582131+00:00'
+created: '2023-12-22T15:51:48.581195+00:00'
+updated: '2023-12-27T16:25:43.29201+00:00'

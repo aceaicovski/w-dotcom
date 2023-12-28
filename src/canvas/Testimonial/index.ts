@@ -1,8 +1,8 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { Testimonial } from './Testimonial';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { Testimonial } from "./Testimonial";
 
 export enum TestimonialVariant {
-  CardWrapped = 'cardWrapped',
+  CardWrapped = "cardWrapped",
 }
 
 export type TestimonialProps = ComponentProps<{
@@ -15,7 +15,7 @@ export type TestimonialProps = ComponentProps<{
 
 [undefined, TestimonialVariant.CardWrapped].forEach(variantId =>
   registerUniformComponent({
-    type: 'testimonial',
+    type: "testimonial",
     component: Testimonial,
     variantId,
   })

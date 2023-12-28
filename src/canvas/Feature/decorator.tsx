@@ -1,6 +1,6 @@
-import { useCallback } from 'react';
-import Image from 'next/image';
-import { UniformPlaygroundDecorator } from '@uniformdev/canvas-react';
+import { useCallback } from "react";
+import Image from "next/image";
+import { UniformPlaygroundDecorator } from "@uniformdev/canvas-react";
 
 // This decorator is used as a display of the FeatureCallout component around the Feature component
 // Activate visual editing doc: https://docs.uniform.app/docs/guides/composition/visual-editing/activate-visual-editing
@@ -8,13 +8,13 @@ export const FeatureDecorator: UniformPlaygroundDecorator = ({ data, children })
   const ItemPlaceholder = useCallback(
     (count = 1) =>
       new Array(count).fill(0).map((_item, index) => (
-        <div key={`item-${index}`} className="flex items-start mt-8 space-x-3 blur-xs">
-          <div className="flex items-center justify-center flex-shrink-0 mt-1 rounded-md w-11 h-11 ">
+        <div key={`item-${index}`} className="mt-8 flex items-start space-x-3 blur-xs">
+          <div className="mt-1 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-md ">
             <Image
               width={100}
               height={100}
               alt="icon"
-              className="w-10 h-10 text-indigo-50"
+              className="h-10 w-10 text-indigo-50"
               src="https://res.cloudinary.com/uniform-demos/image/upload/v1692276689/csk-icons/icon-understand_eytz6h_cgirir.svg"
             />
           </div>
@@ -27,10 +27,10 @@ export const FeatureDecorator: UniformPlaygroundDecorator = ({ data, children })
     []
   );
 
-  if (data.type !== 'feature') return <>{children}</>;
+  if (data.type !== "feature") return <>{children}</>;
   return (
-    <div className="hero flex flex-wrap lg:gap-10 lg:flex-nowrap text-secondary-content">
-      <div className="flex items-center justify-start w-full lg:w-1/2 blur-xs">
+    <div className="hero flex flex-wrap text-secondary-content lg:flex-nowrap lg:gap-10">
+      <div className="flex w-full items-center justify-start blur-xs lg:w-1/2">
         <div>
           <Image
             src="https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png"
@@ -40,11 +40,11 @@ export const FeatureDecorator: UniformPlaygroundDecorator = ({ data, children })
           />
         </div>
       </div>
-      <div className="hero-content flex flex-wrap items-center w-full lg:w-1/2 p-0">
+      <div className="hero-content flex w-full flex-wrap items-center p-0 lg:w-1/2">
         <div>
-          <div className="flex flex-col w-full blur-xs">
-            <div className="text-sm font-bold tracking-wider uppercase text-primary my-3">Eyebrow text</div>
-            <h1 className="font-bold text-5xl">Default variant</h1>
+          <div className="flex w-full flex-col blur-xs">
+            <div className="my-3 text-sm font-bold uppercase tracking-wider text-primary">Eyebrow text</div>
+            <h1 className="text-5xl font-bold">Default variant</h1>
             <p className="py-6">Some compelling description</p>
           </div>
           <div className="w-full">

@@ -6,11 +6,11 @@ import {
   getCoveoEnvs,
   getGoogleAnalyticsEnvs,
   getSegmentEnvs,
-} from './informationCollector';
-import { AvailableProjects, CommonVariants } from './constants';
-import commercetoolsIntegration from './customIntegrations/commercetools';
-import openAIIntegration from './customIntegrations/openAI';
-import { composeGetEnvFns, fetchThemePackThemes } from './utils';
+} from "./informationCollector";
+import { AvailableProjects, CommonVariants } from "./constants";
+import commercetoolsIntegration from "./customIntegrations/commercetools";
+import openAIIntegration from "./customIntegrations/openAI";
+import { composeGetEnvFns, fetchThemePackThemes } from "./utils";
 
 export const demosVariantsGetEnvsMap: {
   [availableProjects in CLI.AvailableProjects]: Partial<
@@ -42,7 +42,7 @@ export const demosVariantsGetEnvsMap: {
 
 export const Integrations = {
   Cloudinary: {
-    name: 'Cloudinary',
+    name: "Cloudinary",
     data: {
       cloudName: process.env.CLI_CLOUDINARY_CLOUD_NAME!,
       apiKey: process.env.CLI_CLOUDINARY_API_KEY!,
@@ -50,11 +50,11 @@ export const Integrations = {
     },
   },
   Contentful: {
-    name: 'Contentful',
+    name: "Contentful",
   },
   ContentfulClassic: {
-    name: 'Contentful Classic',
-    link: 'https://docs.uniform.app/docs/integrations/content/contentful/contentful-classic/uniform-in-contentful/uniformconf-nextjs-tutorial',
+    name: "Contentful Classic",
+    link: "https://docs.uniform.app/docs/integrations/content/contentful/contentful-classic/uniform-in-contentful/uniformconf-nextjs-tutorial",
   },
   Contentstack: {
     name: `Contentstack`,
@@ -62,26 +62,26 @@ export const Integrations = {
   ThemePackUniform: {
     name: `Theme Pack`,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    fetchDataFn: (data: any) => fetchThemePackThemes('uniform', data),
+    fetchDataFn: (data: any) => fetchThemePackThemes("uniform", data),
   },
   ThemePackJavadrip: {
     name: `Theme Pack`,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    fetchDataFn: (data: any) => fetchThemePackThemes('javadrip', data),
+    fetchDataFn: (data: any) => fetchThemePackThemes("javadrip", data),
   },
   ThemePackJavadripBlack: {
     name: `Theme Pack`,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    fetchDataFn: (data: any) => fetchThemePackThemes('custom', data),
+    fetchDataFn: (data: any) => fetchThemePackThemes("custom", data),
   },
   UniformFakeCommerce: {
-    name: 'Uniform Fake Commerce',
+    name: "Uniform Fake Commerce",
     data: {
-      apiUrl: process.env.CLI_UNIFORM_FAKE_COMMERCE_API_URL || '',
+      apiUrl: process.env.CLI_UNIFORM_FAKE_COMMERCE_API_URL || "",
     },
   },
   Algolia: {
-    name: 'Algolia',
+    name: "Algolia",
     data: {
       applicationId: process.env.CLI_ALGOLIA_APPLICATION_ID,
       searchKey: process.env.CLI_ALGOLIA_SEARCH_KEY,
@@ -89,7 +89,7 @@ export const Integrations = {
     },
   },
   Commercetools: {
-    name: 'Commercetools',
+    name: "Commercetools",
     customManifest: commercetoolsIntegration,
     data: {
       projectKey: process.env.CLI_COMMERCETOOLS_PROJECT_KEY,
@@ -100,21 +100,21 @@ export const Integrations = {
     },
   },
   Coveo: {
-    name: 'Coveo',
+    name: "Coveo",
     data: {
       organizationId: process.env.CLI_COVEO_ORGANIZATION_ID as string,
       apiKey: process.env.CLI_COVEO_API_KEY as string,
     },
   },
   OpenAI: {
-    name: 'OpenAI',
+    name: "OpenAI",
     customManifest: openAIIntegration,
   },
 };
 
 export const notMeshIntegrations = [Integrations.ContentfulClassic.name];
 
-const BASE_URL = 'http://localhost:3000/api/preview?secret=';
+const BASE_URL = "http://localhost:3000/api/preview?secret=";
 
 export const demosPreviewUrlMap: {
   [availableProjects in CLI.AvailableProjects]: Partial<Record<CLI.CommonVariants, string>>;
@@ -182,12 +182,12 @@ export const demosRequiredIntegrationsMap: {
 };
 
 const getContentStackBaseUrl = (contentStackRegion: string) => {
-  if (contentStackRegion === 'AZURE') {
-    return 'https://azure-na-api.contentstack.com/v3';
-  } else if (contentStackRegion === 'EU') {
-    return 'https://eu-api.contentstack.com/v3';
+  if (contentStackRegion === "AZURE") {
+    return "https://azure-na-api.contentstack.com/v3";
+  } else if (contentStackRegion === "EU") {
+    return "https://eu-api.contentstack.com/v3";
   } else {
-    return 'https://cdn.contentstack.io/v3';
+    return "https://cdn.contentstack.io/v3";
   }
 };
 
@@ -195,16 +195,16 @@ const DataSource: {
   [key: string]: CLI.DataSourceConfiguration;
 } = {
   Contentful: {
-    integrationDisplayName: 'Contentful',
-    dataSourceId: 'contentfulDataSource',
-    dataSourceDisplayName: 'Contentful Data Source',
-    connectorType: 'contentful-data-connection',
+    integrationDisplayName: "Contentful",
+    dataSourceId: "contentfulDataSource",
+    dataSourceDisplayName: "Contentful Data Source",
+    connectorType: "contentful-data-connection",
     baseUrl: `https://cdn.contentful.com/spaces/${process.env.CLI_CONTENTFUL_SPACE_ID}/environments/${process.env.CLI_CONTENTFUL_ENVIRONMENT}`,
     dataProperties: {
-      headers: [{ key: 'Content-Type', value: 'application/json' }],
+      headers: [{ key: "Content-Type", value: "application/json" }],
       parameters: [
         {
-          key: 'access_token',
+          key: "access_token",
           value: process.env.CLI_CONTENTFUL_CDA_ACCESS_TOKEN,
         },
       ],
@@ -215,52 +215,61 @@ const DataSource: {
     },
   },
   Contentstack: {
-    integrationDisplayName: 'Contentstack',
-    dataSourceDisplayName: 'Contentstack Data Source',
-    dataSourceId: 'contentstackDataSource',
-    connectorType: 'contentstack-data-connection',
-    baseUrl: getContentStackBaseUrl(process.env.CLI_CONTENT_STACK_REGION || ''),
+    integrationDisplayName: "Contentstack",
+    dataSourceDisplayName: "Contentstack Data Source",
+    dataSourceId: "contentstackDataSource",
+    connectorType: "contentstack-data-connection",
+    baseUrl: getContentStackBaseUrl(process.env.CLI_CONTENT_STACK_REGION || ""),
     dataProperties: {
       headers: [
-        { key: 'Content-Type', value: 'application/json' },
-        { key: 'api_key', value: process.env.CLI_CONTENT_STACK_API_KEY },
-        { key: 'access_token', value: process.env.CLI_CONTENT_STACK_DELIVERY_TOKEN },
+        { key: "Content-Type", value: "application/json" },
+        { key: "api_key", value: process.env.CLI_CONTENT_STACK_API_KEY },
+        {
+          key: "access_token",
+          value: process.env.CLI_CONTENT_STACK_DELIVERY_TOKEN,
+        },
       ],
     },
   },
   Algolia: {
-    integrationDisplayName: 'Algolia',
-    dataSourceDisplayName: 'Algolia Data Source',
-    dataSourceId: 'algoliaDataSource',
-    connectorType: 'algolia-data-connection',
+    integrationDisplayName: "Algolia",
+    dataSourceDisplayName: "Algolia Data Source",
+    dataSourceId: "algoliaDataSource",
+    connectorType: "algolia-data-connection",
     baseUrl: `https://${process.env.CLI_ALGOLIA_APPLICATION_ID}-dsn.algolia.net/1/indexes`,
     dataProperties: {
       headers: [
-        { key: 'Content-Type', value: 'application/json' },
-        { key: 'X-Algolia-Application-Id', value: process.env.CLI_ALGOLIA_APPLICATION_ID },
-        { key: 'X-Algolia-API-Key', value: process.env.CLI_ALGOLIA_SEARCH_KEY },
+        { key: "Content-Type", value: "application/json" },
+        {
+          key: "X-Algolia-Application-Id",
+          value: process.env.CLI_ALGOLIA_APPLICATION_ID,
+        },
+        { key: "X-Algolia-API-Key", value: process.env.CLI_ALGOLIA_SEARCH_KEY },
       ],
     },
   },
   Coveo: {
-    integrationDisplayName: 'Coveo',
-    dataSourceDisplayName: 'Coveo Data Source',
-    dataSourceId: 'coveoDataSource',
-    connectorType: 'coveo-data-connection',
+    integrationDisplayName: "Coveo",
+    dataSourceDisplayName: "Coveo Data Source",
+    dataSourceId: "coveoDataSource",
+    connectorType: "coveo-data-connection",
     baseUrl: `https://${process.env.CLI_COVEO_ORGANIZATION_ID}.org.coveo.com/rest/search/v2`,
     dataProperties: {
       headers: [
-        { key: 'Content-Type', value: 'application/json' },
-        { key: 'Authorization', value: `Bearer ${process.env.CLI_COVEO_API_KEY}` },
+        { key: "Content-Type", value: "application/json" },
+        {
+          key: "Authorization",
+          value: `Bearer ${process.env.CLI_COVEO_API_KEY}`,
+        },
       ],
     },
   },
   UniformFakeCommerce: {
-    integrationDisplayName: 'Uniform Fake Commerce',
-    dataSourceDisplayName: 'Fake Commerce Data Source',
-    dataSourceId: 'fakeCommerceDataSource',
-    connectorType: 'fake-commerce-data-connection',
-    baseUrl: process.env.CLI_UNIFORM_FAKE_COMMERCE_NGM_API_URL || '',
+    integrationDisplayName: "Uniform Fake Commerce",
+    dataSourceDisplayName: "Fake Commerce Data Source",
+    dataSourceId: "fakeCommerceDataSource",
+    connectorType: "fake-commerce-data-connection",
+    baseUrl: process.env.CLI_UNIFORM_FAKE_COMMERCE_NGM_API_URL || "",
     dataProperties: {},
   },
 };
@@ -294,7 +303,7 @@ export const demosVariantsRequiredLocales: {
   [availableProjects in CLI.AvailableProjects]: Partial<Record<CLI.CommonVariants, string[]>>;
 } = {
   [AvailableProjects.Localization]: {
-    [CommonVariants.Default]: ['en-US', 'de-DE', 'es-ES'],
+    [CommonVariants.Default]: ["en-US", "de-DE", "es-ES"],
   },
   [AvailableProjects.CommerceStarter]: {
     [CommonVariants.Default]: [],
@@ -327,7 +336,7 @@ export const demosVariantsModulesRequire: {
   [AvailableProjects.ComponentStarterKit]: {
     [CommonVariants.Default]: additionalModulesForComponentStarterKit({
       integrationList: [Integrations.Coveo],
-      packagesList: ['@coveo/headless@2.31.0'],
+      packagesList: ["@coveo/headless@2.31.0"],
     }),
   },
   [AvailableProjects.CommerceAlgoliaDemo]: {

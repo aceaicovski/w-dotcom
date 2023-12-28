@@ -1,81 +1,81 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { UniformComposition } from '@uniformdev/canvas-react';
-import { Grid, GridProps } from '@/canvas';
-import { createFakeCompositionData, createUniformParameter } from '../utils';
+import type { Meta, StoryObj } from "@storybook/react";
+import { UniformComposition } from "@uniformdev/canvas-react";
+import { Grid, GridProps } from "@/canvas";
+import { createFakeCompositionData, createUniformParameter } from "../utils";
 
-const columnCountOptions = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-const gapXOptions = ['none', 'small', 'medium', 'large'];
-const gapYOptions = ['none', 'small', 'medium', 'large'];
+const columnCountOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
+const gapXOptions = ["none", "small", "medium", "large"];
+const gapYOptions = ["none", "small", "medium", "large"];
 
 const meta: Meta<GridProps> = {
-  title: 'Grid',
+  title: "Grid",
   component: Grid,
 };
 
 export default meta;
 type Story = StoryObj<typeof Grid>;
 
-const BASE_PROPS: Omit<GridProps, 'component'> = {
-  columnsCount: '3',
-  gapX: 'small',
-  gapY: 'small',
+const BASE_PROPS: Omit<GridProps, "component"> = {
+  columnsCount: "3",
+  gapX: "small",
+  gapY: "small",
 };
 
 const argTypes = {
-  columnsCount: { control: 'select', options: columnCountOptions },
-  gapX: { control: 'select', options: gapXOptions },
-  gapY: { control: 'select', options: gapYOptions },
+  columnsCount: { control: "select", options: columnCountOptions },
+  gapX: { control: "select", options: gapXOptions },
+  gapY: { control: "select", options: gapYOptions },
 };
 
 const CARDS = [
   {
     image:
-      'https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png',
-    title: 'Leverage existing technology investments ',
+      "https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png",
+    title: "Leverage existing technology investments ",
     description:
-      'Use this paragraph to share information about your company or brand. Make it as engaging as possible.',
+      "Use this paragraph to share information about your company or brand. Make it as engaging as possible.",
   },
   {
     image:
-      'https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png',
-    title: 'Leverage existing technology investments ',
+      "https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png",
+    title: "Leverage existing technology investments ",
     description:
-      'Use this paragraph to share information about your company or brand. Make it as engaging as possible.',
+      "Use this paragraph to share information about your company or brand. Make it as engaging as possible.",
   },
   {
     image:
-      'https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png',
-    title: 'Leverage existing technology investments ',
+      "https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png",
+    title: "Leverage existing technology investments ",
     description:
-      'Use this paragraph to share information about your company or brand. Make it as engaging as possible.',
+      "Use this paragraph to share information about your company or brand. Make it as engaging as possible.",
   },
   {
     image:
-      'https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png',
-    title: 'Leverage existing technology investments ',
+      "https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png",
+    title: "Leverage existing technology investments ",
     description:
-      'Use this paragraph to share information about your company or brand. Make it as engaging as possible.',
+      "Use this paragraph to share information about your company or brand. Make it as engaging as possible.",
   },
   {
     image:
-      'https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png',
-    title: 'Leverage existing technology investments ',
+      "https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png",
+    title: "Leverage existing technology investments ",
     description:
-      'Use this paragraph to share information about your company or brand. Make it as engaging as possible.',
+      "Use this paragraph to share information about your company or brand. Make it as engaging as possible.",
   },
   {
     image:
-      'https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png',
-    title: 'Leverage existing technology investments ',
+      "https://res.cloudinary.com/uniform-demos/image/upload/v1692276539/csk-marketing/Hero-Rectangle_nof1km_qy2ow6.png",
+    title: "Leverage existing technology investments ",
     description:
-      'Use this paragraph to share information about your company or brand. Make it as engaging as possible.',
+      "Use this paragraph to share information about your company or brand. Make it as engaging as possible.",
   },
 ];
 
 const renderStory = (args: GridProps) => {
-  const fakeComposition = createFakeCompositionData('grid', args, {
-    'grid-inner': CARDS.map(card => ({
-      type: 'card',
+  const fakeComposition = createFakeCompositionData("grid", args, {
+    "grid-inner": CARDS.map(card => ({
+      type: "card",
       parameters: createUniformParameter(card),
     })),
   });
@@ -89,13 +89,13 @@ const renderStory = (args: GridProps) => {
 const indexToInsertSpan = 3;
 
 const renderStoryWithColumnSpan = (args: GridProps) => {
-  const fakeComposition = createFakeCompositionData('grid', args, {
-    'grid-inner': CARDS.slice(0, -1).map((card, index) => ({
-      type: 'gridItem',
+  const fakeComposition = createFakeCompositionData("grid", args, {
+    "grid-inner": CARDS.slice(0, -1).map((card, index) => ({
+      type: "gridItem",
       parameters: createUniformParameter(
         index === indexToInsertSpan
           ? {
-              columnSpan: '2',
+              columnSpan: "2",
             }
           : {}
       ),
@@ -103,14 +103,14 @@ const renderStoryWithColumnSpan = (args: GridProps) => {
         inner: [
           index === indexToInsertSpan
             ? {
-                type: 'content',
+                type: "content",
                 parameters: createUniformParameter({
-                  title: 'Example of a grid item that span 2 columns',
-                  text: 'Use this paragraph to share information about your company or brand. Make it as engaging as possible.',
+                  title: "Example of a grid item that span 2 columns",
+                  text: "Use this paragraph to share information about your company or brand. Make it as engaging as possible.",
                 }),
               }
             : {
-                type: 'card',
+                type: "card",
                 parameters: createUniformParameter(card),
               },
         ],
@@ -125,13 +125,13 @@ const renderStoryWithColumnSpan = (args: GridProps) => {
 };
 
 const renderStoryWithRowSpan = (args: GridProps) => {
-  const fakeComposition = createFakeCompositionData('grid', args, {
-    'grid-inner': [...CARDS, ...CARDS].slice(0, -1).map((card, index) => ({
-      type: 'gridItem',
+  const fakeComposition = createFakeCompositionData("grid", args, {
+    "grid-inner": [...CARDS, ...CARDS].slice(0, -1).map((card, index) => ({
+      type: "gridItem",
       parameters: createUniformParameter(
         index === indexToInsertSpan
           ? {
-              rowSpan: '2',
+              rowSpan: "2",
             }
           : {}
       ),
@@ -139,14 +139,14 @@ const renderStoryWithRowSpan = (args: GridProps) => {
         inner: [
           index === indexToInsertSpan
             ? {
-                type: 'content',
+                type: "content",
                 parameters: createUniformParameter({
-                  title: 'Example of a grid item that span 2 rows',
-                  text: 'Use this paragraph to share information about your company or brand. Make it as engaging as possible.',
+                  title: "Example of a grid item that span 2 rows",
+                  text: "Use this paragraph to share information about your company or brand. Make it as engaging as possible.",
                 }),
               }
             : {
-                type: 'card',
+                type: "card",
                 parameters: createUniformParameter(card),
               },
         ],

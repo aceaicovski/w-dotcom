@@ -1,5 +1,5 @@
-import { registerUniformComponent, ComponentProps } from '@uniformdev/canvas-react';
-import { Price } from './Price';
+import { registerUniformComponent, ComponentProps } from "@uniformdev/canvas-react";
+import { Price } from "./Price";
 
 export type PriceProps = ComponentProps<{
   label?: string;
@@ -9,7 +9,7 @@ export type PriceProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'price',
+  type: "price",
   component: Price,
 });
 

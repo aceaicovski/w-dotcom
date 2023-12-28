@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { UniformComposition } from '@uniformdev/canvas-react';
-import { Modal, ModalProps, HeroVariant } from '@/canvas';
-import { createFakeCompositionData, createUniformParameter } from '../utils';
+import type { Meta, StoryObj } from "@storybook/react";
+import { UniformComposition } from "@uniformdev/canvas-react";
+import { Modal, ModalProps, HeroVariant } from "@/canvas";
+import { createFakeCompositionData, createUniformParameter } from "../utils";
 
 const meta: Meta<typeof Modal> = {
-  title: 'Modal',
+  title: "Modal",
   component: Modal,
 };
 
@@ -12,41 +12,44 @@ export default meta;
 type Story = StoryObj<typeof Modal>;
 
 const HERO_PROPS = {
-  eyebrowText: 'Hero',
-  title: 'Are developers stuck with outdated tech and custom code to maintain?',
-  titleStyle: 'h2',
+  eyebrowText: "Hero",
+  title: "Are developers stuck with outdated tech and custom code to maintain?",
+  titleStyle: "h2",
   description:
     "Use this paragraph to share information about your company or brand. Make it as engaging as possible, and showcase your brand's unique personality.",
-  primaryButtonCopy: 'Home',
+  primaryButtonCopy: "Home",
   primaryButtonLink: {
-    path: '/',
+    path: "/",
   },
   image:
-    'https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp',
-  primaryButtonStyle: 'primary',
+    "https://res.cloudinary.com/uniform-demos/image/upload/v1692276482/csk-marketing/Rectangle_7_2_uupdjo_wm94da.webp",
+  primaryButtonStyle: "primary",
 };
 
-const BASE_PROPS: Omit<ModalProps, 'component'> = {
+const BASE_PROPS: Omit<ModalProps, "component"> = {
   closeOnClickOutside: true,
-  maxWidth: 'none',
+  maxWidth: "none",
   automaticOpenTimeout: 5,
 };
 
 const argTypes = {
-  maxWidth: { control: 'select', options: ['none', 'small', 'medium', 'large', 'xLarge'] },
+  maxWidth: {
+    control: "select",
+    options: ["none", "small", "medium", "large", "xLarge"],
+  },
 };
 
 const renderStory = (args: ModalProps) => {
-  const fakeComposition = createFakeCompositionData('modal', args, {
+  const fakeComposition = createFakeCompositionData("modal", args, {
     trigger: [
       {
-        type: 'button',
-        parameters: createUniformParameter({ copy: 'Open modal' }),
+        type: "button",
+        parameters: createUniformParameter({ copy: "Open modal" }),
       },
     ],
     content: [
       {
-        type: 'hero',
+        type: "hero",
         variant: HeroVariant.BackgroundImage,
         parameters: createUniformParameter(HERO_PROPS),
       },

@@ -1,7 +1,7 @@
-import fetch from 'node-fetch';
+import fetch from "node-fetch";
 
 export const getAvailableTeams = async (params: UNIFORM_API.GetTeamsParams) => {
-  const { apiHost = 'https://uniform.app', headers, subject } = params;
+  const { apiHost = "https://uniform.app", headers, subject } = params;
   const query = `
   query GetUserInfo($subject: String!) {
     info: identities_by_pk(subject: $subject) {
@@ -21,10 +21,10 @@ export const getAvailableTeams = async (params: UNIFORM_API.GetTeamsParams) => {
   }
   `;
 
-  const endpoint = new URL('/v1/graphql', apiHost);
+  const endpoint = new URL("/v1/graphql", apiHost);
 
   const response = await fetch(endpoint, {
-    method: 'POST',
+    method: "POST",
     body: JSON.stringify({
       query,
       variables: {

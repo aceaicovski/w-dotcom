@@ -1,5 +1,5 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { NavigationTwoColumnsMenu } from './NavigationTwoColumnMenu';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { NavigationTwoColumnsMenu } from "./NavigationTwoColumnMenu";
 
 export type NavigationOneColumnMenuProps = ComponentProps<{
   description?: string;
@@ -13,6 +13,6 @@ export type NavigationOneColumnMenuProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'navigationTwoColumnsMenu',
+  type: "navigationTwoColumnsMenu",
   component: NavigationTwoColumnsMenu,
 });

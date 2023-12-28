@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useContext, useEffect, useMemo, useState } from 'react';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
+import { FC, useContext, useEffect, useMemo, useState } from "react";
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
 // @ts-ignore: Expected error if the module is not yet installed
-import { buildQuerySummary, QuerySummaryState } from '@coveo/headless';
-import { HeadlessEngineContext } from './Engine';
+import { buildQuerySummary, QuerySummaryState } from "@coveo/headless";
+import { HeadlessEngineContext } from "./Engine";
 
 enum DurationSetting {
-  milliseconds = 'milliseconds',
-  seconds = 'seconds',
+  milliseconds = "milliseconds",
+  seconds = "seconds",
 }
 
 type QuerySummaryProps = ComponentProps<{
@@ -59,13 +59,13 @@ const QuerySummary: FC<QuerySummaryProps> = ({ title, durationSettings = Duratio
   return (
     <div>
       <p className="text-l font-bold">{title}</p>
-      <p>{summary.join(' ')}</p>
+      <p>{summary.join(" ")}</p>
     </div>
   );
 };
 
 registerUniformComponent({
-  type: 'coveo-querySummary',
+  type: "coveo-querySummary",
   component: QuerySummary,
 });
 

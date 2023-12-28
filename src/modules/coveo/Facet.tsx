@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useContext, useEffect, useMemo, useState } from 'react';
-import classNames from 'classnames';
-import { ComponentProps, UniformText, registerUniformComponent } from '@uniformdev/canvas-react';
+import { FC, useContext, useEffect, useMemo, useState } from "react";
+import classNames from "classnames";
+import { ComponentProps, UniformText, registerUniformComponent } from "@uniformdev/canvas-react";
 // @ts-ignore: Expected error if the module is not yet installed
-import { FacetState, buildFacet, FacetValue, buildSearchBox } from '@coveo/headless';
-import { HeadlessEngineContext } from './Engine';
+import { FacetState, buildFacet, FacetValue, buildSearchBox } from "@coveo/headless";
+import { HeadlessEngineContext } from "./Engine";
 
 type FacetProps = {
   field: string;
@@ -37,7 +37,7 @@ const Facet: FC<FacetProps> = ({ field }) => {
 
   useEffect(() => {
     if (!headlessSearchBox.state.isLoading) {
-      if (currentSubCategory && currentSubCategory.state === 'idle') {
+      if (currentSubCategory && currentSubCategory.state === "idle") {
         headlessFacets?.toggleSingleSelect(currentSubCategory);
       } else if (!currentSubCategory) {
         headlessSearchBox.submit();
@@ -50,8 +50,8 @@ const Facet: FC<FacetProps> = ({ field }) => {
   const getFacetValues = () => {
     return facetState.values.map((value: FacetValue) => (
       <div
-        className={classNames('mt-4 px-2 hover:opacity-30 text-secondary-content', {
-          'rounded whitespace-nowrap py-1.5 px-2 hover:opacity-30 bg-primary my-1 text-primary-content':
+        className={classNames("mt-4 px-2 text-secondary-content hover:opacity-30", {
+          "my-1 whitespace-nowrap rounded bg-primary px-2 py-1.5 text-primary-content hover:opacity-30":
             headlessFacets.isValueSelected(value),
         })}
         key={value.value}
@@ -59,15 +59,15 @@ const Facet: FC<FacetProps> = ({ field }) => {
           toggleSelect(value);
         }}
       >
-        <label className="cursor-pointer flex justify-between items-center pr-3">
+        <label className="flex cursor-pointer items-center justify-between pr-3">
           <span
-            className={classNames('capitalize pr-4 flex-1', {
-              'text-primary-content': headlessFacets.isValueSelected(value),
+            className={classNames("flex-1 pr-4 capitalize", {
+              "text-primary-content": headlessFacets.isValueSelected(value),
             })}
           >
             {value.value}
           </span>
-          <span className="bg-gray-50 rounded-full px-2 text-secondary-content">{value.numberOfResults}</span>
+          <span className="rounded-full bg-gray-50 px-2 text-secondary-content">{value.numberOfResults}</span>
         </label>
       </div>
     ));
@@ -90,16 +90,16 @@ type FacetConfigurationProps = ComponentProps<{
 }>;
 
 const FacetConfiguration: FC<FacetConfigurationProps> = ({ facet }) => {
-  const { field = '' } = facet?.facetConfiguration || {};
+  const { field = "" } = facet?.facetConfiguration || {};
 
   if (!field) {
     return <p className="text-black">Facet field must be provided</p>;
   }
 
   return (
-    <div className="w-full flex justify-center">
-      <div className="pt-12 pr-10 inline-flex flex-col lg:w-full first:pt-2 min-h-[250px]">
-        <UniformText parameterId="title" className="font-extrabold text-lg capitalize text-black" />
+    <div className="flex w-full justify-center">
+      <div className="inline-flex min-h-[250px] flex-col pr-10 pt-12 first:pt-2 lg:w-full">
+        <UniformText parameterId="title" className="text-lg font-extrabold capitalize text-black" />
         <Facet key={field} field={field} />
       </div>
     </div>
@@ -107,7 +107,7 @@ const FacetConfiguration: FC<FacetConfigurationProps> = ({ facet }) => {
 };
 
 registerUniformComponent({
-  type: 'coveo-facet',
+  type: "coveo-facet",
   component: FacetConfiguration,
 });
 
