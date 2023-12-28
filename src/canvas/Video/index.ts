@@ -1,5 +1,5 @@
-import { registerUniformComponent, ComponentProps } from '@uniformdev/canvas-react';
-import { Video } from './Video';
+import { registerUniformComponent, ComponentProps } from "@uniformdev/canvas-react";
+import { Video } from "./Video";
 
 export type VideoProps = ComponentProps<{
   url: Types.ProjectMapLink;
@@ -11,7 +11,7 @@ export type VideoProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'video',
+  type: "video",
   component: Video,
 });
 

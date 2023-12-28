@@ -1,5 +1,5 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { Card } from './Card';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { Card } from "./Card";
 
 type Styles = {
   title?: string;
@@ -34,17 +34,17 @@ export type CardProps = ComponentProps<{
 }>;
 
 export enum CardVariants {
-  BackgroundImage = 'backgroundImage',
-  Featured = 'featured',
+  BackgroundImage = "backgroundImage",
+  Featured = "featured",
 }
 
 [undefined, CardVariants.BackgroundImage, CardVariants.Featured].forEach(variantId => {
   registerUniformComponent({
-    type: 'card',
+    type: "card",
     component: Card,
     variantId,
   });
 });
 
-export * from './decorator';
+export * from "./decorator";
 export default Card;

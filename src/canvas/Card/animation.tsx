@@ -1,12 +1,12 @@
-import { PropsWithChildren, useCallback, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import AnimatedContainer, { AnimationVariant, DelayVariants } from '../../components/AnimatedContainer';
+import { PropsWithChildren, useCallback, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import AnimatedContainer, { AnimationVariant, DelayVariants } from "../../components/AnimatedContainer";
 
 export const useAnimationElements = (
   animationType: string | undefined,
   duration: Types.DurationType,
   animationPreview: boolean,
-  delay: Types.AnimationDelay = 'none'
+  delay: Types.AnimationDelay = "none"
 ) => {
   const delayValue = DelayVariants[delay];
   const [runAnimationToggle, setRunAnimationToggle] = useState(false);
@@ -24,18 +24,18 @@ export const useAnimationElements = (
   const CardWrapper = useCallback(
     ({ children, className }: PropsWithChildren<{ className: string }>) => {
       switch (animationType) {
-        case 'flyIn':
+        case "flyIn":
           return (
             <motion.div
               className={className}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ margin: '-400px', once: true }}
+              viewport={{ margin: "-400px", once: true }}
             >
               {children}
             </motion.div>
           );
-        case 'fadeIn':
+        case "fadeIn":
         default:
           return <div className={className}>{children}</div>;
       }
@@ -47,13 +47,13 @@ export const useAnimationElements = (
   const ImageWrapper = useCallback(
     ({ children }: PropsWithChildren) => {
       switch (animationType) {
-        case 'fadeIn':
+        case "fadeIn":
           return (
             <AnimatedContainer delay={delayValue} animationVariant={AnimationVariant.FadeIn} duration={duration}>
               {children}
             </AnimatedContainer>
           );
-        case 'flyIn':
+        case "flyIn":
           return (
             <motion.div
               variants={{
@@ -61,7 +61,7 @@ export const useAnimationElements = (
                   y: 120,
                   zIndex: 0,
                   transition: {
-                    type: 'spring',
+                    type: "spring",
                     bounce: 0.2,
                     duration: animationSpeed[duration],
                   },
@@ -69,7 +69,7 @@ export const useAnimationElements = (
                 onscreen: {
                   y: 0,
                   transition: {
-                    type: 'spring',
+                    type: "spring",
                     bounce: 0.2,
                     duration: animationSpeed[duration],
                     delay: delayValue,
@@ -91,13 +91,13 @@ export const useAnimationElements = (
   const TitleWrapper = useCallback(
     ({ children }: PropsWithChildren) => {
       switch (animationType) {
-        case 'fadeIn':
+        case "fadeIn":
           return (
             <AnimatedContainer delay={delayValue} animationVariant={AnimationVariant.FadeIn} duration={duration}>
               {children}
             </AnimatedContainer>
           );
-        case 'flyIn':
+        case "flyIn":
           return (
             <motion.div
               variants={{

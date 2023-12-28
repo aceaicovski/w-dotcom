@@ -1,4 +1,4 @@
-import { AnimationVariant } from './';
+import { AnimationVariant } from "./";
 
 const getDuration = (duration: Types.DurationType, animationVariant: AnimationVariant) => {
   const speedCoefficient = {
@@ -46,8 +46,8 @@ export const getAnimationParams = ({
   switch (animationVariant) {
     case AnimationVariant.FadeIn:
       return {
-        initial: 'hidden',
-        animate: isInView ? 'show' : 'hidden',
+        initial: "hidden",
+        animate: isInView ? "show" : "hidden",
         variants: {
           hidden: { x: 0, opacity: 0, transition },
           show: {
@@ -60,8 +60,8 @@ export const getAnimationParams = ({
       };
     case AnimationVariant.FadeInTop:
       return {
-        initial: 'hidden',
-        animate: isInView ? 'show' : 'hidden',
+        initial: "hidden",
+        animate: isInView ? "show" : "hidden",
         variants: {
           hidden: { y: fadeInOffset * -1, opacity: 0, transition },
           show: {
@@ -74,8 +74,8 @@ export const getAnimationParams = ({
       };
     case AnimationVariant.FadeInBottom:
       return {
-        initial: 'hidden',
-        animate: isInView ? 'show' : 'hidden',
+        initial: "hidden",
+        animate: isInView ? "show" : "hidden",
         variants: {
           hidden: { y: fadeInOffset, opacity: 0, transition },
           show: {
@@ -88,8 +88,8 @@ export const getAnimationParams = ({
       };
     case AnimationVariant.FadeInLeft:
       return {
-        initial: 'hidden',
-        animate: isInView ? 'show' : 'hidden',
+        initial: "hidden",
+        animate: isInView ? "show" : "hidden",
         variants: {
           hidden: { x: fadeInOffset, opacity: 0, transition },
           show: {
@@ -102,8 +102,8 @@ export const getAnimationParams = ({
       };
     case AnimationVariant.FadeInRight:
       return {
-        initial: 'hidden',
-        animate: isInView ? 'show' : 'hidden',
+        initial: "hidden",
+        animate: isInView ? "show" : "hidden",
         variants: {
           hidden: { x: fadeInOffset * -1, opacity: 0, transition },
           show: {

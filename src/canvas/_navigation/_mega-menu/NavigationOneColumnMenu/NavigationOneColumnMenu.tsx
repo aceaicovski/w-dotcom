@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import { UniformSlot } from '@uniformdev/canvas-react';
-import Button from '../../../../components/Button';
-import { formatProjectMapLink } from '../../../../utilities';
-import { NavigationOneColumnMenuProps } from '.';
+import { FC } from "react";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import Button from "../../../../components/Button";
+import { formatProjectMapLink } from "../../../../utilities";
+import { NavigationOneColumnMenuProps } from ".";
 
 export const NavigationOneColumnMenu: FC<NavigationOneColumnMenuProps> = ({
   primaryButtonCopy,
@@ -34,7 +34,7 @@ export const NavigationOneColumnMenu: FC<NavigationOneColumnMenuProps> = ({
         )}
       </div>
       <div className="col-span-8 bg-white">
-        <div className="absolute w-full max-w-[60%] z-30 top-[10%] right-0">
+        <div className="absolute right-0 top-[10%] z-30 w-full max-w-[60%]">
           <UniformSlot name="defaultContent" />
         </div>
       </div>

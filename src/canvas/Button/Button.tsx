@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import { useUniformCurrentComposition, UniformText } from '@uniformdev/canvas-react';
-import BaseButton from '../../components/Button';
-import { formatProjectMapLink } from '../../utilities';
-import { ButtonProps } from '.';
+import { FC } from "react";
+import { useUniformCurrentComposition, UniformText } from "@uniformdev/canvas-react";
+import BaseButton from "../../components/Button";
+import { formatProjectMapLink } from "../../utilities";
+import { ButtonProps } from ".";
 
-export const Button: FC<ButtonProps> = ({ link, style, animationType }) => {
+export const Button: FC<ButtonProps> = ({ link, style, size, rounded, animationType }) => {
   const { isContextualEditing } = useUniformCurrentComposition();
   return (
     <BaseButton
@@ -18,6 +18,8 @@ export const Button: FC<ButtonProps> = ({ link, style, animationType }) => {
         />
       }
       style={style}
+      size={size}
+      rounded={rounded}
     />
   );
 };

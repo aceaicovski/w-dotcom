@@ -1,16 +1,16 @@
-import { FC, Fragment, useState, useEffect, ReactNode, useCallback, useMemo } from 'react';
-import Masonry from 'react-responsive-masonry';
-import classNames from 'classnames';
-import { UniformSlot, UniformText, UniformSlotWrapperComponentProps } from '@uniformdev/canvas-react';
-import BaseContainer, { ContainerVariants, ScreenContainer } from '../../components/Container';
-import AnimatedContainer, { AnimationVariant, DelayVariants } from '../../components/AnimatedContainer';
-import { getTextClass } from '../../utilities/styling';
-import Image from '../../canvas/Image';
-import { getMediaUrl } from '../../utilities';
-import { BaseProductGalleryProps } from './';
-import { withoutContainer } from '../../hocs/withoutContainer';
+import { FC, Fragment, useState, useEffect, ReactNode, useCallback, useMemo } from "react";
+import Masonry from "react-responsive-masonry";
+import classNames from "classnames";
+import { UniformSlot, UniformText, UniformSlotWrapperComponentProps } from "@uniformdev/canvas-react";
+import BaseContainer, { ContainerVariants, ScreenContainer } from "../../components/Container";
+import AnimatedContainer, { AnimationVariant, DelayVariants } from "../../components/AnimatedContainer";
+import { getTextClass } from "../../utilities/styling";
+import Image from "../../canvas/Image";
+import { getMediaUrl } from "../../utilities";
+import { BaseProductGalleryProps } from "./";
+import { withoutContainer } from "../../hocs/withoutContainer";
 
-type SlotWrapperComponentProps = Partial<Omit<UniformSlotWrapperComponentProps, 'slotName'>>;
+type SlotWrapperComponentProps = Partial<Omit<UniformSlotWrapperComponentProps, "slotName">>;
 
 const galleryConfig = {
   firstLineCount: 2,
@@ -19,14 +19,14 @@ const galleryConfig = {
 };
 
 const BaseProductGallery: FC<BaseProductGalleryProps> = ({
-  titleStyle: TitleTag = 'h1',
+  titleStyle: TitleTag = "h1",
   items,
   maxItems,
   animationType,
   animationOrder,
-  duration = 'medium',
+  duration = "medium",
   animationPreview,
-  delay = 'none',
+  delay = "none",
   component,
   styles,
   ...props
@@ -72,9 +72,9 @@ const BaseProductGallery: FC<BaseProductGalleryProps> = ({
             acc[0].push(
               animationType ? (
                 <AnimatedContainer
-                  animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : dynamicAnimationVariant}
+                  animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : dynamicAnimationVariant}
                   duration={duration}
-                  delay={animationOrder === 'oneByOne' ? getDelay(index) : 0}
+                  delay={animationOrder === "oneByOne" ? getDelay(index) : 0}
                 >
                   {item}
                 </AnimatedContainer>
@@ -88,9 +88,9 @@ const BaseProductGallery: FC<BaseProductGalleryProps> = ({
             acc[1].push(
               animationType ? (
                 <AnimatedContainer
-                  animationVariant={animationType === 'fadeIn' ? AnimationVariant.FadeIn : dynamicAnimationVariant}
+                  animationVariant={animationType === "fadeIn" ? AnimationVariant.FadeIn : dynamicAnimationVariant}
                   duration={duration}
-                  delay={animationOrder === 'oneByOne' ? getDelay(index) : 0}
+                  delay={animationOrder === "oneByOne" ? getDelay(index) : 0}
                 >
                   {item}
                 </AnimatedContainer>
@@ -104,7 +104,7 @@ const BaseProductGallery: FC<BaseProductGalleryProps> = ({
                 <AnimatedContainer
                   animationVariant={AnimationVariant.FadeIn}
                   duration={duration}
-                  delay={animationOrder === 'oneByOne' ? getDelay(index) : 0}
+                  delay={animationOrder === "oneByOne" ? getDelay(index) : 0}
                 >
                   {item}
                 </AnimatedContainer>
@@ -119,7 +119,7 @@ const BaseProductGallery: FC<BaseProductGalleryProps> = ({
       );
 
       return (
-        <div className="flex flex-col gap-6 mt-12">
+        <div className="mt-12 flex flex-col gap-6">
           {imagesGroups?.map((images, lineIndex) =>
             images.length ? (
               <Masonry
@@ -145,16 +145,16 @@ const BaseProductGallery: FC<BaseProductGalleryProps> = ({
   );
 
   const isContentPlaceholder =
-    !component?.slots?.images?.length || component?.slots?.images?.[0]?._id?.startsWith('placeholder');
+    !component?.slots?.images?.length || component?.slots?.images?.[0]?._id?.startsWith("placeholder");
 
   return (
     <BaseContainer {...props} containerVariant={component?.variant}>
-      <Wrapper {...(isFluid ? { className: 'xl:px-0 px-4' } : {})}>
+      <Wrapper {...(isFluid ? { className: "xl:px-0 px-4" } : {})}>
         <UniformText
           placeholder="Title goes here"
           parameterId="title"
           as={TitleTag}
-          className={classNames('uppercase', getTextClass(TitleTag), styles?.title)}
+          className={classNames("uppercase", getTextClass(TitleTag), styles?.title)}
         />
         <UniformText
           placeholder="Description goes here"

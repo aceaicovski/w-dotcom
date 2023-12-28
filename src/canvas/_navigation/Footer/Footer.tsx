@@ -1,39 +1,68 @@
-import { FC } from 'react';
-import dynamic from 'next/dynamic';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { UniformRichText, UniformSlot } from '@uniformdev/canvas-react';
-import { ScreenContainer } from '../../../components/Container';
-import { getMediaUrl } from '../../../utilities';
-import { FooterProps } from '.';
+import { FC } from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import classNames from "classnames";
+import { UniformSlot } from "@uniformdev/canvas-react";
+import { ScreenContainer } from "../../../components/Container";
+import { getMediaUrl } from "../../../utilities";
+import { FooterProps } from ".";
+import { MaxWidth } from "@/utilities/styling";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
-const BuildTimestamp = dynamic(() => import('../../../components/BuildTimestamp'), { ssr: false });
+const BuildTimestamp = dynamic(() => import("../../../components/BuildTimestamp"), { ssr: false });
 
-export const Footer: FC<FooterProps> = ({ logo, displayBuildTimestamp = false, copyright, styles }) => {
+export const Footer: FC<FooterProps> = ({
+  logo,
+  hideLogo = false,
+  displayBuildTimestamp = false,
+  copyright,
+  styles,
+}) => {
   const imageUrl = getMediaUrl(logo);
   return (
-    <div className={classNames('bg-secondary', styles?.container)}>
-      <ScreenContainer>
+    <div className={classNames("bg-primary px-4", styles?.container)}>
+      <ScreenContainer maxWidth={MaxWidth.Large}>
         <footer
           className={classNames(
-            'footer py-10 flex flex-col-reverse md:flex-row justify-between border-info-content w-full border-t-[1px]',
+            "footer flex w-full flex-col-reverse justify-between border-info-content py-10 lg:flex-row",
             styles?.footerSection
           )}
         >
-          <div className="w-full md:w-1/2">
-            <Image src={imageUrl} width="200" height="50" alt="Uniform" />
-            {displayBuildTimestamp && <BuildTimestamp style={styles?.buildTimestamp} />}
-            <div
-              className="footer-content text-secondary-content"
-              dangerouslySetInnerHTML={{ __html: `2023 ${copyright}` }}
-            />
-            <div className="footer-content text-secondary-content">
-              <UniformRichText parameterId="footerText" />
-            </div>
+          <div className="text-xs text-white lg:hidden" dangerouslySetInnerHTML={{ __html: `© 2023 ${copyright}` }} />
+          <div className="w-full lg:w-3/5 flex items-start justify-start xl:justify-between xl:pr-10">
+            <UniformSlot name="section" />
+            {/* [TODO] Add missing components to uniform.app
+              * src/canvas/_navigation/FooterWithoutTitleSection/FooterWithoutTitleSection.tsx
+              * src/canvas/_navigation/FooterSecondSection/FooterSecondSection.tsx
+              * 
+              <div className="w-full flex flex-col md:flex-row items-start justify-start">
+                <UniformSlot name="secondSection" />
+                <UniformSlot name="withoutTitleSection" />
+              </div> 
+            */}
           </div>
-          <UniformSlot name="section" />
-          <div className="flex">
-            <UniformSlot name="iconLinks" />
+          <div className="-mb-8 w-full text-white lg:mb-0 lg:w-2/5">
+            {!hideLogo && <Image src={imageUrl} width="200" height="50" alt={copyright} />}
+            <div className="footer-title text-3xl italic text-white opacity-100 lg:text-4xl xl:text-5xl">
+              {copyright}
+            </div>
+            <div className="flex items-center justify-start">
+              <FontAwesomeIcon icon={faLocationDot} className="mr-3" />
+              <div className="text-sm lg:text-base">385 1st Avenue, San Mateo, California 94401</div>
+            </div>
+            <div className="flex items-center justify-start">
+              <FontAwesomeIcon icon={faEnvelope} className="mr-3" />
+              <div className="text-sm lg:text-base">support@nextlevelsports.com</div>
+            </div>
+            {displayBuildTimestamp && <BuildTimestamp style={styles?.buildTimestamp} />}
+            <div className="my-4 flex lg:my-8">
+              <UniformSlot name="iconLinkSocial" />
+            </div>
+            <div
+              className="hidden text-sm text-white lg:block"
+              dangerouslySetInnerHTML={{ __html: `© 2024 ${copyright}` }}
+            />
           </div>
         </footer>
       </ScreenContainer>

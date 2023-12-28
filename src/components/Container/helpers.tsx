@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import classNames from 'classnames';
+import { FC } from "react";
+import classNames from "classnames";
 import {
   BackgroundTypes,
   getBackgroundClass,
@@ -7,12 +7,12 @@ import {
   getMarginTopClass,
   getPaddingBottomClass,
   getPaddingTopClass,
-} from '../../utilities/styling';
-import { ContainerProps } from './';
+} from "../../utilities/styling";
+import { ContainerProps } from "./";
 
-type BackgroundWrapperProps = Required<Omit<ContainerProps, 'className'>>;
+type BackgroundWrapperProps = Required<Omit<ContainerProps, "maxWidth" | "className">>;
 
-export const BackgroundWrapper: FC<Omit<BackgroundWrapperProps, 'containerVariant'>> = ({
+export const BackgroundWrapper: FC<Omit<BackgroundWrapperProps, "containerVariant">> = ({
   backgroundType = BackgroundTypes.Transparent,
   paddingTop,
   paddingBottom,

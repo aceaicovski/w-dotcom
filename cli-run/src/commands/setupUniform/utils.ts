@@ -5,7 +5,7 @@ import {
   getInstalledIntegration,
   getIntegrationDefinitionByDisplayName,
   installIntegration,
-} from './api';
+} from "./api";
 
 interface ConfigureIntegration {
   displayName: string;
@@ -72,7 +72,9 @@ export const configureIntegration = async ({
     return;
   }
 
-  const dynamicIntegrationParams = await fetchIntegrationParamsFn?.({ apiHost });
+  const dynamicIntegrationParams = await fetchIntegrationParamsFn?.({
+    apiHost,
+  });
 
   const newInstalledIntegration = await installIntegration({
     projectId,

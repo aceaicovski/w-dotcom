@@ -1,6 +1,6 @@
-import { FC, useCallback } from 'react';
-import BaseProductInfo from '../../components/BaseProductInfo';
-import { ProductInfoProps } from '.';
+import { FC, useCallback } from "react";
+import BaseProductInfo from "../../components/BaseProductInfo";
+import { ProductInfoProps } from ".";
 
 export const ProductInfo: FC<ProductInfoProps> = props => {
   const handlePrimaryButtonClick = useCallback(() => {

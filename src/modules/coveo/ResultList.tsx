@@ -1,25 +1,25 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FC, useContext, useEffect, useMemo, useState } from 'react';
-import { ComponentInstance, RootComponentInstance } from '@uniformdev/canvas';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
+import { FC, useContext, useEffect, useMemo, useState } from "react";
+import { ComponentInstance, RootComponentInstance } from "@uniformdev/canvas";
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
 // @ts-ignore: Expected error if the module is not yet installed
-import { buildResultList, Result } from '@coveo/headless';
-import { HeadlessEngineContext } from './Engine';
-import ResultItem from './ResultItem';
-import InformationContent from '../../components/InformationContent';
+import { buildResultList, Result } from "@coveo/headless";
+import { HeadlessEngineContext } from "./Engine";
+import ResultItem from "./ResultItem";
+import InformationContent from "../../components/InformationContent";
 
 enum ItemTypes {
-  Item = 'coveo-resultListItem',
+  Item = "coveo-resultListItem",
 }
 
 const COVEO_FIELDS_TO_INCLUDE = [
-  'slug',
-  'description',
-  'ec_description',
-  'ec_category',
-  'name',
-  'ec_thumbnails',
-  'sub_category',
+  "slug",
+  "description",
+  "ec_description",
+  "ec_category",
+  "name",
+  "ec_thumbnails",
+  "sub_category",
 ];
 
 // Coveo Result List docs https://docs.coveo.com/en/headless/latest/reference/search/controllers/result-list/
@@ -48,7 +48,7 @@ const ResultList: FC<ComponentProps> = ({ component }) => {
       default:
         return (
           <div
-            className="border border-gray-300 p-4 rounded-md mb-4 flex items-center justify-center"
+            className="mb-4 flex items-center justify-center rounded-md border border-gray-300 p-4"
             key={item.uniqueId}
           >
             <span>Add your custom Result Item</span>
@@ -60,7 +60,7 @@ const ResultList: FC<ComponentProps> = ({ component }) => {
   if (!resultState.results?.length) return <InformationContent title="Sorry there are no products for this filter" />;
 
   return (
-    <div className="grid gap-y-3 mb-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-x-8 sm:gap-y-6 lg:gap-x-8 lg:gap-y-5 sm:mb-0">
+    <div className="mb-8 grid gap-y-3 sm:mb-0 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-5">
       {
         // @ts-ignore: Expected error if the module is not yet installed
         resultState.results.map(result => renderResultItem(component, result))
@@ -70,7 +70,7 @@ const ResultList: FC<ComponentProps> = ({ component }) => {
 };
 
 registerUniformComponent({
-  type: 'coveo-resultList',
+  type: "coveo-resultList",
   component: ResultList,
 });
 

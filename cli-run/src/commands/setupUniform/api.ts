@@ -1,9 +1,9 @@
-import fetch from 'node-fetch';
-import { makeWriteApiKey } from '../../uniform';
+import fetch from "node-fetch";
+import { makeWriteApiKey } from "../../uniform";
 
 export const createUniformProject = async (params: UNIFORM_API.CreateUniformProjectParams) => {
   const { apiHost, teamId, headers, projectName, previewUrl, projectTypeId } = params;
-  const url = new URL('/api/v1/project', apiHost);
+  const url = new URL("/api/v1/project", apiHost);
 
   const body = {
     name: projectName,
@@ -13,7 +13,7 @@ export const createUniformProject = async (params: UNIFORM_API.CreateUniformProj
   };
 
   const response = await fetch(url, {
-    method: 'PUT',
+    method: "PUT",
     headers,
     body: JSON.stringify(body),
   });
@@ -31,13 +31,13 @@ export const createUniformProject = async (params: UNIFORM_API.CreateUniformProj
 };
 
 export const getIntegrationDefinitionByDisplayName = async (params: UNIFORM_API.IntegrationDefinitionParams) => {
-  const { displayName, teamId, apiHost = 'https://uniform.app', headers } = params;
+  const { displayName, teamId, apiHost = "https://uniform.app", headers } = params;
 
-  const url = new URL('/api/v1/integration-definitions', apiHost);
+  const url = new URL("/api/v1/integration-definitions", apiHost);
 
-  url.searchParams.append('teamId', teamId);
-  url.searchParams.append('includePublic', 'false');
-  url.searchParams.append('teamSpecificType', 'true');
+  url.searchParams.append("teamId", teamId);
+  url.searchParams.append("includePublic", "false");
+  url.searchParams.append("teamSpecificType", "true");
 
   const availableIntegrationsResult = await fetch(url, {
     headers,
@@ -51,15 +51,15 @@ export const getIntegrationDefinitionByDisplayName = async (params: UNIFORM_API.
 };
 
 export const defineIntegration = async (params: UNIFORM_API.DefineIntegrationParams) => {
-  const { data, teamId, apiHost = 'https://uniform.app', headers } = params;
+  const { data, teamId, apiHost = "https://uniform.app", headers } = params;
   const body = {
     teamId,
     data,
   };
-  const url = new URL('/api/v1/integration-definitions', apiHost);
+  const url = new URL("/api/v1/integration-definitions", apiHost);
 
   const response = await fetch(url, {
-    method: 'PUT',
+    method: "PUT",
     headers,
     body: JSON.stringify(body),
   }).then(res => res.json());
@@ -72,13 +72,13 @@ export const defineIntegration = async (params: UNIFORM_API.DefineIntegrationPar
 };
 
 export const getInstalledIntegration = async (params: UNIFORM_API.GetInstalledIntegrationsParams) => {
-  const { projectId, type, apiHost = 'https://uniform.app', headers } = params;
+  const { projectId, type, apiHost = "https://uniform.app", headers } = params;
 
-  const url = new URL('/api/v1/integration-installations', apiHost);
-  url.searchParams.append('projectId', projectId);
-  url.searchParams.append('type', type);
-  url.searchParams.append('exactType', 'true');
-  url.searchParams.append('teamSpecificType', 'true');
+  const url = new URL("/api/v1/integration-installations", apiHost);
+  url.searchParams.append("projectId", projectId);
+  url.searchParams.append("type", type);
+  url.searchParams.append("exactType", "true");
+  url.searchParams.append("teamSpecificType", "true");
 
   const installedIntegrationResult = await fetch(url, {
     headers,
@@ -90,7 +90,7 @@ export const getInstalledIntegration = async (params: UNIFORM_API.GetInstalledIn
 };
 
 export const installIntegration = async (params: UNIFORM_API.InstallIntegrationsParams) => {
-  const { data, projectId, type, apiHost = 'https://uniform.app', headers } = params;
+  const { data, projectId, type, apiHost = "https://uniform.app", headers } = params;
   const body = {
     projectId,
     exactType: true,
@@ -98,10 +98,10 @@ export const installIntegration = async (params: UNIFORM_API.InstallIntegrations
     data,
   };
 
-  const url = new URL('/api/v1/integration-installations', apiHost);
+  const url = new URL("/api/v1/integration-installations", apiHost);
 
   const response = await fetch(url, {
-    method: 'PUT',
+    method: "PUT",
     headers,
     body: JSON.stringify(body),
   });
@@ -115,10 +115,10 @@ export const installIntegration = async (params: UNIFORM_API.InstallIntegrations
 };
 
 export const getDataSource = async (params: UNIFORM_API.GetDataSourceParams) => {
-  const { projectId, dataSourceId, apiHost = 'https://uniform.app', headers } = params;
-  const url = new URL('/api/v1/data-source', apiHost);
-  url.searchParams.append('projectId', projectId);
-  url.searchParams.append('dataSourceId', dataSourceId);
+  const { projectId, dataSourceId, apiHost = "https://uniform.app", headers } = params;
+  const url = new URL("/api/v1/data-source", apiHost);
+  url.searchParams.append("projectId", projectId);
+  url.searchParams.append("dataSourceId", dataSourceId);
 
   const response = await fetch(url, {
     headers,
@@ -137,7 +137,7 @@ export const addDataSource = async (params: UNIFORM_API.AddDataSourceParams) => 
     dataSourceDisplayName,
     dataSourceId,
     dataProperties,
-    apiHost = 'https://uniform.app',
+    apiHost = "https://uniform.app",
     headers,
   } = params;
   const integrationDefinition = await getIntegrationDefinitionByDisplayName({
@@ -163,9 +163,9 @@ export const addDataSource = async (params: UNIFORM_API.AddDataSourceParams) => 
     },
   };
 
-  const url = new URL('/api/v1/data-source', apiHost);
+  const url = new URL("/api/v1/data-source", apiHost);
   const response = await fetch(url, {
-    method: 'PUT',
+    method: "PUT",
     headers,
     body: JSON.stringify(body),
   });
@@ -179,11 +179,11 @@ export const addDataSource = async (params: UNIFORM_API.AddDataSourceParams) => 
 };
 
 export const createApiKeys = async (params: UNIFORM_API.CreateApiKeysParams) => {
-  const { teamId, projectId, apiHost = 'https://uniform.app', headers } = params;
-  const url = new URL('/api/v1/members', apiHost);
+  const { teamId, projectId, apiHost = "https://uniform.app", headers } = params;
+  const url = new URL("/api/v1/members", apiHost);
 
   const writeApiKeyResponse = await fetch(url, {
-    method: 'PUT',
+    method: "PUT",
     headers,
     body: JSON.stringify(makeWriteApiKey(teamId, projectId)),
   }).then(res => res.json());
@@ -194,12 +194,12 @@ export const createApiKeys = async (params: UNIFORM_API.CreateApiKeysParams) => 
 };
 
 export const createUniformTeam = async (params: UNIFORM_API.CreateUniformTeamParams) => {
-  const { name, apiHost = 'https://uniform.app', headers } = params;
+  const { name, apiHost = "https://uniform.app", headers } = params;
 
-  const url = new URL('/api/v1/team', apiHost);
+  const url = new URL("/api/v1/team", apiHost);
 
   const response = await fetch(url, {
-    method: 'POST',
+    method: "POST",
     headers,
     body: JSON.stringify({ name }),
   }).then(res => res.json());

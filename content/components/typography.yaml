@@ -1,0 +1,68 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: typography
+name: Typography
+icon: format-heading
+parameters:
+  - id: text
+    name: Text
+    type: text
+    helpText: Text goes here
+    typeConfig:
+      required: true
+    localizable: true
+  - id: tag
+    name: Tag
+    type: select
+    helpText: Typography Tag (h1 | h2 | h3 | h4 | p | q)
+    typeConfig:
+      options:
+        - text: Heding H1
+          value: h1
+        - text: Heading H2
+          value: h2
+        - text: Heading H3
+          value: h3
+        - text: Heading H4
+          value: h4
+        - text: Paragraph
+          value: p
+        - text: Quote
+          value: q
+    localizable: false
+  - id: align
+    name: Align
+    type: select
+    helpText: Text Alignment ( left | center | right )
+    typeConfig:
+      options:
+        - text: left
+          value: left
+        - text: center
+          value: center
+        - text: right
+          value: right
+    localizable: false
+  - id: marginBottom
+    name: Margin Bottom
+    type: select
+    helpText: Margin Bottom ( Small | Medium | Large | None )
+    typeConfig:
+      options:
+        - text: Small
+          value: Small
+        - text: Medium
+          value: Medium
+        - text: Large
+          value: Large
+        - text: None
+          value: None
+    localizable: false
+categoryId: 94a7a423-8c09-4264-8495-c562c17d811e
+description: Typography component for single-line text formatting
+useTeamPermissions: true
+slots: []
+titleParameter: text
+canBeComposition: false
+created: '2023-12-25T15:44:19.512869+00:00'
+updated: '2023-12-25T15:44:19.512869+00:00'

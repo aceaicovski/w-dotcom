@@ -1,13 +1,13 @@
-import { Fragment, PropsWithChildren, useCallback, useEffect, useMemo, useState } from 'react';
-import AnimatedContainer, { DelayVariants, AnimatedContainerProps } from '../../components/AnimatedContainer';
+import { Fragment, PropsWithChildren, useCallback, useEffect, useMemo, useState } from "react";
+import AnimatedContainer, { DelayVariants, AnimatedContainerProps } from "../../components/AnimatedContainer";
 
 export const getDelayCoefficient = (duration: Types.DurationType) => {
   switch (duration) {
-    case 'slow':
+    case "slow":
       return 5;
-    case 'medium':
+    case "medium":
       return 7.5;
-    case 'fast':
+    case "fast":
       return 10;
     default:
       return 7.5;
@@ -39,7 +39,7 @@ const useElementsWrapperKeys = (animationType: Types.AnimationType | undefined, 
 export const useProductInfoAnimation = ({
   duration,
   animationOrder,
-  delay = 'none',
+  delay = "none",
   animationType,
   animationPreview = false,
 }: {
@@ -55,7 +55,7 @@ export const useProductInfoAnimation = ({
     ElementWrapper: useElementsWrapperKeys(animationType, animationPreview),
     getDelayValue: useCallback(
       (delayIndex: number) =>
-        getDelay(delayIndex, animationOrder === 'oneByOne', delayCoefficient, DelayVariants[delay]),
+        getDelay(delayIndex, animationOrder === "oneByOne", delayCoefficient, DelayVariants[delay]),
       [animationOrder, delayCoefficient, delay]
     ),
   };

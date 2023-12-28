@@ -1,15 +1,18 @@
-import { FC, useCallback } from 'react';
-import classNames from 'classnames';
-import { UniformText } from '@uniformdev/canvas-react';
-import { getTextClass } from '../../utilities/styling';
-import { PriceProps } from '.';
+import { FC, useCallback } from "react";
+import classNames from "classnames";
+import { UniformText } from "@uniformdev/canvas-react";
+import { getTextClass } from "../../utilities/styling";
+import { PriceProps } from ".";
 
-export const Price: FC<PriceProps> = ({ labelStyle = 'h1', currency }) => {
+export const Price: FC<PriceProps> = ({ labelStyle = "h1", currency }) => {
   const renderValue = useCallback(
     (value: string | undefined) => {
       const formattedPrice =
         value && currency
-          ? new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(Number(value))
+          ? new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency,
+            }).format(Number(value))
           : value;
       return <div>{formattedPrice}</div>;
     },
@@ -17,18 +20,18 @@ export const Price: FC<PriceProps> = ({ labelStyle = 'h1', currency }) => {
   );
 
   return (
-    <div className="flex flex-row items-center text-secondary-content py-2 gap-2">
+    <div className="flex flex-row items-center gap-2 py-2 text-secondary-content">
       <UniformText
         placeholder="Label goes here"
         parameterId="label"
         as="span"
-        className={classNames('font-medium', getTextClass(labelStyle))}
+        className={classNames("font-medium", getTextClass(labelStyle))}
       />
       <UniformText
         placeholder="Price goes here"
         parameterId="price"
         as="div"
-        className={classNames('font-medium', getTextClass(labelStyle))}
+        className={classNames("font-medium", getTextClass(labelStyle))}
         render={renderValue}
       />
     </div>

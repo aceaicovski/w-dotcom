@@ -1,19 +1,20 @@
-import { FC, PropsWithChildren } from 'react';
-import classNames from 'classnames';
+import { FC, PropsWithChildren } from "react";
+import classNames from "classnames";
 import {
   createUniformApiEnhancer,
   UniformComposition,
   UniformSlot,
   useUniformCurrentComposition,
-} from '@uniformdev/canvas-react';
-import ComponentStarterKitContextProvider from '../../context/ComponentStarterKitContext';
-import UniformPreviewIcon from '../UniformPreviewIcon';
-import ThemeProvider from '../ThemeProvider';
-import { getGapClass, getMarginBottomClass, PaddingSize } from '../../utilities/styling';
-import { CHILDREN_CONTAINER_STYLES, COMMON_PADDING } from '../../hocs/withoutContainer';
-import { BasePageProps } from './';
+} from "@uniformdev/canvas-react";
+import ComponentStarterKitContextProvider from "../../context/ComponentStarterKitContext";
+import UniformPreviewIcon from "../UniformPreviewIcon";
+import ThemeProvider from "../ThemeProvider";
+import { getGapClass, getMarginBottomClass, PaddingSize } from "../../utilities/styling";
+import { CHILDREN_CONTAINER_STYLES, COMMON_PADDING } from "../../hocs/withoutContainer";
+import { BasePageProps } from "./";
+import { getTheme } from "@/stories/utils/themes";
 
-const PageContent: FC<Pick<BasePageProps, 'preview' | 'useUniformComposition' | 'providers' | 'styles'>> = ({
+const PageContent: FC<Pick<BasePageProps, "preview" | "useUniformComposition" | "providers" | "styles">> = ({
   useUniformComposition,
   preview,
   providers: Providers,
@@ -27,17 +28,17 @@ const PageContent: FC<Pick<BasePageProps, 'preview' | 'useUniformComposition' | 
     Providers ? <Providers styles={{ modal: styles?.modal }}>{children}</Providers> : <>{children}</>;
 
   return (
-    <ThemeProvider>
+    <ThemeProvider data={getTheme("nextlevelsports")}>
       <ContentProviders>
         {/* Docs: https://docs.uniform.app/reference/packages/uniformdev-canvas-react#slot */}
         <div className={COMMON_PADDING}>
           <UniformSlot name="pageHeader" />
         </div>
         {/* useUniformComposition is always true only for global composition preview */}
-        {useUniformComposition && <h1 className="flex-1 flex justify-center items-center">Page content placeholder</h1>}
+        {useUniformComposition && <h1 className="flex flex-1 items-center justify-center">Page content placeholder</h1>}
         <div
           className={classNames(
-            'flex flex-col flex-1',
+            "flex flex-1 flex-col",
             CHILDREN_CONTAINER_STYLES,
             COMMON_PADDING,
             getGapClass(gap),
@@ -67,7 +68,9 @@ const BasePage: FC<BasePageProps> = ({
   <UniformComposition
     data={composition}
     behaviorTracking="onLoad"
-    contextualEditingEnhancer={createUniformApiEnhancer({ apiUrl: '/api/preview' })}
+    contextualEditingEnhancer={createUniformApiEnhancer({
+      apiUrl: "/api/preview",
+    })}
   >
     <ComponentStarterKitContextProvider {...(context || {})}>
       <PageContent

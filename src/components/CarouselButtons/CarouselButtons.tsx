@@ -1,8 +1,8 @@
-import { FC, useCallback, useMemo } from 'react';
-import classNames from 'classnames';
-import IconArrow from '../../components/IconArrow';
-import { getButtonAnimationClass, getButtonClass } from '../../utilities/styling';
-import { CarouselButtonProps } from './';
+import { FC, useCallback, useMemo } from "react";
+import classNames from "classnames";
+import IconArrow from "../../components/IconArrow";
+import { getButtonAnimationClass, getButtonClass } from "../../utilities/styling";
+import { CarouselButtonProps } from "./";
 
 const CarouselButtons: FC<CarouselButtonProps> = ({
   next,
@@ -32,10 +32,10 @@ const CarouselButtons: FC<CarouselButtonProps> = ({
   }, [currentSlide, goToSlide, lastSlideIndex, previous]);
 
   return totalItems > slidesToShow ? (
-    <div className="flex justify-center sm:justify-end items-center my-6 lg:mt-9">
+    <div className="my-6 flex items-center justify-center sm:justify-end lg:mt-9">
       <div
         className={classNames(
-          'btn rounded-none',
+          "btn rounded-none",
           buttonAnimationStyle
             ? getButtonAnimationClass(buttonStyle, buttonAnimationStyle)
             : getButtonClass(buttonStyle)
@@ -44,12 +44,12 @@ const CarouselButtons: FC<CarouselButtonProps> = ({
       >
         <IconArrow direction="left" />
       </div>
-      <p className={classNames('min-w-[90px] text-center font-bold', colorClassName)}>
+      <p className={classNames("min-w-[90px] text-center font-bold", colorClassName)}>
         {currentSlide + 1} / {totalItems - slidesToShow + 1}
       </p>
       <div
         className={classNames(
-          'btn rounded-none',
+          "btn rounded-none",
           buttonAnimationStyle
             ? getButtonAnimationClass(buttonStyle, buttonAnimationStyle)
             : getButtonClass(buttonStyle)

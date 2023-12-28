@@ -4,5 +4,5 @@ export type RatingProps = {
   starsColor?: Types.AvailableColor;
 };
 
-export * from './Rating';
-export { default } from './Rating';
+export * from "./Rating";
+export { default } from "./Rating";

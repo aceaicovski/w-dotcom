@@ -38,4 +38,4 @@ export type Props = {
   styles?: Styles;
 };
 
-export { default } from './BaseProductInfo';
+export { default } from "./BaseProductInfo";

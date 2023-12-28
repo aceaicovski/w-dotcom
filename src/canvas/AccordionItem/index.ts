@@ -1,5 +1,5 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { AccordionItem } from './AccordionItem';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { AccordionItem } from "./AccordionItem";
 
 type Styles = {
   container?: string;
@@ -15,9 +15,9 @@ export type AccordionItemProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'accordionItem',
+  type: "accordionItem",
   component: AccordionItem,
 });
 
 export default AccordionItem;
-export * from './decorator';
+export * from "./decorator";

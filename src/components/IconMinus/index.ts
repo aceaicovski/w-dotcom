@@ -1,2 +1,2 @@
-export * from './IconMinus';
-export { default } from './IconMinus';
+export * from "./IconMinus";
+export { default } from "./IconMinus";

@@ -1,5 +1,5 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { Grid } from './Grid';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { Grid } from "./Grid";
 
 export type GridProps = ComponentProps<{
   columnsCount: Types.AvailableColumnCount;
@@ -8,7 +8,7 @@ export type GridProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'grid',
+  type: "grid",
   component: Grid,
 });
 

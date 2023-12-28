@@ -1,6 +1,6 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { withoutContainer } from '../../hocs/withoutContainer';
-import { Banner } from './Banner';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { withoutContainer } from "../../hocs/withoutContainer";
+import { Banner } from "./Banner";
 
 export type BannerProps = ComponentProps<{
   title: string;
@@ -20,12 +20,12 @@ export type BannerProps = ComponentProps<{
 }>;
 
 export const enum BannerVariant {
-  FullWidth = 'fullWidth',
+  FullWidth = "fullWidth",
 }
 
 [undefined, BannerVariant.FullWidth].forEach(variantId => {
   registerUniformComponent({
-    type: 'banner',
+    type: "banner",
     component: withoutContainer(Banner),
     variantId,
   });

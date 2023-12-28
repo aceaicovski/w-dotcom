@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { CardBlockCarousel } from './CardBlockCarousel';
-import { CardBlockDefault } from './CardBlock';
+import { FC } from "react";
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { CardBlockCarousel } from "./CardBlockCarousel";
+import { CardBlockDefault } from "./CardBlock";
 
 type Styles = {
   container?: string;
@@ -22,7 +22,7 @@ export type CardBlockProps = ComponentProps<{
 }>;
 
 export enum CardBlockVariants {
-  Carousel = 'carousel',
+  Carousel = "carousel",
 }
 
 const CardBlock: FC<CardBlockProps> = props => {
@@ -37,7 +37,7 @@ const CardBlock: FC<CardBlockProps> = props => {
 
 [undefined, CardBlockVariants.Carousel].forEach(variantId => {
   registerUniformComponent({
-    type: 'cardBlock',
+    type: "cardBlock",
     component: CardBlock,
     variantId,
   });

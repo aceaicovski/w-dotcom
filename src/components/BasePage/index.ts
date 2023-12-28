@@ -1,5 +1,5 @@
-import { ElementType } from 'react';
-import { RootComponentInstance } from '@uniformdev/canvas';
+import { ElementType } from "react";
+import { RootComponentInstance } from "@uniformdev/canvas";
 
 type Styles = {
   pageContentContainer?: string;
@@ -18,5 +18,5 @@ export type BasePageProps = {
   styles?: Styles;
 };
 
-export * from './decorator';
-export { default } from './BasePage';
+export * from "./decorator";
+export { default } from "./BasePage";

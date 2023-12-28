@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: iconLinkSocial
+name: Icon Link Social
+icon: >-
+  https://res.cloudinary.com/uniform-demos/image/upload/v1692281226/csk-icons/component-icons-v2/CSKicon_headerlink_coaugo_mfcseb.svg
+parameters:
+  - id: icon
+    name: Icon
+    type: image
+    helpText: Icon ( facebook | instagram | vimeo | linkedin )
+    typeConfig:
+      required: false
+    localizable: false
+  - id: link
+    name: Link
+    type: link
+    helpText: ''
+    typeConfig:
+      required: false
+categoryId: 94a7a423-8c09-4264-8495-c562c17d811e
+previewImageUrl: >-
+  https://res.cloudinary.com/uniform-demos/image/upload/v1/csk-preview-images/UniformTheme/Icon_link_preview_image
+useTeamPermissions: true
+slots: []
+titleParameter: icon
+canBeComposition: false
+created: '2023-12-27T16:14:45.507017+00:00'
+updated: '2023-12-27T16:14:45.507017+00:00'

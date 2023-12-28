@@ -1,7 +1,7 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { Breadcrumbs } from './Breadcrumbs';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { Breadcrumbs } from "./Breadcrumbs";
 
-export type BreadcrumbSeparator = 'slash' | 'chevron' | 'none';
+export type BreadcrumbSeparator = "slash" | "chevron" | "none";
 
 type Styles = {
   container?: string;
@@ -15,7 +15,7 @@ export type BreadcrumbsProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'breadcrumbs',
+  type: "breadcrumbs",
   component: Breadcrumbs,
 });
 

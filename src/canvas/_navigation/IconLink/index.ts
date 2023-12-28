@@ -1,5 +1,5 @@
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import { IconLink } from './IconLink';
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
+import { IconLink } from "./IconLink";
 
 export type IconLinkProps = ComponentProps<{
   link: Types.ProjectMapLink;
@@ -7,6 +7,6 @@ export type IconLinkProps = ComponentProps<{
 }>;
 
 registerUniformComponent({
-  type: 'iconLink',
+  type: "iconLink",
   component: IconLink,
 });

@@ -1,5 +1,5 @@
-import { ComponentProps } from '@uniformdev/canvas-react/dist';
-import { ContainerProps } from '../Container';
+import { ComponentProps } from "@uniformdev/canvas-react/dist";
+import { ContainerProps } from "../Container";
 
 type Styles = {
   title?: string;
@@ -22,4 +22,4 @@ export type BaseProductGalleryProps = ComponentProps<
   }
 >;
 
-export { default } from './BaseProductGallery';
+export { default } from "./BaseProductGallery";

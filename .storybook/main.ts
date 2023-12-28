@@ -1,14 +1,14 @@
-import path from 'path';
-import type { StorybookConfig } from '@storybook/nextjs';
+import path from "path";
+import type { StorybookConfig } from "@storybook/nextjs";
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    '@storybook/addon-links',
-    'storybook-addon-themes',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
+    "@storybook/addon-links",
+    "storybook-addon-themes",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
     {
-      name: '@storybook/addon-styling',
+      name: "@storybook/addon-styling",
       options: {
         // Check out https://github.com/storybookjs/addon-styling/blob/main/docs/api.md
         // For more details on this addon's options.
@@ -16,8 +16,9 @@ const config: StorybookConfig = {
       },
     },
   ],
+  staticDirs: ["../public"],
   framework: {
-    name: '@storybook/nextjs',
+    name: "@storybook/nextjs",
     options: {},
   },
   webpackFinal: async config => {
@@ -28,7 +29,7 @@ const config: StorybookConfig = {
         ...config.resolve,
         alias: {
           ...alias,
-          '@': path.resolve(__dirname, '../src/'),
+          "@": path.resolve(__dirname, "../src/"),
         },
         fallback: {
           ...config.resolve?.fallback,
@@ -41,7 +42,7 @@ const config: StorybookConfig = {
     };
   },
   docs: {
-    autodocs: 'tag',
+    autodocs: "tag",
   },
 };
 export default config;

@@ -1,18 +1,22 @@
-import { FC } from 'react';
-import Image from 'next/image';
-import classNames from 'classnames';
-import { UniformText } from '@uniformdev/canvas-react';
-import { getLineClampClass } from '../../utilities/styling';
-import { TestimonialProps, TestimonialVariant } from '.';
+import { FC } from "react";
+import Image from "next/image";
+import classNames from "classnames";
+import { UniformText } from "@uniformdev/canvas-react";
+import { getLineClampClass } from "../../utilities/styling";
+import { TestimonialProps, TestimonialVariant } from ".";
 
 export const Testimonial: FC<TestimonialProps> = ({ picture, logo, lineCountRestriction, component }) => {
   const isCardWrapperVariant = component?.variant === TestimonialVariant.CardWrapped;
   return (
-    <div className={classNames('flex flex-col', { 'card shadow-xl p-4': isCardWrapperVariant })}>
+    <div
+      className={classNames("flex flex-col", {
+        "card p-4 shadow-xl": isCardWrapperVariant,
+      })}
+    >
       {Boolean(logo) && <Image src={logo} width={180} height={90} alt="testimonial-logo" />}
       <div>
         <UniformText
-          className={classNames('text-secondary-content mt-4', getLineClampClass(lineCountRestriction))}
+          className={classNames("mt-4 text-secondary-content", getLineClampClass(lineCountRestriction))}
           as="p"
           parameterId="description"
           placeholder="Testimonial description goes here"
@@ -20,13 +24,13 @@ export const Testimonial: FC<TestimonialProps> = ({ picture, logo, lineCountRest
         />
       </div>
 
-      <div className="shrink-0 flex mt-8">
+      <div className="mt-8 flex shrink-0">
         {Boolean(picture) && (
           <Image className="rounded-full" src={picture} width={48} height={48} alt="reviewer-icon" />
         )}
-        <div className="flex flex-col ml-4 ">
+        <div className="ml-4 flex flex-col ">
           <UniformText
-            className="text-secondary-content font-bold"
+            className="font-bold text-secondary-content"
             as="p"
             parameterId="personName"
             placeholder="Person Name  goes here"

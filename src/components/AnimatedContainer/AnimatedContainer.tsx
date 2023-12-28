@@ -1,7 +1,7 @@
-import { FC, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { AnimatedContainerProps } from './';
-import { getAnimationParams } from './helpers';
+import { FC, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { AnimatedContainerProps } from "./";
+import { getAnimationParams } from "./helpers";
 
 const AnimatedContainer: FC<AnimatedContainerProps> = ({
   animationVariant,

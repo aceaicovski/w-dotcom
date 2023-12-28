@@ -1,5 +1,5 @@
-import { registerUniformComponent, ComponentProps } from '@uniformdev/canvas-react';
-import { CallToAction } from './CallToAction';
+import { registerUniformComponent, ComponentProps } from "@uniformdev/canvas-react";
+import { CallToAction } from "./CallToAction";
 
 type Styles = {
   container?: string;
@@ -22,9 +22,9 @@ export type CallToActionProps = ComponentProps<{
 }>;
 
 export enum CallToActionVariant {
-  AlignLeft = 'alignLeft',
-  AlignRight = 'alignRight',
-  Featured = 'featured',
+  AlignLeft = "alignLeft",
+  AlignRight = "alignRight",
+  Featured = "featured",
 }
 
 [
@@ -35,7 +35,7 @@ export enum CallToActionVariant {
   CallToActionVariant.Featured,
 ].forEach(variantId => {
   registerUniformComponent({
-    type: 'callToAction',
+    type: "callToAction",
     component: CallToAction,
     variantId,
   });
