@@ -6,6 +6,7 @@ import { TableRow } from "./TableRow";
 
 export type TableProps = ComponentProps<{
   size: Types.TableSize;
+  textAlign: Types.TableTextAlign;
 }>;
 
 export enum TableVariant {

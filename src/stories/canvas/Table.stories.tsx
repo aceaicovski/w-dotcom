@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { UniformComposition } from "@uniformdev/canvas-react";
 import { Table, TableProps } from "@/canvas";
 import { createFakeCompositionData } from "../utils";
+import { Button } from "@/components";
 
 const meta: Meta<typeof Table> = {
   title: "Data Display/Table",
@@ -12,7 +13,8 @@ export default meta;
 type Story = StoryObj<typeof Table>;
 
 const BASE_PROPS: TableProps = {
-  size: "large",
+  size: "full",
+  textAlign: "center",
   component: {
     type: "table",
     slots: {
@@ -239,6 +241,156 @@ const BASE_PROPS: TableProps = {
   },
 };
 
+const SECOND_PROPS: TableProps = {
+  size: "full",
+  textAlign: "left",
+  component: {
+    type: "table",
+    slots: {
+      tableHead: [
+        {
+          type: "tableRow",
+          slots: {
+            cells: [
+              {
+                type: "tableHeaderCell",
+                parameters: {
+                  value: {
+                    type: "text",
+                    value: "Division",
+                  },
+                },
+              },
+              {
+                type: "tableHeaderCell",
+                parameters: {
+                  value: {
+                    type: "text",
+                    value: "price",
+                  },
+                },
+              },
+              {
+                type: "tableHeaderCell",
+                parameters: {
+                  value: {
+                    type: "text",
+                    value: "",
+                  },
+                },
+              },
+            ],
+          },
+        },
+      ],
+      tableBody: [
+        {
+          type: "tableRow",
+          slots: {
+            cells: [
+              {
+                type: "tableDataCell",
+                parameters: {
+                  value: {
+                    type: "text",
+                    value: "Cal Berkeley - 1st Grade Division/Kindergarten",
+                  },
+                },
+              },
+              {
+                type: "tableDataCell",
+                parameters: {
+                  value: {
+                    type: "price",
+                    value: "$315.00",
+                  },
+                },
+              },
+              {
+                type: "tableDataCell",
+                parameters: {
+                  value: {
+                    type: "button",
+                    value: <Button style="secondary" copy="Register" rounded />,
+                  },
+                },
+              },
+            ],
+          },
+        },
+        {
+          type: "tableRow",
+          slots: {
+            cells: [
+              {
+                type: "tableDataCell",
+                parameters: {
+                  value: {
+                    type: "text",
+                    value: "Cal Berkeley - 2st Grade Division/Kindergarten",
+                  },
+                },
+              },
+              {
+                type: "tableDataCell",
+                parameters: {
+                  value: {
+                    type: "price",
+                    value: "$315.00",
+                  },
+                },
+              },
+              {
+                type: "tableDataCell",
+                parameters: {
+                  value: {
+                    type: "button",
+                    value: <Button style="secondary" copy="Register" rounded />,
+                  },
+                },
+              },
+            ],
+          },
+        },
+        {
+          type: "tableRow",
+          slots: {
+            cells: [
+              {
+                type: "tableDataCell",
+                parameters: {
+                  value: {
+                    type: "text",
+                    value: "Cal Berkeley - 3st Grade Division/Kindergarten",
+                  },
+                },
+              },
+              {
+                type: "tableDataCell",
+                parameters: {
+                  value: {
+                    type: "price",
+                    value: "$315.00",
+                  },
+                },
+              },
+              {
+                type: "tableDataCell",
+                parameters: {
+                  value: {
+                    type: "button",
+                    value: <Button style="secondary" copy="Register" rounded />,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  },
+};
+
 const argTypes = {};
 
 const renderStory = (args: TableProps) => {
@@ -256,11 +408,23 @@ export const Default: Story = {
   render: renderStory,
 };
 
-export const Zebra: Story = {
+export const ZebraCenter: Story = {
   args: {
     ...BASE_PROPS,
     component: {
       ...BASE_PROPS.component,
+      variant: "zebra",
+    },
+  },
+  argTypes,
+  render: renderStory,
+};
+
+export const ZebraLeft: Story = {
+  args: {
+    ...SECOND_PROPS,
+    component: {
+      ...SECOND_PROPS.component,
       variant: "zebra",
     },
   },

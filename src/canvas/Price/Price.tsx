@@ -1,10 +1,10 @@
 import { FC, useCallback } from "react";
 import classNames from "classnames";
 import { UniformText } from "@uniformdev/canvas-react";
-import { getTextClass } from "../../utilities/styling";
+import { getTypographyClass } from "../../utilities/styling";
 import { PriceProps } from ".";
 
-export const Price: FC<PriceProps> = ({ labelStyle = "h1", currency }) => {
+export const Price: FC<PriceProps> = ({ labelStyle = "h4", currency }) => {
   const renderValue = useCallback(
     (value: string | undefined) => {
       const formattedPrice =
@@ -20,18 +20,18 @@ export const Price: FC<PriceProps> = ({ labelStyle = "h1", currency }) => {
   );
 
   return (
-    <div className="flex flex-row items-center gap-2 py-2 text-secondary-content">
+    <div className="flex flex-row items-center gap-2 py-2 text-primary">
       <UniformText
         placeholder="Label goes here"
         parameterId="label"
         as="span"
-        className={classNames("font-medium", getTextClass(labelStyle))}
+        className={classNames(getTypographyClass(labelStyle))}
       />
       <UniformText
         placeholder="Price goes here"
         parameterId="price"
         as="div"
-        className={classNames("font-medium", getTextClass(labelStyle))}
+        className={classNames(getTypographyClass(labelStyle))}
         render={renderValue}
       />
     </div>
