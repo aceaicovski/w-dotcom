@@ -62,6 +62,8 @@ declare namespace Types {
 
   type HorizontalAlignment = "left" | "center" | "right";
 
+  type TableSize = "tiny" | "small" | "normal" | "large";
+
   type SupportedThemes = "uniform" | "javadrip" | "custom" | "nextlevelsports";
 
   type ThemeColors = {
