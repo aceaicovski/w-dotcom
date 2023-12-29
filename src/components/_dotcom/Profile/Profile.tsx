@@ -9,6 +9,7 @@ export type ProfileProps = React.HTMLAttributes<HTMLDivElement> & {
   name: string;
   imagePath: string;
   content: string;
+  className?: string;
 };
 
 const Profile = React.forwardRef<HTMLDivElement, ProfileProps>(
