@@ -1,4 +1,4 @@
-import { registerUniformComponent, ComponentProps } from "@uniformdev/canvas-react";
+import { ComponentProps, registerUniformComponent } from "@uniformdev/canvas-react";
 import { Table } from "./Table";
 import { TableDataCell } from "./TableDataCell";
 import { TableHeaderCell } from "./TableHeaderCell";
@@ -15,11 +15,13 @@ export enum TableVariant {
 
 export type TableCellProps = ComponentProps<{
   value: string;
+  useAsSlot?: boolean;
 }>;
 
 export type TableRowProps = ComponentProps<{
   highlightsOnHover: string;
 }>;
+
 [undefined, TableVariant.Zebra].forEach(variantId => {
   registerUniformComponent({
     type: "table",
@@ -32,10 +34,12 @@ registerUniformComponent({
   type: "tableDataCell",
   component: TableDataCell,
 });
+
 registerUniformComponent({
   type: "tableHeaderCell",
   component: TableHeaderCell,
 });
+
 registerUniformComponent({
   type: "tableRow",
   component: TableRow,

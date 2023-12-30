@@ -1,8 +1,8 @@
+import { Table, TableProps } from "@/canvas";
+import { Button } from "@/components";
 import type { Meta, StoryObj } from "@storybook/react";
 import { UniformComposition } from "@uniformdev/canvas-react";
-import { Table, TableProps } from "@/canvas";
 import { createFakeCompositionData } from "../utils";
-import { Button } from "@/components";
 
 const meta: Meta<typeof Table> = {
   title: "Data Display/Table",
@@ -10,6 +10,7 @@ const meta: Meta<typeof Table> = {
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Table>;
 
 const BASE_PROPS: TableProps = {
@@ -391,7 +392,10 @@ const SECOND_PROPS: TableProps = {
   },
 };
 
-const argTypes = {};
+const argTypes = {
+  size: { control: "select", options: ["tiny", "small", "normal", "large", "full"] },
+  textAlign: { control: "select", options: ["left", "center", "right"] },
+};
 
 const renderStory = (args: TableProps) => {
   const fakeComposition = createFakeCompositionData("table", args, { ...args.component.slots });
