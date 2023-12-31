@@ -18,7 +18,7 @@ declare namespace Types {
     url: string;
   };
 
-  type ButtonStyles = "primary" | "secondary" | "accent" | "ghost" | "link";
+  type ButtonStyles = "primary" | "secondary" | "accent" | "ghost" | "link" | "outline";
 
   type ButtonSize = "large" | "regular" | "small";
 

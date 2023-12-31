@@ -2,7 +2,7 @@ export const titleStyleOptions = ["h1", "h2", "h3", "h4"];
 
 export const currencyOptions = ["USD", "EUR"];
 
-export const buttonStyleOptions = ["primary", "secondary", "accent", "link"];
+export const buttonStyleOptions = ["primary", "secondary", "accent", "ghost", "outline", "link"];
 
 export const buttonSizeOptions = ["large", "regular", "small"];
 
