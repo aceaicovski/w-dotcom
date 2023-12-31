@@ -62,6 +62,12 @@ declare namespace Types {
 
   type HorizontalAlignment = "left" | "center" | "right";
 
+  type FlexContent = "start" | "end" | "center" | "between" | "around";
+
+  type FlexItems = "start" | "end" | "center" | "stretch";
+
+  type ResponsiveBreakpoints = "sm" | "md" | "lg" | "xl" | "2xl";
+
   type SupportedThemes = "uniform" | "javadrip" | "custom" | "nextlevelsports";
 
   type ThemeColors = {
