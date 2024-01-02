@@ -18,7 +18,7 @@ declare namespace Types {
     url: string;
   };
 
-  type ButtonStyles = "primary" | "secondary" | "accent" | "ghost" | "link";
+  type ButtonStyles = "primary" | "secondary" | "accent" | "ghost" | "link" | "outline";
 
   type ButtonSize = "large" | "regular" | "small";
 
@@ -61,6 +61,12 @@ declare namespace Types {
   type TypographyStyle = "h1" | "h2" | "h3" | "h4" | "p" | "q";
 
   type HorizontalAlignment = "left" | "center" | "right";
+
+  type FlexContent = "start" | "end" | "center" | "between" | "around";
+
+  type FlexItems = "start" | "end" | "center" | "stretch";
+
+  type ResponsiveBreakpoints = "sm" | "md" | "lg" | "xl" | "2xl";
 
   type TableSize = "tiny" | "small" | "normal" | "large" | "full";
 
