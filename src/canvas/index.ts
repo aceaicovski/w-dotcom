@@ -40,6 +40,7 @@ import "./Spacer";
 import "./Testimonial";
 import "./Typography";
 import "./Video";
+import "./Table";
 
 export { default as Accordion } from "./Accordion";
 
@@ -105,6 +106,10 @@ export { default as RichText } from "./RichText";
 
 export { default as Video } from "./Video";
 export type { VideoProps } from "./Video";
+
+export { default as Table } from "./Table";
+export { TableVariant } from "./Table";
+export type { TableProps } from "./Table";
 
 /**
  * Next Level Sports design components

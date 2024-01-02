@@ -172,6 +172,8 @@ slots:
       - programnavigation
       - programNavigation
       - typography
+      - profile
+      - table
     allowAllComponents: false
     inheritAllowedComponents: false
     patternsInAllowedComponents: false
@@ -238,4 +240,4 @@ defaults:
 titleParameter: pageTitle
 canBeComposition: true
 created: '2023-10-03T09:04:59.496579+00:00'
-updated: '2023-12-25T15:50:01.706168+00:00'
+updated: '2023-12-30T17:58:09.222589+00:00'

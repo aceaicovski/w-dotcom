@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: table
+name: Table
+icon: view-grid
+parameters:
+  - id: size
+    name: Table Size
+    type: select
+    helpText: Table Size
+    typeConfig:
+      options:
+        - text: tiny
+          value: tiny
+        - text: small
+          value: small
+        - text: normal
+          value: normal
+        - text: large
+          value: large
+        - text: full
+          value: full
+    localizable: false
+  - id: textAlign
+    name: Text Alignment
+    type: select
+    helpText: Table Text Alignment
+    typeConfig:
+      options:
+        - text: left
+          value: left
+        - text: center
+          value: center
+        - text: right
+          value: right
+    localizable: false
+categoryId: 94a7a423-8c09-4264-8495-c562c17d811e
+previewImageUrl: >-
+  https://res.cloudinary.com/uniform-demos/image/upload/v1/preview-images/UniformTheme/Table_preview_image
+useTeamPermissions: true
+slots:
+  - id: tableHead
+    name: Table Head
+    allowedComponents:
+      - tableRow
+    allowAllComponents: false
+    inheritAllowedComponents: false
+    patternsInAllowedComponents: false
+  - id: tableBody
+    name: Table Body
+    allowedComponents:
+      - tableRow
+      - $loop
+    allowAllComponents: false
+    inheritAllowedComponents: false
+    patternsInAllowedComponents: false
+canBeComposition: false
+created: '2023-12-30T18:07:30.327422+00:00'
+updated: '2023-12-30T18:14:55.46373+00:00'
+variants:
+  - id: zebra
+    name: Zebra
