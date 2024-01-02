@@ -23,11 +23,6 @@ parameters:
     typeConfig:
       multiline: true
       linesCount: '5'
-  - id: content
-    name: Content
-    type: json
-    helpText: ''
-    typeConfig: {}
   - id: variant
     name: Variant
     type: select
@@ -74,6 +69,36 @@ parameters:
       subTitle: "tw-" }`
     typeConfig: {}
     localizable: false
+  - id: content
+    name: Content
+    type: richText
+    helpText: Content Block Rich Text
+    typeConfig:
+      elements:
+        builtIn:
+          - h1
+          - h2
+          - h3
+          - h4
+          - h5
+          - h6
+          - unorderedList
+          - orderedList
+          - link
+          - quote
+          - code
+          - variable
+      required: false
+      formatting:
+        builtIn:
+          - bold
+          - italic
+          - underline
+          - strikethrough
+          - code
+          - superscript
+          - subscript
+    localizable: true
 categoryId: 94a7a423-8c09-4264-8495-c562c17d811e
 previewImageUrl: >-
   https://res.cloudinary.com/uniform-demos/image/upload/v1/csk-preview-images/UniformTheme/Content_preview_image
@@ -82,4 +107,4 @@ slots: []
 titleParameter: title
 canBeComposition: false
 created: '2023-12-22T15:51:48.541356+00:00'
-updated: '2023-12-26T16:17:34.563381+00:00'
+updated: '2023-12-29T18:07:01.079902+00:00'

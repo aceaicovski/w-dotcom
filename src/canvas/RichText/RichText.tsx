@@ -6,17 +6,21 @@ import { PaddingSize } from "../../utilities/styling";
 import { RichTextProps, RichTextVariants } from ".";
 
 export const RichText: FC<RichTextProps> = ({ component }) => (
-  <Container paddingTop={PaddingSize.Small} paddingBottom={PaddingSize.Small}>
+  /**
+   * [TODO]
+   * Add paddingTop and paddingBottom parameters available for edit
+   */
+  <Container paddingTop={PaddingSize.None} paddingBottom={PaddingSize.None}>
     <div
       className={classNames("prose max-w-full", {
         "text-primary-content": component?.variant === RichTextVariants.Light,
-        "text-secondary-content": component?.variant !== RichTextVariants.Light,
+        "text-primary": component?.variant !== RichTextVariants.Light,
       })}
     >
       <UniformRichText
         className={classNames({
           "!marker:text-primary-content [&_*]:text-primary-content": component?.variant === RichTextVariants.Light,
-          "marker:text-secondary-content [&_*]:text-secondary-content": component?.variant !== RichTextVariants.Light,
+          "marker:text-primary [&_*]:text-primary": component?.variant !== RichTextVariants.Light,
         })}
         parameterId="content"
       />

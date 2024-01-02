@@ -68,6 +68,10 @@ declare namespace Types {
 
   type ResponsiveBreakpoints = "sm" | "md" | "lg" | "xl" | "2xl";
 
+  type TableSize = "tiny" | "small" | "normal" | "large" | "full";
+
+  type TableTextAlign = "left" | "center" | "right";
+
   type SupportedThemes = "uniform" | "javadrip" | "custom" | "nextlevelsports";
 
   type ThemeColors = {

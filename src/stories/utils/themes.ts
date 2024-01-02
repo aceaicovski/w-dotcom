@@ -65,6 +65,11 @@ const nextLevelSportsTheme = {
         value: colors["base-200"],
       },
       {
+        name: "base-300",
+        label: "Base 300",
+        value: colors["base-300"],
+      },
+      {
         name: "info-content",
         label: "Info Content",
         value: colors.info,
