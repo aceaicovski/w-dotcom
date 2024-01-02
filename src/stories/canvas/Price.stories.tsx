@@ -7,7 +7,7 @@ import { createFakeCompositionData } from "../utils";
 import { currencyOptions, titleStyleOptions } from "../constants";
 
 const meta: Meta<typeof Price> = {
-  title: "Price",
+  title: "Data Display/Price",
   component: Price,
 };
 

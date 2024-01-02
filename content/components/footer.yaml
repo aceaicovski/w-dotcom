@@ -49,6 +49,8 @@ slots:
     name: Section
     allowedComponents:
       - footerSection
+      - footerSecondSection
+      - footerWithoutTitleSection
     allowAllComponents: false
     inheritAllowedComponents: false
     patternsInAllowedComponents: false
@@ -61,4 +63,4 @@ slots:
     patternsInAllowedComponents: false
 canBeComposition: false
 created: '2023-12-22T15:51:48.581195+00:00'
-updated: '2023-12-27T16:25:43.29201+00:00'
+updated: '2023-12-28T17:15:46.639358+00:00'

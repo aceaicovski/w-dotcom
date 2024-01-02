@@ -3,7 +3,7 @@ import { Price } from "./Price";
 
 export type PriceProps = ComponentProps<{
   label?: string;
-  labelStyle: Types.HeadingStyles;
+  labelStyle: Types.TypographyStyle;
   price?: number | string;
   currency?: string;
 }>;

@@ -40,6 +40,7 @@ import "./Spacer";
 import "./Testimonial";
 import "./Typography";
 import "./Video";
+import "./Table";
 
 export { default as Accordion } from "./Accordion";
 
@@ -106,6 +107,10 @@ export { default as RichText } from "./RichText";
 export { default as Video } from "./Video";
 export type { VideoProps } from "./Video";
 
+export { default as Table } from "./Table";
+export { TableVariant } from "./Table";
+export type { TableProps } from "./Table";
+
 /**
  * Next Level Sports design components
  */
@@ -113,6 +118,7 @@ import "./SportTypeCard";
 import "./ProgramNavigation";
 import "./Profile";
 import "./LogoCloud";
+import "./_containers/Flex";
 
 export { default as SportTypeCard } from "./SportTypeCard";
 export type { SportTypeCardProps } from "./SportTypeCard";
@@ -128,3 +134,6 @@ export type { ProfileProps } from "./Profile";
 
 export { default as LogoCloud } from "./LogoCloud";
 export type { LogoCloudProps } from "./LogoCloud";
+
+export { default as Flex } from "./_containers/Flex";
+export type { FlexProps } from "./_containers/Flex";
