@@ -25,7 +25,7 @@ const LogoCloud: FC<LogoCloudProps> = ({ title, logos, className, ...props }) =>
         className
       )}
     >
-      <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold font-['Roboto']">{title}</h2>
+      <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold">{title}</h2>
       <div className="flex gap-x-4 md:gap-x-8 lg:gap-x-16 items-center">
         {logos.map((logo: Logo) => {
           const { linkPath, imagePath, altText } = logo;
