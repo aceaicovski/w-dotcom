@@ -112,6 +112,7 @@ export type { VideoProps } from "./Video";
 import "./SportTypeCard";
 import "./ProgramNavigation";
 import "./Profile";
+import "./LogoCloud";
 
 export { default as SportTypeCard } from "./SportTypeCard";
 export type { SportTypeCardProps } from "./SportTypeCard";
@@ -124,3 +125,6 @@ export type { TypographyProps } from "./Typography";
 
 export { default as Profile } from "./Profile";
 export type { ProfileProps } from "./Profile";
+
+export { default as LogoCloud } from "./LogoCloud";
+export type { LogoCloudProps } from "./LogoCloud";
