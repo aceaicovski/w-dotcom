@@ -1,6 +1,7 @@
 export { default as SportTypeCard, type SportTypeCardProps } from "./_dotcom/SportTypeCard";
 export { default as ProgramNavigation } from "./_dotcom/ProgramNavigation";
 export { default as Logo } from "./_dotcom/Logo";
+export { default as Flex } from "./_dotcom/Flex";
 
 export { default as Decorators } from "./Decorators";
 export { default as BaseAddToCart } from "./BaseAddToCart";
