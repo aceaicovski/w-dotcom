@@ -26,13 +26,19 @@ const LogoCloud: FC<LogoCloudProps> = ({ title, logos, className, ...props }) =>
       )}
     >
       <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold font-['Roboto']">{title}</h2>
-      <div className="flex gap-x-8 lg:gap-x-16 items-center">
+      <div className="flex gap-x-4 md:gap-x-8 lg:gap-x-16 items-center">
         {logos.map((logo: Logo) => {
           const { linkPath, imagePath, altText } = logo;
 
           return (
-            <Link key={linkPath} href={logo.linkPath ?? "#"} className="h-20 md:h-24 lg:h-28">
-              <Image src={imagePath} alt={altText ?? ""} width={160} height={113} className="h-full w-auto" />
+            <Link key={altText} href={linkPath ?? "#"} className="h-[4.6rem] md:h-[5.8rem] lg:h-28">
+              <Image
+                src={imagePath}
+                alt={altText ?? ""}
+                width={160}
+                height={113}
+                className="h-full w-auto flex shrink-0"
+              />
             </Link>
           );
         })}
