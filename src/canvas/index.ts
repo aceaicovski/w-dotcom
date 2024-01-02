@@ -111,6 +111,7 @@ export type { VideoProps } from "./Video";
  */
 import "./SportTypeCard";
 import "./ProgramNavigation";
+import "./Profile";
 
 export { default as SportTypeCard } from "./SportTypeCard";
 export type { SportTypeCardProps } from "./SportTypeCard";
@@ -120,3 +121,6 @@ export type { ProgramNavigationProps } from "./ProgramNavigation";
 
 export { default as Typography } from "./Typography";
 export type { TypographyProps } from "./Typography";
+
+export { default as Profile } from "./Profile";
+export type { ProfileProps } from "./Profile";

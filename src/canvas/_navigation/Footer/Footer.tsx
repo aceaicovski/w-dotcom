@@ -32,15 +32,6 @@ export const Footer: FC<FooterProps> = ({
           <div className="text-xs text-white lg:hidden" dangerouslySetInnerHTML={{ __html: `© 2023 ${copyright}` }} />
           <div className="w-full lg:w-3/5 flex items-start justify-start xl:justify-between xl:pr-10">
             <UniformSlot name="section" />
-            {/* [TODO] Add missing components to uniform.app
-              * src/canvas/_navigation/FooterWithoutTitleSection/FooterWithoutTitleSection.tsx
-              * src/canvas/_navigation/FooterSecondSection/FooterSecondSection.tsx
-              * 
-              <div className="w-full flex flex-col md:flex-row items-start justify-start">
-                <UniformSlot name="secondSection" />
-                <UniformSlot name="withoutTitleSection" />
-              </div> 
-            */}
           </div>
           <div className="-mb-8 w-full text-white lg:mb-0 lg:w-2/5">
             {!hideLogo && <Image src={imageUrl} width="200" height="50" alt={copyright} />}
