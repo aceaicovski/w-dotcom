@@ -6,18 +6,18 @@ const logoCloudProps = {
   title: "In Partnership with",
   logos: [
     {
-      imagePath: "https://placehold.co/400?text=Placeholder+Image&font=roboto",
+      imagePath: "https://img.logoipsum.com/300.svg",
       linkPath: "#",
       altText: "Team Snap",
     },
     {
-      imagePath: "https://placehold.co/400?text=Placeholder+Image&font=roboto",
-      linkPath: "https://placehold.co/400?text=Placeholder+Image&font=roboto",
+      imagePath: "https://img.logoipsum.com/331.svg",
+      linkPath: "#",
       altText: "Nike Team",
     },
     {
-      imagePath: "https://placehold.co/400?text=Placeholder+Image&font=roboto",
-      linkPath: "https://placehold.co/400?text=Placeholder+Image&font=roboto",
+      imagePath: "https://img.logoipsum.com/323.svg",
+      linkPath: "#",
       altText: "Gear Up Sports",
     },
   ],
