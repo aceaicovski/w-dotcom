@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: logos
+name: Logo Cloud
+icon: awards
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: Logos block caption
+    typeConfig: null
+    localizable: true
+  - id: logos
+    name: Logos Config
+    type: json
+    helpText: Logos Config JSON ( `[ { imagePath, linkPath, altText } ]` )
+    typeConfig:
+      required: false
+    localizable: false
+  - id: className
+    name: Class Name
+    type: text
+    helpText: Additional className for custom styling
+    typeConfig: null
+    localizable: true
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2024-01-03T16:22:31.072816+00:00'
+updated: '2024-01-03T16:22:31.072816+00:00'

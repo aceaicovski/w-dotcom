@@ -117,6 +117,7 @@ export type { TableProps } from "./Table";
 import "./SportTypeCard";
 import "./ProgramNavigation";
 import "./Profile";
+import "./LogoCloud";
 import "./_containers/Flex";
 
 export { default as SportTypeCard } from "./SportTypeCard";
@@ -130,6 +131,9 @@ export type { TypographyProps } from "./Typography";
 
 export { default as Profile } from "./Profile";
 export type { ProfileProps } from "./Profile";
+
+export { default as LogoCloud } from "./LogoCloud";
+export type { LogoCloudProps } from "./LogoCloud";
 
 export { default as Flex } from "./_containers/Flex";
 export type { FlexProps } from "./_containers/Flex";
