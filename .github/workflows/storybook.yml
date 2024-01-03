@@ -23,8 +23,8 @@ jobs:
       # Install all NPM dependencies and build storybook as a static files
       - name: Install Packages and Build Storybook
         run: |
-          yarn
-          yarn build-storybook
+          npm
+          npm run build-storybook
 
       # Deploy storybook static files to the github pages
       - name: Deploy Storybook to Github Pages
