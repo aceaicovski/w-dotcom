@@ -118,6 +118,7 @@ import "./SportTypeCard";
 import "./ProgramNavigation";
 import "./Profile";
 import "./LogoCloud";
+import "./MobileApp";
 import "./_containers/Flex";
 
 export { default as SportTypeCard } from "./SportTypeCard";
@@ -137,3 +138,6 @@ export type { LogoCloudProps } from "./LogoCloud";
 
 export { default as Flex } from "./_containers/Flex";
 export type { FlexProps } from "./_containers/Flex";
+
+export { default as MobileApp } from "./MobileApp";
+export type { MobileAppProps } from "./MobileApp";

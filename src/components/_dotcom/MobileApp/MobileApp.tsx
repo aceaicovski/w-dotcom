@@ -12,11 +12,6 @@ export type MobileAppProps = React.HTMLAttributes<HTMLDivElement> & {
   subtitle: string;
 };
 
-const layoutMap = {
-  rightTop: "",
-  leftTop: "",
-};
-
 const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
   ({ title, subtitle, layout = "rightTop", contained = false, className, children, ...props }, ref): JSX.Element => {
     return (
@@ -24,9 +19,9 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
         role="banner"
         {...props}
         className={cn(
-          `flex ${layout === "rightTop" && contained && "lg:flex-row-reverse"} items-end text-white w-full lg:mt-40 ${
-            contained ? "bg-[#051227]" : "md:relative mt-56 "
-          } lg:bg-[#051227]`,
+          `flex ${layout === "rightTop" && "flex-row-reverse"} items-end text-white w-full lg:mt-40 ${
+            contained ? "" : "md:relative mt-56 "
+          } bg-[#051227]`,
           className
         )}
         ref={ref}
@@ -39,8 +34,8 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
               width={255}
               height={552}
               className={`absolute ${
-                contained ? "bottom-0 z-10 left-[50%]" : "bottom-20 left-[75%] -translate-x-3/4"
-              } md:bottom-0 md:z-1 transform md:left-[70%] w-52 ${contained ? "w-44 lg:w-64" : "md:w-64"} ${
+                contained ? "bottom-0 z-10 left-[40%]" : "bottom-20 left-[75%] md:left-[70%] transform -translate-x-3/4"
+              } md:bottom-0 md:z-1 w-52 ${contained ? "w-44 lg:w-64" : "md:w-64"} ${
                 layout === "rightTop"
                   ? "lg:left-52 lg:transform-none lg:translate-x-0"
                   : "lg:right-52 lg:left-auto lg:translate-x-0"
@@ -75,7 +70,6 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
             </div>
           </div>
         </div>
-        {children}
       </div>
     );
   }
