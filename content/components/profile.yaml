@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=<https://uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://uniform.app/schemas/json-schema/component-definition/v1.json
+id: profile
+name: Person Profile
+icon: file-document
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: Profile Title
+    typeConfig:
+      required: true
+    localizable: true
+  - id: name
+    name: Person Name
+    type: text
+    helpText: Profile Name
+    typeConfig:
+      required: true
+    localizable: true
+  - id: content
+    name: Profile Description
+    type: text
+    helpText: Person Profile Description
+    typeConfig:
+      required: true
+    localizable: true
+  - id: imagePath
+    name: Profile Image
+    type: image
+    helpText: Profile Image
+    typeConfig: null
+    localizable: true
+  - id: classname
+    name: className
+    type: text
+    helpText: Profile Container className
+    typeConfig: null
+    localizable: true
+categoryId: ea001653-1f96-4f07-9187-a1626a4965e5
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2023-12-29T18:52:48.280092+00:00'
+updated: '2023-12-29T18:52:48.280092+00:00'

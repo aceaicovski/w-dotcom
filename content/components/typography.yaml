@@ -7,9 +7,8 @@ parameters:
   - id: text
     name: Text
     type: text
-    helpText: Text goes here
-    typeConfig:
-      required: true
+    helpText: Typography
+    typeConfig: null
     localizable: true
   - id: tag
     name: Tag
@@ -65,4 +64,4 @@ slots: []
 titleParameter: text
 canBeComposition: false
 created: '2023-12-25T15:44:19.512869+00:00'
-updated: '2023-12-25T15:44:19.512869+00:00'
+updated: '2023-12-28T15:52:41.227343+00:00'

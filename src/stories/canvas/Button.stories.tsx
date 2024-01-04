@@ -57,6 +57,7 @@ export const ActiveButtons: Story = {
           <Button {...args} copy="Primary" style="primary" />
           <Button {...args} copy="Secondary" style="secondary" />
           <Button {...args} copy="Accent" style="accent" />
+          <Button {...args} copy="Outline" style="outline" />
           <Button {...args} copy="Ghost" style="ghost" />
           <Button {...args} copy="Link" style="link" />
         </Container>

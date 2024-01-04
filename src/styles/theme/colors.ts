@@ -14,8 +14,8 @@ export const colors = {
   "neutral-content": "#ffffff" /* Foreground content color to use on neutral color */,
 
   "base-100": "#ffffff" /* Base color of page, used for blank backgrounds */,
-  "base-200": "#6B6B6B" /* Base color, a little darker */,
-  // "base-300": "#d1d5db" /* Base color, even more darker */,
+  "base-200": "#EBEDF3" /* Base color, a little darker */,
+  "base-300": "#6B6B6B" /* Base color, even more darker */,
   // "base-content":
   //   "#1f2937" /* Foreground content color to use on base color */,
 

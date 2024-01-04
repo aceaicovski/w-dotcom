@@ -1,7 +1,7 @@
 export const getButtonClass = (style?: Types.ButtonStyles) => {
   switch (style) {
     case "primary":
-      return "btn-primary text-white";
+      return "btn-primary text-white normal-case";
     case "secondary":
       return "btn-secondary text-white";
     case "accent":
@@ -10,6 +10,8 @@ export const getButtonClass = (style?: Types.ButtonStyles) => {
       return "btn-ghost";
     case "link":
       return "btn-link";
+    case "outline":
+      return "btn-outline text-primary border-primary";
     default:
       return "btn-primary";
   }
@@ -28,6 +30,8 @@ const getDynamicAnimationClass = (style?: Types.ButtonStyles) => {
       return `btn-ghost ${animationBaseClass} before:border-y-ghost hover:text-ghost hover:bg-transparent`;
     case "link":
       return `btn-link ${animationBaseClass} before:border-y-primary`;
+    case "outline":
+      return `btn-outline ${animationBaseClass} before:border-y-primary hover:text-primary hover:bg-white`;
     default:
       return `btn-primary ${animationBaseClass} before:border-y-primary hover:text-primary hover:bg-primary-content`;
   }
@@ -45,6 +49,8 @@ const getStaticAnimationClass = (style?: Types.ButtonStyles) => {
       return "btn-ghost hover:text-ghost hover:bg-transparent hover:border-ghost";
     case "link":
       return "btn-link hover:border-transparent";
+    case "outline":
+      return "btn-outline hover:bg-transparent";
     default:
       return "btn-primary hover:text-primary hover:transparent";
   }
