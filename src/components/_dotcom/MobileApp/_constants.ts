@@ -1,5 +1,5 @@
-type AppsLinks = {
-	href: string;
+export type AppsLinks = {
+	href?: string;
 	src: string;
 	alt: string;
 	width: number;
@@ -22,3 +22,20 @@ export const appsLinks: AppsLinks[] = [
 		height: 50,
 	},
 ];
+
+export const mobileImages: AppsLinks[] = [
+	{
+		src: "./phone-mockups.jpg",
+		alt: "Android phone",
+		width: 255,
+		height: 552,
+	},
+	{
+		src: "./iPhone-14-pro-mockup.jpg",
+		alt: "Iphone",
+		width: 255,
+		height: 527,
+	},
+];
+
+

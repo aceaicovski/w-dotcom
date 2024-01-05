@@ -3,17 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 import cn from "@/utilities/cn";
-import { appsLinks } from "./_constants";
+import { AppsLinks, appsLinks } from "./_constants";
 
 export type MobileAppProps = React.HTMLAttributes<HTMLDivElement> & {
   layout: "leftTop" | "rightTop";
   contained: boolean;
   title: string;
   subtitle: string;
+  phoneImages: AppsLinks[];
 };
 
 const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
-  ({ title, subtitle, layout = "rightTop", contained = false, className, children, ...props }, ref): JSX.Element => {
+  (
+    { title, subtitle, layout = "rightTop", contained = false, phoneImages, className, children, ...props },
+    ref
+  ): JSX.Element => {
+    const [androidPhone, iPhone] = phoneImages;
+    const { src: androidSrc, alt: androidAlt, width: androidWidth, height: androidHeight } = androidPhone;
+    const { src: iPhoneSrc, alt: iPhoneAlt, width: iPhoneWidth, height: iPhoneHeight } = iPhone;
+
     return (
       <div
         role="banner"
@@ -29,10 +37,10 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
         <div className={`lg:w-[40%] w-full ${contained ? "relative" : "absolute"} lg:relative md:z-0`}>
           <div className={`${contained ? "" : "w-full absolute top-0 left-0 z-0"}`}>
             <Image
-              src="./phone-mockups.jpg"
-              alt={""}
-              width={255}
-              height={552}
+              src={androidSrc}
+              alt={androidAlt}
+              width={androidWidth}
+              height={androidHeight}
               className={`absolute ${
                 contained ? "bottom-0 z-10 left-[40%]" : "bottom-20 left-[75%] md:left-[70%] transform -translate-x-3/4"
               } md:bottom-0 md:z-1 w-52 ${contained ? "w-44 lg:w-64" : "md:w-64"} ${
@@ -42,10 +50,10 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
               }`}
             />
             <Image
-              src="./iPhone-14-pro-mockup.jpg"
-              alt={""}
-              width={255}
-              height={527}
+              src={iPhoneSrc}
+              alt={iPhoneAlt}
+              width={iPhoneWidth}
+              height={iPhoneHeight}
               className={`absolute  ${
                 contained ? "bottom-0 z-1 left-0" : "bottom-20 left-[7%] md:left-[25%]"
               } md:bottom-0 md:z-10 transform -translate-x-1/5 w-52 ${contained ? "w-44 lg:w-64" : "md:w-64"} ${
@@ -62,7 +70,7 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
             <div className={`flex gap-x-4 ${contained ? "flex-col gap-y-2 md:flex-row" : ""}`}>
               {appsLinks.map(link => (
                 <button key={link.alt}>
-                  <Link href={link.href} target="_blank">
+                  <Link href={link.href ?? "#"} target="_blank">
                     <Image src={link.src} alt={link.alt} width={link.width} height={link.height} />
                   </Link>
                 </button>
