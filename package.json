@@ -34,7 +34,7 @@
     "uniform:manifest:publish": "uniform context manifest publish",
     "uniform:publish": "run-s uniform:compositions:publish uniform:manifest:publish",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build -o docs",
     "postinstall": "cd cli-run && npm install && npm run build",
     "cli": "npm i && cd cli-run && node dist/index.mjs"
   },
