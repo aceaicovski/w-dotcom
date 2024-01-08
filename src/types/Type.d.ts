@@ -72,6 +72,8 @@ declare namespace Types {
 
   type TableTextAlign = "left" | "center" | "right";
 
+  type TableJSON = { [index: string]: { [index: string]: string } };
+
   type SupportedThemes = "uniform" | "javadrip" | "custom" | "nextlevelsports";
 
   type ThemeColors = {
