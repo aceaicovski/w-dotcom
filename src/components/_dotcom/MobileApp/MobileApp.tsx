@@ -48,7 +48,7 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
               alt={androidAlt}
               width={androidWidth}
               height={androidHeight}
-              className={`absolute bottom-32 left-[70%] md:left-[70%] transform -translate-x-[70%] md:bottom-0 md:z-1 w-52 md:w-64 lg:w-64 ${
+              className={`absolute bottom-32 left-[70%] md:left-[70%] transform -translate-x-[70%] md:bottom-0 md:z-1 w-52 md:w-64 lg:w-64 rounded-t-3xl ${
                 layout === "rightTop"
                   ? "lg:left-52 lg:transform-none lg:translate-x-0"
                   : "lg:right-52 lg:left-auto lg:translate-x-0"
@@ -59,7 +59,7 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
               alt={iPhoneAlt}
               width={iPhoneWidth}
               height={iPhoneHeight}
-              className={`absolute bottom-32 left-[10%] md:left-[25%] md:bottom-0 md:z-10 transform -translate-x-[10%] w-52 md:w-64 lg:w-64 ${
+              className={`absolute bottom-32 left-[10%] md:left-[25%] md:bottom-0 md:z-10 transform -translate-x-[10%] w-52 md:w-64 lg:w-64 rounded-t-3xl ${
                 layout === "rightTop" ? "lg:left-6 lg:translate-x-0" : "lg:right-6 lg:left-auto lg:translate-x-0"
               }`}
             />
