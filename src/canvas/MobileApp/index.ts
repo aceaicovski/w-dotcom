@@ -5,7 +5,7 @@ import MobileApp from "@/components/_dotcom/MobileApp";
 export type MobileAppProps = ComponentProps<BaseMobileAppProps>;
 
 registerUniformComponent({
-  type: "mobile-app",
+  type: "mobileApp",
   component: MobileApp,
 });
 

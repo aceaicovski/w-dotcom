@@ -34,6 +34,12 @@ parameters:
         - text: right
           value: right
     localizable: false
+  - id: data
+    name: Table Data
+    type: json
+    helpText: Table Data to fill rows and cells
+    typeConfig: {}
+    localizable: false
 categoryId: 94a7a423-8c09-4264-8495-c562c17d811e
 previewImageUrl: >-
   https://res.cloudinary.com/uniform-demos/image/upload/v1/preview-images/UniformTheme/Table_preview_image
@@ -56,7 +62,7 @@ slots:
     patternsInAllowedComponents: false
 canBeComposition: false
 created: '2023-12-30T18:07:30.327422+00:00'
-updated: '2023-12-30T18:14:55.46373+00:00'
+updated: '2024-01-08T16:35:29.907521+00:00'
 variants:
   - id: zebra
     name: Zebra

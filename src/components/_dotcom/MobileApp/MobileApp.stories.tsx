@@ -16,8 +16,14 @@ const appsLinks: AppsLinks[] = [
   },
 ];
 
+const argTypes = {
+  title: { control: "text" },
+  subtitle: { control: "text" },
+};
+
 export default {
   title: "Data Display/Mobile App",
+  argTypes,
   component: MobileApp,
 } as Meta;
 

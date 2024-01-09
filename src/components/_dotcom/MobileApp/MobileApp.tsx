@@ -20,7 +20,6 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
       layout = "rightTop",
       appsLinks = defaultAppsLinks,
       className,
-      children,
       ...props
     },
     ref
@@ -36,7 +35,7 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
         className={cn(
           `flex ${
             layout === "rightTop" ? "flex-row lg:flex-row-reverse" : ""
-          } items-end text-white w-full lg:mt-40 md:relative mt-56 bg-[#051227]`,
+          } items-end text-white w-full lg:mt-40 md:relative mt-56 bg-primary`,
           className
         )}
         ref={ref}
@@ -66,7 +65,7 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
           </div>
         </div>
 
-        <div className="w-full bg-[#051227] lg:w-[60%] flex flex-col py-8 lg:py-12 px-4 md:px-10 lg:px-8 z-50">
+        <div className="w-full lg:w-[60%] flex flex-col py-8 lg:py-12 px-4 md:px-10 lg:px-8 z-50">
           <h1 className="text-3xl md:text-4xl lg:text-5xl uppercase italic font-bold">{title}</h1>
           <div className={`flex flex-col md:flex-row md:justify-between md:gap-x-20 lg:flex-col`}>
             <p className="text-xl lg:text-2xl py-6">{subtitle}</p>
