@@ -174,14 +174,17 @@ slots:
       - typography
       - profile
       - table
+      - flex
+      - logos
+      - mobileApp
     allowAllComponents: false
     inheritAllowedComponents: false
     patternsInAllowedComponents: false
   - id: pageFooter
     name: Page Footer
-    maxComponents: 1
     allowedComponents:
       - footer
+      - mobileApp
     allowAllComponents: false
     inheritAllowedComponents: false
     patternsInAllowedComponents: false
@@ -240,4 +243,4 @@ defaults:
 titleParameter: pageTitle
 canBeComposition: true
 created: '2023-10-03T09:04:59.496579+00:00'
-updated: '2023-12-30T17:58:09.222589+00:00'
+updated: '2024-01-09T17:17:22.216252+00:00'
