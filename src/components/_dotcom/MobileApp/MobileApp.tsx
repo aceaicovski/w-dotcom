@@ -3,22 +3,29 @@ import Image from "next/image";
 import Link from "next/link";
 
 import cn from "@/utilities/cn";
-import { AppsLinks, appsLinks } from "./_constants";
+import { AppsLinks, defaultAppsLinks, mobileImages } from "./_constants";
 
 export type MobileAppProps = React.HTMLAttributes<HTMLDivElement> & {
   layout: "leftTop" | "rightTop";
-  contained: boolean;
   title: string;
   subtitle: string;
-  phoneImages: AppsLinks[];
+  appsLinks: AppsLinks[];
 };
 
 const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
   (
-    { title, subtitle, layout = "rightTop", contained = false, phoneImages, className, children, ...props },
+    {
+      title = "Next Level Sports on the go",
+      subtitle = "Download the Next Level Sports app for iPhone on the App Store",
+      layout = "rightTop",
+      appsLinks = defaultAppsLinks,
+      className,
+      children,
+      ...props
+    },
     ref
   ): JSX.Element => {
-    const [androidPhone, iPhone] = phoneImages;
+    const [androidPhone, iPhone] = mobileImages;
     const { src: androidSrc, alt: androidAlt, width: androidWidth, height: androidHeight } = androidPhone;
     const { src: iPhoneSrc, alt: iPhoneAlt, width: iPhoneWidth, height: iPhoneHeight } = iPhone;
 
@@ -27,23 +34,21 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
         role="banner"
         {...props}
         className={cn(
-          `flex ${layout === "rightTop" && "flex-row-reverse"} items-end text-white w-full lg:mt-40 ${
-            contained ? "" : "md:relative mt-56 "
-          } bg-[#051227]`,
+          `flex ${
+            layout === "rightTop" ? "flex-row lg:flex-row-reverse" : ""
+          } items-end text-white w-full lg:mt-40 md:relative mt-56 bg-[#051227]`,
           className
         )}
         ref={ref}
       >
-        <div className={`lg:w-[40%] w-full ${contained ? "relative" : "absolute"} lg:relative md:z-0`}>
-          <div className={`${contained ? "" : "w-full absolute top-0 left-0 z-0"}`}>
+        <div className={`lg:w-[40%] w-full absolute lg:relative md:z-0`}>
+          <div className={`w-full absolute top-0 left-0 z-0`}>
             <Image
               src={androidSrc}
               alt={androidAlt}
               width={androidWidth}
               height={androidHeight}
-              className={`absolute ${
-                contained ? "bottom-0 z-10 left-[40%]" : "bottom-20 left-[75%] md:left-[70%] transform -translate-x-3/4"
-              } md:bottom-0 md:z-1 w-52 ${contained ? "w-44 lg:w-64" : "md:w-64"} ${
+              className={`absolute bottom-32 left-[70%] md:left-[70%] transform -translate-x-[70%] md:bottom-0 md:z-1 w-52 md:w-64 lg:w-64 ${
                 layout === "rightTop"
                   ? "lg:left-52 lg:transform-none lg:translate-x-0"
                   : "lg:right-52 lg:left-auto lg:translate-x-0"
@@ -54,9 +59,7 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
               alt={iPhoneAlt}
               width={iPhoneWidth}
               height={iPhoneHeight}
-              className={`absolute  ${
-                contained ? "bottom-0 z-1 left-0" : "bottom-20 left-[7%] md:left-[25%]"
-              } md:bottom-0 md:z-10 transform -translate-x-1/5 w-52 ${contained ? "w-44 lg:w-64" : "md:w-64"} ${
+              className={`absolute bottom-32 left-[10%] md:left-[25%] md:bottom-0 md:z-10 transform -translate-x-[10%] w-52 md:w-64 lg:w-64 ${
                 layout === "rightTop" ? "lg:left-6 lg:translate-x-0" : "lg:right-6 lg:left-auto lg:translate-x-0"
               }`}
             />
@@ -65,16 +68,18 @@ const MobileApp = React.forwardRef<HTMLDivElement, MobileAppProps>(
 
         <div className="w-full bg-[#051227] lg:w-[60%] flex flex-col py-8 lg:py-12 px-4 md:px-10 lg:px-8 z-50">
           <h1 className="text-3xl md:text-4xl lg:text-5xl uppercase italic font-bold">{title}</h1>
-          <div className={`flex flex-col ${contained ? "" : "md:flex-row md:justify-between md:gap-x-20"} lg:flex-col`}>
+          <div className={`flex flex-col md:flex-row md:justify-between md:gap-x-20 lg:flex-col`}>
             <p className="text-xl lg:text-2xl py-6">{subtitle}</p>
-            <div className={`flex gap-x-4 ${contained ? "flex-col gap-y-2 md:flex-row" : ""}`}>
-              {appsLinks.map(link => (
-                <button key={link.alt}>
-                  <Link href={link.href ?? "#"} target="_blank">
-                    <Image src={link.src} alt={link.alt} width={link.width} height={link.height} />
-                  </Link>
-                </button>
-              ))}
+            <div className={`flex gap-x-4 `}>
+              {appsLinks?.map(link => {
+                return (
+                  <button key={link.alt}>
+                    <Link href={link.href ?? "#"} target="_blank">
+                      <Image src={link.src} alt={link.alt} width={180} height={50} />
+                    </Link>
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>
