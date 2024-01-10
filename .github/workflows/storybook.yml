@@ -31,7 +31,7 @@ jobs:
 
       # Deploy storybook static files to the github pages
       - name: Deploy Storybook to Github Pages
-        uses: JamesIves/github-pages-deploy-action@4
+        uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           branch: gh-pages
           folder: "./docs"
